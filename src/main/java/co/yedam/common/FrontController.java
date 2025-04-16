@@ -1,4 +1,4 @@
-package co.yedam.web;
+package co.yedam.common;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.yedam.common.Control;
+import co.yedam.web.LoginControl;
+import co.yedam.web.LoginFormControl;
+import co.yedam.web.MainControl;
+import co.yedam.web.ProductControl;
+import co.yedam.web.ProductListControl;
 
 public class FrontController extends HttpServlet {
 
@@ -27,6 +31,8 @@ public class FrontController extends HttpServlet {
 		map.put("/productList.do", new ProductListControl());
 		// 상품상세.
 		map.put("/productInfo.do", new ProductControl());
+		map.put("/loginForm.do", new LoginFormControl());
+		map.put("/login.do", new LoginControl());
 	}
 
 	@Override
