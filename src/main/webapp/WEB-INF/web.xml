@@ -7,11 +7,11 @@
   </listener>
 
   <servlet>
-    <servlet-name>front</servlet-name>
+    <servlet-name>Front</servlet-name>
     <servlet-class>co.yedam.web.FrontController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>front</servlet-name>
+    <servlet-name>Front</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
 
