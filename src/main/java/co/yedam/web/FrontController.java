@@ -22,7 +22,7 @@ public class FrontController extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		map.put("/main.do", new MainControl());
+		map.put("/main.do", new MainControl());//
 		// 상품목록.
 		map.put("/productList.do", new ProductListControl());
 		// 상품상세.
