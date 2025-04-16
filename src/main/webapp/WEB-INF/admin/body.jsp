@@ -6,7 +6,6 @@
     <p class="mb-4">좌측 메뉴를 클릭하면 해당 콘텐츠가 표시됩니다.</p>
 
     <!-- 상품 관리 -->
-    <c:if test="${param.menu eq 'product'}">
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card bg-primary text-white">
@@ -33,10 +32,8 @@
                 </div>
             </div>
         </div>
-    </c:if>
 
     <!-- 회원 관리 -->
-    <c:if test="${param.menu eq 'member'}">
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card bg-warning text-white">
@@ -63,10 +60,8 @@
                 </div>
             </div>
         </div>
-    </c:if>
 
     <!-- 주문 관리 -->
-    <c:if test="${param.menu eq 'order'}">
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card bg-success text-white">
@@ -85,10 +80,8 @@
                 </div>
             </div>
         </div>
-    </c:if>
 
     <!-- 리뷰/신고 관리 -->
-    <c:if test="${param.menu eq 'review'}">
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card bg-danger text-white">
@@ -107,10 +100,5 @@
                 </div>
             </div>
         </div>
-    </c:if>
 
-    <!-- 기본 안내 -->
-    <c:if test="${empty param.menu}">
-        <p>좌측 메뉴에서 항목을 선택해주세요.</p>
-    </c:if>
 </div>
