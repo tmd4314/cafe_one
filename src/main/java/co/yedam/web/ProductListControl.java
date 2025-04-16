@@ -26,7 +26,7 @@ public class ProductListControl implements Control {
 		ProductService svc = new ProductServiceImpl();
 		List<Map<String, Object>> list = svc.cheeringMessage();
 		req.setAttribute("blist", list);
-		req.getRequestDispatcher("product/productList.tiles").forward(req, resp);
+		req.getRequestDispatcher("admin/body.tiles").forward(req, resp);
 		
 		
 	}
