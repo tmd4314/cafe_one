@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     
 =======
                 
@@ -33,6 +34,9 @@
 <<<<<<< HEAD
     
     
+=======
+  
+>>>>>>> branch 'productDetail' of https://github.com/tmd4314/cafe_one.git
     <wb-module deploy-name="cafe_one-0.0.1-SNAPSHOT">
                                         
         
@@ -67,10 +71,13 @@
     </wb-module>
                 
 
+<<<<<<< HEAD
 =======
     </wb-module>
             
 >>>>>>> refs/heads/productDetail
+=======
+>>>>>>> branch 'productDetail' of https://github.com/tmd4314/cafe_one.git
 
 
 </project-modules>
