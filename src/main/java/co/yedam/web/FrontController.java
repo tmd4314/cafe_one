@@ -33,7 +33,7 @@ public class FrontController extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) //
 			throws ServletException, IOException {
 		String uri = req.getRequestURI();
-		String context = req.getContextPath();
+		String context = req.getContextPath();//
 		String path = uri.substring(context.length());
 
 		Control sub = map.get(path);
