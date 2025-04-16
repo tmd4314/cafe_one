@@ -8,7 +8,7 @@
 
   <servlet>
     <servlet-name>front</servlet-name>
-    <servlet-class>co.yedam.web.FrontController</servlet-class>
+    <servlet-class>co.yedam.common.FrontController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>front</servlet-name>

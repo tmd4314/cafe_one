@@ -1,4 +1,4 @@
-package co.yedam.web;
+package co.yedam.common;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -10,10 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.yedam.control.LoginControl;
-import com.yedam.control.LoginFormControl;
-
-import co.yedam.common.Control;
+import co.yedam.web.LoginControl;
+import co.yedam.web.LoginFormControl;
+import co.yedam.web.MainControl;
+import co.yedam.web.ProductControl;
+import co.yedam.web.ProductListControl;
 
 public class FrontController extends HttpServlet {
 
@@ -25,7 +26,7 @@ public class FrontController extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		map.put("/main.do", new MainControl());//
+		map.put("/main.do", new MainControl());
 		// 상품목록.
 		map.put("/productList.do", new ProductListControl());
 		// 상품상세.
@@ -38,7 +39,7 @@ public class FrontController extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) //
 			throws ServletException, IOException {
 		String uri = req.getRequestURI();
-		String context = req.getContextPath();//
+		String context = req.getContextPath();
 		String path = uri.substring(context.length());
 
 		Control sub = map.get(path);
