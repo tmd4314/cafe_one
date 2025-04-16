@@ -22,6 +22,7 @@ public class FrontController extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
+
 		// 메인화면
 		map.put("/main.do", new MainControl());
 		// 상품목록.
