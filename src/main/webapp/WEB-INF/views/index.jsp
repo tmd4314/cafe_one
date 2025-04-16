@@ -26,7 +26,7 @@
   <body>
 
     
-    <section style="background-image: url('images/banner-1.jpg');background-repeat: no-repeat;background-size: cover;">
+    <section style="background-image: url('images/banner-1.jpg'); background-repeat: no-repeat; background-size: cover;">
       <div class="container-lg">
         <div class="row">
           <div class="col-lg-6 pt-5 mt-5">
@@ -109,7 +109,7 @@
       
       </div>
     </section>
-
+	
     <section class="py-5 overflow-hidden">
       <div class="container-lg">
         <div class="row">
@@ -136,7 +136,19 @@
               <div class="swiper-wrapper">
                 <a href="category.html" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Category1</h4>
+                  <h4 class="fs-6 mt-3 fw-normal category-title">커피</h4>
+                </a>
+                <a href="category.html" class="nav-link swiper-slide text-center">
+                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <h4 class="fs-6 mt-3 fw-normal category-title">시럽/소스</h4>
+                </a>
+                <a href="category.html" class="nav-link swiper-slide text-center">
+                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <h4 class="fs-6 mt-3 fw-normal category-title">파우더</h4>
+                </a>
+                <a href="category.html" class="nav-link swiper-slide text-center">
+                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <h4 class="fs-6 mt-3 fw-normal category-title">유제품</h4>
                 </a>
               </div>
             </div>

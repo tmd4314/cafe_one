@@ -29,6 +29,8 @@ public class FrontController extends HttpServlet {
 		map.put("/productInfo.do", new ProductControl());
 		// 관리자부분.
 		map.put("/adminBody.do", new AdminControl());
+		// 카테고리 부분.
+		map.put("/categoryList.do", new CategoryListControl());
 	}
 
 	@Override
