@@ -21,7 +21,7 @@ public class ProductListControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String pno = req.getParameter("pno");
+		
 		// TODO Auto-generated method stub
 		ProductService svc = new ProductServiceImpl();
 		List<Map<String, Object>> list = svc.cheeringMessage();
