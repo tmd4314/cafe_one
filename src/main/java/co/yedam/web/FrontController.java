@@ -17,16 +17,25 @@ public class FrontController extends HttpServlet {
 	Map<String, Control> map;
 
 	public FrontController() {
-		map = new HashMap<>();
+		map = new HashMap<String, Control>();
 	}
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		// 상품목록.
+
+		// 메인화면
 		map.put("/main.do", new MainControl());
-		// 상세화면
-		map.put("/product.do",  new ProductFormControl());
-		
+		// 상품목록.
+		map.put("/productList.do", new ProductListControl());
+		// 상품상세.
+		map.put("/productInfo.do", new ProductControl());
+		// 관리자부분.
+		map.put("/adminBody.do", new AdminControl());
+		// 카테고리 부분.
+		map.put("/categoryList.do", new CategoryListControl());
+		// 베스트, 신상품, 할인상품
+		map.put("/majorProdList.do", new majorProdControl());
+		// 베스트, 사용자 취향 기반
 	}
 
 	@Override
