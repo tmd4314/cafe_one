@@ -6,14 +6,23 @@
 
 <!-- 일반사용자용 템플릿 -->
   <definition name="myapp.common" template="/WEB-INF/layout/template.jsp">
-    <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
-    <put-attribute name="body" value="/WEB-INF/layout/body.jsp" />
-    <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+	<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"/>
+	<put-attribute name="body" value="/WEB-INF/layout/body.jsp"/>
+	<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
   </definition>
-  
-  <!-- 상품용도 -->
+	<!--  상품용도  -->
   <definition name="WILDCARD:product/*" extends="myapp.common">
-  	<put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
+	<put-attribute name="body" value="/WEB-INF/views/{1}.jsp"/>
   </definition>
-  
+
+   <!-- 관리자 템플릿 정의 -->
+	<definition name="myapp.admin" template="/WEB-INF/admin/template.jsp">
+	  <put-attribute name="body" value="/WEB-INF/admin/body.jsp" />
+	</definition>
+	
+	<definition name="WILDCARD:admin/*" extends="myapp.admin">
+	  <put-attribute name="body" value="/WEB-INF/admin/{1}.jsp" />
+	</definition>
+	
+	
 </tiles-definitions>

@@ -256,10 +256,11 @@
             <div class="search-bar row bg-light p-2 rounded-4">
               <div class="col-md-4 d-none d-md-block">
                 <select class="form-select border-0 bg-transparent">
-                  <option>All Categories</option>
-                  <option>Groceries</option>
-                  <option>Drinks</option>
-                  <option>Chocolates</option>
+                  <option>Categories</option>
+                  <option>커피</option>
+                  <option>시럽/소스</option>
+                  <option>파우더</option>
+                  <option>유제품</option>
                 </select>
               </div>
               <div class="col-11 col-md-7">
