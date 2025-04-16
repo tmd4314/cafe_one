@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -24,9 +26,8 @@
 
   </head>
   <body>
-
-    
     <section style="background-image: url('images/banner-1.jpg'); background-repeat: no-repeat; background-size: cover;">
+
       <div class="container-lg">
         <div class="row">
           <div class="col-lg-6 pt-5 mt-5">
@@ -134,7 +135,7 @@
 
             <div class="category-carousel swiper">
               <div class="swiper-wrapper">
-                <a href="category.html" class="nav-link swiper-slide text-center">
+                <a href="productInfo.do" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">커피</h4>
                 </a>
@@ -441,7 +442,5 @@
         </div>
       </div>
     </section>
-
-  
   </body>
 </html>

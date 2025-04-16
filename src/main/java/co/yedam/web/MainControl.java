@@ -20,6 +20,5 @@ public class MainControl implements Control {
 
 		req.getRequestDispatcher("product/index.tiles")//
 				.forward(req, resp);
-	}
-
-}
+	} // end of exec()
+} // end of class
