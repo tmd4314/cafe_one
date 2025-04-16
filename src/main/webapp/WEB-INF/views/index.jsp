@@ -26,8 +26,6 @@
 
   </head>
   <body>
-
-    
     <section style="background-image: url('images/banner-1.jpg');background-repeat: no-repeat;background-size: cover;">
       <div class="container-lg">
         <div class="row">
@@ -136,7 +134,7 @@
 
             <div class="category-carousel swiper">
               <div class="swiper-wrapper">
-                <a href="category.html" class="nav-link swiper-slide text-center">
+                <a href="productInfo.do" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Category1</h4>
                 </a>
@@ -431,7 +429,5 @@
         </div>
       </div>
     </section>
-
-  
   </body>
 </html>
