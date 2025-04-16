@@ -28,6 +28,9 @@ public class FrontController extends HttpServlet {
 		map.put("/productList.do", new ProductListControl());
 		// 상품상세.
 		map.put("/productInfo.do", new ProductControl());
+		// 베스트, 신상품, 할인상품
+		map.put("/majorProdList.do", new majorProdControl());
+		// 베스트, 사용자 취향 기반
 	}
 
 	@Override
