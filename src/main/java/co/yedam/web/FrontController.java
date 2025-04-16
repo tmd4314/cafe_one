@@ -22,9 +22,8 @@ public class FrontController extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		// 메인화면
-		map.put("/main.do", new MainControl());
 		// 상품목록.
+
 		map.put("/productList.do", new ProductListControl());
 		// 상품상세.
 		map.put("/productInfo.do", new ProductControl());
@@ -35,6 +34,11 @@ public class FrontController extends HttpServlet {
 		// 베스트, 신상품, 할인상품
 		map.put("/majorProdList.do", new majorProdControl());
 		// 베스트, 사용자 취향 기반
+
+		map.put("/main.do", new MainControl());
+		// 상세화면
+		map.put("/product.do",  new ProductFormControl());
+		
 	}
 
 	@Override
