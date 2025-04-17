@@ -16,4 +16,9 @@
   	<put-attribute name="body" value="/WEB-INF/views/{1}.jsp" />
   </definition>
   
+  <!-- 회원용도 -->
+  <definition name="WILDCARD:member/*" extends="myapp.common">
+  	<put-attribute name="body" value="/WEB-INF/views/member/{1}.jsp" />
+  </definition>
+  
 </tiles-definitions>
