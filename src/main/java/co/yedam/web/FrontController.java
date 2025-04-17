@@ -42,6 +42,8 @@ public class FrontController extends HttpServlet {
 		// 상세화면
 		map.put("/productForm.do", new ProductFormControl());
 		// 상세화면 이동
+		
+		map.put("/bestProductList.do", new AllProductListControl());
 	}
 
 	@Override

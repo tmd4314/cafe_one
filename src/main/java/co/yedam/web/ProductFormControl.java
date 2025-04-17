@@ -23,9 +23,8 @@ public class ProductFormControl implements Control {
 		
 		SqlSession sqlSession = DataSource.getInstance().openSession(true);
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
-//		ProductVO product = mapper.selectOne
-		
-		
+		ProductVO product = mapper.selectOne(pcd);		
+		req.setAttribute("product", product);
 		
 		req.getRequestDispatcher("product/productForm.tiles")//
 				.forward(req, resp);
