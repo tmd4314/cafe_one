@@ -26,6 +26,7 @@ public class FrontController extends HttpServlet {
 		// 메인화면
 		map.put("/main.do", new MainControl());
 		// 상품목록.
+
 		map.put("/productList.do", new ProductListControl());
 		// 상품상세.
 		map.put("/productInfo.do", new ProductControl());
@@ -36,17 +37,18 @@ public class FrontController extends HttpServlet {
 		// 베스트, 신상품, 할인상품
 		map.put("/majorProdList.do", new majorProdControl());
 		// 베스트, 사용자 취향 기반
+
+		map.put("/main.do", new MainControl());
 		// 상세화면
 		map.put("/product.do", new ProductFormControl());
-		map.put("/loginForm.do", new LoginFormControl());
-		map.put("/login.do", new LoginControl());
+
 	}
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) //
 			throws ServletException, IOException {
 		String uri = req.getRequestURI();
-		String context = req.getContextPath();//
+		String context = req.getContextPath();
 		String path = uri.substring(context.length());
 
 		Control sub = map.get(path);
