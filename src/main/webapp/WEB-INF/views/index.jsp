@@ -176,7 +176,7 @@
             
           </div>
         </div>
-        
+        <c:forEach var="product" items="S{plist}">
         <div class="row">
           <div class="col-md-12">
 
@@ -185,7 +185,7 @@
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="product.do" title="Product Title">
+                    <a href="productForm.do?" title="Product Title">
                       <img src="images/product-thumb-1.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
@@ -217,6 +217,7 @@
 
           </div>
         </div>
+        </c:forEach>
       </div>
     </section>
 

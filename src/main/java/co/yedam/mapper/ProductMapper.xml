@@ -3,17 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.yedam.mapper.ProductMapper">
-
-	<select id="selectMessage" resultType="map">
+	
+	<select id="selectOne" parameterType="String" resultType="product" >
 	  select *
-	  from     product_tbl
-	  order by star_point desc
-	</select>
-
-	<select id="selectHint" parameterType="string">
-	 	select *
-	 	from   product_tbl
-	 	where  prd_code = #{remainTimeStr}
+	  from product
+	  where pd_code = #{pdCode}
 	</select>
 
 </mapper>

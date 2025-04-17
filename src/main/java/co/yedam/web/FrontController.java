@@ -40,8 +40,8 @@ public class FrontController extends HttpServlet {
 
 		map.put("/main.do", new MainControl());
 		// 상세화면
-		map.put("/product.do", new ProductFormControl());
-
+		map.put("/productForm.do", new ProductFormControl());
+		// 상세화면 이동
 	}
 
 	@Override
