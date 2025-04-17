@@ -27,6 +27,10 @@ public class ProductListControl implements Control {
 		List<Map<String, Object>> list = svc.cheeringMessage();
 		req.setAttribute("blist", list);
 		req.getRequestDispatcher("admin/body.tiles").forward(req, resp);
+//		ProductService svc = new ProductServiceImpl();
+//		List<Map<String, Object>> list = svc.cheeringMessage();
+//		req.setAttribute("blist", list);
+		req.getRequestDispatcher("product/index.tiles").forward(req, resp);
 		
 		
 	}

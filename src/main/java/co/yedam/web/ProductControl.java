@@ -16,18 +16,18 @@ public class ProductControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String pno = req.getParameter("pno");
-		
-		ProductService pvc = new ProductServiceImpl();
-		
-		List<Map<String, Object>> pvo = pvc.hintMessage(pno);
-		List<Map<String, Object>> list = pvc.cheeringMessage();
-
-		req.setAttribute("product", pvo);
-		req.setAttribute("productList", list);
-		req.getRequestDispatcher("product/productInfo.tiles").forward(req, resp);
-		
+//		// TODO Auto-generated method stub
+//		String pno = req.getParameter("pno");
+//		
+//		ProductService pvc = new ProductServiceImpl();
+//		
+//		List<Map<String, Object>> pvo = pvc.hintMessage(pno);
+//		List<Map<String, Object>> list = pvc.cheeringMessage();
+//
+//		req.setAttribute("product", pvo);
+//		req.setAttribute("productList", list);
+//		req.getRequestDispatcher("product/productInfo.tiles").forward(req, resp);
+//		
 	}
 
 }
