@@ -26,7 +26,8 @@
 
   </head>
   <body>
-    <section style="background-image: url('images/banner-1.jpg');background-repeat: no-repeat;background-size: cover;">
+    <section style="background-image: url('images/banner-1.jpg'); background-repeat: no-repeat; background-size: cover;">
+
       <div class="container-lg">
         <div class="row">
           <div class="col-lg-6 pt-5 mt-5">
@@ -109,7 +110,7 @@
       
       </div>
     </section>
-
+	
     <section class="py-5 overflow-hidden">
       <div class="container-lg">
         <div class="row">
@@ -136,7 +137,19 @@
               <div class="swiper-wrapper">
                 <a href="productInfo.do" class="nav-link swiper-slide text-center">
                   <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
-                  <h4 class="fs-6 mt-3 fw-normal category-title">Category1</h4>
+                  <h4 class="fs-6 mt-3 fw-normal category-title">커피</h4>
+                </a>
+                <a href="category.html" class="nav-link swiper-slide text-center">
+                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <h4 class="fs-6 mt-3 fw-normal category-title">시럽/소스</h4>
+                </a>
+                <a href="category.html" class="nav-link swiper-slide text-center">
+                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <h4 class="fs-6 mt-3 fw-normal category-title">파우더</h4>
+                </a>
+                <a href="category.html" class="nav-link swiper-slide text-center">
+                  <img src="images/category-thumb-1.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <h4 class="fs-6 mt-3 fw-normal category-title">유제품</h4>
                 </a>
               </div>
             </div>
@@ -172,7 +185,7 @@
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="index.html" title="Product Title">
+                    <a href="product.do" title="Product Title">
                       <img src="images/product-thumb-1.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
@@ -187,11 +200,6 @@
                         <svg width="18" height="18" class="text-warning"><use xlink:href="#star-half"></use></svg>
                       </span>
                       <span>(222)</span>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center gap-2">
-                      <del>$Best selling products1 할인 전</del>
-                      <span class="text-dark fw-semibold">$Best selling products1 할인 후</span>
-                      <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">n% 할인</span>
                     </div>
                     <div class="button-area p-3 pt-0">
                       <div class="row g-1 mt-2">
@@ -300,11 +308,6 @@
                         <svg width="18" height="18" class="text-warning"><use xlink:href="#star-half"></use></svg>
                       </span>
                       <span>(222)</span>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center gap-2">
-                      <del>$Featured products1 할인 전</del>
-                      <span class="text-dark fw-semibold">$Featured products2 할인 후</span>
-                      <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
                     </div>
                     <div class="button-area p-3 pt-0">
                       <div class="row g-1 mt-2">

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpSession;
 
 import co.yedam.common.Control;
 
-
 public class MainControl implements Control {
 
 	@Override
