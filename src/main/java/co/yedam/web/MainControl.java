@@ -9,17 +9,16 @@ import javax.servlet.http.HttpSession;
 
 import co.yedam.common.Control;
 
-
 public class MainControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		HttpSession session = req.getSession();
-		String logId = (String) session.getAttribute("logId");
+//		HttpSession session = req.getSession();
+//		String logId = (String) session.getAttribute("logId");
 
-		req.getRequestDispatcher("product/index.tiles")//
-				.forward(req, resp);
+		
+		req.getRequestDispatcher("product/index.tiles").forward(req, resp);
 	}
 
 }

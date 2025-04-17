@@ -9,14 +9,19 @@
   </settings>
   <typeAliases>
   	<typeAlias alias = "product" type = "co.yedam.vo.ProductVO"/>
+<<<<<<< HEAD
   	<typeAlias alias="member" type="co.yedam.vo.MemberVO"/>
+=======
+  	<typeAlias alias = "user" type = "co.yedam.vo.MemberVo"/>
+>>>>>>> refs/heads/master
   </typeAliases>
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
         <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>  <!-- 192.168.0.35 -->
         <property name="username" value="scott"/>
         <property name="password" value="tiger"/>
       </dataSource>
@@ -24,6 +29,10 @@
   </environments>
   <mappers>
     <mapper resource="co/yedam/mapper/ProductMapper.xml"/>
+<<<<<<< HEAD
     <mapper resource="com/yedam/mapper/MemberMapper.xml"/>
+=======
+    <mapper resource="co/yedam/mapper/MemberMapper.xml"/>
+>>>>>>> refs/heads/master
   </mappers>
 </configuration>
