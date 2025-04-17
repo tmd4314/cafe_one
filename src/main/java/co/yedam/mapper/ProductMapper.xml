@@ -16,4 +16,13 @@
 	 	where  prd_code = #{remainTimeStr}
 	</select>
 
+<!-- 
+	<select id="selectProduct" parameterType="string">
+	 	select *
+	 	from   product
+	 	where  pd_code = #{pdCode}
+	</select>
+ -->
+
+
 </mapper>
