@@ -18,14 +18,7 @@ public class MainControl implements Control {
 //		HttpSession session = req.getSession();
 //		String logId = (String) session.getAttribute("logId");
 
-<<<<<<< HEAD
-		req.getRequestDispatcher("product/index.tiles")//
-				.forward(req, resp);
-	} // end of exec()
-} // end of class
-=======
 		req.getRequestDispatcher("product/index.tiles").forward(req, resp);
 	}
 
 }
->>>>>>> branch 'master' of https://github.com/tmd4314/cafe_one.git
