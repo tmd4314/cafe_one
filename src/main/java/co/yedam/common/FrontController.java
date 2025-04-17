@@ -16,8 +16,9 @@ import co.yedam.web.LoginControl;
 import co.yedam.web.LoginFormControl;
 import co.yedam.web.MainControl;
 import co.yedam.web.ProductControl;
+import co.yedam.web.ProductInfoControl;
 import co.yedam.web.ProductListControl;
-import co.yedam.web.majorProdControl;
+import co.yedam.web.SearchControl;
 
 public class FrontController extends HttpServlet {
 
@@ -37,9 +38,12 @@ public class FrontController extends HttpServlet {
 		// 관리자부분.
 		map.put("/adminBody.do", new AdminControl());
 		// 카테고리 부분.
-		map.put("/categoryList.do", new CategoryListControl());
+		map.put("/category.do", new CategoryListControl());
+		// 검색 부분.
+		map.put("/search.do", new SearchControl());
+		map.put("/productInfo.do", new ProductInfoControl());
 		// 베스트, 신상품, 할인상품
-		map.put("/majorProdList.do", new majorProdControl());
+//		map.put("/majorProdList.do", new majorProdControl());
 		// 베스트, 사용자 취향 기반
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl());
@@ -53,7 +57,12 @@ public class FrontController extends HttpServlet {
 		String path = uri.substring(context.length());
 
 		Control sub = map.get(path);
-		sub.exec(req, resp);
+		if (sub == null) {
+	        System.out.println("해당 요청을 처리할 컨트롤러가 없습니다: " + path);
+	        resp.sendError(HttpServletResponse.SC_NOT_FOUND, "요청한 URL을 처리할 컨트롤러가 없습니다.");
+	        return;
+	    }
 
+	    sub.exec(req, resp);
 	}
 }

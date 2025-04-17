@@ -41,6 +41,7 @@ public class LoginControl implements Control {
 			session.setAttribute("mile", mvo.getMailage());
 			session.setAttribute("reviewId", mvo.getReviewId());
 			session.setAttribute("orDNo", mvo.getOrderDetailNo());
+			session.setAttribute("loginUser", mvo);
 			req.getRequestDispatcher("product/index.tiles").forward(req, resp);
 			
 		}

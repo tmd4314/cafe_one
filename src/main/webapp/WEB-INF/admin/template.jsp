@@ -37,29 +37,6 @@
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
-                    <div class="sb-sidenav-menu-heading">상품 관리</div>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseProduct">
-                        상품 관리
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapseProduct">
-                        <nav class="sb-sidenav-menu-nested nav accordion">
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseList">
-                                상품 목록 
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseList">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#">상품 전체 보기</a>
-                                    <a class="nav-link" href="#">상품 검색</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link" href="#">입고/재고 관리</a>
-                            <a class="nav-link" href="#">상품 등록</a>
-                        </nav>
-                    </div>
-
-                    <div class="sb-sidenav-menu-heading">회원 관리</div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMember">
                         전체 회원
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -71,20 +48,38 @@
                             <a class="nav-link" href="#">회원 삭제</a>
                         </nav>
                     </div>
-
-                    <div class="sb-sidenav-menu-heading">주문 및 리뷰</div>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseOrder">
-                        주문 관리
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapseOrder">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="#">주문 목록</a>
-                            <a class="nav-link" href="#">주문 검색</a>
-                            <a class="nav-link" href="#">배송 관리</a>
-                            <a class="nav-link" href="#">환불/취소 요청</a>
-                        </nav>
-                    </div>
+	 				<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseProduct">
+				                        상품 관리
+				                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+				                    </a>
+				                    <div class="collapse" id="collapseProduct">
+				                        <nav class="sb-sidenav-menu-nested nav accordion">
+				                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseList">
+				                                상품 목록 
+				                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+				                            </a>
+				                            <div class="collapse" id="collapseList">
+				                                <nav class="sb-sidenav-menu-nested nav">
+				                                    <a class="nav-link" href="#">상품 전체 보기</a>
+				                                    <a class="nav-link" href="#">상품 검색</a>
+				                                </nav>
+				                            </div>
+				                            <a class="nav-link" href="#">입고/재고 관리</a>
+				                            <a class="nav-link" href="#">상품 등록</a>
+				                        </nav>
+				                    </div>
+				                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseOrder">
+				                        주문 관리
+				                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+				                    </a>
+				                    <div class="collapse" id="collapseOrder">
+				                        <nav class="sb-sidenav-menu-nested nav">
+				                            <a class="nav-link" href="#">주문 목록</a>
+				                            <a class="nav-link" href="#">주문 검색</a>
+				                            <a class="nav-link" href="#">배송 관리</a>
+				                            <a class="nav-link" href="#">환불/취소 요청</a>
+				                        </nav>
+				                    </div>			                   
 
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseReview">
                         리뷰/신고 관리
