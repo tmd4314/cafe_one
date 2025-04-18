@@ -8,5 +8,6 @@ public interface CartService {
     List<CartVo> getCartList(String id);
     boolean removeCart(int cartNo);
 	boolean updateCart(CartVo cvo);
+	List<CartVo> getCash(String id, int cartNo);
 }
 

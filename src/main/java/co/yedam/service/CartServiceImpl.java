@@ -27,6 +27,13 @@ public class CartServiceImpl implements CartService {
 		// TODO Auto-generated method stub
 		return mapper.modifyCart(cvo) == 1;
 	}
+	@Override
+	public List<CartVo> getCash(String id, int cartNo) {
+		System.out.println(id);
+		System.out.println(cartNo);
+		// TODO Auto-generated method stub
+		return mapper.selectCash(id, cartNo);
+	}
 
 
 }

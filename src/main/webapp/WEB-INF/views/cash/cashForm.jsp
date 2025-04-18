@@ -26,12 +26,13 @@
   <h3 class="mb-4">📝 주문/결제</h3>
 
   <!-- 주문 상품 요약 -->
-  <!-- <c:forEach var="cart" items="${blist }"> -->
+  <c:forEach var="cart" items="${blist }"> 
 	   <div class="card p-3 mb-4">
 	     <h5>🛒 주문 상품</h5>
 	     <table class="table">
 	       <thead>
 	         <tr>
+	           <th scope="col">이미지</th>
 	           <th scope="col">상품/옵션 정보</th>
 	           <th scope="col">수량</th>
 	           <th scope="col">상품금액</th>
@@ -41,10 +42,13 @@
 	       </thead>
 	       <tbody>
 	         <tr>
-	           <td>커피존 바날라 시럽 1000ml</td>
-	           <td>1개</td>
-	           <td>15,000원</td>
-	           <td>15,000원</td>
+	           <td>
+                   <img src="images/${cart.pdImg}" alt="${cart.pdName}" style="width: 50px; height: 50px;">
+               </td>
+	           <td><c:out value="${cart.pdName }"/></td>
+	           <td><c:out value="${cart.quantity }"/>개</td>
+	           <td><fmt:formatNumber value="${cart.pdPrice }" pattern="#,###"/>원</td>
+	           <td><fmt:formatNumber value="${cart.totalPrice }" pattern="#,###"/>원</td>
 	           <td>(실온5만원이상 무료배송/3,000원)</td>
 	         </tr>
 	       </tbody>
@@ -53,7 +57,7 @@
 	     <p>배송비: <strong>3,000원</strong></p>
 	     <p>합계: <strong>18,000원</strong></p>
 	   </div>
-   <!-- </c:forEach> -->
+   </c:forEach>
   
   <form action="#" method="post">
     <!-- 배송지 정보 //-->
