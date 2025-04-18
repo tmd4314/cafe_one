@@ -25,7 +25,7 @@ public class ProductListControl implements Control {
 		List<ProductVO> list = mapper.selectAllProduct();
 		
 		for(ProductVO pd : list) {
-			System.out.println("확인" + pd.getPdName().toString());
+			System.out.println(pd.getPdName().toString());
 		}
 		//req.setAttribute("pList", list);
 		
