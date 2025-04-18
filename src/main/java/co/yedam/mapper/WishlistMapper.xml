@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <mapper namespace="co.yedam.mapper.WishlistMapper">
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<mapper namespace="co.yedam.mapper.WishlistMapper">
+
+  <!-- 찜 추가 -->
   <insert id="insert" parameterType="co.yedam.vo.WishlistVO">
     INSERT INTO list (user_id, pd_code)
     VALUES (#{userId}, #{pdCode})
   </insert>
 
-  <delete id="delete" parameterType="co.yedam.vo.WishlistVO">
-    DELETE FROM list
-    WHERE user_id = #{userId} AND pd_code = #{pdCode}
-  </delete>
+  <!-- 찜 삭제 -->
+	<delete id="delete" parameterType="co.yedam.vo.WishlistVO">
+	  DELETE FROM list
+	  WHERE user_id = #{userId}
+	    AND pd_code = #{pdCode}
+	</delete>
 
+  <!-- 찜 목록 조회 -->
   <select id="selectByUser" resultType="co.yedam.vo.WishlistVO">
-    SELECT * FROM list
+    SELECT user_id, pd_code
+    FROM list
     WHERE user_id = #{userId}
   </select>
 
-  <select id="exists" resultType="boolean" parameterType="co.yedam.vo.WishlistVO">
+  <!-- 찜 여부 확인 -->
+  <select id="exists" parameterType="co.yedam.vo.WishlistVO" resultType="boolean">
     SELECT CASE WHEN COUNT(*) > 0 THEN 1 ELSE 0 END
     FROM list
-    WHERE user_id = #{userId} AND pd_code = #{pdCode}
+    WHERE user_id = #{userId}
+      AND pd_code = #{pdCode}
   </select>
 
 </mapper>
+
   

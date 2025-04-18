@@ -54,5 +54,13 @@
  	  <put-attribute name="body" value="/WEB-INF/views/productInfo.jsp"/>
  	  <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
  	</definition>
+ 	
+ 	<!-- 찜목록 용도 -->
+ 	<definition name="wishlist.tiles" template="/WEB-INF/layout/template.jsp">
+	  <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"/>
+	  <put-attribute name="body" value="/WEB-INF/views/wishlist.jsp"/>
+	  <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+	</definition>
+ 	
   
 </tiles-definitions>
