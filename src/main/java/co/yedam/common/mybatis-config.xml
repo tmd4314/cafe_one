@@ -30,5 +30,7 @@
     <mapper resource="co/yedam/mapper/CategoryMapper.xml"/>
     <mapper resource="co/yedam/mapper/CartMapper.xml"/>
     <mapper resource="co/yedam/mapper/WishlistMapper.xml"/>
+    <mapper resource="co/yedam/mapper/ReviewMapper.xml"/>
+    <mapper resource="co/yedam/mapper/ProductDetailMapper.xml"/>
   </mappers>
 </configuration>
