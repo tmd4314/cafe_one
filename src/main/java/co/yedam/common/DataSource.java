@@ -10,15 +10,14 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class DataSource {
 	// SqlSessionFactory 생성.
 	public static SqlSessionFactory getInstance() {
-		String resource = "config/mybatis-config.xml";
+		String resource = "co/yedam/common/mybatis-config.xml";
 		InputStream inputStream = null;
 		try {
 			inputStream = Resources.getResourceAsStream(resource);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		SqlSessionFactory sqlSessionFactory //
-				= new SqlSessionFactoryBuilder().build(inputStream);
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		return sqlSessionFactory;
 	}
 }

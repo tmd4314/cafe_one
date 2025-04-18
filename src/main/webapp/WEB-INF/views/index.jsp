@@ -131,7 +131,6 @@
             
           </div>
         </div>
-        
         <div class="row">
           <div class="col-md-12">
 
@@ -140,8 +139,8 @@
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="product.do" title="Product Title">
-                      <img src="images/product-thumb-1.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="productForm.do?pdc=${product.pdCode }" title="Product Title">
+                      <img src="images/product-thumb-1.png" alt="produtForm.jsp" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">
