@@ -81,6 +81,7 @@ public class FrontController extends HttpServlet {
  		map.put("/signForm.do", new SignUpControl()); // 회원가입화면.
  		map.put("/signUp.do", new SignUpControl()); // 회원등록.
 		
+ 		
 		//주문/장바구니
 		map.put("/cartList.do", new CartListControl());
 		map.put("/cartDelete.do", new CartDeleteControl());

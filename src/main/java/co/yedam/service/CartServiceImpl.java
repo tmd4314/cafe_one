@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.common.DataSource;
 import co.yedam.mapper.CartMapper;
-import co.yedam.mapper.CategoryMapper;
 import co.yedam.vo.CartVo;
 
 public class CartServiceImpl implements CartService {
