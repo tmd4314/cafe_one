@@ -7,7 +7,7 @@
         <div class="row">
 
             <div class="footer-menu">
-              <img src="images/logo.svg" width="240" height="70" alt="logo">
+              <img src="images/logo.png" width="140" height="140" alt="logo">
             </div>
           
         </div>
