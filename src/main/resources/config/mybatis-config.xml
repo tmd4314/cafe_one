@@ -11,6 +11,8 @@
 
   <typeAliases>
     <typeAlias alias="product" type="co.yedam.vo.ProductVO"/>
+    <typeAlias alias = "user" type = "co.yedam.vo.MemberVo"/>
+    <typeAlias alias = "cart" type = "co.yedam.vo.CartVo"/>
   </typeAliases>
 
   <environments default="development">
