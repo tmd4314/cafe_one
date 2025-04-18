@@ -35,7 +35,6 @@
 	           <th scope="col">상품/옵션 정보</th>
 	           <th scope="col">수량</th>
 	           <th scope="col">상품금액</th>
-	           <th scope="col">할인/적립</th>
 	           <th scope="col">합계금액</th>
 	           <th scope="col">배송비</th>
 	         </tr>
@@ -45,7 +44,6 @@
 	           <td>커피존 바날라 시럽 1000ml</td>
 	           <td>1개</td>
 	           <td>15,000원</td>
-	           <td>0원</td>
 	           <td>15,000원</td>
 	           <td>(실온5만원이상 무료배송/3,000원)</td>
 	         </tr>
