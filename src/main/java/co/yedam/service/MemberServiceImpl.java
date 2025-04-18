@@ -16,20 +16,20 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVo login(String id, String pw) {
 		return mapper.selectMember(id, pw);
 	}
-
+	
 	@Override
-	public boolean addMember(MemberVo member) {
-		return mapper.insertMember(member) == 1;
-	}
-
-	@Override
-	public MemberVo getMember(String id) {
-		return mapper.selectMemberId(id);
-	}
-
-	@Override
-	public boolean changePasswd(MemberVo member) {
-		return false;
-	}
-
+ 	public boolean addMember(MemberVo member) {
+ 		return mapper.insertMember(member) == 1;
+ 	}
+ 
+ 	@Override
+ 	public MemberVo getMember(String id) {
+ 		return mapper.selectMemberId(id);
+ 	}
+ 
+ 	@Override
+ 	public boolean changePasswd(MemberVo member) {
+ 		return false;
+ 	}
+	
 }

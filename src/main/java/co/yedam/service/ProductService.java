@@ -3,7 +3,10 @@ package co.yedam.service;
 import java.util.List;
 import java.util.Map;
 
+import co.yedam.vo.ProductVO;
+
 public interface ProductService {
-	List<Map<String, Object>> cheeringMessage();
-	List<Map<String, Object>> hintMessage(String remainTimeString);
+	 List<ProductVO> searchAdvanced(String keyword, String main, String sub, String minPrice, String maxPrice);
+     ProductVO getProduct(String code);
+     List<Map<String, Object>> hintMessage(String pno);
 }

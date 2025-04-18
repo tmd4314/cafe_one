@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.yedam.mapper.CartMapper">
+  
+  <select id="selectCart" resultType="co.yedam.vo.CartVo">
+   	SELECT
+	    c.cart_no,
+	    c.quantity,
+	    c.pd_code,
+	    c.user_id,
+	    p.pd_name,       -- 상품명
+	    p.pd_price,      -- 상품가격
+	    p.pd_img,        -- 상품이미지
+	    c.quantity * p.pd_price AS total_price -- 상품수량 * 상품가격
+	FROM
+	    cart c
+	JOIN
+	    product p ON c.pd_code = p.pd_code
+	WHERE
+	    c.user_id = #{id}
+  </select>
+
+</mapper>
