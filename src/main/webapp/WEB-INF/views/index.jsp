@@ -184,7 +184,7 @@
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="productForm.do?" title="Product Title">
+                    <a href="productForm.do?pdc=${product.pdCode }" title="Product Title">
                       <img src="images/product-thumb-1.png" alt="produtForm.jsp" class="tab-image">
                     </a>
                   </figure>

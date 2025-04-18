@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.mapper.ProductDetailMapper">
+   
+   <select id="selectOne" resultType="co.yedam.vo.ProductVO">
+     SELECT * FROM PRODUCT WHERE PD_CODE = #{pdc}
+   </select>
+
+</mapper>

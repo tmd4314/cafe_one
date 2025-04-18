@@ -66,7 +66,7 @@
 
                 <div class="col-md-6">
 
-                    <h1 class="product-title">레오 블렌드 500g</h1>
+                    <h1 class="product-title">${product.pdName }</h1>
 
                     <div class="ratings">
 
@@ -98,7 +98,7 @@
 
                     <div class="price">
 
-                        <span>300,000원</span>
+                        <span>${product.pdPrice }</span>
 
                     </div>
 
