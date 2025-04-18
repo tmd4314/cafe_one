@@ -10,7 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class DataSource {
 	// SqlSessionFactory 생성.
 	public static SqlSessionFactory getInstance() {
-		String resource = "common/mybatis-config.xml";
+		String resource = "config/mybatis-config.xml";
 		InputStream inputStream = null;
 		try {
 			inputStream = Resources.getResourceAsStream(resource);
@@ -19,6 +19,6 @@ public class DataSource {
 		}
 		SqlSessionFactory sqlSessionFactory //
 				= new SqlSessionFactoryBuilder().build(inputStream);
-		return sqlSessionFactory;
+		  return sqlSessionFactory;
 	}
 }
