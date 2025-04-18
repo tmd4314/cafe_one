@@ -21,18 +21,17 @@ public class ProductListControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		
 		// TODO Auto-generated method stub
 		ProductService svc = new ProductServiceImpl();
-		List<Map<String, Object>> list = svc.cheeringMessage();
-		req.setAttribute("blist", list);
+		//List<Map<String, Object>> list = svc.cheeringMessage();
+		//req.setAttribute("blist", list);
 		req.getRequestDispatcher("admin/body.tiles").forward(req, resp);
 //		ProductService svc = new ProductServiceImpl();
 //		List<Map<String, Object>> list = svc.cheeringMessage();
 //		req.setAttribute("blist", list);
 		req.getRequestDispatcher("product/index.tiles").forward(req, resp);
 		
-		
 	}
-
 }

@@ -43,47 +43,35 @@
     </div>
 
     <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart">
-      <div class="offcanvas-header justify-content-center">
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div class="order-md-last">
-          <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-primary">Your cart</span>
-            <span class="badge bg-primary rounded-pill">3</span>
-          </h4>
-          <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Growers cider</h6>
-                <small class="text-body-secondary">Brief description</small>
-              </div>
-              <span class="text-body-secondary">$12</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Fresh grapes</h6>
-                <small class="text-body-secondary">Brief description</small>
-              </div>
-              <span class="text-body-secondary">$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Heinz tomato ketchup</h6>
-                <small class="text-body-secondary">Brief description</small>
-              </div>
-              <span class="text-body-secondary">$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total (USD)</span>
-              <strong>$20</strong>
-            </li>
-          </ul>
-  
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
-        </div>
-      </div>
-    </div>
+	    <div class="offcanvas-header justify-content-center">
+	        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	    </div>
+	    <div class="offcanvas-body">
+	        <div class="order-md-last">
+	            <h4 class="d-flex justify-content-between align-items-center mb-3">
+	                <span class="text-primary"><c:out value="${userName}"/>님의 장바구니</span>
+	                <span class="badge bg-primary rounded-pill"></span>
+	            </h4>
+	            <ul class="list-group mb-3" id="cartItems">
+	                <!-- 아이템 목록이 여기에 추가됩니다 -->
+	            </ul>
+	            <div class="row mb-3">
+				    <div class="col">
+				        <button class="w-100 btn btn-outline-primary btn-sm" type="button" id="orderSelected">선택상품주문</button>
+				    </div>
+				    <div class="col">
+				        <button class="w-100 btn btn-secondary btn-sm" type="button" id="orderAll">전체상품주문</button>
+				    </div>
+				    <div class="col">
+				        <button class="w-100 btn btn-danger btn-sm" type="button" id="deleteSelected">선택상품삭제</button>
+				    </div>
+				</div>
+
+
+	        </div>
+	    </div>
+	</div>
+
     
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
 
@@ -253,7 +241,42 @@
 			    </svg>
 			  </button>
 			</form>
-
+      <div class="container-fluid">
+        <div class="row py-3 border-bottom">
+          
+          <div class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
+            <div class="d-flex align-items-center my-3 my-sm-0">
+              <a href="main.do">
+                <img src="images/logo.svg" alt="logo" class="img-fluid">
+              </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar">
+              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#menu"></use></svg>
+            </button>
+          </div>
+          
+          <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-4">
+            <div class="search-bar row bg-light p-2 rounded-4">
+              <div class="col-md-4 d-none d-md-block">
+                <select class="form-select border-0 bg-transparent">
+                  <option>Categories</option>
+                  <option>커피</option>
+                  <option>시럽/소스</option>
+                  <option>파우더</option>
+                  <option>유제품</option>
+                </select>
+              </div>
+              <div class="col-11 col-md-7">
+                <form id="search-form" class="text-center" action="index.html" method="post">
+                  <input type="text" class="form-control border-0 bg-transparent" placeholder="Search for more than 20,000 products">
+                </form>
+              </div>
+              <div class="col-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"/></svg>
+              </div>
+            </div>
+          </div>
 	
 	        <!-- 메뉴 -->
 	        <ul class="navbar-nav d-flex flex-row gap-3 mb-0 fw-bold text-uppercase text-dark ps-3">
@@ -357,3 +380,51 @@
 	</header>
 <p style="color:red;">[디버그] 로그인 유저: ${sessionScope.loginUser.userName}</p>
 	
+          <div class="col-lg-4">
+            <ul class="navbar-nav list-unstyled d-flex flex-row gap-3 gap-lg-5 justify-content-center flex-wrap align-items-center mb-0 fw-bold text-uppercase text-dark">
+              <li class="nav-item active">
+                <a href="main.do" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
+                  <li><a href="index.html" class="dropdown-item">About Us </a></li>
+                  <li><a href="index.html" class="dropdown-item">Shop </a></li>
+                  <li><a href="index.html" class="dropdown-item">Single Product </a></li>
+                  <li><a href="index.html" class="dropdown-item">Cart </a></li>
+                  <li><a href="index.html" class="dropdown-item">Checkout </a></li>
+                  <li><a href="index.html" class="dropdown-item">Blog </a></li>
+                  <li><a href="index.html" class="dropdown-item">Single Post </a></li>
+                  <li><a href="index.html" class="dropdown-item">Styles </a></li>
+                  <li><a href="index.html" class="dropdown-item">Contact </a></li>
+                  <li><a href="index.html" class="dropdown-item">Thank You </a></li>
+                  <li><a href="index.html" class="dropdown-item">My Account </a></li>
+                  <li><a href="index.html" class="dropdown-item">404 Error </a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="col-sm-8 col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
+            <ul class="d-flex justify-content-end list-unstyled m-0">
+              <li>
+                <a href="#" class="p-2 mx-1">
+                  <svg width="24" height="24"><use xlink:href="#user"></use></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="p-2 mx-1">
+                  <svg width="24" height="24"><use xlink:href="#wishlist"></use></svg>
+                </a>
+              </li>
+              <li>
+                <a href="cartList.do" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" onclick="loadCart()">
+                  <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </header>

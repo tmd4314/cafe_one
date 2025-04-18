@@ -22,3 +22,4 @@ public class ProductInfoControl implements Control {
         req.getRequestDispatcher("productInfo.tiles").forward(req, resp);
     }
 }
+

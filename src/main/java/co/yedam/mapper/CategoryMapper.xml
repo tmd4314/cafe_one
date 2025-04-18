@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="co.yedam.mapper.CategoryMapper">
 
   <select id="selectCategoryList" resultType="co.yedam.vo.CategoryVO">
-    SELECT 
-      category_code AS categoryCode,
-      category_name AS categoryName,
-      subcategory_name AS subcategoryName
-    FROM category
-    ORDER BY category_code
+     SELECT 
+       category_code AS categoryCode,
+       category_name AS categoryName,
+       subcategory_name AS subcategoryName
+     FROM category
+     ORDER BY category_code
   </select>
 
 </mapper>

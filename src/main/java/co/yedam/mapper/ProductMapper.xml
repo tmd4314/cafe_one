@@ -5,30 +5,30 @@
 
 <mapper namespace="co.yedam.mapper.ProductMapper">
 
-  <select id="searchAdvanced" resultType="co.yedam.vo.ProductVO">
-    SELECT * 
-    FROM PRODUCT P
-    JOIN CATEGORY C ON P.CATEGORY_CODE = C.CATEGORY_CODE
-    WHERE 1=1
-    <if test="keyword != null and keyword != ''">
-      AND P.PD_NAME LIKE '%' || #{keyword} || '%'
-    </if>
-    <if test="main != null and main != ''">
-      AND C.CATEGORY_NAME = #{main}
-    </if>
-    <if test="sub != null and sub != ''">
-      AND C.SUBCATEGORY_NAME = #{sub}
-    </if>
-    <if test="minPrice != null and minPrice != ''">
-      AND P.PD_PRICE &gt;= #{minPrice}
-    </if>
-    <if test="maxPrice != null and maxPrice != ''">
-      AND P.PD_PRICE &lt;= #{maxPrice}
-    </if>
-  </select>
-
-  <select id="selectProduct" resultType="co.yedam.vo.ProductVO">
-    SELECT * FROM PRODUCT WHERE PD_CODE = #{code}
-  </select>
+	 <select id="searchAdvanced" resultType="co.yedam.vo.ProductVO">
+     SELECT * 
+     FROM PRODUCT P
+     JOIN CATEGORY C ON P.CATEGORY_CODE = C.CATEGORY_CODE
+     WHERE 1=1
+     <if test="keyword != null and keyword != ''">
+       AND P.PD_NAME LIKE '%' || #{keyword} || '%'
+     </if>
+     <if test="main != null and main != ''">
+       AND C.CATEGORY_NAME = #{main}
+     </if>
+     <if test="sub != null and sub != ''">
+       AND C.SUBCATEGORY_NAME = #{sub}
+     </if>
+     <if test="minPrice != null and minPrice != ''">
+       AND P.PD_PRICE &gt;= #{minPrice}
+     </if>
+     <if test="maxPrice != null and maxPrice != ''">
+       AND P.PD_PRICE &lt;= #{maxPrice}
+     </if>
+   </select>
+   
+   <select id="selectProduct" resultType="co.yedam.vo.ProductVO">
+     SELECT * FROM PRODUCT WHERE PD_CODE = #{code}
+   </select>
 
 </mapper>

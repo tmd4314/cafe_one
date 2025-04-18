@@ -109,7 +109,8 @@
         </div>
       
       </div>
-  
+    </section>
+
 
     <section class="pb-5">
       <div class="container-lg">
@@ -137,7 +138,7 @@
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="index.html" title="Product Title">
+                    <a href="product.do" title="Product Title">
                       <img src="images/product-thumb-1.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>
@@ -152,11 +153,6 @@
                         <svg width="18" height="18" class="text-warning"><use xlink:href="#star-half"></use></svg>
                       </span>
                       <span>(222)</span>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center gap-2">
-                      <del>$Best selling products1 할인 전</del>
-                      <span class="text-dark fw-semibold">$Best selling products1 할인 후</span>
-                      <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">n% 할인</span>
                     </div>
                     <div class="button-area p-3 pt-0">
                       <div class="row g-1 mt-2">
@@ -265,11 +261,6 @@
                         <svg width="18" height="18" class="text-warning"><use xlink:href="#star-half"></use></svg>
                       </span>
                       <span>(222)</span>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center gap-2">
-                      <del>$Featured products1 할인 전</del>
-                      <span class="text-dark fw-semibold">$Featured products2 할인 후</span>
-                      <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
                     </div>
                     <div class="button-area p-3 pt-0">
                       <div class="row g-1 mt-2">

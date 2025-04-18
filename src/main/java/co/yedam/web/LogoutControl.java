@@ -9,17 +9,15 @@ import javax.servlet.http.HttpSession;
 
 import co.yedam.common.Control;
 
-public class MainControl implements Control {
+public class LogoutControl implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-//		HttpSession session = req.getSession();
-//		String logId = (String) session.getAttribute("logId");
-
-		req.getRequestDispatcher("product/index.tiles").forward(req, resp);
-
-	} // end of exec()
-} // end of class
+		// TODO Auto-generated method stub
+		HttpSession session = req.getSession();
+		session.invalidate(); // 세션삭제.
 		
+		resp.sendRedirect("main.do");
+	}
 
+}

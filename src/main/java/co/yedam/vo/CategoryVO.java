@@ -1,5 +1,8 @@
 package co.yedam.vo;
 
+import lombok.Data;
+
+@Data
 public class CategoryVO {
 
     private String categoryCode;       
@@ -16,30 +19,10 @@ public class CategoryVO {
         this.subcategoryName = subcategoryName;
     }
 
-    // Getter / Setter
-    public String getCategoryCode() {
-        return categoryCode;
-    }
-    public void setCategoryCode(String categoryCode) {
-        this.categoryCode = categoryCode;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-    public String getSubcategoryName() {
-        return subcategoryName;
-    }
-    public void setSubcategoryName(String subcategoryName) {
-        this.subcategoryName = subcategoryName;
-    }
 
     @Override
     public String toString() {
         return "CategoryVO [categoryCode=" + categoryCode + ", categoryName=" + categoryName + ", subcategoryName=" + subcategoryName + "]";
     }
+
 }
