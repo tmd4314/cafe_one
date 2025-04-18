@@ -200,8 +200,8 @@
 	
 	      <!-- 왼쪽: 로고 -->
 	      <div class="col-auto d-flex align-items-center gap-3">
-	        <a href="index.html">
-	          <img src="images/logo.svg" alt="logo" class="img-fluid" style="height: 36px;">
+	        <a href="main.do">
+	          <img src="images/logo.svg" alt="Home" class="img-fluid" style="height: 36px;">
 	        </a>
 	        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
 	          <svg width="24" height="24"><use xlink:href="#menu"></use></svg>
@@ -241,129 +241,101 @@
 			    </svg>
 			  </button>
 			</form>
-      <div class="container-fluid">
-        <div class="row py-3 border-bottom">
-          
-          <div class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
-            <div class="d-flex align-items-center my-3 my-sm-0">
-              <a href="main.do">
-                <img src="images/logo.svg" alt="logo" class="img-fluid">
-              </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar">
-              <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#menu"></use></svg>
-            </button>
-          </div>
-          
-          <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-4">
-            <div class="search-bar row bg-light p-2 rounded-4">
-              <div class="col-md-4 d-none d-md-block">
-                <select class="form-select border-0 bg-transparent">
-                  <option>Categories</option>
-                  <option>커피</option>
-                  <option>시럽/소스</option>
-                  <option>파우더</option>
-                  <option>유제품</option>
-                </select>
-              </div>
-              <div class="col-11 col-md-7">
-                <form id="search-form" class="text-center" action="index.html" method="post">
-                  <input type="text" class="form-control border-0 bg-transparent" placeholder="Search for more than 20,000 products">
-                </form>
-              </div>
-              <div class="col-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"/></svg>
-              </div>
-            </div>
-          </div>
+      
 	
-	        <!-- 메뉴 -->
-	        <ul class="navbar-nav d-flex flex-row gap-3 mb-0 fw-bold text-uppercase text-dark ps-3">
-			  <li class="nav-item dropdown">
-			    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">제품</a>
-			    <div class="dropdown-menu p-4" style="width: 800px;">
-			      <div class="row">
-			        <!-- 커피 -->
-			        <div class="col-md-3">
-			          <h6 class="dropdown-header">커피</h6>
-			          <a class="dropdown-item" href="#">원두커피</a>
-			          <a class="dropdown-item" href="#">액상/캡슐커피</a>
-			          <a class="dropdown-item" href="#">인스턴트커피</a>
-			        </div>
-			        <!-- 시럽/소스 -->
-			        <div class="col-md-3">
-			          <h6 class="dropdown-header">시럽/소스</h6>
-			          <a class="dropdown-item" href="#">일반시럽</a>
-			          <a class="dropdown-item" href="#">과일시럽</a>
-			          <a class="dropdown-item" href="#">토핑시럽</a>
-			          <a class="dropdown-item" href="#">에이드베이스</a>
-			        </div>
+	       <!-- 메뉴 -->
+			<ul class="navbar-nav d-flex flex-row gap-5 mb-0 fw-bold text-uppercase text-dark ps-3" style="margin-left: 50px;">
+
 			
-			        <!-- 파우더 -->
-			        <div class="col-md-3">
-			          <h6 class="dropdown-header">파우더</h6>
-			          <a class="dropdown-item" href="#">라떼</a>
-			          <a class="dropdown-item" href="#">과일</a>
-			          <a class="dropdown-item" href="#">요거트</a>
-			        </div>
-			        <!-- 유제품 -->
-			        <div class="col-md-3">
-			          <h6 class="dropdown-header">유제품</h6>
-			          <a class="dropdown-item" href="#">우유생크림</a>
-			          <a class="dropdown-item" href="#">치즈버터</a>
-			          <a class="dropdown-item" href="#">휘핑크림연유</a>
-			        </div>
-			      </div>
+			  <!-- 커피 -->
+			  <li class="nav-item dropdown">
+			    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">커피</a>
+			    <div class="dropdown-menu p-3">
+			      <a class="dropdown-item" href="#">원두커피</a>
+			      <a class="dropdown-item" href="#">액상/캡슐커피</a>
+			      <a class="dropdown-item" href="#">인스턴트커피</a>
 			    </div>
 			  </li>
+			
+			  <!-- 시럽/소스 -->
+			  <li class="nav-item dropdown">
+			    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">시럽/소스</a>
+			    <div class="dropdown-menu p-3">
+			      <a class="dropdown-item" href="#">일반시럽</a>
+			      <a class="dropdown-item" href="#">과일시럽</a>
+			      <a class="dropdown-item" href="#">토핑시럽</a>
+			      <a class="dropdown-item" href="#">에이드베이스</a>
+			    </div>
+			  </li>
+			
+			  <!-- 파우더 -->
+			  <li class="nav-item dropdown">
+			    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">파우더</a>
+			    <div class="dropdown-menu p-3">
+			      <a class="dropdown-item" href="#">라떼</a>
+			      <a class="dropdown-item" href="#">과일</a>
+			      <a class="dropdown-item" href="#">요거트</a>
+			    </div>
+			  </li>
+			
+			  <!-- 유제품 -->
+			  <li class="nav-item dropdown">
+			    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">유제품</a>
+			    <div class="dropdown-menu p-3">
+			      <a class="dropdown-item" href="#">우유생크림</a>
+			      <a class="dropdown-item" href="#">치즈버터</a>
+			      <a class="dropdown-item" href="#">휘핑크림연유</a>
+			    </div>
+			  </li>
+			
 			</ul>
-	      </div>
+
 	
-	      <!-- 오른쪽: 유저 메뉴 -->
-	     <div class="col-auto d-flex align-items-center gap-3">
-  
-			  <!-- 로그인 상태일 때 -->
+	     <!-- 오른쪽: 유저 메뉴 -->
+			<div class="col-auto ms-auto d-flex align-items-center gap-3">
+			
+			  <!-- 로그인 상태 -->
 			  <c:if test="${not empty sessionScope.loginUser}">
 			    <!-- 마이페이지 -->
 			    <a href="#" title="마이페이지">
-			      <svg width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+			      <svg width="26" height="26" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 			        <path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3z"/>
 			      </svg>
 			    </a>
 			
 			    <!-- 로그아웃 -->
-			    <a href="loginForm.do" title="로그아웃">
-			      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+			    <a href="logout.do" title="로그아웃">
+			      <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24">
 			        <path d="M10 17l5-5-5-5v10zM3 4h9v2H5v12h7v2H3V4z"/>
 			      </svg>
 			    </a>
 			  </c:if>
 			
-			  <!-- 비로그인 상태일 때 -->
+			  <!-- 비로그인 상태 -->
 			  <c:if test="${empty sessionScope.loginUser}">
 			    <!-- 로그인 -->
 			    <a href="loginForm.do" title="로그인">
-			      <svg width="16" height="16"><use xlink:href="#user"></use></svg>
+			      <svg width="26" height="26"><use xlink:href="#user"></use></svg>
 			    </a>
+			
 			    <!-- 회원가입 -->
 			    <a href="#" title="회원가입">
-			      <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
+			      <svg width="26" height="26"><use xlink:href="#plus"></use></svg>
 			    </a>
 			  </c:if>
 			
 			  <!-- 찜목록 -->
 			  <a href="#" title="찜목록">
-			    <svg width="20" height="20"><use xlink:href="#wishlist"></use></svg>
+			    <svg width="26" height="26"><use xlink:href="#wishlist"></use></svg>
 			  </a>
 			
 			  <!-- 장바구니 -->
 			  <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" title="장바구니">
-			    <svg width="20" height="20"><use xlink:href="#shopping-bag"></use></svg>
+			    <svg width="26" height="26"><use xlink:href="#shopping-bag"></use></svg>
 			  </a>
+			
 			</div>
-	    </div>
-	  </div>
+
 	
 	  <!-- JS for 대분류 → 소분류 필터링 -->
 	  <script>
@@ -380,51 +352,5 @@
 	</header>
 <p style="color:red;">[디버그] 로그인 유저: ${sessionScope.loginUser.userName}</p>
 	
-          <div class="col-lg-4">
-            <ul class="navbar-nav list-unstyled d-flex flex-row gap-3 gap-lg-5 justify-content-center flex-wrap align-items-center mb-0 fw-bold text-uppercase text-dark">
-              <li class="nav-item active">
-                <a href="main.do" class="nav-link">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-                <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
-                  <li><a href="index.html" class="dropdown-item">About Us </a></li>
-                  <li><a href="index.html" class="dropdown-item">Shop </a></li>
-                  <li><a href="index.html" class="dropdown-item">Single Product </a></li>
-                  <li><a href="index.html" class="dropdown-item">Cart </a></li>
-                  <li><a href="index.html" class="dropdown-item">Checkout </a></li>
-                  <li><a href="index.html" class="dropdown-item">Blog </a></li>
-                  <li><a href="index.html" class="dropdown-item">Single Post </a></li>
-                  <li><a href="index.html" class="dropdown-item">Styles </a></li>
-                  <li><a href="index.html" class="dropdown-item">Contact </a></li>
-                  <li><a href="index.html" class="dropdown-item">Thank You </a></li>
-                  <li><a href="index.html" class="dropdown-item">My Account </a></li>
-                  <li><a href="index.html" class="dropdown-item">404 Error </a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
           
-          <div class="col-sm-8 col-lg-2 d-flex gap-5 align-items-center justify-content-center justify-content-sm-end">
-            <ul class="d-flex justify-content-end list-unstyled m-0">
-              <li>
-                <a href="#" class="p-2 mx-1">
-                  <svg width="24" height="24"><use xlink:href="#user"></use></svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="p-2 mx-1">
-                  <svg width="24" height="24"><use xlink:href="#wishlist"></use></svg>
-                </a>
-              </li>
-              <li>
-                <a href="cartList.do" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" onclick="loadCart()">
-                  <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
-                </a>
-              </li>
-            </ul>
-          </div>
 
-        </div>
-      </div>
-    </header>
