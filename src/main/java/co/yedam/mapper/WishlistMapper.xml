@@ -4,12 +4,12 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="co.yedam.mapper.WishlistMapper">
 
-  <insert id="insert" parameterType="WishlistVO">
+  <insert id="insert" parameterType="co.yedam.vo.WishlistVO">
     INSERT INTO list (user_id, pd_code)
     VALUES (#{userId}, #{pdCode})
   </insert>
 
-  <delete id="delete" parameterType="WishlistVO">
+  <delete id="delete" parameterType="co.yedam.vo.WishlistVO">
     DELETE FROM list
     WHERE user_id = #{userId} AND pd_code = #{pdCode}
   </delete>
@@ -19,7 +19,7 @@
     WHERE user_id = #{userId}
   </select>
 
-  <select id="exists" resultType="boolean" parameterType="WishlistVO">
+  <select id="exists" resultType="boolean" parameterType="co.yedam.vo.WishlistVO">
     SELECT CASE WHEN COUNT(*) > 0 THEN 1 ELSE 0 END
     FROM list
     WHERE user_id = #{userId} AND pd_code = #{pdCode}
