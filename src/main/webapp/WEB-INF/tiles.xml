@@ -10,9 +10,14 @@
 	<put-attribute name="body" value="/WEB-INF/layout/body.jsp"/>
 	<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
   </definition>
-	<!--  상품용도  -->
+ <!--  상품용도  -->
   <definition name="WILDCARD:product/*" extends="myapp.common">
 	<put-attribute name="body" value="/WEB-INF/views/{1}.jsp"/>
+  </definition>
+  
+  <!--  주문용도  -->
+  <definition name="WILDCARD:cash/*" extends="myapp.common">
+	<put-attribute name="body" value="/WEB-INF/views/cash/{1}.jsp"/>
   </definition>
 
    <!-- 관리자 템플릿 정의 -->
