@@ -28,6 +28,7 @@ import co.yedam.web.SearchControl;
 import co.yedam.web.SignUpControl;
 import co.yedam.web.WishlistAddControl;
 import co.yedam.web.WishlistControl;
+import co.yedam.web.WishlistRemoveControl;
 
 public class FrontController extends HttpServlet {
 
@@ -91,9 +92,10 @@ public class FrontController extends HttpServlet {
 		map.put("/cashForm.do", new CashFormControl());
 		
 		//찜목록
- 		map.put("/wishlist.do", new WishlistControl());
- 		map.put("/wishlistAdd.do", new WishlistAddControl());
-		
+		map.put("/wishlist.do", new WishlistControl());
+		map.put("/wishlistAdd.do", new WishlistAddControl());
+		map.put("/wishlistRemove.do", new WishlistRemoveControl());
+
 	}
 
 	@Override
