@@ -11,10 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.web.AdminControl;
-<<<<<<< HEAD
-=======
 import co.yedam.web.CartListControl;
->>>>>>> branch 'master' of https://github.com/tmd4314/cafe_one.git
 import co.yedam.web.CategoryListControl;
 import co.yedam.web.LoginControl;
 import co.yedam.web.LoginFormControl;
@@ -24,12 +21,8 @@ import co.yedam.web.ProductControl;
 import co.yedam.web.ProductFormControl;
 import co.yedam.web.ProductInfoControl;
 import co.yedam.web.ProductListControl;
-<<<<<<< HEAD
-import co.yedam.web.majorProdControl;
-=======
 import co.yedam.web.SearchControl;
 import co.yedam.web.SignUpControl;
->>>>>>> branch 'master' of https://github.com/tmd4314/cafe_one.git
 
 public class FrontController extends HttpServlet {
 
@@ -49,16 +42,11 @@ public class FrontController extends HttpServlet {
 		map.put("/productList.do", new ProductListControl());
 		// 상품상세.
 		map.put("/productInfo.do", new ProductControl());
-<<<<<<< HEAD
 		// 관리자부분.
 		map.put("/adminBody.do", new AdminControl());
 		// 카테고리 부분.
 		map.put("/categoryList.do", new CategoryListControl());
 		// 베스트, 신상품, 할인상품
-		map.put("/majorProdList.do", new majorProdControl());
-		// 베스트, 사용자 취향 기반
-=======
-
 		// 관리자부분.
 		map.put("/adminBody.do", new AdminControl());
 		// 카테고리 부분.
@@ -73,7 +61,6 @@ public class FrontController extends HttpServlet {
 		// 상세화면
 		map.put("/product.do", new ProductFormControl());
 		//로그인 관려
->>>>>>> branch 'master' of https://github.com/tmd4314/cafe_one.git
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl());
 		map.put("/logout.do", new LogoutControl());
