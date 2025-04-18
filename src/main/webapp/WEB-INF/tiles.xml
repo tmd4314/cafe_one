@@ -23,8 +23,13 @@
 	<definition name="WILDCARD:admin/*" extends="myapp.admin">
 	  <put-attribute name="body" value="/WEB-INF/admin/{1}.jsp" />
 	</definition>
+	<!-- 카테고리 용도 -->
+	<definition name="category.tiles" template="/WEB-INF/layout/template.jsp">
+	  <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"/>
+	  <put-attribute name="body" value="/WEB-INF/views/category.jsp"/>
+	  <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+	</definition>
 	
-
   <!-- 회원용도 -->
   <definition name="WILDCARD:member/*" extends="myapp.common">
   	<put-attribute name="body" value="/WEB-INF/views/member/{1}.jsp" />
