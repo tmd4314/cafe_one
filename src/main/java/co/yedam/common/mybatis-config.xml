@@ -29,5 +29,6 @@
     <mapper resource="co/yedam/mapper/MemberMapper.xml"/>
     <mapper resource="co/yedam/mapper/CategoryMapper.xml"/>
     <mapper resource="co/yedam/mapper/CartMapper.xml"/>
+    <mapper resource="co/yedam/mapper/WishlistMapper.xml"/>
   </mappers>
 </configuration>
