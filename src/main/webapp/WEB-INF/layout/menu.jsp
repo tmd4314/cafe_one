@@ -42,7 +42,7 @@
       <div class="preloader"></div>
     </div>
 
-    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart" onclick="loadCart()">
+     <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart">
 	    <div class="offcanvas-header justify-content-center">
 	        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 	    </div>
@@ -66,8 +66,6 @@
 				        <button class="w-100 btn btn-danger btn-sm" type="button" id="deleteSelected">선택상품삭제</button>
 				    </div>
 				</div>
-
-
 	        </div>
 	    </div>
 	</div>
@@ -201,7 +199,7 @@
 	      <!-- 왼쪽: 로고 -->
 	      <div class="col-auto d-flex align-items-center gap-3">
 	        <a href="main.do">
-	          <img src="images/logo.svg" alt="Home" class="img-fluid" style="height: 36px;">
+	          <img src="images/logo.png" alt="Home" class="img-fluid" style="height: 36px;">
 	        </a>
 	        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
 	          <svg width="24" height="24"><use xlink:href="#menu"></use></svg>
@@ -330,9 +328,9 @@
 			  </a>
 			
 			  <!-- 장바구니 -->
-			  <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" title="장바구니">
-			    <svg width="26" height="26"><use xlink:href="#shopping-bag"></use></svg>
-			  </a>
+			   <a href="cartList.do" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" onclick="loadCart()">
+                  <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
+                </a>
 			
 			</div>
 

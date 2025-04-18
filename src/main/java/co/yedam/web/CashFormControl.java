@@ -25,11 +25,11 @@ public class CashFormControl implements Control {
 		resp.setContentType("text/json;charset=utf-8");
 		// { "data": [ [21, '댓글내용', 'user01', '날짜'], [], []...[] ]}
 		String id = req.getParameter("logId");
+		String cno = req.getParameter("cno");
 		CartService svc = new CartServiceImpl();
-		List<CartVo> list = svc.getCartList(id);
+		List<CartVo> list = svc.getCash(id, Integer.parseInt(cno));
 		System.out.println(list);
 		req.setAttribute("blist", list);
-		req.setAttribute("userId", id); // userId attribute 설정 (필요한 경우)
 		req.getRequestDispatcher("cash/cashForm.tiles").forward(req, resp);
 	}
 

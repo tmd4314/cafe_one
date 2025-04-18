@@ -6,6 +6,7 @@
 
 <mapper namespace="co.yedam.mapper.CartMapper">
   
+  <!-- 전체장바구니 조회 -->
   <select id="selectCart" resultType="co.yedam.vo.CartVo">
    	SELECT
 	    c.cart_no,
@@ -30,11 +31,31 @@
  	 where  cart_no = #{cartNo}
   </delete>
   
-  <!-- 삭제 -->
+  <!-- 수정 -->
   <update id="modifyCart" parameterType="int">
   	 update cart
  	 set    quantity = #{quantity}
  	 where  cart_no = #{cartNo}
   </update>
+  
+  <!-- 주문한 물품 조회 -->
+  <select id="selectCash" resultType="co.yedam.vo.CartVo">
+	    SELECT
+	        c.cart_no,
+	        c.quantity,
+	        c.pd_code,
+	        c.user_id,
+	        p.pd_name,       -- 상품명
+	        p.pd_price,      -- 상품가격
+	        p.pd_img,        -- 상품이미지
+	        c.quantity * p.pd_price AS total_price -- 상품수량 * 상품가격
+	    FROM
+	        cart c
+	    JOIN
+	        product p ON c.pd_code = p.pd_code
+	    WHERE
+	        c.user_id = #{id}
+	        AND c.cart_no = #{cartNo}
+  </select>
 
 </mapper>
