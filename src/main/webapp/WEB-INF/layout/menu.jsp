@@ -66,47 +66,35 @@
     </div>
 
     <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart">
-      <div class="offcanvas-header justify-content-center">
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div class="order-md-last">
-          <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-primary">Your cart</span>
-            <span class="badge bg-primary rounded-pill">3</span>
-          </h4>
-          <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Growers cider</h6>
-                <small class="text-body-secondary">Brief description</small>
-              </div>
-              <span class="text-body-secondary">$12</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Fresh grapes</h6>
-                <small class="text-body-secondary">Brief description</small>
-              </div>
-              <span class="text-body-secondary">$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">Heinz tomato ketchup</h6>
-                <small class="text-body-secondary">Brief description</small>
-              </div>
-              <span class="text-body-secondary">$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total (USD)</span>
-              <strong>$20</strong>
-            </li>
-          </ul>
-  
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
-        </div>
-      </div>
-    </div>
+	    <div class="offcanvas-header justify-content-center">
+	        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	    </div>
+	    <div class="offcanvas-body">
+	        <div class="order-md-last">
+	            <h4 class="d-flex justify-content-between align-items-center mb-3">
+	                <span class="text-primary"><c:out value="${userName}"/>님의 장바구니</span>
+	                <span class="badge bg-primary rounded-pill"></span>
+	            </h4>
+	            <ul class="list-group mb-3" id="cartItems">
+	                <!-- 아이템 목록이 여기에 추가됩니다 -->
+	            </ul>
+	            <div class="row mb-3">
+				    <div class="col">
+				        <button class="w-100 btn btn-outline-primary btn-sm" type="button" id="orderSelected">선택상품주문</button>
+				    </div>
+				    <div class="col">
+				        <button class="w-100 btn btn-secondary btn-sm" type="button" id="orderAll">전체상품주문</button>
+				    </div>
+				    <div class="col">
+				        <button class="w-100 btn btn-danger btn-sm" type="button" id="deleteSelected">선택상품삭제</button>
+				    </div>
+				</div>
+
+
+	        </div>
+	    </div>
+	</div>
+
     
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
 
@@ -312,7 +300,7 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                <a href="cartList.do" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" onclick="loadCart()">
                   <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
                 </a>
               </li>

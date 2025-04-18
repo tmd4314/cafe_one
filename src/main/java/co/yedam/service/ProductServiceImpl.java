@@ -7,19 +7,24 @@ import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.common.DataSource;
 import co.yedam.mapper.ProductMapper;
+import co.yedam.vo.ProductVO;
 
 public class ProductServiceImpl implements ProductService {
-	SqlSession sqlSession = DataSource.getInstance().openSession(true);
-	ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
+	SqlSession session = DataSource.getInstance().openSession(true);
+    ProductMapper mapper = session.getMapper(ProductMapper.class);
 
-	@Override
-	public List<Map<String, Object>> cheeringMessage() {
-		return mapper.selectMessage();
-	}
+    @Override
+    public List<ProductVO> searchAdvanced(String keyword, String main, String sub, String minPrice, String maxPrice) {
+        return mapper.searchAdvanced(keyword, main, sub, minPrice, maxPrice);
+    }
 
-	@Override
-	public List<Map<String, Object>> hintMessage(String remainTimeString) {
-		// TODO Auto-generated method stub
-		return mapper.selectHint(remainTimeString);
-	}
+    @Override
+    public ProductVO getProduct(String code) {
+        return mapper.selectProduct(code);
+    }
+ 
+ 	@Override
+ 	public List<Map<String, Object>> hintMessage(String pno) {
+ 		return null;
+ 	}
 }
