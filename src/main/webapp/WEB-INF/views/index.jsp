@@ -120,6 +120,8 @@
 
             <div class="section-header d-flex flex-wrap justify-content-between my-4">
               
+              
+              
               <h2 class="section-title">Best selling products</h2>
 
               <div class="d-flex align-items-center">
