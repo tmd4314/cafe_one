@@ -8,4 +8,5 @@ public interface ProductMapper {
 	   List<ProductVO> searchAdvanced(@Param("keyword") String keyword, @Param("main") String main,
        @Param("sub") String sub, @Param("minPrice") String minPrice, @Param("maxPrice") String maxPrice);
 	   ProductVO selectProduct(@Param("code") String code); // 상품 상세 조회
+	   List<ProductVO> selectAllProduct(); 
 }

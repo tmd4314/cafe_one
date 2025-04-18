@@ -2,7 +2,6 @@ package co.yedam.web;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
@@ -17,16 +16,20 @@ public class WishlistControl implements Control {
         HttpSession session = req.getSession();
         String userId = (String) session.getAttribute("logId");
 
+        // 로그인하지 않은 사용자 처리
         if (userId == null) {
             resp.sendRedirect("loginForm.do");
             return;
         }
 
+        // 찜목록 조회
         WishlistService service = new WishlistServiceImpl();
         List<WishlistVO> list = service.getUserWishlist(userId);
 
+        // 화면 전달용 속성 등록
         req.setAttribute("wishlist", list);
-        req.getRequestDispatcher("wishlist.tiles").forward(req, resp); // 변경됨
+
+        // Tiles 뷰 호출
+        req.getRequestDispatcher("wishlist.tiles").forward(req, resp);
     }
 }
-

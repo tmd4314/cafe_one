@@ -30,5 +30,10 @@
    <select id="selectProduct" resultType="co.yedam.vo.ProductVO">
      SELECT * FROM PRODUCT WHERE PD_CODE = #{code}
    </select>
+   
+    <select id="selectAllProduct" resultType="co.yedam.vo.ProductVO">
+     SELECT *
+     FROM PRODUCT
+   </select>
 
 </mapper>
