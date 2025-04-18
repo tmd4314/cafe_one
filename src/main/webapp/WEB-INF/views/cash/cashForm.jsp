@@ -58,7 +58,7 @@
    <!-- </c:forEach> -->
   
   <form action="#" method="post">
-    <!-- 배송지 정보 -->
+    <!-- 배송지 정보 //-->
     <div class="card p-3 mb-4">
       <h5>배송지 정보</h5>
       <div class="col-md-6">
