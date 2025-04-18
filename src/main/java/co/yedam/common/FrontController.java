@@ -88,7 +88,6 @@ public class FrontController extends HttpServlet {
  		map.put("/wishlist.do", new WishlistControl());
  		map.put("/wishlistAdd.do", new WishlistAddControl());
 		
- 		System.out.println("-------->>>>>>>>>>>>>>>>>>>");
 	}
 
 	@Override

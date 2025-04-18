@@ -31,6 +31,10 @@
      SELECT * FROM PRODUCT WHERE PD_CODE = #{code}
    </select>
 
+   <select id="selectAllProduct" resultType="co.yedam.vo.ProductVO">
+     SELECT *
+     FROM PRODUCT
+   </select>
 <!-- 
 	<select id="selectProduct" parameterType="string">
 	 	select *
