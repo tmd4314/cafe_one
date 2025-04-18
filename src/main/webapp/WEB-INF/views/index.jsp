@@ -138,7 +138,7 @@
               <div class="col">
                 <div class="product-item">
                   <figure>
-                    <a href="product.do" title="Product Title">
+                    <a href="product.do?pdc=${product.pdCode }" title="Product Title">
                       <img src="images/product-thumb-1.png" alt="Product Thumbnail" class="tab-image">
                     </a>
                   </figure>

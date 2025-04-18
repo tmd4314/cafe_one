@@ -58,7 +58,7 @@
 
                    <div class="col-md-10 col-sm-10 col-xs-10">
 
-                       <div class="thumb-main-image"><a href=""><img src="images/커피한잔 레오 블렌드 500g.png" alt=""></a></div>
+                       <div class="thumb-main-image"><a href=""><img src="./images/${product.pdImg }" alt=""></a></div>
 
                    </div>
                        
@@ -66,7 +66,7 @@
 
                 <div class="col-md-6">
 
-                    <h1 class="product-title">레오 블렌드 500g</h1>
+                    <h1 class="product-title">${product.pdName }</h1>
 
                     <div class="ratings">
 
@@ -86,7 +86,7 @@
 
                     <div class="product-info">
 
-                        <span class="product-id"><span class="strong-text">Product ID:</span> RST 4562</span>
+                        <span class="product-id"><span class="strong-text">Product ID:</span> ${product.pdCode }</span>
 
                         
 
@@ -98,7 +98,7 @@
 
                     <div class="price">
 
-                        <span>300,000원</span>
+                        <span>${product.pdPrice }</span>
 
                     </div>
 
