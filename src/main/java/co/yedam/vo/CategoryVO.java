@@ -1,30 +1,28 @@
 package co.yedam.vo;
 
+import lombok.Data;
+
+@Data
 public class CategoryVO {
-    private String category_code;
-    private String category_name;
-    private String subcategory_name;
 
-    // Getter/Setter
-    public String getCategory_code() {
-        return category_code;
-    }
-    public void setCategory_code(String category_code) {
-        this.category_code = category_code;
-    }
+    private String categoryCode;       
+    private String categoryName;       
+    private String subcategoryName;    
 
-    public String getCategory_name() {
-        return category_name;
-    }
-    public void setCategory_name(String category_name) {
-        this.category_name = category_name;
+    // 기본 생성자
+    public CategoryVO() {}
+
+    // 전체 필드를 사용하는 생성자
+    public CategoryVO(String categoryCode, String categoryName, String subcategoryName) {
+        this.categoryCode = categoryCode;
+        this.categoryName = categoryName;
+        this.subcategoryName = subcategoryName;
     }
 
-    public String getSubcategory_name() {
-        return subcategory_name;
+
+    @Override
+    public String toString() {
+        return "CategoryVO [categoryCode=" + categoryCode + ", categoryName=" + categoryName + ", subcategoryName=" + subcategoryName + "]";
     }
-    public void setSubcategory_name(String subcategory_name) {
-        this.subcategory_name = subcategory_name;
-    }
+
 }
-
