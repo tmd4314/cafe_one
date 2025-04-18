@@ -15,6 +15,7 @@ import co.yedam.web.CartDeleteControl;
 import co.yedam.web.CartListControl;
 import co.yedam.web.CartUpdateControl;
 import co.yedam.web.CashFormControl;
+
 import co.yedam.web.CategoryListControl;
 import co.yedam.web.LoginControl;
 import co.yedam.web.LoginFormControl;
@@ -48,25 +49,30 @@ public class FrontController extends HttpServlet {
 		// 상품상세.
 		map.put("/productInfo.do", new ProductControl());
 
-		// 관리자부분.
-		map.put("/adminBody.do", new AdminControl());
 		// 카테고리 부분.
 		map.put("/categoryList.do", new CategoryListControl());
 		// 베스트, 신상품, 할인상품
 
 
 		// 베스트, 사용자 취향 기반
+
 		// 상세화면
 		map.put("/product.do", new ProductFormControl());
 
 		// 관리자부분.
 		map.put("/adminBody.do", new AdminControl());
 		// 카테고리 부분.
+		map.put("/categoryList.do", new CategoryListControl());
 		map.put("/category.do", new CategoryListControl());
- 		// 검색 부분.
- 		map.put("/search.do", new SearchControl());
+		
 		// 베스트, 신상품, 할인상품
-
+	//	map.put("/majorProdList.do", new majorProdControl());
+		
+		// 검색 부분.
+ 		map.put("/search.do", new SearchControl());
+ 		map.put("/productInfo.do", new ProductInfoControl());
+ 		
+		//로그인 관련r
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl());
 		map.put("/logout.do", new LogoutControl());
@@ -99,6 +105,8 @@ public class FrontController extends HttpServlet {
 
 		Control sub = map.get(path);
 
+
+
 		if (sub == null) {
 
  	        System.out.println("해당 요청을 처리할 컨트롤러가 없습니다: " + path);
@@ -106,8 +114,7 @@ public class FrontController extends HttpServlet {
  	        return;
  	    }
 
-		
-		
 	    sub.exec(req, resp);
+
 	}
 }
