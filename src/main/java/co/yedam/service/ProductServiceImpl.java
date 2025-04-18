@@ -10,7 +10,7 @@ import co.yedam.mapper.ProductMapper;
 import co.yedam.vo.ProductVO;
 
 public class ProductServiceImpl implements ProductService {
-	SqlSession session = DataSource.getInstance().openSession(true);
+    SqlSession session = DataSource.getInstance().openSession(true);
     ProductMapper mapper = session.getMapper(ProductMapper.class);
 
     @Override
@@ -22,6 +22,11 @@ public class ProductServiceImpl implements ProductService {
     public ProductVO getProduct(String code) {
         return mapper.selectProduct(code);
     }
+	@Override
+	public List<Map<String, Object>> cheeringMessage() {
+		return null;
+	}
+
  
  	@Override
  	public List<Map<String, Object>> hintMessage(String pno) {

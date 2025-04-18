@@ -66,7 +66,7 @@
 
                 <div class="col-md-6">
 
-                    <h1 class="product-title">레오 블렌드 500g</h1>
+                    <h1 class="product-title">${product.pdName }</h1>
 
                     <div class="ratings">
 
@@ -98,7 +98,7 @@
 
                     <div class="price">
 
-                        <span>300,000원</span>
+                        <span>${product.pdPrice }</span>
 
                     </div>
 
@@ -185,15 +185,36 @@
                         <div class="product-desc">
 
                             <h2>상품상세정보</h2>
-
-                            <p>Ultricies et consectetur rhoncus lorem mattis, ligula interdum nibh dolor ipsum, venenatis ultrices sem nisl senectus phasellus lectus facilisis gravida curabitur interdum pretium et pellentesque nullam auctor vestibulum aenean ipsum placerat erat volutpat lectus mi est lacinia sociosqu, pretium habitasse aenean eros tristique augue a vivamus ac, sapien blandit nullam et neque curabitur varius nostra dui dictum cras orci congue.  Ultricies et consectetur rhoncus lorem mattis, ligula interdum nibh dolor ipsum, venenatis ultrices sem nisl senectus phasellus lectus facilisis gravida curabitur interdum pretium et pellentesque nullam auctor vestibulum aenean ipsum placerat</p>
-
+								
+								<div class="bg-white">
+								  <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+								    <div>
+								      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Technical Specifications</h2>
+								      <p class="mt-4 text-gray-500">The walnut wood card tray is precision milled to perfectly fit a stack of Focus cards. The powder coated steel divider separates active cards from new ones, or can be used to archive important task lists.</p>
+								
+								      <div class="border-t border-gray-200 pt-4">
+  										<dl>
+    										<dt class="font-medium text-gray-900">Origin</dt>
+    										<dd class="mt-2 text-sm text-gray-500">Designed by Good Goods, Inc.</dd>
+									  	</dl>
+									  </div>
+									  <div class="border-t border-gray-200 pt-4">
+  										<dl>
+    										<dt class="font-medium text-gray-900">Origin</dt>
+    										<dd class="mt-2 text-sm text-gray-500">Designed by Good Goods, Inc.</dd>
+									  	</dl>
+									  </div>
+		
+								    </div>
+								  </div>
+								</div>
+							
                         </div>
 
                     </div>
 
                     <div class="tab-pane" id="reviews">
-
+						<p>리뷰 번호 : ${review.reviewId } 리뷰 제목 : ${review.reviewTitle } 리뷰 내용 : ${review.reviewContent } 리뷰 작성일 : ${review.createDate }</p>
                     </div>
 
                 </div>

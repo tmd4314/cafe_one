@@ -16,6 +16,7 @@
 		  and  password = #{pw}
 	</select>
 	<!-- 아이디로 회원 조회 -->
+
 	<select id="selectMemberId" resultType="user" parameterType="string">
 		select *
 		from user_info

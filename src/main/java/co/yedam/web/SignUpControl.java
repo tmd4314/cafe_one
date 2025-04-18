@@ -60,3 +60,4 @@ public class SignUpControl implements Control {
 		}
 	}
 }
+

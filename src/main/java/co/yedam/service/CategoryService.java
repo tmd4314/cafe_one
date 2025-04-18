@@ -6,4 +6,3 @@ import co.yedam.vo.CategoryVO;
 public interface CategoryService {
     List<CategoryVO> getCategoryList();
 }
-
