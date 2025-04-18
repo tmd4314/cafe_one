@@ -214,7 +214,7 @@
                     </div>
 
                     <div class="tab-pane" id="reviews">
-
+						<p>리뷰 번호 : ${review.reviewId } 리뷰 제목 : ${review.reviewTitle } 리뷰 내용 : ${review.reviewContent } 리뷰 작성일 : ${review.createDate }</p>
                     </div>
 
                 </div>
