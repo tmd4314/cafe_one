@@ -8,6 +8,6 @@ public interface MemberService {
 	MemberVo login(String id, String pw);
 
 	boolean addMember(MemberVo member); //회원등록.
- 	MemberVo getMember(String id); //회원아이디로 조회.
+	MemberVo getMember(String id); //회원아이디로 조회.
  	boolean changePasswd(MemberVo member); //비번변경.
 }

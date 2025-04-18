@@ -21,10 +21,11 @@ import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
 import co.yedam.web.ProductControl;
 import co.yedam.web.ProductFormControl;
-import co.yedam.web.ProductInfoControl;
 import co.yedam.web.ProductListControl;
 import co.yedam.web.SearchControl;
 import co.yedam.web.SignUpControl;
+import co.yedam.web.WishlistAddControl;
+import co.yedam.web.WishlistControl;
 
 public class FrontController extends HttpServlet {
 
@@ -77,11 +78,16 @@ public class FrontController extends HttpServlet {
  		map.put("/signForm.do", new SignUpControl()); // 회원가입화면.
  		map.put("/signUp.do", new SignUpControl()); // 회원등록.
 		
- 		
 		//주문/장바구니
 		map.put("/cartList.do", new CartListControl());
 		map.put("/cartDelete.do", new CartDeleteControl());
 		map.put("/updateCart.do", new CartUpdateControl());
+		
+		//찜목록
+		map.put("/wishlist.do", new WishlistControl());
+		map.put("/wishlistAdd.do", new WishlistAddControl());
+
+		
 	}
 
 	@Override

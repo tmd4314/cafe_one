@@ -9,7 +9,7 @@
   </settings>
   <typeAliases>
   	<typeAlias alias = "product" type = "co.yedam.vo.ProductVO"/>
-  	<typeAlias alias = "user" type = "co.yedam.vo.MemberVo"/>
+  	<typeAlias alias="user" type="co.yedam.vo.MemberVo"/>
   	<typeAlias alias = "cart" type = "co.yedam.vo.CartVo"/>
   </typeAliases>
   <environments default="development">
@@ -17,7 +17,6 @@
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
         <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-
         <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>  <!-- 192.168.0.35 -->
         <property name="username" value="scott"/>
         <property name="password" value="tiger"/>
@@ -29,5 +28,6 @@
     <mapper resource="co/yedam/mapper/MemberMapper.xml"/>
     <mapper resource="co/yedam/mapper/CategoryMapper.xml"/>
     <mapper resource="co/yedam/mapper/CartMapper.xml"/>
+    <mapper resource="co/yedam/mapper/WishlistMapper.xml"/>
   </mappers>
 </configuration>
