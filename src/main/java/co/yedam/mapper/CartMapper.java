@@ -6,4 +6,6 @@ import co.yedam.vo.CartVo;
 
 public interface CartMapper {
 	List<CartVo> selectCart(String id);
+	int deleteCart(int cartNo);
+	int modifyCart(CartVo cvo);
 }

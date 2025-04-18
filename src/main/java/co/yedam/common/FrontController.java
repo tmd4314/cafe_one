@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.web.AdminControl;
+import co.yedam.web.CartDeleteControl;
 import co.yedam.web.CartListControl;
+import co.yedam.web.CartUpdateControl;
 //github.com/tmd4314/cafe_one.git
 //github.com/tmd4314/cafe_one.git
 import co.yedam.web.CategoryListControl;
@@ -81,6 +83,8 @@ public class FrontController extends HttpServlet {
 		
 		//주문/장바구니
 		map.put("/cartList.do", new CartListControl());
+		map.put("/cartDelete.do", new CartDeleteControl());
+		map.put("/updateCart.do", new CartUpdateControl());
 	}
 
 	@Override

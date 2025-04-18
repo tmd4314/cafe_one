@@ -22,5 +22,18 @@
 	WHERE
 	    c.user_id = #{id}
   </select>
+  
+  <!-- 삭제 -->
+  <delete id="deleteCart" parameterType="int">
+  	delete from cart
+ 	 where  cart_no = #{cartNo}
+  </delete>
+  
+  <!-- 삭제 -->
+  <update id="modifyCart" parameterType="int">
+  	 update cart
+ 	 set    quantity = #{quantity}
+ 	 where  cart_no = #{cartNo}
+  </update>
 
 </mapper>

@@ -7,5 +7,7 @@ import co.yedam.vo.CartVo;
 
 public interface CartService {
     List<CartVo> getCartList(String id);
+    boolean removeCart(int cartNo);
+	boolean updateCart(CartVo cvo);
 }
 

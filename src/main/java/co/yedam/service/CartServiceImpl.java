@@ -18,6 +18,16 @@ public class CartServiceImpl implements CartService {
 		// TODO Auto-generated method stub
 		return mapper.selectCart(id);
 	}
+	@Override
+	public boolean removeCart(int cartNo) {
+		// TODO Auto-generated method stub
+		return mapper.deleteCart(cartNo) == 1;
+	}
+	@Override
+	public boolean updateCart(CartVo cvo) {
+		// TODO Auto-generated method stub
+		return mapper.modifyCart(cvo) == 1;
+	}
 
 
 }
