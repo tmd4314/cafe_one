@@ -39,8 +39,6 @@ public class LoginControl implements Control {
 		    session.setAttribute("addre", mvo.getAddress());
 		    session.setAttribute("email", mvo.getEmail());
 		    session.setAttribute("mile", mvo.getMailage());
-		    session.setAttribute("reviewId", mvo.getReviewId());
-		    session.setAttribute("orDNo", mvo.getOrderDetailNo());
 		    session.setAttribute("loginUser", mvo);
 
 		    resp.sendRedirect("main.do");

@@ -40,9 +40,7 @@ package co.yedam.web;
  			mvo.setAddress(uad);
  			mvo.setEmail(uem);
  			mvo.setMailage(0);
- 			mvo.setReviewId("");
- 			mvo.setOrderDetailNo(0);
- 
+ 			
  			// 업무처리.
  			MemberService svc = new MemberServiceImpl();
  			if (svc.addMember(mvo)) {

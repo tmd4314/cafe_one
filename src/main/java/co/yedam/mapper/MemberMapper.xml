@@ -10,9 +10,7 @@
 		       phone,
 		       address,
 		       email,
-		       mailage,
-		       review_id,
-		       order_detail_no
+		       mailage
 		from   user_info
 		where  user_id = #{id}
 		  and  password = #{pw}
