@@ -10,9 +10,7 @@
 		       phone,
 		       address,
 		       email,
-		       mailage,
-		       review_id,
-		       order_detail_no
+		       mailage
 		from   user_info
 		where  user_id = #{id}
 		  and  password = #{pw}
@@ -26,8 +24,8 @@
  	
  	<!-- 회원가입시 DB전달 -->
  	<insert id="insertMember" parameterType="user">
- 		INSERT INTO user_info (user_id, password, user_name, image)
- 		VALUES (#{userID}, #{password}, #{userName}, #{image})
+ 		INSERT INTO user_info (user_id, password, user_name, phone, address, email, mailage)
+  		       VALUES         (#{userId}, #{password}, #{userName}, #{phone }, #{address}, #{email}, 0)
  	</insert>
  
  	<!-- 회원정보 변경 -->
