@@ -18,7 +18,7 @@
       <dataSource type="POOLED">
         <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
 
-        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>  <!-- 192.168.0.35 -->
+        <property name="url" value="jdbc:oracle:thin:@192.168.0.35:1521:xe"/>  <!-- 192.168.0.35 -->
         <property name="username" value="scott"/>
         <property name="password" value="tiger"/>
       </dataSource>
@@ -27,6 +27,8 @@
   <mappers>
     <mapper resource="co/yedam/mapper/ProductMapper.xml"/>
     <mapper resource="co/yedam/mapper/MemberMapper.xml"/>
+    <mapper resource="co/yedam/mapper/CategoryMapper.xml"/>
     <mapper resource="co/yedam/mapper/CartMapper.xml"/>
+    <mapper resource="co/yedam/mapper/WishlistMapper.xml"/>
   </mappers>
 </configuration>

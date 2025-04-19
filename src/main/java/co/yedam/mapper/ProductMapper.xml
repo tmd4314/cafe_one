@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="co.yedam.mapper.ProductMapper">
 
 	 <select id="searchAdvanced" resultType="co.yedam.vo.ProductVO">
@@ -29,5 +30,14 @@
    <select id="selectProduct" resultType="co.yedam.vo.ProductVO">
      SELECT * FROM PRODUCT WHERE PD_CODE = #{code}
    </select>
+
+<!-- 
+	<select id="selectProduct" parameterType="string">
+	 	select *
+	 	from   product
+	 	where  pd_code = #{pdCode}
+	</select>
+ -->
+
 
 </mapper>

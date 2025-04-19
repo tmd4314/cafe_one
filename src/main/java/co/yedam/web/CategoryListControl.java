@@ -33,4 +33,3 @@ public class CategoryListControl implements Control {
         req.getRequestDispatcher("category.tiles").forward(req, resp);
     }
 }
-

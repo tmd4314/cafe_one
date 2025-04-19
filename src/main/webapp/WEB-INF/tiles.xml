@@ -10,9 +10,14 @@
 	<put-attribute name="body" value="/WEB-INF/layout/body.jsp"/>
 	<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
   </definition>
-	<!--  상품용도  -->
+ <!--  상품용도  -->
   <definition name="WILDCARD:product/*" extends="myapp.common">
 	<put-attribute name="body" value="/WEB-INF/views/{1}.jsp"/>
+  </definition>
+  
+  <!--  주문용도  -->
+  <definition name="WILDCARD:cash/*" extends="myapp.common">
+	<put-attribute name="body" value="/WEB-INF/views/cash/{1}.jsp"/>
   </definition>
 
    <!-- 관리자 템플릿 정의 -->
@@ -22,6 +27,12 @@
 	
 	<definition name="WILDCARD:admin/*" extends="myapp.admin">
 	  <put-attribute name="body" value="/WEB-INF/admin/{1}.jsp" />
+	</definition>
+	<!-- 카테고리 용도 -->
+	<definition name="category.tiles" template="/WEB-INF/layout/template.jsp">
+	  <put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"/>
+	  <put-attribute name="body" value="/WEB-INF/views/category.jsp"/>
+	  <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
 	</definition>
 	
   <!-- 회원용도 -->

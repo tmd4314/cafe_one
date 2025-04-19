@@ -5,9 +5,7 @@ package co.yedam.web;
  import javax.servlet.ServletException;
  import javax.servlet.http.HttpServletRequest;
  import javax.servlet.http.HttpServletResponse;
- 
- import com.oreilly.servlet.MultipartRequest;
- import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
  
  import co.yedam.common.Control;
  import co.yedam.service.MemberService;
@@ -40,9 +38,7 @@ package co.yedam.web;
  			mvo.setAddress(uad);
  			mvo.setEmail(uem);
  			mvo.setMailage(0);
- 			mvo.setReviewId("");
- 			mvo.setOrderDetailNo(0);
- 
+
  			// 업무처리.
  			MemberService svc = new MemberServiceImpl();
  			if (svc.addMember(mvo)) {
