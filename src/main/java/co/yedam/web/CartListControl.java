@@ -28,8 +28,8 @@ public class CartListControl implements Control {
 		CartService svc = new CartServiceImpl();
 		List<CartVo> list = svc.getCartList(id);
 		
-		System.out.println(list);
-		System.out.println(id);
+//		System.out.println(list);
+//		System.out.println(id);
 		
 		
 		Map<String, Object> result = new HashMap<>();

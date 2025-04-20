@@ -49,7 +49,7 @@
 	    <div class="offcanvas-body">
 	        <div class="order-md-last">
 	            <h4 class="d-flex justify-content-between align-items-center mb-3">
-	                <span class="text-primary"><c:out value="${userName}"/>님의 장바구니</span>
+	                <span class="text-primary">🛒<c:out value="${userName}"/>님의 장바구니</span>
 	                <span class="badge bg-primary rounded-pill"></span>
 	            </h4>
 	            <ul class="list-group mb-3" id="cartItems">

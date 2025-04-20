@@ -12,7 +12,8 @@ public class CartServiceImpl implements CartService {
 
     SqlSession session = DataSource.getInstance().openSession(true);
     CartMapper mapper = session.getMapper(CartMapper.class);
-	@Override
+	
+    @Override
 	public List<CartVo> getCartList(String id) {
 		// TODO Auto-generated method stub
 		return mapper.selectCart(id);
@@ -28,13 +29,19 @@ public class CartServiceImpl implements CartService {
 		return mapper.modifyCart(cvo) == 1;
 	}
 	@Override
-	public List<CartVo> getCash(String id, int cartNo) {
-		System.out.println(id);
-		System.out.println(cartNo);
+	public List<CartVo> getCash(String id, List<Integer> cartNoList) {
 		// TODO Auto-generated method stub
-		return mapper.selectCash(id, cartNo);
+		return mapper.selectCashList(id, cartNoList);
 	}
-
-
+	@Override
+	public boolean deleteCartItem(String logId, String pdCode, int quantity) {
+		// TODO Auto-generated method stub
+		return mapper.deleteCartItem(logId, pdCode, quantity);
+	}
+	@Override
+	public CartVo getCartItemByCartNo(int cartNo) {
+		// TODO Auto-generated method stub
+		return mapper.getCartItemByCartNo(cartNo);
+	}
 }
 

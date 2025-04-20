@@ -43,5 +43,11 @@
 	</select>
  -->
 
+	<!-- 상품 재고 업데이트 -->
+    <update id="updateStock" parameterType="product">
+        UPDATE product
+        SET    pd_stock = pd_stock + #{quantity}
+        WHERE  pd_code  = #{pdCode}
+    </update>
 
 </mapper>
