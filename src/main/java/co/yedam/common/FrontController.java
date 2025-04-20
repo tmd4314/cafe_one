@@ -14,6 +14,7 @@ import co.yedam.web.AdminControl;
 import co.yedam.web.CartDeleteControl;
 import co.yedam.web.CartListControl;
 import co.yedam.web.CartUpdateControl;
+import co.yedam.web.CashControl;
 import co.yedam.web.CashFormControl;
 import co.yedam.web.CategoryListControl;
 import co.yedam.web.LoginControl;
@@ -90,6 +91,7 @@ public class FrontController extends HttpServlet {
 		
 		//주문
 		map.put("/cashForm.do", new CashFormControl());
+		map.put("/cash.do", new CashControl());
 		
 		//찜목록
 		map.put("/wishlist.do", new WishlistControl());

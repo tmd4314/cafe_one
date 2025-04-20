@@ -39,7 +39,7 @@
   </update>
   
   <!-- 주문한 물품 조회 -->
-  <select id="selectCash" resultType="co.yedam.vo.CartVo">
+  <select id="selectCashList" resultType="co.yedam.vo.CartVo" parameterType="map">
 	    SELECT
 	        c.cart_no,
 	        c.quantity,
@@ -53,9 +53,31 @@
 	        cart c
 	    JOIN
 	        product p ON c.pd_code = p.pd_code
-	    WHERE
-	        c.user_id = #{id}
-	        AND c.cart_no = #{cartNo}
+	    WHERE c.user_id = #{id}
+	    <if test="cartNoList != null and cartNoList.size() > 0">
+	      AND c.cart_no IN
+	          <foreach item="cartNo" collection="cartNoList" open="(" separator="," close=")">
+		           #{cartNo}
+		      </foreach>
+		</if>
+		<if test="cartNoList == null or cartNoList.size() == 0">
+	    	AND 1 = 0  <!-- 항상 false가 되는 조건 -->
+	    </if>
   </select>
+    
+     <!-- 장바구니 주문 상품 삭제 -->
+    <delete id="deleteCartItem">
+        DELETE FROM cart
+        WHERE user_id = #{userId}
+          AND pd_code = #{pdCode}
+          AND quantity = #{quantity}
+    </delete>
+    
+    <select id="getCartItemByCartNo" parameterType="int" resultType="co.yedam.vo.CartVo">
+	    SELECT *
+	    FROM cart
+	    WHERE cart_no = #{cartNo}
+	</select>
+  
 
 </mapper>
