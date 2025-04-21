@@ -210,7 +210,7 @@
 	      <!-- 중간: 대분류/소분류/검색창 -->
 	      <div class="col d-flex align-items-center gap-2">
 	        <!-- 대분류 -->
-	        <select id="mainCategory" class="form-select form-select-sm w-auto" style="width: 250px;">
+	        <select id="mainCategory" class="form-select form-select-sm w-auto" style="width: 250px; font-size: 1rem; height: 30px;">
 	          <option value="">대분류 선택</option>
 	          <c:forEach var="main" items="${mainCategoryList}">
 				 <option value="${main}">${main}</option>
@@ -219,7 +219,7 @@
 			
 	
 	        <!-- 소분류 -->
-	        <select id="subCategory" class="form-select form-select-sm w-auto" style="width: 250px;">
+	        <select id="subCategory" class="form-select form-select-sm w-auto" style="width: 250px; font-size: 1rem; height: 30px;">
 	          <option value="">소분류 선택</option>
 	          <c:forEach var="cat" items="${categoryList}">
 			    <option value="${cat.subcategoryName}" data-main="${cat.categoryName}">
