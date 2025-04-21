@@ -1,8 +1,8 @@
 package co.yedam.mapper;
  
  import org.apache.ibatis.annotations.Param;
- 
- import co.yedam.vo.MemberVo;
+
+import co.yedam.vo.MemberVo;
  
  public interface MemberMapper {
  	//아이디&비밀번호 단건조회.
@@ -14,4 +14,7 @@ package co.yedam.mapper;
      // 정보변경
      MemberVo selectMemberId(String id);
      int updatePasswd(MemberVo member);
+     
+     // 마일리지 업데이트
+     int updateMemberMaile(MemberVo member);
  }

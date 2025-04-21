@@ -31,6 +31,12 @@ public class MemberServiceImpl implements MemberService {
  	public boolean changePasswd(MemberVo member) {
  		return false;
  	}
+
+	@Override
+	public boolean updateMemberMaile(MemberVo member) {
+		// TODO Auto-generated method stub
+		return mapper.updateMemberMaile(member) == 1;
+	}
 	
 }
 
