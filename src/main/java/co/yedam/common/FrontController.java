@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.web.AdminControl;
+import co.yedam.web.CancelOrderControl;
 import co.yedam.web.CancelOrderFormControl;
 import co.yedam.web.CartDeleteControl;
 import co.yedam.web.CartListControl;
@@ -107,6 +108,7 @@ public class FrontController extends HttpServlet {
 		
 		//주문취소
 		map.put("/cancelOrderForm.do", new CancelOrderFormControl());
+		map.put("/cancelOrder.do", new CancelOrderControl());
 		
 		//찜목록
 		map.put("/wishlist.do", new WishlistControl());

@@ -25,7 +25,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
+        h2 {
             text-align: center;
             color: #333;
         }
@@ -66,9 +66,17 @@
 
         .order-status {
             font-size: 16px;
-            color: green;
             margin-bottom: 5px;
             text-align: center; /* 가운데 정렬 추가 */
+        }
+        
+        /* 주문 상태에 따른 색상 */
+        .order-status.success {
+            color: green;
+        }
+
+        .order-status.cancelled {
+            color: red;
         }
 
         .order-actions {
@@ -95,16 +103,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>주문 내역</h1>
+        <h2>🧾주문 내역</h1>
        <c:forEach var="order" items="${orderList}">
             <div class="order-item">
-            	<div class="order-status"><c:out value="${order.odStatus }"/></div> <!-- 주문 성공 메시지 -->
+            	<div class="order-status <c:if test="${order.odStatus == '주문성공'}">success</c:if><c:if test="${order.odStatus == '주문취소'}">cancelled</c:if>"><c:out value="${order.odStatus }"/></div> <!-- 주문 메시지 -->
                 <img src="images/${order.orderDetails[0].pdImg}" alt="상품 이미지">
                 <div class="order-details">
                     <h3>주문 번호: ${order.odNo}</h3>
                     <p>상품 제목: ${order.orderDetails[0].pdName} 외 ${order.orderDetails.size()}건</p> <!-- 상품 제목 및 건수 표시 -->
                     <p>주문일자: ${order.odDate}</p>
-                    <p>총 결제 금액: ${order.odTotal} 원</p>
+                    <p>총 결제 금액:  <fmt:formatNumber value="${order.odTotal}" pattern="#,###" />원</p>
                     <a href="orderDetailForm.do?ono=${order.odNo }">주문상세</a>
                 </div>
                 <div class="order-actions">

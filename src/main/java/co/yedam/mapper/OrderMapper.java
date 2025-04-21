@@ -12,4 +12,8 @@ public interface OrderMapper {
 	List<OrderVo> getOrderListByUserId(String userId);
 
 	OrderVo getOrder(@Param("odNo") String odNo, @Param("userid") String userid);
+	
+	String getImpUidByOrderNo(@Param("odNo") String odNo);
+
+	boolean updateOrderStatusToCancelled(@Param("odNo") String odNo);
 }
