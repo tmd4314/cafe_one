@@ -3,28 +3,46 @@
   margin: 0 auto;
 }
 
-/* 이달의 상품 추천 */
-
-.product-slider {
-  width: 100%;
+/* 메인 상품 영역 */
+.main_goods {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2 );
+  border-radius: 5%;
 }
 
-.product-list {
+/* Swiper */
+.swiper {
+  width: 100%;
+}
+
+.swiper-wrapper {
   display: flex;
-  gap: 20px;
-  padding: 0;
-  list-style: none;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.swiper-slide {
+  width: auto !important;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .product-item {
-  width: 280px;
+  width: 220px;
   text-align: center;
   border: 1px solid #ddd;
   padding: 10px;
   border-radius: 10px;
   background: #fff;
   position: relative;
+  box-sizing: border-box;
 }
 
 .discount {
@@ -65,199 +83,44 @@
   color: #ec0000;
 }
 
-/* 이달의 상품 추천 끝 */
-
-/* 신상품 추천 시작 */
-.goods-list {
-  padding: 20px;
-  font-family: sans-serif;
-}
-
-.goods-list-title h3 {
-  margin-bottom: 16px;
-  font-size: 1.5em;
-}
-
-.item-list {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-}
-
-.item {
-  flex: 0 0 20%;
-  box-sizing: border-box;
-  background: #f9f9f9;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.item img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.item-name {
-  display: block;
-  margin-top: 10px;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.item-price {
-  margin-top: 5px;
-  color: #333;
-  font-size: 0.95em;
-}
-
-/* 신상품 추천 끝 */
-
-/* 할인상품 추천 시작 */
-.layer_wrap.hidden {
-  display: none;
-}
-
-.add_cart_layer {
+/* Swiper 버튼 */
+.swiper-button-next,
+.swiper-button-prev {
   position: absolute;
-  top: 280px;
-  left: 650px;
-  background: #fff;
-  padding: 20px;
-  border: 1px solid #ccc;
-}
-
-/* 전체 리스트 박스 */
-.item_list_type > ul {
-  display: flex;
-  flex-wrap: nowrap; /* 넘치면 줄바꿈 안 하도록 */
-  gap: 20px; /* 아이템 사이 간격 */
-  overflow-x: auto; /* 가로 스크롤 가능하도록 */
-  padding: 10px 0;
-}
-
-/* 각 상품 아이템(li) */
-.item_list_type > ul > li {
-  flex: 0 0 220px; /* 고정 너비 설정 */
-  box-sizing: border-box;
-}
-
-/* 상품 컨테이너 */
-.item_cont {
-  border: 1px solid #ddd;
-  padding: 10px;
-  background-color: #fff;
-}
-
-.item_photo_box img {
-  display: block;
-  width: 220px;
-}
-
-.item_info_cont {
-  margin-top: 10px;
-}
-
-.item_money_box del {
-  color: #888;
-  margin-right: 10px;
-}
-
-.item_price span {
-  color: red;
-  font-weight: bold;
-}
-
-.item_btn_box {
-  margin-top: 10px;
-}
-
-button {
-  cursor: pointer;
-  padding: 5px 10px;
-}
-
-/* 할인상품 추천 끝 */
-
-/* 장바구니 추가 안내 시작 */
-.hidden {
-  display: none;
-}
-
-.layer-wrap {
-  position: fixed;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.4);
-  width: 100%;
-  height: 100%;
+  transform: translateY(-50%);	
+  z-index: 10;
 }
 
-.add-cart-layer {
-  background: #fff;
-  padding: 20px;
-  width: 360px;
-  margin: 0 auto;
-  border-radius: 8px;
-  position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  top: 30%;
+.swiper-button-prev {
+  left: 0px;
 }
 
-.view h2 {
-  font-size: 18px;
-  margin-bottom: 15px;
+.swiper-button-next {
+  right: 0px;
 }
 
-.scroll-box {
-  margin-bottom: 20px;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.success {
-  font-size: 14px;
-  color: #333;
-  text-align: center;
+/* 반응형 */
+@media (max-width: 1200px) {
+  .swiper-slide {
+    width: calc(100% / 3.5) !important;
+  }
 }
 
-.btn-box {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 10px;
+@media (max-width: 768px) {
+  .swiper-slide {
+    width: calc(100% / 2.2) !important;
+  }
 }
 
-.btn-cancel,
-.btn-confirm {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+@media (max-width: 480px) {
+  .swiper-slide {
+    width: 100% !important;
+  }
 }
-
-.btn-cancel {
-  background-color: #ccc;
-  color: #000;
-}
-
-.btn-confirm {
-  background-color: #ec0000;
-  color: #fff;
-}
-
-.btn-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/* 장바구니 추가 끝 */

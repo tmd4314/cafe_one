@@ -18,5 +18,7 @@ public interface MemberMapper {
 	int updatePasswd(MemberVo member);
 
 	// 회원 탈퇴
-	int deleteMember(String userId);
+	int deleteMember(String userId);    
+     // 마일리지 업데이트
+     int updateMemberMaile(MemberVo member);
 }
