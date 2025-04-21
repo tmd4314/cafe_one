@@ -37,5 +37,6 @@
     <mapper resource="co/yedam/mapper/ProductDetailMapper.xml"/>
     <mapper resource="co/yedam/mapper/OrderDetailMapper.xml"/>
     <mapper resource="co/yedam/mapper/OrderMapper.xml"/>
+    <mapper resource="co/yedam/mapper/AdminMapper.xml"/>
   </mappers>
 </configuration>

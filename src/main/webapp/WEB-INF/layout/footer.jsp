@@ -16,6 +16,9 @@
     <div id="footer-bottom">
       <div class="container-lg">
         <div class="row">
+        <div class="text-end mt-2">
+			  <a href="adminLogin.do" class="btn btn-sm btn-outline-secondary">관리자 로그인</a>
+		  </div>
           <div class="col-md-6 copyright">
             <p>© 2024 Organic. All rights reserved.</p>
           </div>
