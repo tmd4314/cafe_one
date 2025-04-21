@@ -6,12 +6,57 @@
 <div id="container">
 	<!-- 이달의 상품 추천 시작 -->
 	<div class="main_h1">
-		<h2 class="main_h1">
+		<h2>
 			<strong>이달의 추천 상품</strong> <span> 무엇인지 궁금하시죠?</span>
 		</h2>
 	</div>
-	<div id="container">
-		<div class="main_goods">
+	<div class="main_goods">
+		<div class="swiper mySwiper">
+			<div class="swiper-wrapper">
+				<c:forEach var="pdsf" items="${listSF}">
+					<div class="swiper-slide">
+						<div class="product-item">
+							<div class="discount">n%</div>
+							<a href="#">
+								<img src="images/${pdsf.pdimg}" alt="${pdsf.pdName}">
+								<h5 class="product-title">${pdsf.pdName}</h5>
+							</a>
+							<div class="price-box">
+								<del>${pdsf.pdPrice}원</del>
+								<span class="price">${pdsf.pdPrice}원</span>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+
+			<!-- Swiper Navigation Buttons -->
+			<button type="button" class="swiper-button-prev" aria-label="이전 배너 보기">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+					<circle cx="20" cy="20" r="19.5" fill="white" stroke="#E0E0E0"></circle>
+					<path d="M22.5 27L15.7121 20.2119C15.595 20.0948 15.595 19.9048 15.7121 19.7877L22.5 13" stroke="black"
+						stroke-width="1.5"></path>
+				</svg>
+			</button>
+			<button type="button" class="swiper-button-next" aria-label="다음 배너 보기">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+					<circle cx="20" cy="20" r="19.5" fill="white" stroke="#E0E0E0"></circle>
+					<path d="M17.5 27L24.2879 20.2119C24.405 20.0948 24.405 19.9048 24.2879 19.7877L17.5 13" stroke="black"
+						stroke-width="1.5"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+
+
+	<!-- 이달의 상품 추천 끝-->
+
+	<!-- 신상품 추천 시작 -->
+	<div class="main_h1">
+		<h3>신상품 추천</h3>
+	</div>
+	<div class="new-goods">
+		<div class="new-goods-list">
 			<div class="swiper mySwiper">
 				<div class="swiper-wrapper">
 					<c:forEach var="pdsf" items="${listSF}">
@@ -48,376 +93,73 @@
 				</button>
 			</div>
 		</div>
+	</div>
+	<!-- 신상품 추천 끝 -->
 
+	<!-- 할인 상품 추천 시작 -->
+	<h2 class="main_h1">
+		<strong>할인상품 구경하세요! </strong> <span>할인 팍팍!</span>
+	</h2>
 
-		<!-- 이달의 상품 추천 끝-->
-
-		<!-- 신상품 추천 시작 -->
-		<div class="goods-list">
-			<div class="goods-list-title">
-				<h3>신상품 추천</h3>
-			</div>
-			<div class="goods-list-content">
-				<ul class="item-list">
-					<li class="item">
-						<div class="item-image">
-							<a href="#"><img
-									src="https://godomall.speedycdn.net/9581c5139980e426b8ecbd8a4538a589/goods/1000001346/image/main/1000001346_main_053.jpg"
-									alt="신상품 1"></a>
-						</div>
-						<div class="item-info">
-							<strong class="item-name">신상품 1</strong>
-							<div class="item-price">n원</div>
-						</div>
-					</li>
-					<li class="item">
-						<div class="item-image">
-							<a href="#"><img
-									src="https://godomall.speedycdn.net/9581c5139980e426b8ecbd8a4538a589/goods/1000001756/image/main/1000001756_main_091.jpg"
-									alt="신상품 2"></a>
-						</div>
-						<div class="item-info">
-							<strong class="item-name">신상품 2</strong>
-							<div class="item-price">n원</div>
-						</div>
-					</li>
-					<li class="item">
-						<div class="item-image">
-							<a href="#"><img
-									src="https://godomall.speedycdn.net/9581c5139980e426b8ecbd8a4538a589/goods/1000001346/image/main/1000001346_main_053.jpg"
-									alt="신상품 1"></a>
-						</div>
-						<div class="item-info">
-							<strong class="item-name">신상품 3</strong>
-							<div class="item-price">n원</div>
-						</div>
-					</li>
-					<li class="item">
-						<div class="item-image">
-							<a href="#"><img
-									src="https://godomall.speedycdn.net/9581c5139980e426b8ecbd8a4538a589/goods/1000001756/image/main/1000001756_main_091.jpg"
-									alt="신상품 2"></a>
-						</div>
-						<div class="item-info">
-							<strong class="item-name">신상품 4</strong>
-							<div class="item-price">n원</div>
-						</div>
-					</li>
-					<!-- 나머지 항목도 같은 방식으로 반복 -->
-				</ul>
-			</div>
+	<div class="main_h1">
+		<div class="goods_list_tit">
+			<h3>!!할인상품 목록!!</h3>
 		</div>
 
-		<!-- 신상품 추천 끝 -->
-
-		<!-- 할인 상품 추천 시작 -->
-		<h2 class="main_h1">
-			<strong>할인상품 구경하세요! </strong> <span>할인 팍팍!</span>
-		</h2>
-		<div class="goods_list main_wrap_21">
-			<div class="goods_list_tit">
-				<h3>!!할인상품 목록!!</h3>
-			</div>
-			<div class="goods_list_cont goods_content_21">
-				<div class="item_list_type">
-					<ul>
-						<li>
-							<div class="item_cont">
-								<div class="item_photo_box">
-									<a
-										href="../goods/goods_view.php?goodsNo=1000000656&amp;mtn=21%5E%7C%5E%ED%95%A0%EC%9D%B8%EC%83%81%ED%92%88+%EA%B5%AC%EA%B2%BD%ED%95%98%EC%84%B8%EC%9A%94%21%5E%7C%5En">
-										<img
-											src="https://godomall.speedycdn.net/9581c5139980e426b8ecbd8a4538a589/goods/1000000656/image/main/1000000656_main_027.jpg"
-											alt="[할인] 상품1" title="[할인] 상품1" class="middle">
-									</a>
-								</div>
-								<!-- //item_photo_box -->
-								<div class="item_info_cont">
-									<div class="item_info_list">
-										<div class="item_tit_box">
-											<a href="#"> <strong class="item_name">[할인]상품 1</strong>
-											</a>
-										</div>
-										<!-- //item_tit_box -->
-										<!-- //item_number_box -->
-
-									</div>
-									<!-- //item_info_list -->
-									<div class="item_money_box">
-										<del>n원 </del>
-										<strong class="item_price"> <span>n원 </span>
-										</strong>
-									</div>
-									<!-- //item_money_box -->
-									<div class="item_icon_box"></div>
-									<!-- //item_icon_box -->
-								</div>
-								<!-- //item_info_cont -->
-								<div class="item_btn_box">
-									<button class="btn_list_get btn_add_wish_21" data-goods-no="1000000656" data-optionfl="n"
-										data-min-order-cnt="1">
-										<img
-											src="https://cdn-pro-web-251-118.cdn-nhncommerce.com/coffeetr8258_godomall_com/data/skin/front/designbook_shopharuP/img/icon/goods_icon/icon_list_get.png"
-											alt="찜하기"><span>찜하기</span>
-									</button>
-									<button href="#optionViewLayer" class="btn_list_cart btn_add_cart_21 btn_open_layer"
-										data-mode="cartIn" data-goods-no="1000000656">
-										<img
-											src="https://cdn-pro-web-251-118.cdn-nhncommerce.com/coffeetr8258_godomall_com/data/skin/front/designbook_shopharuP/img/icon/goods_icon/icon_list_cart.png"
-											alt="장바구니"><span>장바구니</span>
-									</button>
-								</div>
-								<!-- //item_btn_box -->
-							</div> <!-- //item_cont -->
-						</li>
-						<li>
-							<div class="item_cont">
-								<div class="item_photo_box">
-									<a href="#"> <img
-											src="https://godomall.speedycdn.net/9581c5139980e426b8ecbd8a4538a589/goods/1000001834/image/main/1000001834_main_065.jpg"
-											width="220" alt="[할인] 상품2" title="[할인] 상품2" class="middle">
-									</a>
-								</div>
-								<!-- //item_photo_box -->
-								<div class="item_info_cont">
-									<div class="item_info_list">
-										<div class="item_tit_box">
-											<a href="#"> <strong class="item_name">[할인]상품 2</strong>
-											</a>
-										</div>
-										<!-- //item_tit_box -->
-										<!-- //item_number_box -->
-
-									</div>
-									<!-- //item_info_list -->
-									<div class="item_money_box">
-										<strong class="item_price"> <span>nn원 </span>
-										</strong>
-									</div>
-									<!-- //item_money_box -->
-									<div class="item_icon_box"></div>
-									<!-- //item_icon_box -->
-								</div>
-								<!-- //item_info_cont -->
-								<div class="item_btn_box">
-									<button class="btn_list_get btn_add_wish_21" data-goods-no="1000001834" data-optionfl="n"
-										data-min-order-cnt="1">
-										<img
-											src="https://cdn-pro-web-251-118.cdn-nhncommerce.com/coffeetr8258_godomall_com/data/skin/front/designbook_shopharuP/img/icon/goods_icon/icon_list_get.png"
-											alt="찜하기"><span>찜하기</span>
-									</button>
-									<button href="#optionViewLayer" class="btn_list_cart btn_add_cart_21 btn_open_layer"
-										data-mode="cartIn" data-goods-no="1000001834">
-										<img
-											src="https://cdn-pro-web-251-118.cdn-nhncommerce.com/coffeetr8258_godomall_com/data/skin/front/designbook_shopharuP/img/icon/goods_icon/icon_list_cart.png"
-											alt="장바구니"><span>장바구니</span>
-									</button>
-								</div>
-								<!-- //item_btn_box -->
-							</div> <!-- //item_cont -->
-						</li>
-						<li>
-							<div class="item_cont">
-								<div class="item_photo_box">
-									<a href="#"> <img
-											src="https://godomall.speedycdn.net/9581c5139980e426b8ecbd8a4538a589/goods/1000001977/image/main/5084_main_042.jpg"
-											width="220" alt="[할인] 상품3" title="[할인] 상품3" class="middle">
-									</a>
-								</div>
-								<!-- //item_photo_box -->
-								<div class="item_info_cont">
-									<div class="item_info_list">
-										<div class="item_tit_box">
-											<a href="#"> <strong class="item_name">[할인] 상품3</strong>
-											</a>
-										</div>
-										<!-- //item_tit_box -->
-										<!-- //item_number_box -->
-
-									</div>
-									<!-- //item_info_list -->
-									<div class="item_money_box">
-										<strong class="item_price"> <span>n원 </span>
-										</strong>
-									</div>
-									<!-- //item_money_box -->
-									<div class="item_icon_box"></div>
-									<!-- //item_icon_box -->
-								</div>
-								<!-- //item_info_cont -->
-								<div class="item_btn_box">
-									<button class="btn_list_get btn_add_wish_21" data-goods-no="1000001977" data-optionfl="n"
-										data-min-order-cnt="1">
-										<img
-											src="https://cdn-pro-web-251-118.cdn-nhncommerce.com/coffeetr8258_godomall_com/data/skin/front/designbook_shopharuP/img/icon/goods_icon/icon_list_get.png"
-											alt="찜하기"><span>찜하기</span>
-									</button>
-									<button href="#optionViewLayer" class="btn_list_cart btn_add_cart_21 btn_open_layer"
-										data-mode="cartIn" data-goods-no="1000001977">
-										<img
-											src="https://cdn-pro-web-251-118.cdn-nhncommerce.com/coffeetr8258_godomall_com/data/skin/front/designbook_shopharuP/img/icon/goods_icon/icon_list_cart.png"
-											alt="장바구니"><span>장바구니</span>
-									</button>
-								</div>
-								<!-- //item_btn_box -->
-							</div> <!-- //item_cont -->
-						</li>
-						<li>
-							<div class="item_cont">
-								<div class="item_photo_box">
-									<a href="#"> <img
-											src="https://godomall.speedycdn.net/9581c5139980e426b8ecbd8a4538a589/goods/1000000656/image/main/1000000656_main_027.jpg"
-											width="220" alt="[할인] 상품4" title="[할인] 상품4" class="middle">
-									</a>
-								</div>
-								<!-- //item_photo_box -->
-								<div class="item_info_cont">
-									<div class="item_info_list">
-										<div class="item_tit_box">
-											<a href="#"> <strong class="item_name">[할인] 상품4</strong>
-											</a>
-										</div>
-										<!-- //item_tit_box -->
-										<!-- //item_number_box -->
-
-									</div>
-									<!-- //item_info_list -->
-									<div class="item_money_box">
-										<strong class="item_price"> <span>n원 </span>
-										</strong>
-									</div>
-									<!-- //item_money_box -->
-									<div class="item_icon_box"></div>
-									<!-- //item_icon_box -->
-								</div>
-								<!-- //item_info_cont -->
-								<div class="item_btn_box">
-									<button class="btn_list_get btn_add_wish_21" data-goods-no="1000001977" data-optionfl="n"
-										data-min-order-cnt="1">
-										<img
-											src="https://cdn-pro-web-251-118.cdn-nhncommerce.com/coffeetr8258_godomall_com/data/skin/front/designbook_shopharuP/img/icon/goods_icon/icon_list_get.png"
-											alt="찜하기"><span>찜하기</span>
-									</button>
-									<button href="#optionViewLayer" class="btn_list_cart btn_add_cart_21 btn_open_layer"
-										data-mode="cartIn" data-goods-no="1000001977">
-										<img
-											src="https://cdn-pro-web-251-118.cdn-nhncommerce.com/coffeetr8258_godomall_com/data/skin/front/designbook_shopharuP/img/icon/goods_icon/icon_list_cart.png"
-											alt="장바구니"><span>장바구니</span>
-									</button>
-								</div>
-								<!-- //item_btn_box -->
-							</div> <!-- //item_cont -->
-						</li>
-					</ul>
-				</div>
-				<!-- //item_list_type -->
-
-				<!-- option layer -->
-				<div id="optionViewLayer" class="layer_wrap dn"></div>
-				<!-- //option layer -->
-				<!-- 할인 상품 추천 끝 -->
-
-				<!-- 장바구니 추가 안내 시작 -->
-				<div id="addCartLayer" class="layer-wrap hidden">
-					<div class="box add-cart-layer">
-						<div class="view">
-							<h2>장바구니 담기</h2>
-							<div class="scroll-box">
-								<p class="success">
-									<strong>상품이 장바구니에 담겼습니다.</strong><br> 바로 확인하시겠습니까?
-								</p>
+	</div>
+	<div class="discounted-goods">
+		<div class="swiper mySwiper">
+			<div class="swiper-wrapper">
+				<c:forEach var="pdsf" items="${listSF}">
+					<div class="swiper-slide">
+						<div class="product-item">
+							<div class="discount">n%</div>
+							<a href="#">
+								<img src="images/${pdsf.pdimg}" alt="${pdsf.pdName}">
+								<h5 class="product-title">${pdsf.pdName}</h5>
+							</a>
+							<div class="price-box">
+								<del>${pdsf.pdPrice}원</del>
+								<span class="price">${pdsf.pdPrice}원</span>
 							</div>
-							<div class="btn-box">
-								<button type="button" class="btn-cancel">취소</button>
-								<button type="button" class="btn-confirm btn-move-cart">확인</button>
-							</div>
-							<button title="닫기" class="btn-close" type="button">닫기</button>
 						</div>
 					</div>
-				</div>
-				<!-- 장바구니 추가 안내 끝 -->
-
-				<!-- //layer_wrap -->
-				<!-- wish form -->
-				<form id="frmView" method="post">
-					<input type="hidden" name="mode" value="wishIn"> <input type="hidden" name="cartMode" value=""> <input
-						type="hidden" name="optionFl" value=""> <input type="hidden" name="minOrderCnt" value="">
-				</form>
-				<!-- //wish form -->
-				<script type="text/javascript">
-					<!--
-					$(function () {
-						$('.btn_add_wish_21').on('click', function (e) {
-							alert("로그인하셔야 본 서비스를 이용하실 수 있습니다.");
-							document.location.href = "../member/login.php";
-
-							return false;
-						});
-
-						$('.btn_add_cart_21').on(
-							'click',
-							function () {
-								if ($(this).data('mode') == 'cartIn') {
-									var params = {
-										page: 'goods',
-										type: 'goods',
-										goodsNo: $(this).data('goods-no')
-									};
-
-									$.ajax({
-										method: "POST",
-										cache: false,
-										url: "../goods/layer_option.php",
-										data: params,
-										success: function (data) {
-											$('#optionViewLayer').empty()
-												.append(data);
-											$('#optionViewLayer').find('>div')
-												.center();
-										},
-										error: function (data) {
-											alert(data.message);
-										}
-									});
-								}
-							});
-
-						$('.btn_move_cart').click(function () {
-							location.href = '../order/cart.php';
-						});
-					});
-
-					function gd_goods_option_view_result(params) {
-						params += "&mode=cartIn";
-
-						$.ajax({
-							method: "POST",
-							cache: false,
-							url: "../order/cart_ps.php",
-							data: params,
-							success: function (data) {
-								$("#optionViewLayer").addClass('dn');
-								$("#addCartLayer").removeClass('dn');
-								$('#layerDim').removeClass('dn');
-								$("#addCartLayer").find('> div').center();
-							},
-							error: function (data) {
-								alert(data.message);
-							}
-						});
-					}
-					//
-					-->
-				</script>
+				</c:forEach>
 			</div>
+
+			<!-- Swiper Navigation Buttons -->
+			<button type="button" class="swiper-button-prev" aria-label="이전 배너 보기">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+					<circle cx="20" cy="20" r="19.5" fill="white" stroke="#E0E0E0"></circle>
+					<path d="M22.5 27L15.7121 20.2119C15.595 20.0948 15.595 19.9048 15.7121 19.7877L22.5 13" stroke="black"
+						stroke-width="1.5"></path>
+				</svg>
+			</button>
+			<button type="button" class="swiper-button-next" aria-label="다음 배너 보기">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+					<circle cx="20" cy="20" r="19.5" fill="white" stroke="#E0E0E0"></circle>
+					<path d="M17.5 27L24.2879 20.2119C24.405 20.0948 24.405 19.9048 24.2879 19.7877L17.5 13" stroke="black"
+						stroke-width="1.5"></path>
+				</svg>
+			</button>
 		</div>
 	</div>
-	</body>
-	<script src="js/productList.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	<!-- 스와이프 기능 관련 추가 -->
-	<script type="module">import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.mjs';
-</script>
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<!-- 할인 상품 추천 끝 -->
+
+
+	<!-- //layer_wrap -->
+	<!-- wish form -->
+	<form id="frmView" method="post">
+		<input type="hidden" name="mode" value="wishIn"> <input type="hidden" name="cartMode" value=""> <input type="hidden"
+			name="optionFl" value=""> <input type="hidden" name="minOrderCnt" value="">
+	</form>
+</div>
+</div>
+</div>
+</body>
+<script src="js/productList.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- 스와이프 기능 관련 추가 -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />

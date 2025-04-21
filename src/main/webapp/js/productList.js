@@ -1,29 +1,15 @@
 // 이달의 상품 시작
 // 스와이프 기능 추가
+
 document.addEventListener('DOMContentLoaded', function() {
 	const swiper = new Swiper('.mySwiper', {
-		slidesPerView: 5,
+		slidesPerView: 4,
 		slidesPerGroup: 1,
-		spaceBetween: 3,
+		spaceBetween: 0,
 		loop: true,
-		loopAdditionalSlides: 5, // 추가 복제 슬라이드 생성, 루프가 작동하지 않아서 추가함
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
-		},
-		breakpoints: {
-			1200: {
-				slidesPerView: 4,
-				slidesPerGroup: 4,
-			},
-			768: {
-				slidesPerView: 2,
-				slidesPerGroup: 2,
-			},
-			480: {
-				slidesPerView: 1,
-				slidesPerGroup: 1,
-			},
 		},
 	});
 });
@@ -38,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // 신상품 끝
 
 // 할인상품 시작
+/*
 document.addEventListener('DOMContentLoaded', () => {
 	const cartButtons = document.querySelectorAll('.btn_list_cart');
 	const cartLayer = document.getElementById('addCartLayer');
@@ -56,7 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 });
+*/
 // 할인상품 끝
+
+
 // 장바구니 추가 시작
 // 장바구니 팝업 열기
 function showCartLayer() {
@@ -69,6 +59,7 @@ function hideCartLayer() {
 }
 
 // 이벤트 바인딩
+/*
 document.addEventListener('DOMContentLoaded', () => {
 	const cancelBtn = document.querySelector('.btn-cancel');
 	const confirmBtn = document.querySelector('.btn-confirm');
@@ -80,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		window.location.href = '/cart'; // 장바구니 페이지로 이동
 	});
 });
+ */
 // 장바구니 추가 끝
 
 
