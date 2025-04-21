@@ -13,6 +13,7 @@
   	<typeAlias alias = "cart" type = "co.yedam.vo.CartVo"/>
   	<typeAlias alias = "order" type = "co.yedam.vo.OrderVo"/>
   	<typeAlias alias = "orderDetail" type = "co.yedam.vo.OrderDetailVo"/>
+  	<typeAlias alias = "review" type = "co.yedam.vo.ReviewVO"/>
   </typeAliases>
   <environments default="development">
     <environment id="development">

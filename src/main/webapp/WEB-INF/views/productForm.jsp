@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE HTML>
 
 <html lang="ko">
@@ -58,7 +61,7 @@
 
                    <div class="col-md-10 col-sm-10 col-xs-10">
 
-                       <div class="thumb-main-image"><a href=""><img src="images/커피한잔 레오 블렌드 500g.png" alt=""></a></div>
+                       <div class="thumb-main-image"><a href=""><img src="images/${product.pdimg }" alt=""></a></div>
 
                    </div>
                        
@@ -86,7 +89,7 @@
 
                     <div class="product-info">
 
-                        <span class="product-id"><span class="strong-text">Product ID:</span> RST 4562</span>
+                        <span class="product-id"><span class="strong-text">Product ID: <span>${product.pdCode }</span></span></span>
 
                         
 
@@ -98,7 +101,7 @@
 
                     <div class="price">
 
-                        <span>${product.pdPrice }</span>
+                        <span><fmt:formatNumber value="${product.pdPrice}" type="number" groupingUsed="true" />원</span>
 
                     </div>
 
@@ -186,35 +189,98 @@
 
                             <h2>상품상세정보</h2>
 								
-								<div class="bg-white">
-								  <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
-								    <div>
-								      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Technical Specifications</h2>
-								      <p class="mt-4 text-gray-500">The walnut wood card tray is precision milled to perfectly fit a stack of Focus cards. The powder coated steel divider separates active cards from new ones, or can be used to archive important task lists.</p>
-								
-								      <div class="border-t border-gray-200 pt-4">
-  										<dl>
-    										<dt class="font-medium text-gray-900">Origin</dt>
-    										<dd class="mt-2 text-sm text-gray-500">Designed by Good Goods, Inc.</dd>
-									  	</dl>
-									  </div>
-									  <div class="border-t border-gray-200 pt-4">
-  										<dl>
-    										<dt class="font-medium text-gray-900">Origin</dt>
-    										<dd class="mt-2 text-sm text-gray-500">Designed by Good Goods, Inc.</dd>
-									  	</dl>
-									  </div>
-		
-								    </div>
-								  </div>
-								</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 25%;">Imformation</th>
+      <th scope="col" style="width: 75%;">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>상품명</td>
+      <td>${product.pdName }</td>
+    </tr>
+    <tr>
+      <td>상품가격</td>
+      <td><fmt:formatNumber value="${product.pdPrice}" type="number" groupingUsed="true" />원</td>
+    </tr>
+    <tr>
+      <td>제조사</td>
+      <td>${product.manufacturer }</td>
+    </tr>
+    <tr>
+      <td>원산지</td>
+      <td>${product.pdCoo }</td>
+    </tr>
+    <tr>
+      <td>원재료명</td>
+      <td>${product.material }</td>
+    </tr>
+    <tr>
+      <td>제조일</td>
+      <td>${product.pdMfd }</td>
+    </tr>
+    <tr>
+      <td>유통기한</td>
+      <td>${product.pdExp }</td>
+    </tr>
+    <tr>
+      <td>고객센터</td>
+      <td>1899-0011</td>
+    </tr>
+    <tr>
+      <td>반품 및 교환처</td>
+      <td>구입처 또는 판매원</td>
+    </tr>
+    <tr>
+      <td>상품카테고리코드</td>
+      <td>${product.categoryCode }</td>
+    </tr>
+    <tr>
+      <td>기타사항</td>
+      <td>본 제품은 공정거래위원회고시 소비자분쟁해결 기준에 의거 교환 또는 보상 받을 수 있습니다. 부정, 불량식품 신고는 국번없이 1399 입니다. 판매 시 개봉되지 않은 제품에 한하여 품질을 보증합니다. 구입시 밀봉상태를 확인하십시오. 제품에 이상이 있거나 의문사항이 있을 시 드시지 마시고 구입처로 문의하시기 바랍니다. 질소충전</td>
+    </tr>
+  </tbody>
+</table>
 							
                         </div>
 
                     </div>
 
                     <div class="tab-pane" id="reviews">
-						<p>리뷰 번호 : ${review.reviewId } 리뷰 제목 : ${review.reviewTitle } 리뷰 내용 : ${review.reviewContent } 리뷰 작성일 : ${review.createDate }</p>
+					
+					<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>	
+						
+						
                     </div>
 
                 </div>
