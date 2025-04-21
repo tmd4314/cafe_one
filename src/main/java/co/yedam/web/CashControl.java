@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import co.yedam.common.Control;
 import co.yedam.service.CartService;
 import co.yedam.service.CartServiceImpl;
+import co.yedam.service.MemberService;
+import co.yedam.service.MemberServiceImpl;
 import co.yedam.service.OrderDetailService;
 import co.yedam.service.OrderDetailServiceImpl;
 import co.yedam.service.OrderService;
@@ -18,6 +20,7 @@ import co.yedam.service.OrderServiceImpl;
 import co.yedam.service.ProductService;
 import co.yedam.service.ProductServiceImpl;
 import co.yedam.vo.CartVo;
+import co.yedam.vo.MemberVo;
 import co.yedam.vo.OrderDetailVo;
 import co.yedam.vo.OrderVo;
 
@@ -60,7 +63,7 @@ public class CashControl implements Control {
             order.setPaymentUid(impUid);
             order.setOdNo(odn); // merchantUid를 odNo로 사용
             order.setOdStatus(odStatus);
-            order.setPrice(price);
+            order.setOdPrice(price);
             order.setOdTotal(totalPrice);
             order.setUseMali(umile);
             order.setReName(ren);
@@ -96,6 +99,10 @@ public class CashControl implements Control {
 
             // 주문 상세 정보 가져오기 (odNo 사용)
             List<OrderDetailVo> orderDetails = odv.getOrderDetailsByOdNo(odn);
+            
+            // 주문 내역 페이지에 전달할 데이터 설정
+            req.setAttribute("orderDetails", orderDetails); // 주문 상세 정보
+            req.setAttribute("order", order); // 주문 정보 (필요한 경우)
 
             // 장바구니 제거 및 재고 감소
             for (OrderDetailVo detail : orderDetails) {
@@ -110,8 +117,32 @@ public class CashControl implements Control {
                 ProductService pvc = new ProductServiceImpl();
                 pvc.updateStock(pdCode, -quantity); // 재고 감소이므로 음수 값 전달
             }
+            
+            // 사용한만큼 마일리지 차감 
+            MemberService mvs = new MemberServiceImpl();
+            MemberVo member = mvs.getMember(logId);
+            
+            if(member != null) {
+            	int currentMailage = member.getMailage();
+            	int newMailage = currentMailage - umile;
+            	
+            	if(newMailage < 0) {
+            		newMailage = 0;
+            	}
+            	
+            	// 마일리지 적립: 10000원당 1000마일리지
+            	int earnedMailage = (totalPrice / 10000) * 1000; // 적립될 마일리지 계산
+            	newMailage += earnedMailage; //적립된 마일리지 추가
+            	
+            	System.out.println(newMailage);
+            	
+            	member.setMailage(newMailage);
+            	member.setUserId(logId);
+            	
+            	mvs.updateMemberMaile(member);
+            }
 
-            resp.sendRedirect("main.do");
+            resp.sendRedirect("orderForm.do");
 
         } catch (Exception e) {
             String errorMessage = "오류 발생: " + e.getMessage();

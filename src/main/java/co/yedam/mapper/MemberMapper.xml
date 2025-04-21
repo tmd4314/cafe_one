@@ -35,4 +35,10 @@
  		set password = #{password}
  		where user_id = #{userID}
  	</update>
+ 	
+ 	<update id="updateMemberMaile" parameterType="user">
+ 		update user_info
+ 		set    mailage = #{mailage}
+ 		where user_id = #{userId}
+ 	</update>
 </mapper>
