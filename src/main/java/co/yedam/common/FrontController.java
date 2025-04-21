@@ -17,10 +17,12 @@ import co.yedam.web.CartUpdateControl;
 import co.yedam.web.CashControl;
 import co.yedam.web.CashFormControl;
 import co.yedam.web.CategoryListControl;
+import co.yedam.web.DropUserControl;
 import co.yedam.web.LoginControl;
 import co.yedam.web.LoginFormControl;
 import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
+import co.yedam.web.MyPageControl;
 import co.yedam.web.ProductControl;
 import co.yedam.web.ProductFormControl;
 import co.yedam.web.ProductInfoControl;
@@ -74,7 +76,7 @@ public class FrontController extends HttpServlet {
  		map.put("/search.do", new SearchControl());
  		map.put("/productInfo.do", new ProductInfoControl());
  		
-		//로그인 관련r
+		//로그인 관련
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl());
 		map.put("/logout.do", new LogoutControl());
@@ -82,7 +84,10 @@ public class FrontController extends HttpServlet {
 		// 회원가입.
  		map.put("/signForm.do", new SignUpControl()); // 회원가입화면.
  		map.put("/signUp.do", new SignUpControl()); // 회원등록.
-		
+ 		map.put("/dropUser.do", new DropUserControl()); // 회원 탈퇴.
+ 		
+ 		// 마이페이지.
+		map.put("/myPage.do", new MyPageControl()); // 마이페이지
  		
 		//장바구니
 		map.put("/cartList.do", new CartListControl());

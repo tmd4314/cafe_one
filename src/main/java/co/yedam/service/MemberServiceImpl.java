@@ -32,5 +32,9 @@ public class MemberServiceImpl implements MemberService {
  		return false;
  	}
 	
+ 	@Override
+ 	public boolean removeMember(String userId) {
+ 		return mapper.deleteMember(userId) == 1;
+ 	}
 }
 

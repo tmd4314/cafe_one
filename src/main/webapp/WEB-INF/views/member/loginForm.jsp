@@ -1,185 +1,147 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>로그인</title>
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* Set a style for all buttons */
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
+body {
+	background-color: #fff;
+	color: #333;
 }
 
 .container {
-  padding: 16px;
+	width: 400px;
+	margin: 50px auto;
 }
 
-span.psw {
-  float: right;
-  padding-top: 16px;
+h2 {
+	font-size: 22px;
+	margin-bottom: 20px;
+	font-weight: 500;
 }
 
-/* The Modal (background) */
-.modal {
-  display: block; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
+.login-box {
+	border: 1px solid #e1e1e1;
+	padding: 30px;
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 60%; /* Could be more or less, depending on screen size */
+.login-title {
+	font-size: 16px;
+	margin-bottom: 20px;
+	font-weight: normal;
 }
 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
+.login-flex {
+	display: flex;
+	gap: 10px;
 }
 
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
+.login-btn {
+	width: 100px;
+	height: 90px;
+	background-color: #444;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 14px;
 }
 
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
+.input-group {
+	margin-bottom: 10px;
 }
 
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
+.input-field {
+	width: 100%;
+	height: 40px;
+	border: 1px solid #e1e1e1;
+	padding: 0 10px;
+	font-size: 14px;
+	border-radius: 0;
+	outline: none;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
+.checkbox-wrap {
+	flex: 1;
+}
+
+.button-group {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.btn {
+	padding: 10px 0;
+	text-align: center;
+	flex: 1;
+	cursor: pointer;
+	font-size: 14px;
+	border: none;
+}
+
+.btn-dark {
+	background-color: #666;
+	color: white;
+}
+
+.btn-light {
+	background-color: white;
+	border: 1px solid #ccc;
+	color: #333;
+}
+
+.btn+.btn {
+	margin-left: 10px;
 }
 </style>
 </head>
 <body>
+	<div class="container">
+		<h2>로그인</h2>
+		<div class="login-box">
+			<h3 class="login-title">회원 로그인</h3>
+			<form action="login.do" method="post">
+				<div class="login-flex">
+					<div class="input-wrap">
+						<div class="input-group">
+							<input type="text" name="uname" class="input-field"
+								placeholder="아이디">
+						</div>
+						<div class="input-group">
+							<input type="password" name="psw" class="input-field"
+								placeholder="비밀번호">
+						</div>
+					</div>
+					<button type="submit" class="login-btn">로그인</button>
+				</div>
 
-<h2>Modal Login Form</h2>
+				<div class="checkbox-wrap">
+					<input type="checkbox" id="saveId" name="saveId"> <label
+						for="saveId">아이디 저장</label>
+				</div>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+				<div class="button-group">
+					<button type="button" class="btn btn-dark"
+						onclick="location.href='signForm.do'">회원가입</button>
+					<button type="button" class="btn btn-light"
+						onclick="location.href='findId.do'">아이디 찾기</button>
+					<button type="button" class="btn btn-light"
+						onclick="location.href='findPw.do'">비밀번호 찾기</button>
+				</div>
+			</form>
 
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="login.do" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <!-- msg 출력. -->
-
-      <c:if test="${msg != null }">
-      <p style="color: red"><c:out value="${msg }"/></p>
-      </c:if>
-
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
+		</div>
+	</div>
 </body>
 </html>
