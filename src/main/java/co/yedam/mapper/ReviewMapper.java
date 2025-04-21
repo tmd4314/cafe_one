@@ -4,6 +4,6 @@ import co.yedam.vo.ReviewVO;
 
 public interface ReviewMapper {
 
-	ReviewVO selectReview(String reveiwId);
+	ReviewVO reviewList(String pdCode);
 	
 }

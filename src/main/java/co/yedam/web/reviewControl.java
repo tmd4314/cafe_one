@@ -21,12 +21,14 @@ public class reviewControl implements Control {
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		String review = req.getParameter("reviewId");
+		String pdCode = req.getParameter("pdCode");
 		
 		SqlSession sqlSession = DataSource.getInstance().openSession(true);
 		ReviewMapper mapper = sqlSession.getMapper(ReviewMapper.class);
-		ReviewVO reviewVO = mapper.selectReview(review);
-		req.setAttribute("review", reviewVO);
+		ReviewVO review = mapper.reviewList(pdCode);
+		req.setAttribute("review", review);
+		
+		req.getRequestDispatcher("product/productForm.tiles").forward(req, resp);
 	}
 
 }
