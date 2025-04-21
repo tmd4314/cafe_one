@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.web.AdminControl;
+import co.yedam.web.AdminLoginControl;
+import co.yedam.web.AdminLogoutControl;
 import co.yedam.web.CancelOrderFormControl;
 import co.yedam.web.CartDeleteControl;
 import co.yedam.web.CartListControl;
@@ -68,6 +70,8 @@ public class FrontController extends HttpServlet {
 
 		// 관리자부분.
 		map.put("/adminBody.do", new AdminControl());
+		map.put("/adminLogin.do", new AdminLoginControl());
+		map.put("/adminLogout.do", new AdminLogoutControl());
 		// 카테고리 부분.
 		map.put("/categoryList.do", new CategoryListControl());
 		map.put("/category.do", new CategoryListControl());
