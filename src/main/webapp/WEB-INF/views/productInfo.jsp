@@ -27,8 +27,5 @@
     <button type="submit" class="btn btn-outline-danger">찜하기</button>
   </form>
 
-
-  request.setAttribute("product", productVO);
-  
  
  <a href="search.do" class="btn btn-secondary mt-3">← 목록으로 돌아가기</a>

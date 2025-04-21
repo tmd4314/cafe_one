@@ -11,28 +11,26 @@ import co.yedam.vo.WishlistVO;
 
 public class WishlistAddControl implements Control {
 
-    @Override
-    public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String userId = (String) req.getSession().getAttribute("logId");
-        String pdCode = req.getParameter("pdCode");
+	@Override
+	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	    String userId = (String) req.getSession().getAttribute("logId");
+	    String pdCode = req.getParameter("pdCode");
 
-        if (userId == null || pdCode == null) {
-            resp.sendRedirect("loginForm.do");
-            return;
-        }
+	    if (userId == null || pdCode == null) {
+	        resp.sendRedirect("loginForm.do");
+	        return;
+	    }
 
-        WishlistService svc = new WishlistServiceImpl();
-        WishlistVO vo = new WishlistVO();
-        vo.setUserId(userId);
-        vo.setPdCode(pdCode);
+	    WishlistService svc = new WishlistServiceImpl();
+	    WishlistVO vo = new WishlistVO();
+	    vo.setUserId(userId);
+	    vo.setPdCode(pdCode);
 
-        System.out.println("찜 추가 요청 - userId: " + userId + ", pdCode: " + pdCode);
-        System.out.println("VO 세팅 - " + vo.getUserId() + " / " + vo.getPdCode());
+	    System.out.println("VO 세팅 - " + vo.getUserId() + " / " + vo.getPdCode());
+	    System.out.println("찜 요청: userId=" + userId + ", pdCode=" + pdCode);
 
-        if (!svc.isInWishlist(vo)) {
-            svc.addToWishlist(vo);
-        }
+	    svc.addToWishlist(vo);
 
-        resp.sendRedirect("productInfo.do?pdCode=" + pdCode);
-    }
+	    resp.sendRedirect("productInfo.do?pdCode=" + pdCode);
+	}
 }

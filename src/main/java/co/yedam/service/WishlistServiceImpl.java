@@ -1,9 +1,7 @@
 package co.yedam.service;
 
 import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
-
 import co.yedam.common.DataSource;
 import co.yedam.mapper.WishlistMapper;
 import co.yedam.vo.WishlistVO;
@@ -13,7 +11,7 @@ public class WishlistServiceImpl implements WishlistService {
     WishlistMapper mapper = session.getMapper(WishlistMapper.class);
 
     public boolean addToWishlist(WishlistVO vo) {
-        return mapper.insert(vo) == 1;
+    	return mapper.insertOrUpdateCnt(vo) >= 1;
     }
 
     public boolean removeFromWishlist(WishlistVO vo) {
@@ -29,14 +27,9 @@ public class WishlistServiceImpl implements WishlistService {
     }
 
     public boolean addToWishlist(String userId, String pdCode) {
-        System.out.println("userId: " + userId); // 디버깅 로그
-        System.out.println("pdCode: " + pdCode); // null 여부 확인
-
         WishlistVO vo = new WishlistVO();
         vo.setUserId(userId);
         vo.setPdCode(pdCode);
-
         return addToWishlist(vo);
     }
-
 }
