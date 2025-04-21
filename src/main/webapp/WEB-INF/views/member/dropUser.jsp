@@ -6,7 +6,8 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="keywords" content="SignUp, Login, Register, Sign up, Sign in">
+<meta name="keywords"
+	content="SignUp, Login, Register, Sign up, Sign in">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login</title>
@@ -37,7 +38,7 @@
 				<div class="col col-sm-12 col-md-12 col-lg-6 m-0 p-0 accounts_col">
 					<div class="accounts_forms signup_form w-100 h-100" id="signup">
 						<div class="title mt-4 p-4 w-100">
-							<h1>회원가입</h1>
+							<h1>비밀번호 변경</h1>
 						</div>
 						<!--title-->
 
@@ -46,29 +47,29 @@
 							<div class="row">
 								<div>
 									<div class="form-group">
-										<label for="signup_password">비밀번호 ${mes}</label> <i
-											class="fa fa-eye-slash" id="eye_icon_signup"></i> <input
-											type="password" name="password" class="form-control"
-											id="signup_password" onfocus="labelUp(this)"
-											onblur="labelDown(this)" required />
+										<label for="password">현재 비밀번호</label> <input type="password"
+											name="password" class="form-control" id="password"
+											onfocus="labelUp(this)" onblur="labelDown(this)" required />
 									</div>
 									<div class="form-group">
-										<label for="cpass">비밀번호 확인</label> <input type="password"
-											name="cpass" class="form-control" id="password"
+										<label for="newpw">새 비밀번호 ${mes}</label> <i
+											class="fa fa-eye-slash" id="eye_icon_signup"></i> <input
+											type="password" name="newpw" class="form-control" id="newpw"
+											onfocus="labelUp(this)" onblur="labelDown(this)" required />
+									</div>
+									<div class="form-group">
+										<label for="newcpw">비밀번호 확인</label> <input type="password"
+											name="newcpw" class="form-control" id="newcpw"
 											onfocus="labelUp(this)" onblur="labelDown(this)" required />
 									</div>
 								</div>
 							</div>
-					</div>
-					
-					<div class="form-group">
-						<button type="submit" class="btn btn-primary register_btn w-100">회원정보
-							수정</button>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary register_btn w-100">비밀번호
+									수정</button>
+							</div>
 					</div>
 					</form>
-					<div class="already_member_box">
-						<p class="text-center" id="to_login">환영합니다</p>
-					</div>
 				</div>
 			</div>
 		</div>
