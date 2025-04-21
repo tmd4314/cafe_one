@@ -23,7 +23,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
+        h2 {
             text-align: center;
             color: #333;
         }
@@ -101,7 +101,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>주문 상세 정보</h1>
+        <h2>🧾주문 상세 정보</h1>
 
         <div class="order-info">
             <p><b>주문번호:</b> ${order.odNo}</p>
@@ -117,7 +117,7 @@
                         <h3>${orderDetail.pdName}</h3>
                         <p>수량: ${orderDetail.quantity}</p>
                         <p>${orderDetail.pdPrice} 원</p>
-                        <button class="btn btn-sm btn-danger" onclick="goToCancelForm('${order.odNo}')">주문취소</button>
+                        
                         <button class="btn btn-sm btn-primary">리뷰쓰기</button>
                     </div>
                 </div>
@@ -137,6 +137,13 @@
 			<p><b>사용 마일리지:</b> <fmt:formatNumber value="${order.useMali}" pattern="#,###" />포인트</p>
 			<p><b>총 결제 금액:</b> <fmt:formatNumber value="${order.odTotal}" pattern="#,###" />원</p>
         </div>
+       
+         <div class="cancel-button-container">
+             <c:if test="${order.odStatus != '주문취소'}">
+                 <button class="btn btn-sm btn-danger" onclick="goToCancelForm('${order.odNo}')">주문취소</button>
+             </c:if>
+         </div>
+         
     </div>
     
     <script>

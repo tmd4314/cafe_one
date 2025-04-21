@@ -26,4 +26,14 @@ public class OrderServiceImpl implements OrderService {
 		// TODO Auto-generated method stub
 		return mapper.getOrder(odNo, userid);
 	}
+	@Override
+	public String getImpUidByOrderNo(String orderNo) {
+		// TODO Auto-generated method stub
+		return mapper.getImpUidByOrderNo(orderNo);
+	}
+	@Override
+	public boolean updateOrderStatusToCancelled(String orderNo) {
+		// TODO Auto-generated method stub
+		return mapper.updateOrderStatusToCancelled(orderNo);
+	}
 }
