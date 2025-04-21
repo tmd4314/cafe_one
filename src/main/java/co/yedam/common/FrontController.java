@@ -18,6 +18,7 @@ import co.yedam.web.CartUpdateControl;
 import co.yedam.web.CashControl;
 import co.yedam.web.CashFormControl;
 import co.yedam.web.CategoryListControl;
+import co.yedam.web.ChangePwControl;
 import co.yedam.web.DropUserControl;
 import co.yedam.web.LoginControl;
 import co.yedam.web.LoginFormControl;
@@ -91,6 +92,7 @@ public class FrontController extends HttpServlet {
  		
  		// 마이페이지.
 		map.put("/myPage.do", new MyPageControl()); // 마이페이지
+		map.put("/changePw.do", new ChangePwControl()); // 비밀번호변경
  		
 		//장바구니
 		map.put("/cartList.do", new CartListControl());
