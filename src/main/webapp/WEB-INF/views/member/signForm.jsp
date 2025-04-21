@@ -38,7 +38,7 @@
                <h1>회원가입</h1>
              </div>
              <!--title-->
-             <form method="post" name="form" class="form w-100 p-4" action="signUp.do" id="form">
+             <form method="post" name="form" class="form w-100 p-4" action="signForm.do" id="form">
                <div class="row">
                  <div class="col col-sm-12 col-md-12 col-lg-6 m-0">
                    <div class="form-group">

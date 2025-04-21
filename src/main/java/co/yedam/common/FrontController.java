@@ -15,7 +15,6 @@ import co.yedam.web.CartDeleteControl;
 import co.yedam.web.CartListControl;
 import co.yedam.web.CartUpdateControl;
 import co.yedam.web.CashFormControl;
-
 import co.yedam.web.CategoryListControl;
 import co.yedam.web.LoginControl;
 import co.yedam.web.LoginFormControl;
@@ -23,6 +22,7 @@ import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
 import co.yedam.web.ProductControl;
 import co.yedam.web.ProductFormControl;
+import co.yedam.web.ProductInfoControl;
 import co.yedam.web.ProductListControl;
 import co.yedam.web.SearchControl;
 import co.yedam.web.SignUpControl;
