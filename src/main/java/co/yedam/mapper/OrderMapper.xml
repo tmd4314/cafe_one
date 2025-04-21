@@ -72,5 +72,19 @@
         WHERE od_no = #{odNo} 
           AND user_id = #{userid}
     </select>
+    
+    <!-- imp_uid 조회 -->
+    <select id="getImpUidByOrderNo" parameterType="string" resultType="string">
+        SELECT payment_uid
+        FROM   order_info
+        WHERE od_no = #{odNo}
+    </select>
+
+    <!-- 주문 상태 업데이트 (주문 취소) -->
+    <update id="updateOrderStatusToCancelled" parameterType="string">
+        UPDATE order_info
+        SET od_status = '주문취소'
+        WHERE od_no = #{odNo}
+    </update>
 
 </mapper>

@@ -12,4 +12,10 @@ public interface OrderService {
 
 	OrderVo getOrder(String odNo, String userid);
 
+	String getImpUidByOrderNo(String orderNo); // 주문정보 가져오기
+	
+	boolean updateOrderStatusToCancelled(String orderNo);
+
+	
+
 }

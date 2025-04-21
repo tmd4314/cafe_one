@@ -19,6 +19,23 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/ProductList.css">
+        <style>
+		    .cart-header {
+		        background-color: #808080 ; /* 진한 회색 배경 */
+		        padding: 10px;
+		        border-bottom: 1px solid #dee2e6; /* 구분선 */
+		        color: white; /* 글자 색상 */
+		        font-weight: bold; /* 글자 굵게 */
+		    }
+		
+		    .cart-header .form-check-label {
+		        margin-left: 0.5rem; /* 체크박스 옆 여백 */
+		    }
+		
+		    .cart-header div {
+		        text-align: center; /* 텍스트 가운데 정렬 */
+		    }
+		</style>
     </head>
     <body>
         <tiles:insertAttribute name="menu" />
