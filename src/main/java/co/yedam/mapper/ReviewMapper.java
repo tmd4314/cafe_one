@@ -1,9 +1,11 @@
 package co.yedam.mapper;
 
+import java.util.List;
+
 import co.yedam.vo.ReviewVO;
 
 public interface ReviewMapper {
 
-	ReviewVO reviewList(String pdCode);
+	List<ReviewVO> reviewList(String pdCode);
 	
 }
