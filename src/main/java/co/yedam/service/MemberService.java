@@ -9,5 +9,6 @@ public interface MemberService {
 	boolean addMember(MemberVo member); //회원등록.
 	MemberVo getMember(String id); //회원아이디로 조회.
 	boolean changePasswd(MemberVo member); //비번변경.
+	public boolean removeMember(String userId); //회원탈퇴.
 	boolean updateMemberMaile(MemberVo member); // 주문시 마일리지 정보 업데이트
 }

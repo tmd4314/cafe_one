@@ -38,5 +38,9 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.updateMemberMaile(member) == 1;
 	}
 	
+ 	@Override
+ 	public boolean removeMember(String userId) {
+ 		return mapper.deleteMember(userId) == 1;
+ 	}
 }
 

@@ -296,7 +296,7 @@
 			  <!-- 로그인 상태 -->
 			  <c:if test="${not empty sessionScope.loginUser}">
 			    <!-- 마이페이지 -->
-			    <a href="#" title="마이페이지">
+			    <a href="myPage.do" title="마이페이지">
 			      <svg width="26" height="26" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 			        <path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3z"/>
 			      </svg>
