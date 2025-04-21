@@ -1,6 +1,8 @@
 package co.yedam.web;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -23,14 +25,36 @@ public class ProductListControl implements Control {
 		SqlSession sqlSession = DataSource.getInstance().openSession(true);
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
 		List<ProductVO> list = mapper.selectAllProduct();
+		List<ProductVO> listCO = new ArrayList<>();
+		List<ProductVO> listSF = new ArrayList<>();
+		List<ProductVO> listPD = new ArrayList<>();
+		List<ProductVO> listUZ = new ArrayList<>();
 		
+		// test code
 		for(ProductVO pd : list) {
-			System.out.println(pd.getPdName().toString());
-		}
-		//req.setAttribute("pList", list);
-		
-		
-		
+			if(pd.getCategoryCode().toString().equals("CO1") 
+					|| pd.getCategoryCode().toString().equals("CO2")
+					|| pd.getCategoryCode().toString().equals("CO3")) {
+				listCO.add(pd);
+			} else if (pd.getCategoryCode().toString().equals("SF1") 
+					|| pd.getCategoryCode().toString().equals("SF2")
+					|| pd.getCategoryCode().toString().equals("SF3")
+					|| pd.getCategoryCode().toString().equals("SF4")) {
+				listSF.add(pd);
+			} else if (pd.getCategoryCode().toString().equals("PD1") 
+					|| pd.getCategoryCode().toString().equals("PD2")
+					|| pd.getCategoryCode().toString().equals("PD3")) {
+				listPD.add(pd);
+			} else if (pd.getCategoryCode().toString().equals("UZ1") 
+					|| pd.getCategoryCode().toString().equals("UZ2")
+					|| pd.getCategoryCode().toString().equals("UZ3")) {
+				listUZ.add(pd);
+			}
+		} // end of loop
+		req.setAttribute("listCO", listCO);
+		req.setAttribute("listSF", listSF);
+		req.setAttribute("listPD", listPD);
+		req.setAttribute("listUZ", listUZ);
 		
 		req.getRequestDispatcher("product/productList.tiles").forward(req, resp);
 	} // end of exec()
