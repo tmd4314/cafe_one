@@ -22,10 +22,13 @@
    <div class="alert alert-success mt-2">${success}</div>
  </c:if>
   <!-- 찜하기 버튼 -->
-  <form action="wishlistAdd.do" method="post" class="mt-3">
-   <input type="hidden" name="userId" value="${sessionScope.logId}" />
-   <input type="hidden" name="pdCode" value="${product.pdCode}" />
-   <button type="submit" class="btn btn-outline-danger">찜하기</button>
- </form>
+  <form action="wishlistAdd.do" method="post">
+    <input type="hidden" name="pdCode" value="${product.pdCode}" />
+    <button type="submit" class="btn btn-outline-danger">찜하기</button>
+  </form>
+
+
+  request.setAttribute("product", productVO);
+  
  
  <a href="search.do" class="btn btn-secondary mt-3">← 목록으로 돌아가기</a>

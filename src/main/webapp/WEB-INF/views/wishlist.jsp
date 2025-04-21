@@ -19,7 +19,7 @@
 
 <div class="container my-5">
   <div class="d-flex justify-content-between align-items-center mb-4">
-    <h3>찜한 상품 목록</h3>
+    <h3> 찜한 상품 목록</h3>
     <a href="main.do" class="btn btn-outline-secondary btn-sm">← 메인으로</a>
   </div>
 
@@ -33,19 +33,21 @@
           <div class="col">
             <div class="card h-100">
               <img src="images/${item.pdImg}" class="card-img-top" alt="상품 이미지"
-     			onerror="this.src='images/no-image.png'">
+                   onerror="this.src='images/no-image.png'">
               <div class="card-body">
                 <h5 class="card-title">${item.pdName}</h5>
                 <p class="card-text">
                   제조사: ${item.manufacturer}<br/>
-                  가격: <fmt:formatNumber value="${item.pdPrice}" pattern="#,###"/>원
+                  가격: <fmt:formatNumber value="${item.pdPrice}" pattern="#,###"/> 원
                 </p>
               </div>
               <div class="card-footer d-flex justify-content-between">
+                <!-- 상세보기 -->
                 <form action="productInfo.do" method="get">
                   <input type="hidden" name="pdCode" value="${item.pdCode}" />
                   <button class="btn btn-sm btn-outline-primary" type="submit">상세보기</button>
                 </form>
+                <!-- 찜 삭제 -->
                 <form action="wishlistRemove.do" method="post"
                       onsubmit="return confirm('정말 삭제하시겠습니까?')">
                   <input type="hidden" name="userId" value="${sessionScope.logId}" />
@@ -63,4 +65,3 @@
 
 </body>
 </html>
-<c:out value="${wishlist}" />

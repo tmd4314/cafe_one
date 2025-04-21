@@ -14,7 +14,7 @@ import co.yedam.vo.ProductVO;
 public class ProductInfoControl implements Control {
     @Override
     public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String code = req.getParameter("code");
+    	String code = req.getParameter("pdCode");
         ProductService service = new ProductServiceImpl();
         ProductVO product = service.getProduct(code);
 

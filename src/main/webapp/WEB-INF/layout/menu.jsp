@@ -323,15 +323,18 @@
 			  </c:if>
 			
 			  <!-- 찜목록 -->
-			  <a href="#" title="찜목록">
-			    <svg width="26" height="26"><use xlink:href="#wishlist"></use></svg>
-			  </a>
-			
+				<c:if test="${not empty sessionScope.loginUser}">
+				  <a href="wishlist.do" title="찜 목록">
+				    <svg width="26" height="26"><use xlink:href="#wishlist"></use></svg>
+				  </a>
+				</c:if>
+
 			  <!-- 장바구니 -->
+			  <c:if test="${not empty sessionScope.loginUser}">
 			   <a href="cartList.do" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" onclick="loadCart()">
                   <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
                 </a>
-			
+			  </c:if>
 			</div>
 
 	
