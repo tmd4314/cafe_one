@@ -191,6 +191,7 @@
 	
 	  .offcanvas .btn-toggle-nav {
 	    margin-bottom: 1rem;
+	  
 	  }
 	</style>
 	  <div class="container-fluid">
@@ -209,7 +210,7 @@
 	      <!-- 중간: 대분류/소분류/검색창 -->
 	      <div class="col d-flex align-items-center gap-2">
 	        <!-- 대분류 -->
-	        <select id="mainCategory" class="form-select form-select-sm w-auto" style="min-width: 120px;">
+	        <select id="mainCategory" class="form-select form-select-sm w-auto" style="width: 250px; font-size: 1rem; height: 30px;">
 	          <option value="">대분류 선택</option>
 	          <c:forEach var="main" items="${mainCategoryList}">
 				 <option value="${main}">${main}</option>
@@ -218,7 +219,7 @@
 			
 	
 	        <!-- 소분류 -->
-	        <select id="subCategory" class="form-select form-select-sm w-auto" style="min-width: 120px;">
+	        <select id="subCategory" class="form-select form-select-sm w-auto" style="width: 250px; font-size: 1rem; height: 30px;">
 	          <option value="">소분류 선택</option>
 	          <c:forEach var="cat" items="${categoryList}">
 			    <option value="${cat.subcategoryName}" data-main="${cat.categoryName}">
@@ -323,15 +324,18 @@
 			  </c:if>
 			
 			  <!-- 찜목록 -->
-			  <a href="#" title="찜목록">
-			    <svg width="26" height="26"><use xlink:href="#wishlist"></use></svg>
-			  </a>
-			
+				<c:if test="${not empty sessionScope.loginUser}">
+				  <a href="wishlist.do" title="찜 목록">
+				    <svg width="26" height="26"><use xlink:href="#wishlist"></use></svg>
+				  </a>
+				</c:if>
+
 			  <!-- 장바구니 -->
+			  <c:if test="${not empty sessionScope.loginUser}">
 			   <a href="cartList.do" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" onclick="loadCart()">
                   <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
                 </a>
-			
+			  </c:if>
 			</div>
 
 	

@@ -1,5 +1,7 @@
 package co.yedam.service;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.common.DataSource;
@@ -13,5 +15,15 @@ public class OrderServiceImpl implements OrderService {
 	public boolean insertOrder(OrderVo order) {
 		// TODO Auto-generated method stub
 		return mapper.insertOrder(order) == 1;
+	}
+	@Override
+	public List<OrderVo> getOrderListByUserId(String userId) {
+		// TODO Auto-generated method stub
+		return mapper.getOrderListByUserId(userId);
+	}
+	@Override
+	public OrderVo getOrder(String odNo, String userid) {
+		// TODO Auto-generated method stub
+		return mapper.getOrder(odNo, userid);
 	}
 }
