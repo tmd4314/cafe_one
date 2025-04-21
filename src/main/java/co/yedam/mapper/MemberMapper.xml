@@ -32,11 +32,11 @@
 		#{email}, 0)
 	</insert>
 
-	<!-- 회원정보 변경 -->
+	<!-- 비밀번호 변경 -->
 	<update id="updatePasswd" parameterType="user">
 		update user_info
 		set password = #{password}
-		where user_id = #{userID}
+		where user_id = #{userId}
 	</update>
 
 	<!-- 회원 탈퇴 -->

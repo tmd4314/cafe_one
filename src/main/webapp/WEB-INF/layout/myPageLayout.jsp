@@ -43,37 +43,30 @@
     </div>
 
      <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart">
-     <div class="offcanvas-header justify-content-between align-items-center">
-         <h5 class="offcanvas-title" id="offcanvasCartLabel">🛒<c:out value="${userName}"/>님의 장바구니</h5>
-         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <!-- 장바구니 상품 목록 상단 -->
-        <div class="cart-header d-flex justify-content-between align-items-center mb-2">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="selectAll">
-            </div>
-            <div>
-                상품명/금액
-            </div>
-            <div>
-                수정
-            </div>
-        </div>
-
-        <!-- 장바구니 상품 목록 -->
-        <ul class="list-group mb-3" id="cartItems">
-            <!-- 아이템 목록이 여기에 추가됩니다 -->
-        </ul>
-
-        <div class="row mb-3">
-            <div class="col">
-                <button class="w-100 btn btn-outline-primary btn-sm" type="button" id="orderSelected">선택 상품 주문</button>
-            </div>
-            <div class="col">
-                <button class="w-100 btn btn-danger btn-sm" type="button" id="deleteSelected">선택 상품 삭제</button>
-            </div>
-        </div>
+	    <div class="offcanvas-header justify-content-center">
+	        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	    </div>
+	    <div class="offcanvas-body">
+	        <div class="order-md-last">
+	            <h4 class="d-flex justify-content-between align-items-center mb-3">
+	                <span class="text-primary">🛒<c:out value="${userName}"/>님의 장바구니</span>
+	                <span class="badge bg-primary rounded-pill"></span>
+	            </h4>
+	            <ul class="list-group mb-3" id="cartItems">
+	                <!-- 아이템 목록이 여기에 추가됩니다 -->
+	            </ul>
+	            <div class="row mb-3">
+				    <div class="col">
+				        <button class="w-100 btn btn-outline-primary btn-sm" type="button" id="orderSelected">선택상품주문</button>
+				    </div>
+				    <div class="col">
+				        <button class="w-100 btn btn-secondary btn-sm" type="button" id="orderAll">전체상품주문</button>
+				    </div>
+				    <div class="col">
+				        <button class="w-100 btn btn-danger btn-sm" type="button" id="deleteSelected">선택상품삭제</button>
+				    </div>
+				</div>
+	        </div>
 	    </div>
 	</div>
 

@@ -161,7 +161,7 @@ h1 {
 }
 </style>
 </head>
-<body>
+<header>
 	<div class="container">
 		<h1>마이 쇼핑</h1>
 
@@ -192,7 +192,7 @@ h1 {
 				<div class="menu-divider"></div>
 				<h4><b>나의 쇼핑 정보</b></h4>
 				<ul>
-					<li><a href="">주문내역 조회</a></li>
+					<li><a href="orderForm.do">주문내역 조회</a></li>
 					<li><a href="">취소/반품 내역</a></li>
 					<li><a href="cartList.do">장바구니</a></li>
 					<li><a href="wishlist.do">찜리스트</a></li>
@@ -206,14 +206,14 @@ h1 {
 				<h4><b>정보 변경</b></h4>
 				<ul>
 					<li><a href="">회원 정보 수정</a></li>
-					<li><a href="">비밀번호 변경</a></li>
-					<li><a href="dropUser.do">회원 탈퇴</a></li>
+					<li><a href="changePw.do">비밀번호 변경</a></li>
+					<li><a href="">회원 탈퇴</a></li>
 				</ul>
 			</div>
 		</form>
 
 		<div class="main-content">
-			<h4>나의 주문처리 현황 (최근 3개월 기준)</h4>
+			<h4>주문내역 조회</h4>
 			<div class="status-box">
 				<div>
 					<strong>0</strong><br>입금전
@@ -251,5 +251,5 @@ h1 {
 			</div>
 		</div>
 	</div>
-</body>
+</header>
 </html>
