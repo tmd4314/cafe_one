@@ -5,41 +5,36 @@
 
 /* 메인 상품 영역 */
 .main_goods {
-  max-width: 1200px;
+  width: 80%;
   margin: 0 auto;
-  padding: 20px 0;
-  position: relative;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.2 );
-  border-radius: 5%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3%;
 }
 
 /* Swiper */
 .swiper {
   width: 100%;
+  position: relative;
 }
 
 .swiper-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  padding: 20px 0;
-  box-sizing: border-box;
 }
 
 .swiper-slide {
-  width: auto !important;
   flex-shrink: 0;
-  display: flex;
-  justify-content: center;
+  width: 20%; /* 5개씩 보이게 */
+  box-sizing: border-box;
+  padding: 0 1px; /* 슬라이드 간 여백 주고 싶으면 */
 }
 
 .product-item {
-  width: 220px;
+  height: 320px;
   text-align: center;
   border: 1px solid #ddd;
   padding: 10px;
-  border-radius: 10px;
   background: #fff;
   position: relative;
   box-sizing: border-box;
@@ -59,8 +54,9 @@
 
 .product-item img {
   width: 100%;
-  height: auto;
+  height: 200px;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .product-title {
@@ -90,6 +86,8 @@
   top: 50%;
   transform: translateY(-50%);	
   z-index: 10;
+  border: none;
+  background-color: none;
 }
 
 .swiper-button-prev {
@@ -104,8 +102,29 @@
 .swiper-button-prev::after {
   font-size: 20px;
   font-weight: bold;
+  background-color: none;
 }
-
+.main_h1 {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.new-goods {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3%;
+}
+.discounted-goods {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3%;
+}
 /* 반응형 */
 @media (max-width: 1200px) {
   .swiper-slide {
