@@ -1,6 +1,6 @@
 package co.yedam.vo;
- 
- import lombok.Data;
+
+import lombok.Data;
  
  @Data
  public class WishlistVO {

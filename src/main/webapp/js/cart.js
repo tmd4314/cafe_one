@@ -71,9 +71,48 @@ function orderSelectedItems() {
         .map(checkbox => checkbox.value);
 
     if (selectedItems.length > 0) {
-        // 선택된 상품 주문 처리 (예: 서버에 요청)
-        //console.log('선택된 상품 IDs:', selectedItems);
-        // 여기서 주문 요청을 서버에 보낼 수 있습니다.
+		
+		const data = {
+			logId: logId,
+			cartNoList: selectedItems
+		};
+		
+		const formData = new URLSearchParams(); //cartNoList 정의
+		for (const key in data){
+			if(Array.isArray(data[key])){
+				data[key].forEach(item => {
+					formData.append(key, item)
+				});
+			} else{
+				formData.append(key, data[key]);
+			}
+		}
+		
+		fetch('cashForm.do', {
+			method: 'POST',
+			headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+			body: formData.toString()
+		})
+		.then(response => {
+			if (response.redirected) { // 리다이렉션 여부 확인
+                alert("로그인이 필요합니다.");
+                location.href = 'loginForm.do'; // 로그인 페이지로 리다이렉트
+                return; // 함수 종료
+            }
+             return response.text(); // 응답 텍스트를 반환
+		})
+		.then(data => {
+            // 응답 텍스트를 처리 (필요한 경우)
+			const paymentUrl = 'cashForm.do?' + formData.toString(); // 서버에서 생성된 URL로 변경
+
+            // 결제 페이지로 이동
+            location.href = paymentUrl;
+        })
+		.catch(error => {
+			console.error('에러 발생:', error);
+		})
     } else {
         alert('선택된 상품이 없습니다.');
     }
