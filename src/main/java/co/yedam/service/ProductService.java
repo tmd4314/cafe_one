@@ -8,6 +8,5 @@ import co.yedam.vo.ProductVO;
 public interface ProductService {
 	 List<ProductVO> searchAdvanced(String keyword, String main, String sub, String minPrice, String maxPrice);
      ProductVO getProduct(String code);
-     List<Map<String, Object>> hintMessage(String pno);
-	 List<Map<String, Object>> cheeringMessage();
+	 boolean updateStock(String pdCode, int quantity);
 }
