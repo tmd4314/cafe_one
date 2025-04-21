@@ -1,6 +1,7 @@
 package co.yedam.web;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +31,15 @@ public class ProductListControl implements Control {
 		List<ProductVO> listPD = new ArrayList<>();
 		List<ProductVO> listUZ = new ArrayList<>();
 		
-		// test code
+		List<ProductVO> bestCOpd = new ArrayList<>();
+		List<ProductVO> bestSFpd = new ArrayList<>();
+		List<ProductVO> bestPDpd = new ArrayList<>();
+		List<ProductVO> bestUZpd = new ArrayList<>();
+		// LocalDate now = LocalDate.now();
+		// System.out.println(now);
+		
+		
+		
 		for(ProductVO pd : list) {
 			if(pd.getCategoryCode().toString().equals("CO1") 
 					|| pd.getCategoryCode().toString().equals("CO2")
@@ -51,10 +60,10 @@ public class ProductListControl implements Control {
 				listUZ.add(pd);
 			}
 		} // end of loop
-		req.setAttribute("listCO", listCO);
-		req.setAttribute("listSF", listSF);
-		req.setAttribute("listPD", listPD);
-		req.setAttribute("listUZ", listUZ);
+		req.setAttribute("listCO", listCO); // CO 카테고리 제품들
+		req.setAttribute("listSF", listSF); // SF 카테고리 제품들
+		req.setAttribute("listPD", listPD); // PD 카테고리 제품들
+		req.setAttribute("listUZ", listUZ); // UZ 카테고리 제품들
 		
 		req.getRequestDispatcher("product/productList.tiles").forward(req, resp);
 	} // end of exec()
