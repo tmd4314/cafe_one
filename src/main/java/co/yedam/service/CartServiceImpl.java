@@ -43,5 +43,10 @@ public class CartServiceImpl implements CartService {
 		// TODO Auto-generated method stub
 		return mapper.getCartItemByCartNo(cartNo);
 	}
+	@Override
+	public boolean addCart(CartVo cvo) {
+		// TODO Auto-generated method stub
+		return mapper.insertCart(cvo) == 1;
+	}
 }
 

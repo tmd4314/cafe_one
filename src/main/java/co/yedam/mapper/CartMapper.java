@@ -12,5 +12,6 @@ public interface CartMapper {
 	int modifyCart(CartVo cvo);
 	List<CartVo> selectCashList(@Param("id") String id, @Param("cartNoList") List<Integer> cartNoList);
 	boolean deleteCartItem(@Param("userId") String userId, @Param("pdCode") String pdCode, @Param("quantity") int quantity);
-	CartVo getCartItemByCartNo(int cartNo); 
+	CartVo getCartItemByCartNo(int cartNo);
+	int insertCart(CartVo cvo); 
 }

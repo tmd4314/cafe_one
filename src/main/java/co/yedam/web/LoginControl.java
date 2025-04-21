@@ -26,7 +26,7 @@ public class LoginControl implements Control {
 //		System.out.println(id);
 //		System.out.println(pw);
 //		System.out.println(mvo);
-		
+		System.out.println(mvo);
 		if(mvo == null) {
 			req.setAttribute("msg", "아이디와 비밀번호를 확인하세요.");
 			req.getRequestDispatcher("member/loginForm.tiles").forward(req, resp);
@@ -37,7 +37,10 @@ public class LoginControl implements Control {
 			session.setAttribute("pwd", pw); //세션객체의 attr에 저장.
 			session.setAttribute("userName", mvo.getUserName());
 			session.setAttribute("phone", mvo.getPhone());
-			session.setAttribute("addre", mvo.getAddress());
+			session.setAttribute("post1", mvo.getPost());
+			session.setAttribute("addre1", mvo.getAddress1());
+			session.setAttribute("addre2", mvo.getAddress2());
+			session.setAttribute("addre3", mvo.getAddress3());
 			session.setAttribute("email", mvo.getEmail());
 			session.setAttribute("mile", mvo.getMailage());
 			session.setAttribute("loginUser", mvo);

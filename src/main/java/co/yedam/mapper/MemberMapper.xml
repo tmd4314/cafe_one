@@ -8,7 +8,10 @@
 		password,
 		user_name,
 		phone,
-		address,
+		post,
+		address1,
+		address2,
+		address3,
 		email,
 		mailage
 		from user_info
@@ -26,10 +29,26 @@
 
 	<!-- 회원가입시 DB전달 -->
 	<insert id="insertMember" parameterType="user">
-		INSERT INTO user_info (user_id, password, user_name, phone, address, email,
-		mailage)
-		VALUES (#{userId}, #{password}, #{userName}, #{phone}, #{address},
-		#{email}, 0)
+		INSERT INTO user_info (user_id, 
+		                       password, 
+		                       user_name, 
+		                       phone, 
+		                       post, 
+		                       address1, 
+		                       address2, 
+		                       address3, 
+		                       email,
+		                       mailage)
+		VALUES (#{userId}, 
+		        #{password}, 
+		        #{userName}, 
+		        #{phone},
+		        #{post},
+		        #{address1}, 
+		        #{address2}, 
+		        #{address3},
+		        #{email}, 
+		        0)
 	</insert>
 
 	<!-- 비밀번호 변경 -->
