@@ -12,4 +12,5 @@ public interface ProductMapper {
        @Param("sub") String sub, @Param("minPrice") String minPrice, @Param("maxPrice") String maxPrice);
 	   ProductVO selectProduct(@Param("code") String code); // 상품 상세 조회
 	   List<ProductVO> selectAllProduct();
+	   int updateStock(@Param("quantity") int quantity, @Param("pdCode") String pdCode);
 }

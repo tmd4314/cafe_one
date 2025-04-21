@@ -22,14 +22,10 @@ public class ProductServiceImpl implements ProductService {
     public ProductVO getProduct(String code) {
         return mapper.selectProduct(code);
     }
-	@Override
-	public List<Map<String, Object>> cheeringMessage() {
-		return null;
-	}
 
- 
- 	@Override
- 	public List<Map<String, Object>> hintMessage(String pno) {
- 		return null;
- 	}
+	@Override
+	public boolean updateStock(String pdCode, int quantity) {
+		// TODO Auto-generated method stub
+		return mapper.updateStock(quantity, pdCode) == 1;
+	}
 }

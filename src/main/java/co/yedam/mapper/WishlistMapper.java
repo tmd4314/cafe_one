@@ -1,6 +1,6 @@
 package co.yedam.mapper;
- 
- import java.util.List;
+
+import java.util.List;
 
 import co.yedam.vo.WishlistVO;
  
