@@ -20,6 +20,7 @@
       margin-right: 10px;
     }
   </style>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
 <div class="container my-5">
@@ -94,9 +95,17 @@
         <label class="dphone">전화번호</label>
         <input type="text" class="form-control" name="dphone" id="dphone">
       </div>
+      
+      <div class="col-md-12">
+	        <label class="dpost">우편번호</label>
+	         <input type="text" class="form-control" name="dpost" id="sample6_postcode" placeholder="우편번호">
+	         <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" style="background-color: #007bff; color: white; border: 1px solid #007bff;">
+	      </div>
+      
       <div class="col-md-12">
         <label class="daddre">배송 주소</label>
-        <input type="text" class="form-control" name="daddre"id="daddre">
+        <input type="text" class="form-control" name="daddre" id="sample6_address">
+        <input type="text" class="form-control" name="daddre2" id="sample6_detailAddress" placeholder="상세주소">
       </div>
     </div>
 
@@ -118,16 +127,68 @@
     </div>
   </form>
 </div>
-
-<script>
-
+  
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.1.js"></script>
+  <script>
   function fillMemberInfo() {
       // 세션에 저장된 회원 정보를 가져와서 해당 필드에 채워 넣음
       document.getElementById('dname').value = '${sessionScope.userName}';
       document.getElementById('dphone').value = '${sessionScope.phone}';
-      document.getElementById('daddre').value = '${sessionScope.addre}';
+      document.getElementById('sample6_postcode').value = '${sessionScope.post1}';
+      document.getElementById('sample6_address').value = '${sessionScope.addre1} ${sessionScope.addre2}';
+      document.getElementById('sample6_detailAddress').value = '${sessionScope.addre3}';
+
   }
-	
+
+  function sample6_execDaumPostcode() {
+      new daum.Postcode({
+          oncomplete: function(data) {
+              // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+              // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+              // 내려오는 변수가 값이 없는 경우에는 공백('')값을 가지므로, 임의로 가공하지 않아도 된다.
+              var addr = ''; // 주소 변수
+              var extraAddr = ''; // 참고항목 변수
+
+              //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+              if (data.userSelectedType === 'R') {
+                  // 사용자가 도로명 주소를 선택했을 경우
+                  addr = data.roadAddress;
+              } else {
+                  // 사용자가 지번 주소를 선택했을 경우(J)
+                  addr = data.jibunAddress;
+              }
+
+              // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+              if(data.userSelectedType === 'R'){
+                  // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                  // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                  if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                      extraAddr += data.bname;
+                  }
+                  // 건물명이 있고, 공동주택일 경우 추가한다.
+                  if(data.buildingName !== '' && data.apartment === 'Y'){
+                      extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                  }
+                  // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                  if(extraAddr !== ''){
+                      extraAddr = ' (' + extraAddr + ')';
+                  }
+                  // 조합된 참고항목을 주소에 추가한다.
+                  addr += extraAddr;
+              }
+
+              // 우편번호와 주소 정보를 해당 필드에 넣는다.
+              document.getElementById('sample6_postcode').value = data.zonecode;
+              document.getElementById('sample6_address').value = addr;
+              // 커서를 상세주소 필드로 이동한다.
+              document.getElementById('sample6_detailAddress').focus();
+          }
+      }).open();
+  }
+
   function useAllMileage() {
     const availableMileage = '${sessionScope.mile}';
     document.querySelector('input[name="useMileage"]').value = availableMileage;
@@ -140,14 +201,14 @@
     const orderPr = totalPr - useMileage;
     console.log(totalPr);
     document.getElementById('totalPriceResult').innerText = orderPr.toLocaleString() + '원';
-    
+
     //hidden input 필드에 값 설정
     document.getElementById('totalPr').value = totalPr;
     document.getElementById('orderPr').value = orderPr;
   }
 
   document.querySelector('input[name="useMileage"]').addEventListener('input', uptopr);
-  
+
   function requestPay() {
     // 상품 이름 통합
     let productName = "${blist[0].pdName}" + " 외 " + "${blist.size() - 1}" + "건";
@@ -168,8 +229,8 @@
         buyer_email: '${sessionScope.email}', // 구매자 이메일
         buyer_name: document.getElementById('dname').value, // 구매자 이름
         buyer_tel: document.getElementById('dphone').value, // 구매자 전화번호
-        buyer_addr: document.getElementById('daddre').value, // 구매자 주소
-        buyer_postcode: '42015' // 구매자 우편번호
+        buyer_addr: document.getElementById('sample6_address').value + " " + document.getElementById('sample6_detailAddress').value, // 구매자 주소
+        buyer_postcode: document.getElementById('sample6_postcode').value // 구매자 우편번호
     }, function (rsp) {
         if (rsp.success) {
             // 결제 성공 시 로직
@@ -179,10 +240,10 @@
             document.getElementById('merchant_uid').value = rsp.merchant_uid;
             document.getElementById('buyerName').value = document.getElementById('dname').value;
             document.getElementById('buyerTel').value = document.getElementById('dphone').value;
-            document.getElementById('buyerAddr').value = document.getElementById('daddre').value;
-            document.getElementById('buyerPostcode').value = '42015';
+            document.getElementById('buyerAddr').value = document.getElementById('sample6_address').value + " " + document.getElementById('sample6_detailAddress').value;
+            document.getElementById('buyerPostcode').value = document.getElementById('sample6_postcode').value;
             document.getElementById('logId').value = '${sessionScope.logId }'; // 추가됨
-            
+
          // cartNos 값을 hidden input 필드에 추가
             const cartNos = document.querySelectorAll('input[name="cartNos"]');
             let cartNosValues = [];
@@ -190,7 +251,7 @@
                 cartNosValues.push(cartNo.value);
             });
             console.log("cartNosValues: " + cartNosValues); // cartNos 값 확인
-            
+
             // cartNosValues를 hidden input 필드에 설정 (쉼표로 구분된 문자열)
             const cartNosInput = document.createElement('input');
             cartNosInput.setAttribute('type', 'hidden');
@@ -204,10 +265,11 @@
             console.log("buyerName: " + document.getElementById('buyerName').value);
             console.log("buyerTel: " + document.getElementById('buyerTel').value);
             console.log("buyerAddr: " + document.getElementById('buyerAddr').value);
+            console.log("buyerPostcode: " + document.getElementById('buyerPostcode').value);
             console.log("logId: " + document.getElementById('logId').value); // 추가됨
             console.log("cartNos: " + document.querySelector('input[name="cartNos"]').value); // cartNos 값 확인
 
-            
+
             // 폼 제출
             document.getElementById('paymentForm').submit();
         } else {
@@ -216,12 +278,7 @@
         }
     });
   }
-</script>
-<script>
-  console.log("sessionScope.userId = '${sessionScope.logId}'");
-</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.1.js"></script>
+  </script>
 </body>
 </html>
-    
+

@@ -89,17 +89,17 @@
 							<div class="row">
 								<div class="col col-sm-12 col-md-12 col-lg-6 m-0">
 									<div class="form-group">
-										<label for="address1">우편번호</label> <input type="text"
-											name="address1" class="form-control" id="sample6_postcode"
+										<label for="post">우편번호</label> <input type="text"
+											name="post" class="form-control" id="sample6_postcode"
 											placeholder="우편번호" onfocus="labelUp(this)"
 											onblur="labelDown(this)" required />
 									</div>
 								</div>
 								<div class="col col-sm-12 col-md-12 col-lg-6 m-0 d-flex align-items-end">
 									<div class="form-group">
-										<label for="address"> </label> <input type="button"
+										<label for="post"> </label> <input type="button"
 											onclick="sample6_execDaumPostcode()" value="우편번호 찾기"
-											name="address" class="form-control" id="address2"
+											name="post" class="form-control" id="post"
 											style="background-color: #007bff; color: white; border: 1px solid #007bff;"
 											onfocus="labelUp(this)" onblur="labelDown(this)" required />
 									</div>
@@ -107,16 +107,16 @@
 							</div>
 
 							<div class="form-group">
-								<label for="address2"></label> <input type="text"
-									name="address2" class="form-control" id="sample6_address"
+								<label for="address1"></label> <input type="text"
+									name="address1" class="form-control" id="sample6_address"
 									placeholder="주소" onfocus="labelUp(this)"
 									onblur="labelDown(this)" required />
 							</div>
 							<div class="row">
 								<div class="col col-sm-12 col-md-12 col-lg-6 m-0">
 								<div class="form-group">
-										<label for="address3"> </label> <input type="text"
-											placeholder="참고항목" name="address3" class="form-control"
+										<label for="address2"> </label> <input type="text"
+											placeholder="참고항목" name="address2" class="form-control"
 											id="sample6_extraAddress" onfocus="labelUp(this)"
 											onblur="labelDown(this)" required />
 									</div>
@@ -124,8 +124,8 @@
 								</div>
 								<div class="col col-sm-12 col-md-12 col-lg-6 m-0">
 									<div class="form-group">
-										<label for="address4"></label> <input type="text"
-											name="address4" class="form-control"
+										<label for="address3"></label> <input type="text"
+											name="address3" class="form-control"
 											id="sample6_detailAddress" placeholder="상세주소"
 											onfocus="labelUp(this)" onblur="labelDown(this)" required />
 									</div>

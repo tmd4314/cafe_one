@@ -11,5 +11,6 @@ public interface CartService {
 	List<CartVo> getCash(String id, List<Integer> cartNoList);
 	boolean deleteCartItem(String logId, String pdCode, int quantity);
 	CartVo getCartItemByCartNo(int cartNo);
+	boolean addCart(CartVo cvo);
 }
 

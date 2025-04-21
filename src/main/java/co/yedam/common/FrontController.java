@@ -15,6 +15,7 @@ import co.yedam.web.AdminLoginControl;
 import co.yedam.web.AdminLogoutControl;
 import co.yedam.web.CancelOrderControl;
 import co.yedam.web.CancelOrderFormControl;
+import co.yedam.web.CartAddControl;
 import co.yedam.web.CartDeleteControl;
 import co.yedam.web.CartListControl;
 import co.yedam.web.CartUpdateControl;
@@ -28,6 +29,7 @@ import co.yedam.web.LoginFormControl;
 import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
 import co.yedam.web.MyPageControl;
+import co.yedam.web.OrderDeleteControl;
 import co.yedam.web.OrderDetailFormControl;
 import co.yedam.web.OrderFormControl;
 import co.yedam.web.ProductControl;
@@ -103,10 +105,12 @@ public class FrontController extends HttpServlet {
 		map.put("/cartList.do", new CartListControl());
 		map.put("/cartDelete.do", new CartDeleteControl());
 		map.put("/updateCart.do", new CartUpdateControl());
+		map.put("/cartAdd.do", new CartAddControl());
 		
 		//주문
 		map.put("/cashForm.do", new CashFormControl());
 		map.put("/cash.do", new CashControl());
+		map.put("/orderDelete.do", new OrderDeleteControl());
 		
 		//주문내역
 		map.put("/orderForm.do", new OrderFormControl());
