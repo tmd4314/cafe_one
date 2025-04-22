@@ -329,7 +329,7 @@
 			
 			  <!-- 시럽/소스 -->
 				<li class="nav-item dropdown">
-				  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">시럽/소스</a>
+				  <a class="nav-link dropdown-toggle" href="search.do?sub=SF" role="button" data-bs-toggle="dropdown">시럽/소스</a>
 				  <div class="dropdown-menu p-3">
 				    <a class="dropdown-item" href="search.do?sub=SF1">일반시럽</a>
 				    <a class="dropdown-item" href="search.do?sub=SF2">과일시럽</a>
