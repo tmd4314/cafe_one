@@ -28,4 +28,14 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 		return mapper.updateStock(quantity, pdCode) == 1;
 	}
+	
+	@Override
+	public List<ProductVO> getProductList() {
+	    return mapper.selectAllProduct();
+	}
+	
+	@Override
+	public List<ProductVO> getTopReviewProductList() {
+	    return mapper.selectTopReviewProductList();
+	}
 }
