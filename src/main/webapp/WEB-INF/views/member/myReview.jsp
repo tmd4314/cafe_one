@@ -77,8 +77,8 @@
         <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="user" />
         <div class="user">${r.userId}</div>
       </div>
-      <div class="review-date">
-        <div><fmt:formatDate value="${r.createDate}" pattern="yyyy-MM-dd" /></div>
+      <div class="review-date" >
+        <div style="color: black;"><fmt:formatDate value="${r.createDate}" pattern="yyyy-MM-dd" /></div>
       </div>
   <div class="review-title">
     ${r.reviewTitle}

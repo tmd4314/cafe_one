@@ -88,6 +88,7 @@
       <table class="table table-striped table-hover">
         <thead>
           <tr>
+          	<th>이미지</th>
             <th>상품명</th>
             <th>가격</th>
             <th>제조사</th>
@@ -97,6 +98,7 @@
         <tbody>
           <c:forEach var="p" items="${searchList}">
             <tr>
+              <td><img src="images/${p.pdimg}" alt="${p.pdimg}" width="50" height="50"></td>  
               <td>${p.pdName}</td>
               <td><fmt:formatNumber value="${p.pdPrice}" pattern="#,###"/> 원</td>
               <td>${p.manufacturer}</td>

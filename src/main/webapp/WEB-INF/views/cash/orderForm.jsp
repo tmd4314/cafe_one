@@ -140,7 +140,7 @@
 		                <p>상품 제목: ${order.orderDetails[0].pdName} 외 ${order.orderDetails.size() - 1}건</p>
 		                <p>주문일자: ${order.odDate}</p>
 		                <p>총 결제 금액:  <fmt:formatNumber value="${order.odTotal}" pattern="#,###" />원</p>
-		                <a href="orderDetailForm.do?ono=${order.odNo }">주문상세</a>
+		                <a style="color: black;" href="orderDetailForm.do?ono=${order.odNo }">주문상세</a>
 		            </div>
 		        </c:if>
 		        <div class="order-actions">

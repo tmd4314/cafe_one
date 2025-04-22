@@ -118,7 +118,7 @@
                         <p>수량: ${orderDetail.quantity}</p>
                         <p>${orderDetail.pdPrice} 원</p>
                         
-                        <button class="btn btn-sm btn-primary">리뷰쓰기</button>
+                        <button class="btn btn-sm btn-primary" onclick="location.href='product.do?pdCode=${orderDetail.pdCode}'">리뷰쓰기</button>
                     </div>
                 </div>
             </c:forEach>

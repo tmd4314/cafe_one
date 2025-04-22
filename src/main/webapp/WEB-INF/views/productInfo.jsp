@@ -1,6 +1,17 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
- 
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+            color: black !important;
+            background: transparent !important;
+            background-image: none !important;
+        }
+	</style>
+</head>
+ <body>
  <h2 class="my-4"> ${product.pdName}</h2>
  
  <table class="table table-striped">
@@ -29,3 +40,5 @@
 
  
  <a href="search.do" class="btn btn-secondary mt-3">← 목록으로 돌아가기</a>
+ </body>
+</html>

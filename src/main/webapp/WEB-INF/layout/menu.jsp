@@ -154,7 +154,7 @@
 
 <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart">
 	<div class="offcanvas-header justify-content-between align-items-center">
-		<h5 class="offcanvas-title" id="offcanvasCartLabel">🛒
+		<h5 class="offcanvas-title" id="offcanvasCartLabel" style="color: black;">🛒
 			<c:out value="${userName}" />님의 장바구니</h5>
 		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 	</div>
@@ -192,7 +192,7 @@
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
 
 	<div class="offcanvas-header justify-content-between">
-		<h4 class="fw-normal text-uppercase fs-6">Menu</h4>
+		<h4 class="fw-normal text-uppercase fs-6" style="color: black;">Menu</h4>
 		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 	</div>
 
@@ -207,14 +207,14 @@
 					<svg width="24" height="24">
 						<use xlink:href="#beverages"></use>
 					</svg>
-					<span>커피</span>
+					<span style="color: black;">커피</span>
 				</div>
 			</button>
-			<div class="collapse" id="coffee-collapse">
+			<div class="collapse" id="coffee-collapse" style="color: black;">
 				<ul class="btn-toggle-nav list-unstyled fw-normal ps-5 pb-1">
-					<li class="border-bottom py-2"><a href="productList.do?category=CO1" class="dropdown-item">원두커피</a></li>
-					<li class="border-bottom py-2"><a href="productList.do?category=CO2" class="dropdown-item">액상캡슐커피</a></li>
-					<li class="border-bottom py-2"><a href="productList.do?category=CO3" class="dropdown-item">인스턴스커피</a></li>
+					<li class="border-bottom py-2"><a href="productList.do?category=CO1" class="dropdown-item" style="color: black;">원두커피</a></li>
+					<li class="border-bottom py-2"><a href="productList.do?category=CO2" class="dropdown-item" style="color: black;">액상캡슐커피</a></li>
+					<li class="border-bottom py-2"><a href="productList.do?category=CO3" class="dropdown-item" style="color: black;">인스턴스커피</a></li>
 				</ul>
 			</div>
 		</li>
@@ -228,15 +228,15 @@
 					<svg width="24" height="24">
 						<use xlink:href="#beverages"></use>
 					</svg>
-					<span>시럽/소스</span>
+					<span style="color: black;">시럽/소스</span>
 				</div>
 			</button>
-			<div class="collapse" id="syrup-collapse">
+			<div class="collapse" id="syrup-collapse" style="color: black;">
 				<ul class="btn-toggle-nav list-unstyled fw-normal ps-5 pb-1">
-					<li class="border-bottom py-2"><a href="productList.do?category=SF1" class="dropdown-item">일반 시럽</a></li>
-					<li class="border-bottom py-2"><a href="productList.do?category=SF2" class="dropdown-item">과일 시럽</a></li>
-					<li class="border-bottom py-2"><a href="productList.do?category=SF3" class="dropdown-item">토핑 시럽</a></li>
-					<li class="border-bottom py-2"><a href="productList.do?category=SF4" class="dropdown-item">에이드 베이스</a></li>
+					<li class="border-bottom py-2"><a href="productList.do?category=SF1" class="dropdown-item" style="color: black;">과일 시럽</a></li>
+					<li class="border-bottom py-2"><a href="productList.do?category=SF2" class="dropdown-item" style="color: black;">에이드 베이스</a></li>
+					<li class="border-bottom py-2"><a href="productList.do?category=SF3" class="dropdown-item" style="color: black;">일반 시럽</a></li>
+					<li class="border-bottom py-2"><a href="productList.do?category=SF4" class="dropdown-item" style="color: black;">토핑 시럽</a></li>
 				</ul>
 			</div>
 		</li>
@@ -250,14 +250,14 @@
 					<svg width="24" height="24">
 						<use xlink:href="#beverages"></use>
 					</svg>
-					<span>파우더</span>
+					<span style="color: black;">파우더</span>
 				</div>
 			</button>
 			<div class="collapse" id="powder-collapse">
-				<ul class="btn-toggle-nav list-unstyled fw-normal ps-5 pb-1">
-					<li class="border-bottom py-2"><a href="productList.do?category=PD1" class="dropdown-item">라떼</a></li>
-					<li class="border-bottom py-2"><a href="productList.do?category=PD2" class="dropdown-item">과일</a></li>
-					<li class="border-bottom py-2"><a href="productList.do?category=PD3" class="dropdown-item">요거트</a></li>
+				<ul class="btn-toggle-nav list-unstyled fw-normal ps-5 pb-1" style="color: black;">
+					<li class="border-bottom py-2"><a href="productList.do?category=PD1" class="dropdown-item" style="color: black;">라떼</a></li>
+					<li class="border-bottom py-2"><a href="productList.do?category=PD2" class="dropdown-item" style="color: black;">과일</a></li>
+					<li class="border-bottom py-2"><a href="productList.do?category=PD3" class="dropdown-item" style="color: black;">요거트</a></li>
 				</ul>
 			</div>
 		</li>
@@ -269,14 +269,14 @@
 					<svg width="24" height="24">
 						<use xlink:href="#beverages"></use>
 					</svg>
-					<span>유제품</span>
+					<span style="color: black;">유제품</span>
 				</div>
 			</button>
 			<div class="collapse" id="dairy-collapse">
-				<ul class="btn-toggle-nav list-unstyled fw-normal ps-5 pb-1">
-					<li class="border-bottom py-2"><a href="productList.do?category=UZ1" class="dropdown-item">우유생크림</a></li>
-					<li class="border-bottom py-2"><a href="productList.do?category=UZ2" class="dropdown-item">치즈버터</a></li>
-					<li class="border-bottom py-2"><a href="productList.do?category=UZ3" class="dropdown-item">휘핑크림연유</a></li>
+				<ul class="btn-toggle-nav list-unstyled fw-normal ps-5 pb-1" style="color: black;">
+					<li class="border-bottom py-2"><a href="productList.do?category=UZ1" class="dropdown-item" style="color: black;">우유생크림</a></li>
+					<li class="border-bottom py-2"><a href="productList.do?category=UZ2" class="dropdown-item" style="color: black;">치즈버터</a></li>
+					<li class="border-bottom py-2"><a href="productList.do?category=UZ3" class="dropdown-item" style="color: black;">휘핑크림연유</a></li>
 				</ul>
 			</div>
 		</li>
@@ -292,7 +292,7 @@
 					<img src="images/logo.png" alt="Home" class="img-fluid" style="height: 36px;">
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-					<svg width="24" height="24">
+					<svg width="24" height="24" style="color: #CCCCCC;">
 						<use xlink:href="#menu"></use>
 					</svg>
 				</button>
@@ -316,12 +316,12 @@
 
 				<!-- 메뉴 -->
 				<ul class="navbar-nav d-flex flex-row gap-5 mb-0 fw-bold text-uppercase text-dark ps-3"
-					style="margin-left: 50px;">
+					style="margin-left: 50px;" >
 
 
 					<!-- 커피 -->
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">커피</a>
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: #CCCCCC;">커피</a>
 						<div class="dropdown-menu p-3">
 							<a href="search.do?sub=CO1" class="dropdown-item">원두커피</a>
 							<a href="search.do?sub=CO2" class="dropdown-item">캡슐커피</a>
@@ -331,18 +331,18 @@
 
 					<!-- 시럽/소스 -->
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">시럽/소스</a>
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: #CCCCCC;">시럽/소스</a>
 						<div class="dropdown-menu p-3">
-							<a class="dropdown-item" href="search.do?sub=SF1">일반시럽</a>
-							<a class="dropdown-item" href="search.do?sub=SF2">과일시럽</a>
-							<a class="dropdown-item" href="search.do?sub=SF3">토핑시럽</a>
-							<a class="dropdown-item" href="search.do?sub=SF4">에이드베이스</a>
+							<a class="dropdown-item" href="search.do?sub=SF1">과일시럽</a>
+							<a class="dropdown-item" href="search.do?sub=SF2">에이드베이스</a>
+							<a class="dropdown-item" href="search.do?sub=SF3">일반시럽</a>
+							<a class="dropdown-item" href="search.do?sub=SF4">토핑시럽</a>
 						</div>
 					</li>
 
 					<!-- 파우더 -->
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">파우더</a>
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: #CCCCCC;">파우더</a>
 						<div class="dropdown-menu p-3">
 							<a class="dropdown-item" href="search.do?sub=PD1">라떼</a>
 							<a class="dropdown-item" href="search.do?sub=PD2">과일</a>
@@ -352,7 +352,7 @@
 
 					<!-- 유제품 -->
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">유제품</a>
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: #CCCCCC;">유제품</a>
 						<div class="dropdown-menu p-3">
 							<a class="dropdown-item" href="search.do?sub=UZ1">우유생크림</a>
 							<a class="dropdown-item" href="search.do?sub=UZ2">치즈버터</a>

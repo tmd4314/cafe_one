@@ -17,7 +17,7 @@
 					<!-- 
 					<div class="discount">n%</div>					
 					 -->
-					<a href="product.do?pdc=${bestPD.pdCode}">
+					<a href="product.do?pdCode=${bestPD.pdCode}">
 						<img src="images/${bestPD.pdimg}" alt="${bestPD.pdName}">
 						<h5 class="product-title">${bestPD.pdName}</h5>
 					</a>

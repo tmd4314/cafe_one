@@ -33,7 +33,34 @@
     <link rel="stylesheet" href="css/detailstyle.css">
 
     <link rel="stylesheet" href="css/responsive.css">
-
+	 <style>
+        .qt {
+            color: black !important;
+            text-align: center;
+        }
+        body {
+        	color: black !important; /* 글자색을 검정색으로 설정 */
+		    background: transparent !important; /* 배경을 투명하게 설정 */
+		    background-image: none !important; /* 배경 이미지 제거 */
+		}
+		/* 필요한 경우 특정 요소에 대한 글자색을 재정의할 수 있습니다. */
+		h1, h2, h3, h4, h5, h6 {
+		    color: black !important; /* 제목 글자색을 검정색으로 설정 */
+		}
+		
+		p, div, span, a, li {
+		    color: black !important; /* 일반 텍스트, div, span, 링크, 목록 항목 글자색을 검정색으로 설정 */
+		}
+		
+		a {
+		    color: black !important; /* 링크 글자색을 검정색으로 설정 */
+		}
+		
+		a:hover {
+		    color: darkgray !important; /* 마우스 오버 시 링크 글자색을 어두운 회색으로 설정 */
+		}
+        
+    </style>
 </head>
 
 <body>
@@ -88,27 +115,19 @@
 
                     <div class="price">
 
-                        <span><fmt:formatNumber value="${product.pdPrice}" type="number" groupingUsed="true" />원</span>
+                        <span id="calculatedPrice"><fmt:formatNumber value="${product.pdPrice}" type="number" groupingUsed="true" />원</span>
 
                     </div>
 
-                    <form action="" class="purchase-form">
-
-                       <div class="qt-area">
-
-                           <i class="fa fa-minus"></i>
-
-                           <input name="quantity" class="qt" value="1">
-
-                           <i class="fa fa-plus"></i>
-
-                       </div>
-
-                        
-
-                        <button class="btn btn-theme" type="submit">Add to cart</button>
-
-                    </form>
+                    <form action="cartAdd.do" class="purchase-form" method="get">
+					    <input type="hidden" name="pdCode" value="${product.pdCode}">
+					    <div class="qt-area">
+					        <i class="fa fa-minus minus-btn"></i>
+					        <strong><input name="quan" class="qt" value="1" min="1" max="10"></strong>
+					        <i class="fa fa-plus plus-btn"></i>
+					    </div>
+					    <button class="btn btn-theme" type="submit">🛒Cart</button>
+					</form>
 
                     <p><span class="strong-text">Categories:</span> 커피, 원두</p>
 
@@ -274,6 +293,42 @@
         </div>
 
     </div>
+    
+    <script>
+	    document.addEventListener('DOMContentLoaded', function() {
+	        const minusBtns = document.querySelectorAll('.minus-btn');
+	        const plusBtns = document.querySelectorAll('.plus-btn');
+	        const quantityInputs = document.querySelectorAll('.qt');
+	        const calculatedPriceSpans = document.querySelectorAll('#calculatedPrice');
+	        const originalPriceValue = ${product.pdPrice}; // JSP에서 가격을 JavaScript 변수로 전달
+	
+	        minusBtns.forEach((btn) => { // index 파라미터 제거
+	            btn.addEventListener('click', function() {
+	                let currentValue = parseInt(this.parentNode.querySelector('.qt').value); // this 사용
+	                if (currentValue > 1) {
+	                    this.parentNode.querySelector('.qt').value = currentValue - 1; // this 사용
+	                    updateCalculatedPrice(currentValue - 1);
+	                }
+	            });
+	        });
+	
+	        plusBtns.forEach((btn)  => { // index 파라미터 제거
+	            btn.addEventListener('click', function() {
+	                let currentValue = parseInt(this.parentNode.querySelector('.qt').value); // this 사용
+	                if (currentValue < 10) {
+	                    this.parentNode.querySelector('.qt').value = currentValue + 1; // this 사용
+	                    updateCalculatedPrice(currentValue + 1);
+	                }
+	            });
+	        });
+	
+	        function updateCalculatedPrice(quantity) { // index 파라미터 제거
+	            const newPrice = originalPriceValue * quantity;
+	            const formattedPrice = newPrice.toLocaleString() + "원"; // 포맷된 가격 생성
+	            document.querySelector('#calculatedPrice').textContent = formattedPrice; // 포맷된 가격 업데이트
+	        }
+	    });
+	</script>
     
     	<!-- jQuery Library -->
 

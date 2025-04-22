@@ -45,5 +45,10 @@ public class CartServiceImpl implements CartService {
 	public boolean addToCart(CartVo vo) {
 		 return mapper.insertOrUpdateCart(vo) >= 1;
 	}
+	@Override
+	public CartVo getCartItem(String userId, String pdCode) {
+		// TODO Auto-generated method stub
+		return mapper.getCartCartNo(userId, pdCode);
+	}
 }
 

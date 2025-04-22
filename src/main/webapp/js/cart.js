@@ -30,14 +30,14 @@ function loadCart() {
                 <li class="list-group-item d-flex justify-content-between align-items-center" data-cart-no="${item.cartNo}" data-total-price="${itemTotalPrice}">
                     <input type="checkbox" class="form-check-input cart-checkbox" value="${item.cartNo}" style="margin-right: 10px;" onchange="updateTotalPrice()"/>
                     <div class="flex-grow-1 text-center">
-                        <h6 class="my-0">${item.pdName}</h6>
+                        <h6 class="my-0" style="color: black;">${item.pdName}</h6>
                         <img src="images/${item.pdImg}" style="width: 50px; height: 50px;">
                         <div class="quantity-controls">
                             <button class="btn btn-sm btn-outline-secondary quantity-decrease" data-cart-no="${item.cartNo}">-</button>
-                            <span class="quantity">${item.quantity}</span>
+                            <span class="quantity" style="color: black;">${item.quantity}</span>
                             <button class="btn btn-sm btn-outline-secondary quantity-increase" data-cart-no="${item.cartNo}">+</button>
                         </div>
-                        <small class="text-body-secondary"> 금액: ${itemTotalPrice.toLocaleString()}원</small>
+                        <small class="text-body-secondary" style="color: black;"> 금액: ${itemTotalPrice.toLocaleString()}원</small>
                     </div>
                     <button class="btn btn-sm btn-primary update-quantity-on-server" data-cart-no="${item.cartNo}">수정</button>
                 </li>
@@ -48,7 +48,7 @@ function loadCart() {
         // 총 가격 표시
         const totalItemHtml = `
             <li class="list-group-item d-flex justify-content-between">
-                <span>총합계</span>
+                <span style="color: black;">총합계</span>
                 <strong id="totalPrice">0원</strong>
             </li>
         `;

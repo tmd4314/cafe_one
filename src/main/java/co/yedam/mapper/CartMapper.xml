@@ -95,5 +95,8 @@
 	    VALUES (seq_cart.nextval, #{quantity}, #{pdCode}, #{userId})
 	</insert>
   
+  	<select id="getCartCartNo" resultType="co.yedam.vo.CartVo">
+	    SELECT * FROM cart WHERE user_id = #{userId} AND pd_code = #{pdCode}
+	</select>
 
 </mapper>
