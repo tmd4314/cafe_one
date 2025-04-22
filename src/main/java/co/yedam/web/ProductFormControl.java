@@ -23,6 +23,11 @@ public class ProductFormControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String pdc = req.getParameter("pdc");
+		String uid = req.getParameter("uid");
+		String rt = req.getParameter("rt");
+		String rc = req.getParameter("rc");
+		
+		ReviewVO vo = new ReviewVO();
 		
 		SqlSession sqlSession = DataSource.getInstance().openSession(true);
 		ProductDetailMapper mapper = sqlSession.getMapper(ProductDetailMapper.class);
