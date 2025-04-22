@@ -286,7 +286,6 @@
 	<div class="container-fluid">
 		<div class="row py-3 border-bottom align-items-center flex-nowrap">
 
-<<<<<<< HEAD
 			
 			  <!-- 커피 -->
 			  <li class="nav-item dropdown">

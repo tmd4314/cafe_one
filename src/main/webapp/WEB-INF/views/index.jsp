@@ -66,10 +66,18 @@
               <div class="row mb-4">
                 <div class="col-md-12">
                   <div class="category-buttons d-flex justify-content-center">
-                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('coffee')">커피</button>
-                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('syrup/sauce')">시럽/소스</button>
-                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('powder')">파우더</button>
-                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('dairy')">유제품</button>
+                    <div class="category-buttons d-flex justify-content-center">
+                      <a href="?categoryCode=CO" class="btn btn-outline-secondary mx-1">커피</a>
+                      <a href="?categoryCode=SF" class="btn btn-outline-secondary mx-1">시럽/소스</a>
+                      <a href="?categoryCode=PD" class="btn btn-outline-secondary mx-1">파우더</a>
+                      <a href="?categoryCode=UZ" class="btn btn-outline-secondary mx-1">유제품</a>
+                    </div>
+                    <!-- 
+                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('CO')">커피</button>
+                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('SF')">시럽/소스</button>
+                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('PD')">파우더</button>
+                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('UZ')">유제품</button>                    
+                     -->
                   </div>
                 </div>
               </div>
@@ -79,77 +87,148 @@
       </div>
 
 
-
-      <div class="row product-grid">
-        <div class="col-md-4 product-item coffee">
+      <c:forEach var="pdList" items="${bList}">
+        <div class="col-md-4 product-item ">
           <figure>
             <a href="product.do?pdc=product1" title="Product 1">
-              <img src="images/리브라 브렌드 500g.png" alt="Product 1" class="tab-image">
+              <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
             </a>
           </figure>
           <div class="d-flex flex-column text-center">
-            <h3 class="fs-6 fw-normal">리브라 브렌드 500g</h3>
+            <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
             <div>
-              <span class="rating">★★★★☆</span>
-              <span>(222)</span>
+              <span class="rating">${pdList.pdScore} / 10</span>
+              <span>(재고 : ${pdList.pdStock})</span>
             </div>
             <div class="button-area p-3 pt-0">
               <div class="row g-1 mt-2">
                 <div class="col-3"><input type="number" name="quantity"
                     class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a></div>
+                <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
+                </div>
                 <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
               </div>
             </div>
           </div>
         </div>
+      </c:forEach>
 
-        <div class="col-md-4 product-item tea">
-          <figure>
-            <a href="product.do?pdc=product2" title="Product 2">
-              <img src="images/product-thumb-2.png" alt="Product 2" class="tab-image">
-            </a>
-          </figure>
-          <div class="d-flex flex-column text-center">
-            <h3 class="fs-6 fw-normal">RICCO 프리미엄 국화차 20티백</h3>
-            <div>
-              <span class="rating">★★★★★</span>
-              <span>(150)</span>
-            </div>
-            <div class="button-area p-3 pt-0">
-              <div class="row g-1 mt-2">
-                <div class="col-3"><input type="number" name="quantity"
-                    class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a></div>
-                <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
+      <c:choose>
+        <c:when test="${param.categoryCode == 'CO'}">
+          <div class="row product-grid">
+            <c:forEach var="pdList" items="${bCOList}">
+              <div class="col-md-4 product-item ">
+                <figure>
+                  <a href="product.do?pdc=product1" title="Product 1">
+                    <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                  </a>
+                </figure>
+                <div class="d-flex flex-column text-center">
+                  <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
+                  <div>
+                    <span class="rating">${pdList.pdScore} / 10</span>
+                    <span>(재고 : ${pdList.pdStock})</span>
+                  </div>
+                  <div class="button-area p-3 pt-0">
+                    <div class="row g-1 mt-2">
+                      <div class="col-3"><input type="number" name="quantity"
+                          class="form-control border-dark-subtle input-number quantity" value="1"></div>
+                      <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
+                      </div>
+                      <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </c:forEach>
+          </div>
+        </c:when>
+        <c:when test="${param.categoryCode == 'SF'}">
+          <c:forEach var="pdList" items="${bSFList }">
+            <div class="col-md-4 product-item ">
+              <figure>
+                <a href="product.do?pdc=product1" title="Product 1">
+                  <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                </a>
+              </figure>
+              <div class="d-flex flex-column text-center">
+                <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
+                <div>
+                  <span class="rating">${pdList.pdScore} / 10</span>
+                  <span>(재고 : ${pdList.pdStock})</span>
+                </div>
+                <div class="button-area p-3 pt-0">
+                  <div class="row g-1 mt-2">
+                    <div class="col-3"><input type="number" name="quantity"
+                        class="form-control border-dark-subtle input-number quantity" value="1"></div>
+                    <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
+                    </div>
+                    <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </c:forEach>
+        </c:when>
+        <c:when test="${param.categoryCode == 'PD'}">
+          <c:forEach var="pdList" items="${bPDList}">
+            <div class="col-md-4 product-item ">
+              <figure>
+                <a href="product.do?pdc=product1" title="Product 1">
+                  <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                </a>
+              </figure>
+              <div class="d-flex flex-column text-center">
+                <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
+                <div>
+                  <span class="rating">${pdList.pdScore} / 10</span>
+                  <span>(재고 : ${pdList.pdStock})</span>
+                </div>
+                <div class="button-area p-3 pt-0">
+                  <div class="row g-1 mt-2">
+                    <div class="col-3"><input type="number" name="quantity"
+                        class="form-control border-dark-subtle input-number quantity" value="1"></div>
+                    <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
+                    </div>
+                    <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </c:forEach>
+        </c:when>
+        <c:when test="${param.categoryCode == 'UZ'}">
+          <c:forEach var="pdList" items="${bUZList}">
+            <div class="col-md-4 product-item ">
+              <figure>
+                <a href="product.do?pdc=product1" title="Product 1">
+                  <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                </a>
+              </figure>
+              <div class="d-flex flex-column text-center">
+                <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
+                <div>
+                  <span class="rating">${pdList.pdScore} / 10</span>
+                  <span>(재고 : ${pdList.pdStock})</span>
+                </div>
+                <div class="button-area p-3 pt-0">
+                  <div class="row g-1 mt-2">
+                    <div class="col-3"><input type="number" name="quantity"
+                        class="form-control border-dark-subtle input-number quantity" value="1"></div>
+                    <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
+                    </div>
+                    <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </c:forEach>
+        </c:when>
+      </c:choose>
 
-        <div class="col-md-4 product-item snacks">
-          <figure>
-            <a href="product.do?pdc=product3" title="Product 3">
-              <img src="images/product-thumb-3.png" alt="Product 3" class="tab-image">
-            </a>
-          </figure>
-          <div class="d-flex flex-column text-center">
-            <h3 class="fs-6 fw-normal">꽃샘 꿀모과차 1kg</h3>
-            <div>
-              <span class="rating">★★★☆☆</span>
-              <span>(80)</span>
-            </div>
-            <div class="button-area p-3 pt-0">
-              <div class="row g-1 mt-2">
-                <div class="col-3"><input type="number" name="quantity"
-                    class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a></div>
-                <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+
       <!-- / product-grid -->
     </div>
   </section>
@@ -167,70 +246,70 @@
           </div>
         </div>
         <c:forEach var="product" items="${productList}">
-        <div class="row">
-          <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
 
-            <div class="swiper">
-              <div class="swiper-wrapper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
 
-                <div class="product-item swiper-slide">
-                  <figure>
-                    <a href="product.do?pdCode=${product.pdCode}" title="Product Title">
-                      <img src="images/${product.pdimg }" alt="produtForm.jsp" class="tab-image">
-                    </a>
-                  </figure>
-                  <div class="d-flex flex-column text-center">
-                    <h3 class="fs-6 fw-normal">${product.pdName}</h3>
-                    <div>
-                      <span class="rating">
-                        <svg width="18" height="18" class="text-warning">
-                          <use xlink:href="#star-full"></use>
-                        </svg>
-                        <svg width="18" height="18" class="text-warning">
-                          <use xlink:href="#star-full"></use>
-                        </svg>
-                        <svg width="18" height="18" class="text-warning">
-                          <use xlink:href="#star-full"></use>
-                        </svg>
-                        <svg width="18" height="18" class="text-warning">
-                          <use xlink:href="#star-full"></use>
-                        </svg>
-                        <svg width="18" height="18" class="text-warning">
-                          <use xlink:href="#star-half"></use>
-                        </svg>
-                      </span>
-                      <span>(222)</span>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center gap-2">
+                  <div class="product-item swiper-slide">
+                    <figure>
+                      <a href="product.do?pdCode=${product.pdCode}" title="Product Title">
+                        <img src="images/${product.pdimg }" alt="produtForm.jsp" class="tab-image">
+                      </a>
+                    </figure>
+                    <div class="d-flex flex-column text-center">
+                      <h3 class="fs-6 fw-normal">${product.pdName}</h3>
+                      <div>
+                        <span class="rating">
+                          <svg width="18" height="18" class="text-warning">
+                            <use xlink:href="#star-full"></use>
+                          </svg>
+                          <svg width="18" height="18" class="text-warning">
+                            <use xlink:href="#star-full"></use>
+                          </svg>
+                          <svg width="18" height="18" class="text-warning">
+                            <use xlink:href="#star-full"></use>
+                          </svg>
+                          <svg width="18" height="18" class="text-warning">
+                            <use xlink:href="#star-full"></use>
+                          </svg>
+                          <svg width="18" height="18" class="text-warning">
+                            <use xlink:href="#star-half"></use>
+                          </svg>
+                        </span>
+                        <span>(222)</span>
+                      </div>
+                      <div class="d-flex justify-content-center align-items-center gap-2">
 
-                      <span class="text-dark fw-semibold">${product.pdPrice }</span>
+                        <span class="text-dark fw-semibold">${product.pdPrice }</span>
 
-                    </div>
-                    <div class="button-area p-3 pt-0">
-                      <div class="row g-1 mt-2">
-                        <div class="col-3"><input type="number" name="quantity"
-                            class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                        <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><svg
-                              width="18" height="18">
-                              <use xlink:href="#cart"></use>
-                            </svg> Add to Cart</a></div>
-                        <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18"
-                              height="18">
-                              <use xlink:href="#heart"></use>
-                            </svg></a></div>
+                      </div>
+                      <div class="button-area p-3 pt-0">
+                        <div class="row g-1 mt-2">
+                          <div class="col-3"><input type="number" name="quantity"
+                              class="form-control border-dark-subtle input-number quantity" value="1"></div>
+                          <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><svg
+                                width="18" height="18">
+                                <use xlink:href="#cart"></use>
+                              </svg> Add to Cart</a></div>
+                          <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18"
+                                height="18">
+                                <use xlink:href="#heart"></use>
+                              </svg></a></div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                </c:forEach>
-                
-              </div>
-            </div>
-            <!-- / products-carousel -->
+        </c:forEach>
 
-          </div>
-        </div>
       </div>
+    </div>
+    <!-- / products-carousel -->
+
+    </div>
+    </div>
+    </div>
   </section>
 
   <section id="latest-blog" class="pb-4">
@@ -245,7 +324,7 @@
               <img src="images/c02.png" alt="Blog Post 2">
             </div>
             <div class="blog-slide">
-              <img src="images/c03.png" alt="Blog Post 3" style="border-radius: 50%;" >
+              <img src="images/c03.png" alt="Blog Post 3" style="border-radius: 50%;">
             </div>
           </div>
         </div>
@@ -299,7 +378,13 @@
     function filterProducts(category) {
       const products = document.querySelectorAll('.product-item');
       products.forEach(product => {
-        if (category === 'all' || product.classList.contains(category)) {
+        if (category === 'CO' || product.classList.contains(category)) {
+          product.style.display = 'block';
+        } else if (category === 'SF') {
+          product.style.display = 'block';
+        } else if (category === 'PD') {
+          product.style.display = 'block';
+        } else if (category === 'UZ') {
           product.style.display = 'block';
         } else {
           product.style.display = 'none';
