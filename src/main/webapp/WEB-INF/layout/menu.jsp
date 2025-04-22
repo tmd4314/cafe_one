@@ -410,8 +410,6 @@
 			  </c:if>
     </div>
   </div>
-
-
 			<!-- JS for 대분류 → 소분류 필터링 -->
 			<script>
 				window.addEventListener('DOMContentLoaded', function () {
