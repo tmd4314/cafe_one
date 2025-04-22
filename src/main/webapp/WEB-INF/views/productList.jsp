@@ -18,7 +18,14 @@
 					<div class="discount">n%</div>					
 					 -->
 					<a href="product.do?pdCode=${bestPD.pdCode}">
-						<img src="images/${bestPD.pdimg}" alt="${bestPD.pdName}">
+						<c:choose>
+						    <c:when test="${bestPD.pdStock == 0}">
+						        <img src="images/soldout.jpg" alt="SOLD OUT">
+						    </c:when>
+						    <c:otherwise>
+						        <img src="images/${bestPD.pdimg}" alt="${bestPD.pdName}">
+						    </c:otherwise>
+						</c:choose>
 						<h5 class="product-title">${bestPD.pdName}</h5>
 					</a>
 					<div class="price-box">
@@ -47,7 +54,14 @@
 					<div class="discount">n%</div>					
 					 -->
 					<a href="product.do?pdCode=${WorstPD.pdCode}">
-						<img src="images/${WorstPD.pdimg}" alt="${WorstPD.pdName}">
+						<c:choose>
+						    <c:when test="${WorstPD.pdStock == 0}">
+						        <img src="images/soldout.jpg" alt="SOLD OUT">
+						    </c:when>
+						    <c:otherwise>
+						        <img src="images/${WorstPD.pdimg}" alt="${WorstPD.pdName}">
+						    </c:otherwise>
+						</c:choose>
 						<h5 class="product-title">${WorstPD.pdName}</h5>
 					</a>
 					<div class="price-box">
@@ -76,7 +90,14 @@
 						<div class="swiper-slide">
 							<div class="product-item">
 								<a href="product.do?pdCode=${newpd.pdCode}">
-									<img src="images/${newpd.pdimg}" alt="${newpd.pdName}">
+									<c:choose>
+									    <c:when test="${newpd.pdStock == 0}">
+									        <img src="images/soldout.jpg" alt="SOLD OUT">
+									    </c:when>
+									    <c:otherwise>
+									        <img src="images/${newpd.pdimg}" alt="${newpd.pdName}">
+									    </c:otherwise>
+									</c:choose>
 									<h5 class="product-title">${newpd.pdName}</h5>
 								</a>
 								<div class="price-box">
@@ -126,7 +147,14 @@
 						<div class="product-item">
 							<div class="discount">n%</div>
 							<a href="product.do?pdCode=${pdList.pdCode}">
-								<img src="images/${pdList.pdimg}" alt="${pdList.pdName}">
+								<c:choose>
+								    <c:when test="${pdList.pdStock == 0}">
+								        <img src="images/soldout.png" alt="SOLD OUT">
+								    </c:when>
+								    <c:otherwise>
+								        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}">
+								    </c:otherwise>
+								</c:choose>
 								<h5 class="product-title">${pdList.pdName}</h5>
 							</a>
 							<div class="price-box">

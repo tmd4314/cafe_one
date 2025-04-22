@@ -75,7 +75,18 @@
 
                    <div class="col-md-10 col-sm-10 col-xs-10">
 
-                       <div class="thumb-main-image"><a href=""><img src="images/${product.pdimg }" alt=""></a></div>
+                       <div class="thumb-main-image">
+				        <a href="">
+				            <c:choose>
+				                <c:when test="${product.pdStock == 0}">
+				                    <img src="images/soldout.jpg" alt="SOLD OUT">
+				                </c:when>
+				                <c:otherwise>
+				                    <img src="images/${product.pdimg}" alt="">
+				                </c:otherwise>
+				            </c:choose>
+				        </a>
+				    </div>
 
                    </div>
                        
@@ -122,10 +133,19 @@
                     <form action="cartAdd.do" class="purchase-form" method="get">
 					    <input type="hidden" name="pdCode" value="${product.pdCode}">
 					    <div class="qt-area">
-					        <i class="fa fa-minus minus-btn"></i>
-					        <strong><input name="quan" class="qt" value="1" min="1" max="10"></strong>
-					        <i class="fa fa-plus plus-btn"></i>
-					    </div>
+						    <c:choose>
+						        <c:when test="${product.pdStock == 0}">
+						            <i class="fa fa-minus minus-btn disabled"></i>
+						            <strong><input name="quan" class="qt" value="0" disabled></strong>
+						            <i class="fa fa-plus plus-btn disabled"></i>
+						        </c:when>
+						        <c:otherwise>
+						            <i class="fa fa-minus minus-btn"></i>
+						            <strong><input name="quan" class="qt" value="1" min="1" max="10"></strong>
+						            <i class="fa fa-plus plus-btn"></i>
+						        </c:otherwise>
+						    </c:choose>
+						</div>
 					    <button class="btn btn-theme" type="submit">🛒Cart</button>
 					</form>
 
@@ -295,39 +315,48 @@
     </div>
     
     <script>
-	    document.addEventListener('DOMContentLoaded', function() {
-	        const minusBtns = document.querySelectorAll('.minus-btn');
-	        const plusBtns = document.querySelectorAll('.plus-btn');
-	        const quantityInputs = document.querySelectorAll('.qt');
-	        const calculatedPriceSpans = document.querySelectorAll('#calculatedPrice');
-	        const originalPriceValue = ${product.pdPrice}; // JSP에서 가격을 JavaScript 변수로 전달
-	
-	        minusBtns.forEach((btn) => { // index 파라미터 제거
-	            btn.addEventListener('click', function() {
-	                let currentValue = parseInt(this.parentNode.querySelector('.qt').value); // this 사용
-	                if (currentValue > 1) {
-	                    this.parentNode.querySelector('.qt').value = currentValue - 1; // this 사용
-	                    updateCalculatedPrice(currentValue - 1);
-	                }
-	            });
-	        });
-	
-	        plusBtns.forEach((btn)  => { // index 파라미터 제거
-	            btn.addEventListener('click', function() {
-	                let currentValue = parseInt(this.parentNode.querySelector('.qt').value); // this 사용
-	                if (currentValue < 10) {
-	                    this.parentNode.querySelector('.qt').value = currentValue + 1; // this 사용
-	                    updateCalculatedPrice(currentValue + 1);
-	                }
-	            });
-	        });
-	
-	        function updateCalculatedPrice(quantity) { // index 파라미터 제거
-	            const newPrice = originalPriceValue * quantity;
-	            const formattedPrice = newPrice.toLocaleString() + "원"; // 포맷된 가격 생성
-	            document.querySelector('#calculatedPrice').textContent = formattedPrice; // 포맷된 가격 업데이트
-	        }
-	    });
+    document.addEventListener('DOMContentLoaded', function() {
+        const minusBtns = document.querySelectorAll('.minus-btn');
+        const plusBtns = document.querySelectorAll('.plus-btn');
+        const quantityInputs = document.querySelectorAll('.qt');
+        const calculatedPriceSpans = document.querySelectorAll('#calculatedPrice');
+        const originalPriceValue = ${product.pdPrice}; // JSP에서 가격을 JavaScript 변수로 전달
+        const productStock = ${product.pdStock}; // JSP에서 재고를 JavaScript 변수로 전달
+
+        // 재고가 0이면 수량 조절 버튼 및 입력 필드 비활성화
+        if (productStock === 0) {
+            minusBtns.forEach(btn => btn.classList.add('disabled'));
+            plusBtns.forEach(btn => btn.classList.add('disabled'));
+            quantityInputs.forEach(input => input.disabled = true);
+        } else {
+            minusBtns.forEach((btn) => {
+                btn.addEventListener('click', function() {
+                    let currentValue = parseInt(this.parentNode.querySelector('.qt').value);
+                    if (currentValue > 1) {
+                        this.parentNode.querySelector('.qt').value = currentValue - 1;
+                        updateCalculatedPrice(currentValue - 1);
+                    }
+                });
+            });
+
+            plusBtns.forEach((btn)  => {
+                btn.addEventListener('click', function() {
+                    let currentValue = parseInt(this.parentNode.querySelector('.qt').value);
+                    if (currentValue < 10) {
+                        this.parentNode.querySelector('.qt').value = currentValue + 1;
+                        updateCalculatedPrice(currentValue + 1);
+                    }
+                });
+            });
+        }
+
+        function updateCalculatedPrice(quantity) {
+            const newPrice = originalPriceValue * quantity;
+            const formattedPrice = newPrice.toLocaleString() + "원";
+            document.querySelector('#calculatedPrice').textContent = formattedPrice;
+        }
+    });
+
 	</script>
     
     	<!-- jQuery Library -->
