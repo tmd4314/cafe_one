@@ -106,7 +106,7 @@
                 <p>© 2024 Organic. All rights reserved.</p>
             </div>
             <div class="col-md-6 credit-link text-end">
-                <a href="adminLogin.do" class="btn btn-sm btn-outline-light">관리자 로그인</a>
+                <a href="adminLoginForm.do" class="btn btn-sm btn-outline-light">관리자 로그인</a>
                 <p>HTML Template by <a href="https://templatesjungle.com/">TemplatesJungle</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a></p>
             </div>
         </div>

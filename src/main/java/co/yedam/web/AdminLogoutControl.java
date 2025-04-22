@@ -11,6 +11,6 @@ public class AdminLogoutControl implements Control {
     public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         session.invalidate(); // 세션 초기화
-        resp.sendRedirect("adminLoginForm.jsp"); // 관리자 로그인 페이지로 이동
+        resp.sendRedirect("adminBody.do"); // 관리자 로그인 페이지로 이동
     }
 }

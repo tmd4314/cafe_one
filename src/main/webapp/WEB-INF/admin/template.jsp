@@ -13,11 +13,20 @@
 
 <!-- 상단 네비게이션 바 -->
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand ps-3" href="#">Admin</a>
+    <a class="navbar-brand ps-3" href="adminBody.do">Admin</a>
+
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle">
         <i class="fas fa-bars"></i>
     </button>
-    <ul class="navbar-nav ms-auto me-3 me-lg-4">
+    <!-- 로그인 버튼 (로그인 안 한 경우에만 보여짐) -->
+    <c:if test="${empty sessionScope.adminName}">
+        <div class="ms-auto" style="position: absolute; right: 25px; top: 15px;">
+            <a class="nav-link text-white" href="adminLoginForm.do">로그인</a>
+        </div>
+    </c:if>
+
+    <!-- 로그인 후 이름 출력 및 로그아웃 버튼 (오른쪽 상단에 표시) -->
+    <ul class="navbar-nav ms-auto me-3 d-flex align-items-center"> <!-- 추가된 d-flex align-items-center -->
         <li class="nav-item">
             <span class="text-white">
                 <c:choose>
@@ -27,8 +36,16 @@
                 </c:choose>
             </span>
         </li>
+
+        <!-- 로그아웃 버튼 (로그인된 경우만) -->
+        <c:if test="${not empty sessionScope.adminName}">
+            <li class="nav-item ms-5"> <!-- me-5로 간격 추가 -->
+                <a class="nav-link text-white" href="adminLogout.do">로그아웃</a>
+            </li>
+        </c:if>
     </ul>
 </nav>
+
 
 <div id="layoutSidenav">
     <!-- 좌측 사이드바 -->
