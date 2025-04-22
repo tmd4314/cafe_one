@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.yedam.web.AddReviewControl;
 import co.yedam.web.AdminControl;
 import co.yedam.web.AdminLoginControl;
 import co.yedam.web.AdminLogoutControl;
@@ -23,6 +24,7 @@ import co.yedam.web.CashControl;
 import co.yedam.web.CashFormControl;
 import co.yedam.web.CategoryListControl;
 import co.yedam.web.ChangePwControl;
+import co.yedam.web.DeleteReviewControl;
 import co.yedam.web.DropUserControl;
 import co.yedam.web.LoginControl;
 import co.yedam.web.LoginFormControl;
@@ -69,8 +71,10 @@ public class FrontController extends HttpServlet {
 
 		// 베스트, 사용자 취향 기반
 
-		// 상세화면
+		// 상세화면, 댓글관리
 		map.put("/product.do", new ProductFormControl());
+		map.put("/addReview.do", new AddReviewControl());
+		map.put("/deleteReview.do", new DeleteReviewControl());
 
 		// 관리자부분.
 		map.put("/adminBody.do", new AdminControl());

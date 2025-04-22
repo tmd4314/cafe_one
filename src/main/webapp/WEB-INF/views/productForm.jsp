@@ -38,20 +38,6 @@
 
 <body>
 
-    <div class="breadcumbs">
-
-        <div class="container">
-
-            <div class="row">
-
-                <span>Home > 커피 > 원두 > </span>
-
-            </div>
-
-        </div>
-
-    </div>  
-
     <div class="short-description">
 
         <div class="container">
@@ -168,107 +154,118 @@
 
                             <h2>상품상세정보</h2>
 								
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col" style="width: 25%;">Imformation</th>
-      <th scope="col" style="width: 75%;">Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>상품명</td>
-      <td>${product.pdName }</td>
-    </tr>
-    <tr>
-      <td>상품가격</td>
-      <td><fmt:formatNumber value="${product.pdPrice}" type="number" groupingUsed="true" />원</td>
-    </tr>
-    <tr>
-      <td>제조사</td>
-      <td>${product.manufacturer }</td>
-    </tr>
-    <tr>
-      <td>원산지</td>
-      <td>${product.pdCoo }</td>
-    </tr>
-    <tr>
-      <td>원재료명</td>
-      <td>${product.material }</td>
-    </tr>
-    <tr>
-      <td>제조일</td>
-      <td>${product.pdMfd }</td>
-    </tr>
-    <tr>
-      <td>유통기한</td>
-      <td>${product.pdExp }</td>
-    </tr>
-    <tr>
-      <td>고객센터</td>
-      <td>1899-0011</td>
-    </tr>
-    <tr>
-      <td>반품 및 교환처</td>
-      <td>구입처 또는 판매원</td>
-    </tr>
-    <tr>
-      <td>상품카테고리코드</td>
-      <td>${product.categoryCode }</td>
-    </tr>
-    <tr>
-      <td>기타사항</td>
-      <td>본 제품은 공정거래위원회고시 소비자분쟁해결 기준에 의거 교환 또는 보상 받을 수 있습니다. 부정, 불량식품 신고는 국번없이 1399 입니다. 판매 시 개봉되지 않은 제품에 한하여 품질을 보증합니다. 구입시 밀봉상태를 확인하십시오. 제품에 이상이 있거나 의문사항이 있을 시 드시지 마시고 구입처로 문의하시기 바랍니다. 질소충전</td>
-    </tr>
-  </tbody>
-</table>
+								<table class="table">
+								  <thead>
+								    <tr>
+								      <th scope="col" style="width: 25%;">Information</th>
+								      <th scope="col" style="width: 75%;">Details</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								    <tr>
+								      <td>상품명</td>
+								      <td>${product.pdName }</td>
+								    </tr>
+								    <tr>
+								      <td>상품가격</td>
+								      <td><fmt:formatNumber value="${product.pdPrice}" type="number" groupingUsed="true" />원</td>
+								    </tr>
+								    <tr>
+								      <td>제조사</td>
+								      <td>${product.manufacturer }</td>
+								    </tr>
+								    <tr>
+								      <td>원산지</td>
+								      <td>${product.pdCoo }</td>
+								    </tr>
+								    <tr>
+								      <td>원재료명</td>
+								      <td>${product.material }</td>
+								    </tr>
+								    <tr>
+								      <td>제조일</td>
+								      <td>${product.pdMfd }</td>
+								    </tr>
+								    <tr>
+								      <td>유통기한</td>
+								      <td>${product.pdExp }</td>
+								    </tr>
+								    <tr>
+								      <td>고객센터</td>
+								      <td>1899-0011</td>
+								    </tr>
+								    <tr>
+								      <td>반품 및 교환처</td>
+								      <td>구입처 또는 판매원</td>
+								    </tr>
+								    <tr>
+								      <td>상품카테고리코드</td>
+								      <td>${product.categoryCode }</td>
+								    </tr>
+								    <tr>
+								      <td>기타사항</td>
+								      <td>본 제품은 공정거래위원회고시 소비자분쟁해결 기준에 의거 교환 또는 보상 받을 수 있습니다. 부정, 불량식품 신고는 국번없이 1399 입니다. 판매 시 개봉되지 않은 제품에 한하여 품질을 보증합니다. 구입시 밀봉상태를 확인하십시오. 제품에 이상이 있거나 의문사항이 있을 시 드시지 마시고 구입처로 문의하시기 바랍니다. 질소충전</td>
+								    </tr>
+								  </tbody>
+								</table>
 							
                         </div>
 
                     </div>
 
-                    <div class="tab-pane" id="reviews">
-					
-					<h3>리뷰 작성</h3>
-<form action="addReview.do" method="post">
-    <input type="hidden" name="pdCode" value="${product.pdCode}" />
-    <div class="form-group">
-        <label for="userId">작성자</label>
-        <input type="text" class="form-control" name="userId" id="userId" required />
-    </div>
-    <div class="form-group">
-        <label for="reviewTitle">제목</label>
-        <input type="text" class="form-control" name="reviewTitle" id="reviewTitle" required />
-    </div>
-    <div class="form-group">
-        <label for="reviewContent">내용</label>
-        <textarea class="form-control" name="reviewContent" id="reviewContent" rows="3" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">리뷰 등록</button>
-</form>
-					
-					<table class="table">
-					  <thead>
-					    <tr>
-					      <th scope="col" style="width: 5%;">번호</th>
-					      <th scope="col" style="width: 10%;">작성자</th>
-					      <th scope="col" style="width: 25%;">리뷰제목</th>
-					      <th scope="col" style="width: 60%;">리뷰내용</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-					  	<c:forEach var="review" items="${review}" varStatus="status">
-						    <tr>
-						      <th scope="row">${review.reviewId }</th>
-						      <td>${review.userId }</td>
-						      <td>${review.reviewTitle }</td>
-						      <td>${review.reviewContent }</td>
-						    </tr>
-					    </c:forEach>
-					  </tbody>
-					</table>	
-								
-                    </div>
+						<div class="tab-pane" id="reviews">
+						  <h3>리뷰 작성</h3>
+						
+						  <!-- 리뷰 작성 폼 -->
+						  <form action="addReview.do" method="post">
+						    <input type="hidden" name="pdCode" value="${product.pdCode}" />
+						    <input type="hidden" name="userId" value="${sessionScope.loginId}" />
+						
+						    <div class="form-group">
+						      <label>리뷰 제목</label>
+						      <input type="text" name="reviewTitle" class="form-control" required>
+						    </div>
+						
+						    <div class="form-group">
+						      <label>리뷰 내용</label>
+						      <textarea name="reviewContent" class="form-control" rows="3" required></textarea>
+						    </div>
+						
+						    <button type="submit" class="btn btn-primary">리뷰 작성</button>
+						  </form>
+						
+						  <hr/>
+						
+						  <!-- 리뷰 목록 -->
+						  <table class="table">
+						    <thead>
+								  <tr>
+								    <th style="width: 5%;">번호</th>
+								    <th style="width: 10%;">작성자</th>
+								    <th style="width: 25%;">리뷰제목</th>
+								    <th style="width: 50%;">리뷰내용</th>
+								    <th style="width: 10%;">삭제</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <c:forEach var="review" items="${review}" varStatus="status">
+								    <tr>
+								      <td>${review.reviewId}</td>
+								      <td>${review.userId}</td>
+								      <td>${review.reviewTitle}</td>
+								      <td>${review.reviewContent}</td>
+								      <td>
+								        <form action="deleteReview.do" method="post" onsubmit="return confirm('정말 삭제하시겠습니까?');">
+								          <input type="hidden" name="reviewId" value="${review.reviewId}" />
+								          <input type="hidden" name="pdCode" value="${product.pdCode}" />
+								          <button type="submit" class="btn btn-danger btn-sm">삭제</button>
+								        </form>
+								      </td>
+								    </tr>
+								  </c:forEach>
+								</tbody>
+							</table>
+						</div>
 
                 </div>
 

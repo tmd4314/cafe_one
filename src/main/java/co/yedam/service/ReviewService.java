@@ -8,4 +8,6 @@ public interface ReviewService {
 
 	public boolean addReview(ReviewVO vo);
 	public List<ReviewVO> getReviewList(String pdCode);
+	
+	public boolean removeReview(int reviewId, String userId);
 }

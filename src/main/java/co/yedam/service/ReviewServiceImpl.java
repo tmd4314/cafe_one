@@ -23,6 +23,9 @@ public class ReviewServiceImpl implements ReviewService{
 		
 		return mapper.selectReviewList(pdCode);
 	}
-
 	
+	@Override
+	public boolean removeReview(int reviewId, String userId) {
+	    return mapper.deleteReview(reviewId, userId) == 1;
+	}
 }
