@@ -11,4 +11,5 @@ public interface ProductService {
 	 boolean updateStock(String pdCode, int quantity);
 
 	 List<ProductVO> getTopReviewProductList();
+	 int getproductListWithReviewCount(String code);
 }

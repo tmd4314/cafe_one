@@ -130,11 +130,10 @@
         NVL(r.review_count, 0) DESC
 </select>
 
-    <select id="productListWithReviewCount" resultType="co.yedam.vo.ProductVO">
-        SELECT p.*, 
-               (SELECT COUNT(*) FROM review r WHERE r.pd_code = p.pd_code) AS review_count
-        FROM product p
-        ORDER BY p.pd_code DESC
-    </select>
+<select id="productListWithReviewCount" parameterType="String" resultType="co.yedam.vo.ProductVO">
+	select count (*)
+	from review
+	where pd_code = #{pdCode}
+</select>
 
 </mapper>

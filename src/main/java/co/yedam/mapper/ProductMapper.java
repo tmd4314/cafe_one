@@ -20,4 +20,5 @@ public interface ProductMapper {
 	   
 	   List<ProductVO> selectProductOrderByReview();
 
+	   int productListWithReviewCount(@Param("pdCode") String code);
 }

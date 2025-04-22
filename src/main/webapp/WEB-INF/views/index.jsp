@@ -184,7 +184,7 @@
                     <h3 class="fs-6 fw-normal">${product.pdName}</h3>
                     <div>
 
-                      <span>${product.reviewCount}</span>
+                      <span>${sessionScope.reviewCount}</span>
                     </div>
                     <div class="d-flex justify-content-center align-items-center gap-2">
 

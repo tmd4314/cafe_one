@@ -33,5 +33,10 @@ public class ProductServiceImpl implements ProductService {
 	public List<ProductVO> getTopReviewProductList() {
 	    return mapper.selectProductOrderByReview();  // 메서드 호출이 올바른지 확인
 	}
+	
+	@Override
+	public int getproductListWithReviewCount(String code) {
+	    return mapper.productListWithReviewCount(code);  // 메서드 호출이 올바른지 확인
+	}
 
 }

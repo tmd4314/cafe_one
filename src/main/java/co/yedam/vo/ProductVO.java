@@ -24,5 +24,5 @@ public class ProductVO {
 	private int pdScore;
 	private String categoryCode;
 
-	private int reviewCount;
+
 }
