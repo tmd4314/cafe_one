@@ -17,6 +17,10 @@
       background: #f5f5f5;
       font-family: 'Roboto', sans-serif;
     }
+    .container {
+	  margin: 0 auto; /* 상하 여백은 0, 좌우는 auto로 설정하여 중앙 정렬 */
+	  margin-bottom: 250px; /* container의 최대 너비 설정 (필요한 경우) */
+	}
     .table-wrapper {
       background: #fff;
       padding: 20px;
@@ -96,7 +100,7 @@
               <td>${p.pdName}</td>
               <td><fmt:formatNumber value="${p.pdPrice}" pattern="#,###"/> 원</td>
               <td>${p.manufacturer}</td>
-              <td><a href="productInfo.do?code=${p.pdCode}">보기</a></td>
+              <td><a href="productInfo.do?pdCode=${p.pdCode}">보기</a></td>
             </tr>
           </c:forEach>
         </tbody>

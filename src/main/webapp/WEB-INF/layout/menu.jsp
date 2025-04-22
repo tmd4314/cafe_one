@@ -435,4 +435,6 @@
 					</script>
 				</div>
 			</div>
+		</div>
+	</div>
 </header>
