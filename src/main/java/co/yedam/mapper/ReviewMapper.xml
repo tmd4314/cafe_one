@@ -27,6 +27,15 @@
 <delete id="deleteReview">
     DELETE FROM review 
     WHERE review_id = #{reviewId}
-    AND user_id = #{userId}
+      AND LOWER(user_id) = LOWER(#{userId})
+      AND pd_code = #{pdCode}
 </delete>
+
+    <update id="reorderReviews">
+        UPDATE review
+        SET review_id = review_id - 1
+        WHERE pd_code = #{pdCode}
+        AND review_id > #{deletedReviewId}
+    </update>
+
 </mapper>

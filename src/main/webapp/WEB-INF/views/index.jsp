@@ -166,13 +166,14 @@
 
           </div>
         </div>
-        <c:forEach var="product" items="${productList}">
+        
         <div class="row">
           <div class="col-md-12">
 
             <div class="swiper">
               <div class="swiper-wrapper">
 
+				<c:forEach var="product" items="${reviewProductList}">
                 <div class="product-item swiper-slide">
                   <figure>
                     <a href="product.do?pdCode=${product.pdCode}" title="Product Title">
@@ -182,28 +183,12 @@
                   <div class="d-flex flex-column text-center">
                     <h3 class="fs-6 fw-normal">${product.pdName}</h3>
                     <div>
-                      <span class="rating">
-                        <svg width="18" height="18" class="text-warning">
-                          <use xlink:href="#star-full"></use>
-                        </svg>
-                        <svg width="18" height="18" class="text-warning">
-                          <use xlink:href="#star-full"></use>
-                        </svg>
-                        <svg width="18" height="18" class="text-warning">
-                          <use xlink:href="#star-full"></use>
-                        </svg>
-                        <svg width="18" height="18" class="text-warning">
-                          <use xlink:href="#star-full"></use>
-                        </svg>
-                        <svg width="18" height="18" class="text-warning">
-                          <use xlink:href="#star-half"></use>
-                        </svg>
-                      </span>
-                      <span>(222)</span>
+
+                      <span>${product.reviewCount}</span>
                     </div>
                     <div class="d-flex justify-content-center align-items-center gap-2">
 
-                      <span class="text-dark fw-semibold">${product.pdPrice }</span>
+                      <span class="text-dark fw-semibold"><fmt:formatNumber value="${product.pdPrice}" type="number" groupingUsed="true" />원</span>
 
                     </div>
                     <div class="button-area p-3 pt-0">

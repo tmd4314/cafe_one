@@ -30,12 +30,8 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public List<ProductVO> getProductList() {
-	    return mapper.selectAllProduct();
-	}
-	
-	@Override
 	public List<ProductVO> getTopReviewProductList() {
-	    return mapper.selectTopReviewProductList();
+	    return mapper.selectProductOrderByReview();  // 메서드 호출이 올바른지 확인
 	}
+
 }

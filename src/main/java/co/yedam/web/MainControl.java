@@ -21,16 +21,12 @@ public class MainControl implements Control {
 //		HttpSession session = req.getSession();
 //		String logId = (String) session.getAttribute("logId");
 		
-        ProductService service = new ProductServiceImpl();
-        List<ProductVO> allList = service.getTopReviewProductList();
-
-        // 4개만 자르기
-        List<ProductVO> productList = allList.size() > 4 ? allList.subList(0, 4) : allList;
-
-        req.setAttribute("productList", productList); // JSP에 전달
+		ProductService service = new ProductServiceImpl();
 		
+		List<ProductVO> allList = service.getTopReviewProductList();
+		List<ProductVO> productList = allList.size() > 4 ? allList.subList(0, 4) : allList;
+		req.setAttribute("reviewProductList", productList);
 		req.getRequestDispatcher("product/index.tiles").forward(req, resp);
-
 	} // end of exec()
 } // end of class
 		

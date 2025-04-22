@@ -23,4 +23,6 @@ public class ProductVO {
 	private int pdPrice;
 	private int pdScore;
 	private String categoryCode;
+
+	private int reviewCount;
 }
