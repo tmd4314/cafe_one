@@ -92,7 +92,14 @@
               <div class="col-md-4 product-item ">
                 <figure>
                   <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
-                    <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                    <c:choose>
+					    <c:when test="${pdList.pdStock == 0}">
+					        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
+					    </c:when>
+					    <c:otherwise>
+					        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+					    </c:otherwise>
+					</c:choose>
                   </a>
                 </figure>
                 <div class="d-flex flex-column text-center">
@@ -104,7 +111,15 @@
                     <div class="row g-1 mt-2">
                       <div class="col-3"><input type="number" name="quantity"
                           class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10" data-pdcode="${pdList.pdCode}"></div>
-                      <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+                      <div class="col-7"> <c:choose>
+										        <c:when test="${pdList.pdStock == 0}">
+										            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+										            <span class="text-danger">매진되었습니다</span>
+										        </c:when>
+										        <c:otherwise>
+										            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+										        </c:otherwise>
+										    </c:choose>
                       </div>
                       <a href="#" 
 						   class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
@@ -124,7 +139,14 @@
               <div class="col-md-4 product-item ">
                 <figure>
                   <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
-                    <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                    <c:choose>
+					    <c:when test="${pdList.pdStock == 0}">
+					        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
+					    </c:when>
+					    <c:otherwise>
+					        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+					    </c:otherwise>
+					</c:choose>
                   </a>
                 </figure>
                 <div class="d-flex flex-column text-center">
@@ -136,7 +158,15 @@
                     <div class="row g-1 mt-2">
                       <div class="col-3"><input type="number" name="quantity"
                           class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10" data-pdcode="${pdList.pdCode}"></div>
-                      <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"  onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+                      <div class="col-7"><c:choose>
+										        <c:when test="${pdList.pdStock == 0}">
+										            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+										            <span class="text-danger">매진되었습니다</span>
+										        </c:when>
+										        <c:otherwise>
+										            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+										        </c:otherwise>
+										    </c:choose>
                       </div>
                       <a href="#" 
 						   class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
@@ -155,7 +185,14 @@
               <div class="col-md-4 product-item ">
                 <figure>
                   <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
-                    <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                    <c:choose>
+					    <c:when test="${pdList.pdStock == 0}">
+					        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
+					    </c:when>
+					    <c:otherwise>
+					        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+					    </c:otherwise>
+					</c:choose>
                   </a>
                 </figure>
                 <div class="d-flex flex-column text-center">
@@ -167,7 +204,15 @@
                     <div class="row g-1 mt-2">
                       <div class="col-3"><input type="number" name="quantity"
                           class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10" data-pdcode="${pdList.pdCode}"></div>
-                      <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+                      <div class="col-7"><c:choose>
+										        <c:when test="${pdList.pdStock == 0}">
+										            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+										            <span class="text-danger">매진되었습니다</span>
+										        </c:when>
+										        <c:otherwise>
+										            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+										        </c:otherwise>
+										    </c:choose>
                       </div>
 						<a href="#" 
 						   class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
@@ -185,7 +230,14 @@
               <div class="col-md-4 product-item ">
                 <figure>
                   <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
-                    <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                    <c:choose>
+					    <c:when test="${pdList.pdStock == 0}">
+					        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
+					    </c:when>
+					    <c:otherwise>
+					        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+					    </c:otherwise>
+					</c:choose>
                   </a>
                 </figure>
                 <div class="d-flex flex-column text-center">
@@ -198,7 +250,15 @@
                       <div class="col-3"><input type="number" name="quantity"
                           class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10" data-pdcode="${pdList.pdCode}"></div>
                       <div class="col-7">
-                      		<a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+                      		<c:choose>
+						        <c:when test="${pdList.pdStock == 0}">
+						            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+						            <span class="text-danger">매진되었습니다</span>
+						        </c:when>
+						        <c:otherwise>
+						            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+						        </c:otherwise>
+						    </c:choose>
                       </div>
   						   <a href="#" 
 						   class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
@@ -217,7 +277,14 @@
               <div class="col-md-4 product-item ">
                 <figure>
                   <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
-                    <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image" style="color: black;">
+                    <c:choose>
+					    <c:when test="${pdList.pdStock == 0}">
+					        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
+					    </c:when>
+					    <c:otherwise>
+					        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+					    </c:otherwise>
+					</c:choose>
                   </a>
                 </figure>
                 <div class="d-flex flex-column text-center">
@@ -229,7 +296,15 @@
                     <div class="row g-1 mt-2">
                       <div class="col-3"><input type="number" name="quantity"
                           class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10" data-pdcode="${pdList.pdCode}"></div>
-                      <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+                      <div class="col-7"><c:choose>
+										        <c:when test="${pdList.pdStock == 0}">
+										            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+										            <span class="text-danger">매진되었습니다</span>
+										        </c:when>
+										        <c:otherwise>
+										            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+										        </c:otherwise>
+										    </c:choose>
                       </div>
  					  <a href="#" 
 						   class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
@@ -272,7 +347,14 @@
                                     <div class="product-item swiper-slide review-product-item"> <!-- 클래스 추가 -->
                                         <figure>
                                             <a href="product.do?pdCode=${product.pdCode}" title="${product.pdName}">
-                                                <img src="images/${product.pdimg}" alt="${product.pdName}" class="tab-image">
+                                               <c:choose>
+												    <c:when test="${product.pdStock == 0}">
+												        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
+												    </c:when>
+												    <c:otherwise>
+												        <img src="images/${product.pdimg}" alt="${product.pdName}" class="tab-image">
+												    </c:otherwise>
+												</c:choose>
                                             </a>
                                         </figure>
                                         <h3 class="fs-6 fw-normal" style="color: black;">${product.pdName}</h3>
@@ -288,7 +370,15 @@
                                                         class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10" data-pdcode="${product.pdCode}">
                                                 </div>
                                                 <div class="col-7">
-                                                    <a href="#" class="btn btn-primary rounded-1 p-3 fs-6 btn-cart" onclick="addToCart(this, '${product.pdCode}')">🛒 Cart</a>
+                                                    <c:choose>
+												        <c:when test="${pdList.pdStock == 0}">
+												            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+												            <span class="text-danger">매진되었습니다</span>
+												        </c:when>
+												        <c:otherwise>
+												            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+												        </c:otherwise>
+												    </c:choose>
                                                 </div>
                                                     <a href="#" 
                                                        class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
