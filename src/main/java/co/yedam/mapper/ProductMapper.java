@@ -16,4 +16,7 @@ public interface ProductMapper {
 	   List<ProductVO> selectCategoryWorst(@Param("categoryCode") String categoryCode); // 카테고리별 worst5상품 made by KMS
 	   List<ProductVO> selectCategoryNewPd(@Param("categoryCode") String categoryCode); // 카테고리별 최신 5상품 made by KMS 
 	   int updateStock(@Param("quantity") int quantity, @Param("pdCode") String pdCode);
+	   
+	   List<ProductVO> selectTopReviewProductList();
+
 }
