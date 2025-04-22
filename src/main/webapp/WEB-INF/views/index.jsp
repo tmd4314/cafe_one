@@ -85,37 +85,38 @@
           </div>
         </div>
       </div>
-
-
-      <c:forEach var="pdList" items="${bList}">
-        <div class="col-md-4 product-item ">
-          <figure>
-            <a href="product.do?pdc=product1" title="Product 1">
-              <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
-            </a>
-          </figure>
-          <div class="d-flex flex-column text-center">
-            <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
-            <div>
-              <span class="rating">${pdList.pdScore} / 10</span>
-              <span>(재고 : ${pdList.pdStock})</span>
-            </div>
-            <div class="button-area p-3 pt-0">
-              <div class="row g-1 mt-2">
-                <div class="col-3"><input type="number" name="quantity"
-                    class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
+      <div class="row product-grid">
+        <c:choose>
+          <c:when test="${param.categoryCode == NULL}">
+            <c:forEach var="pdList" items="${bList}">
+              <div class="col-md-4 product-item ">
+                <figure>
+                  <a href="product.do?pdc=product1" title="Product 1">
+                    <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                  </a>
+                </figure>
+                <div class="d-flex flex-column text-center">
+                  <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
+                  <div>
+                    <span class="rating">${pdList.pdScore} / 10</span>
+                    <span>(재고 : ${pdList.pdStock})</span>
+                  </div>
+                  <div class="button-area p-3 pt-0">
+                    <div class="row g-1 mt-2">
+                      <div class="col-3"><input type="number" name="quantity"
+                          class="form-control border-dark-subtle input-number quantity" value="1"></div>
+                      <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
+                      </div>
+                      <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
               </div>
-            </div>
-          </div>
-        </div>
-      </c:forEach>
+            </c:forEach>
+          </c:when>
 
-      <c:choose>
-        <c:when test="${param.categoryCode == 'CO'}">
-          <div class="row product-grid">
+          <c:when test="${param.categoryCode == 'CO'}">
+
             <c:forEach var="pdList" items="${bCOList}">
               <div class="col-md-4 product-item ">
                 <figure>
@@ -141,91 +142,91 @@
                 </div>
               </div>
             </c:forEach>
-          </div>
-        </c:when>
-        <c:when test="${param.categoryCode == 'SF'}">
-          <c:forEach var="pdList" items="${bSFList }">
-            <div class="col-md-4 product-item ">
-              <figure>
-                <a href="product.do?pdc=product1" title="Product 1">
-                  <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
-                </a>
-              </figure>
-              <div class="d-flex flex-column text-center">
-                <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
-                <div>
-                  <span class="rating">${pdList.pdScore} / 10</span>
-                  <span>(재고 : ${pdList.pdStock})</span>
-                </div>
-                <div class="button-area p-3 pt-0">
-                  <div class="row g-1 mt-2">
-                    <div class="col-3"><input type="number" name="quantity"
-                        class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                    <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
-                    </div>
-                    <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </c:forEach>
-        </c:when>
-        <c:when test="${param.categoryCode == 'PD'}">
-          <c:forEach var="pdList" items="${bPDList}">
-            <div class="col-md-4 product-item ">
-              <figure>
-                <a href="product.do?pdc=product1" title="Product 1">
-                  <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
-                </a>
-              </figure>
-              <div class="d-flex flex-column text-center">
-                <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
-                <div>
-                  <span class="rating">${pdList.pdScore} / 10</span>
-                  <span>(재고 : ${pdList.pdStock})</span>
-                </div>
-                <div class="button-area p-3 pt-0">
-                  <div class="row g-1 mt-2">
-                    <div class="col-3"><input type="number" name="quantity"
-                        class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                    <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
-                    </div>
-                    <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </c:forEach>
-        </c:when>
-        <c:when test="${param.categoryCode == 'UZ'}">
-          <c:forEach var="pdList" items="${bUZList}">
-            <div class="col-md-4 product-item ">
-              <figure>
-                <a href="product.do?pdc=product1" title="Product 1">
-                  <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
-                </a>
-              </figure>
-              <div class="d-flex flex-column text-center">
-                <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
-                <div>
-                  <span class="rating">${pdList.pdScore} / 10</span>
-                  <span>(재고 : ${pdList.pdStock})</span>
-                </div>
-                <div class="button-area p-3 pt-0">
-                  <div class="row g-1 mt-2">
-                    <div class="col-3"><input type="number" name="quantity"
-                        class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                    <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
-                    </div>
-                    <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </c:forEach>
-        </c:when>
-      </c:choose>
 
+          </c:when>
+          <c:when test="${param.categoryCode == 'SF'}">
+            <c:forEach var="pdList" items="${bSFList }">
+              <div class="col-md-4 product-item ">
+                <figure>
+                  <a href="product.do?pdc=product1" title="Product 1">
+                    <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                  </a>
+                </figure>
+                <div class="d-flex flex-column text-center">
+                  <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
+                  <div>
+                    <span class="rating">${pdList.pdScore} / 10</span>
+                    <span>(재고 : ${pdList.pdStock})</span>
+                  </div>
+                  <div class="button-area p-3 pt-0">
+                    <div class="row g-1 mt-2">
+                      <div class="col-3"><input type="number" name="quantity"
+                          class="form-control border-dark-subtle input-number quantity" value="1"></div>
+                      <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
+                      </div>
+                      <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </c:forEach>
+          </c:when>
+          <c:when test="${param.categoryCode == 'PD'}">
+            <c:forEach var="pdList" items="${bPDList}">
+              <div class="col-md-4 product-item ">
+                <figure>
+                  <a href="product.do?pdc=product1" title="Product 1">
+                    <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                  </a>
+                </figure>
+                <div class="d-flex flex-column text-center">
+                  <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
+                  <div>
+                    <span class="rating">${pdList.pdScore} / 10</span>
+                    <span>(재고 : ${pdList.pdStock})</span>
+                  </div>
+                  <div class="button-area p-3 pt-0">
+                    <div class="row g-1 mt-2">
+                      <div class="col-3"><input type="number" name="quantity"
+                          class="form-control border-dark-subtle input-number quantity" value="1"></div>
+                      <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
+                      </div>
+                      <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </c:forEach>
+          </c:when>
+          <c:when test="${param.categoryCode == 'UZ'}">
+            <c:forEach var="pdList" items="${bUZList}">
+              <div class="col-md-4 product-item ">
+                <figure>
+                  <a href="product.do?pdc=product1" title="Product 1">
+                    <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                  </a>
+                </figure>
+                <div class="d-flex flex-column text-center">
+                  <h3 class="fs-6 fw-normal">${pdList.pdName}</h3>
+                  <div>
+                    <span class="rating">${pdList.pdScore} / 10</span>
+                    <span>(재고 : ${pdList.pdStock})</span>
+                  </div>
+                  <div class="button-area p-3 pt-0">
+                    <div class="row g-1 mt-2">
+                      <div class="col-3"><input type="number" name="quantity"
+                          class="form-control border-dark-subtle input-number quantity" value="1"></div>
+                      <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
+                      </div>
+                      <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </c:forEach>
+          </c:when>
+        </c:choose>
+      </div>
 
 
 

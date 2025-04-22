@@ -27,11 +27,13 @@ public class MainControl implements Control {
 		SqlSession sqlSession = DataSource.getInstance().openSession(true);
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
         
+		List<ProductVO> bestPdList = mapper.selectCategoryTop("");
         List<ProductVO> bestPdListCO = mapper.selectCategoryTop("CO");
         List<ProductVO> bestPdListSF = mapper.selectCategoryTop("SF");
         List<ProductVO> bestPdListPD = mapper.selectCategoryTop("PD");
         List<ProductVO> bestPdListUZ = mapper.selectCategoryTop("UZ");
         
+        req.setAttribute("bList", bestPdList);
         req.setAttribute("bCOList", bestPdListCO);
         req.setAttribute("bSFList", bestPdListSF);
         req.setAttribute("bPDList", bestPdListPD);
