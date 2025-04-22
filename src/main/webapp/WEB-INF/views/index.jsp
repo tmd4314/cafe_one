@@ -246,20 +246,13 @@
 
           </div>
         </div>
-<<<<<<< HEAD
         
-        <div class="row">
-          <div class="col-md-12">
-=======
-        <c:forEach var="product" items="${productList}">
           <div class="row">
             <div class="col-md-12">
->>>>>>> refs/heads/master
 
               <div class="swiper">
                 <div class="swiper-wrapper">
 
-<<<<<<< HEAD
 				<c:forEach var="product" items="${reviewProductList}">
                 <div class="product-item swiper-slide">
                   <figure>
@@ -274,7 +267,6 @@
                       <span>${sessionScope.reviewCount}</span>
                     </div>
                     <div class="d-flex justify-content-center align-items-center gap-2">
-=======
                   <div class="product-item swiper-slide">
                     <figure>
                       <a href="product.do?pdCode=${product.pdCode}" title="Product Title">
