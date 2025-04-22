@@ -286,6 +286,47 @@
 	<div class="container-fluid">
 		<div class="row py-3 border-bottom align-items-center flex-nowrap">
 
+			
+			  <!-- 커피 -->
+			  <li class="nav-item dropdown">
+			    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">커피</a>
+			    <div class="dropdown-menu p-3">
+			      <a href="search.do?sub=CO1" class="dropdown-item">원두커피</a>
+			      <a href="search.do?sub=CO2" class="dropdown-item">캡슐커피</a>
+			      <a href="search.do?sub=CO3" class="dropdown-item">인스턴트커피</a>
+			    </div>
+			  </li>
+			
+			  <!-- 시럽/소스 -->
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="search.do?sub=SF" role="button" data-bs-toggle="dropdown">시럽/소스</a>
+				  <div class="dropdown-menu p-3">
+				    <a class="dropdown-item" href="search.do?sub=SF1">일반시럽</a>
+				    <a class="dropdown-item" href="search.do?sub=SF2">과일시럽</a>
+				    <a class="dropdown-item" href="search.do?sub=SF3">토핑시럽</a>
+				    <a class="dropdown-item" href="search.do?sub=SF4">에이드베이스</a>
+				  </div>
+				</li>
+				
+				<!-- 파우더 -->
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">파우더</a>
+				  <div class="dropdown-menu p-3">
+				    <a class="dropdown-item" href="search.do?sub=PD1">라떼</a>
+				    <a class="dropdown-item" href="search.do?sub=PD2">과일</a>
+				    <a class="dropdown-item" href="search.do?sub=PD3">요거트</a>
+				  </div>
+				</li>
+				
+				<!-- 유제품 -->
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">유제품</a>
+				  <div class="dropdown-menu p-3">
+				    <a class="dropdown-item" href="search.do?sub=UZ1">우유생크림</a>
+				    <a class="dropdown-item" href="search.do?sub=UZ2">치즈버터</a>
+				    <a class="dropdown-item" href="search.do?sub=UZ3">휘핑크림연유</a>
+				  </div>
+				</li>
 			<!-- 왼쪽: 로고 -->
 			<div class="col-auto d-flex align-items-center gap-3">
 				<a href="main.do">

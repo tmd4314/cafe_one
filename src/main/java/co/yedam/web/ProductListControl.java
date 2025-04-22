@@ -27,7 +27,6 @@ public class ProductListControl implements Control {
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
 		
 		String cc = req.getParameter("category");
-		//String cc = "SF1";
 		
 		// 해당 카테고리 전체 상품
 		List<ProductVO> list = mapper.selectCategory(cc); 		

@@ -103,11 +103,21 @@ section {
   flex-wrap: nowrap;
   overflow-x: auto;
 }
-
+/* .product-item이 있으면 높이도 맞춰주세요 */
+.product-item {
+  height: auto; /* 또는 원하는 높이 설정 가능 */
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+  text-align: center;
+}
 .product-item.card {
-  width: 250px;
+  width: 20%;
   /* 카드 너비 설정 */
-  margin-right: 15px;
+  /*
+  margin-right: 15px;  
+  */
   /* 카드 간 간격 설정 */
   flex: 0 0 auto;
 }
@@ -187,23 +197,9 @@ section {
   border-radius: 3px;
 }
 
-.product-item.swiper-slide {
-  width: 300px !important;
-  /* 원하는 너비로 변경, !important 추가 */
-  margin-right: 15px !important;
-  /* 필요에 따라 간격 조정, !important 추가 */
-  /* 다른 스타일 속성들을 추가할 수 있습니다. */
-}
-
-/* Swiper가 동적으로 생성하는 스타일을 덮어쓰기 위해 더 구체적인 선택자를 사용할 수 있습니다. */
-.swiper-wrapper .product-item.swiper-slide {
-  width: 300px !important;
-}
-
 .tab-image {
-  /* 이미지에 대한 스타일 (선택 사항) */
   width: 100%;
-  /* 이미지가 컨테이너에 꽉 차도록 설정 */
-  height: auto;
-  /* 이미지 비율 유지 */
+  height: 200px; /* 원하는 이미지 높이로 조절 */
+  object-fit: cover; /* 이미지 비율 유지하며 넘치는 부분 자르기 */
+  border-radius: 5px;
 }
