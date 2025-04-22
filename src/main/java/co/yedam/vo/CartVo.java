@@ -12,6 +12,14 @@ public class CartVo {
     private int pdPrice;
     private String pdImg;
     private int totalPrice;
+    
+    public CartVo() {} // 기본 생성자 추가
+    
+public CartVo(String userId, String pdCode, int quantity) {
+        this.userId = userId;
+        this.pdCode = pdCode;
+        this.quantity = quantity;
+    }
 
     // 생성자, getter, setter
 }

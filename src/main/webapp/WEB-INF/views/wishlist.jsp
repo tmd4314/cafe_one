@@ -61,10 +61,17 @@
                 </p>
               </div>
               <div class="card-footer d-flex justify-content-between bg-transparent border-0">
+                 <!-- 상세보기 버튼 -->
                 <form action="productInfo.do" method="get">
 				  <input type="hidden" name="pdCode" value="${item.pdCode}" />
 				  <button class="btn btn-sm btn-outline-primary" type="submit">상세보기</button>
 				</form>
+				<!-- 장바구니 추가 버튼 -->
+				  <button class="btn btn-sm btn-outline-success add-to-cart-btn"
+				          data-pdcode="${item.pdCode}" data-userid="${sessionScope.logId}">
+				    🛒 장바구니
+				  </button>
+				<!-- 삭제 버튼 -->
                 <form action="wishlistRemove.do" method="post"
                       onsubmit="return confirm('정말 삭제하시겠습니까?')">
                   <input type="hidden" name="userId" value="${sessionScope.logId}" />
@@ -79,5 +86,68 @@
     </c:otherwise>
   </c:choose>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".add-to-cart-btn").forEach(button => {
+    button.addEventListener("click", function () {
+      const pdCode = this.dataset.pdcode;
+      const userId = this.dataset.userid;
+
+      fetch("addToCartAjax.do", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `pdCode=\${pdCode}&userId=\${userId}&quantity=1`
+      })
+      .then(res => res.text())
+      .then(data => {
+        if (data === "success") {
+          // ✅ 장바구니 창 열기
+          const cartOffcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasCart'));
+          cartOffcanvas.show();
+
+          // ✅ 장바구니 내용 불러오기
+          loadCart();
+        } else {
+          alert("장바구니 담기에 실패했습니다.");
+        }
+      });
+    });
+  });
+});
+
+function loadCart() {
+  fetch("cartListAjax.do?userId=" + '${sessionScope.logId}')
+    .then(res => res.json())
+    .then(data => {
+      const cartItems = document.getElementById("cartItems");
+      cartItems.innerHTML = "";
+
+      let total = 0;
+
+      data.forEach(item => {
+        total += item.quantity * item.pdPrice;
+
+        const li = document.createElement("li");
+        li.className = "list-group-item d-flex justify-content-between align-items-center";
+
+        li.innerHTML = `
+          <div class="form-check">
+            <input class="form-check-input cart-check" type="checkbox" value="${item.cartNo}">
+          </div>
+          <div>
+            <strong>${item.pdName}</strong><br>
+            <small>${item.quantity}개 × ${item.pdPrice.toLocaleString()}원</small>
+          </div>
+          <div>
+            <button class="btn btn-sm btn-outline-secondary">수정</button>
+          </div>
+        `;
+        cartItems.appendChild(li);
+      });
+    });
+}
+</script>
 </body>
 </html>

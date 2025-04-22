@@ -24,7 +24,6 @@
                     <c:when test="${not empty sessionScope.adminName}">
                         ${sessionScope.adminName}님 로그인됨
                     </c:when>
-                    <c:otherwise>관리자 로그인됨</c:otherwise>
                 </c:choose>
             </span>
         </li>
@@ -139,6 +138,10 @@
                 localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
             });
         }
+
+        //  관리자 로그인 유저 확인 로그
+        const adminName = '<c:out value="${sessionScope.adminName}" />';
+        console.log(" 로그인된 관리자:", adminName ? adminName : '익명 관리자');
     });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
