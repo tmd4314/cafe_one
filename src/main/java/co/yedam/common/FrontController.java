@@ -34,6 +34,7 @@ import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
 import co.yedam.web.MemberUpdateControl;
 import co.yedam.web.MyPageControl;
+import co.yedam.web.MyReviewControl;
 import co.yedam.web.OrderDeleteControl;
 import co.yedam.web.OrderDetailFormControl;
 import co.yedam.web.OrderFormControl;
@@ -109,6 +110,7 @@ public class FrontController extends HttpServlet {
 		map.put("/myPage.do", new MyPageControl()); // 마이페이지
 		map.put("/changePw.do", new ChangePwControl()); // 비밀번호변경
 		map.put("/updateMember.do", new MemberUpdateControl()); // 정보변경
+		map.put("/myReview.do", new MyReviewControl()); // 나의 리뷰후기
  		
 		//장바구니
 		map.put("/cartList.do", new CartListControl());

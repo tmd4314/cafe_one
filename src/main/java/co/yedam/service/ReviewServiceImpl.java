@@ -28,4 +28,9 @@ public class ReviewServiceImpl implements ReviewService{
 	public boolean removeReview(int reviewId, String userId) {
 	    return mapper.deleteReview(reviewId, userId) == 1;
 	}
+	
+	@Override
+    public List<ReviewVO> getMyReviews(String userId) {
+        return mapper.selectMyReviews(userId); // 내가 작성한 리뷰 목록을 가져옵니다.
+    }
 }
