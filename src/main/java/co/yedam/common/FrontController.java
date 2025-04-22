@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.web.AdminControl;
 import co.yedam.web.AdminLoginControl;
+import co.yedam.web.AdminLoginFormControl;
 import co.yedam.web.AdminLogoutControl;
 import co.yedam.web.CancelOrderControl;
 import co.yedam.web.CancelOrderFormControl;
@@ -28,6 +29,7 @@ import co.yedam.web.LoginControl;
 import co.yedam.web.LoginFormControl;
 import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
+import co.yedam.web.MemberUpdateControl;
 import co.yedam.web.MyPageControl;
 import co.yedam.web.OrderDeleteControl;
 import co.yedam.web.OrderDetailFormControl;
@@ -73,9 +75,10 @@ public class FrontController extends HttpServlet {
 		map.put("/product.do", new ProductFormControl());
 
 		// 관리자부분.
-		map.put("/adminBody.do", new AdminControl());
-		map.put("/adminLogin.do", new AdminLoginControl());
-		map.put("/adminLogout.do", new AdminLogoutControl());
+		map.put("/adminBody.do", new AdminControl()); // 관리자 메인
+		map.put("/adminLoginForm.do", new AdminLoginFormControl()); // 관리자 로그인화면
+		map.put("/adminLogin.do", new AdminLoginControl()); // 관리자로그인
+		map.put("/adminLogout.do", new AdminLogoutControl()); // 관리자로그아웃
 		// 카테고리 부분.
 		map.put("/categoryList.do", new CategoryListControl());
 		map.put("/category.do", new CategoryListControl());
@@ -100,6 +103,7 @@ public class FrontController extends HttpServlet {
  		// 마이페이지.
 		map.put("/myPage.do", new MyPageControl()); // 마이페이지
 		map.put("/changePw.do", new ChangePwControl()); // 비밀번호변경
+		map.put("/updateMember.do", new MemberUpdateControl()); // 정보변경
  		
 		//장바구니
 		map.put("/cartList.do", new CartListControl());
