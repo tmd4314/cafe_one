@@ -12,5 +12,6 @@ public interface CartService {
 	boolean deleteCartItem(String logId, String pdCode, int quantity);
 	CartVo getCartItemByCartNo(int cartNo);
 	boolean addCart(CartVo cvo);
+	boolean addToCart(CartVo vo);
 }
 

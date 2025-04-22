@@ -211,7 +211,7 @@ h1 {
 				<h4><b>정보 변경</b></h4>
 				<ul>
 					<li><a href="changePw.do">비밀번호 변경</a></li>
-					<li><a href="">회원 탈퇴</a></li>
+					<li><a href="dropUser.do">회원 탈퇴</a></li>
 				</ul>
 			</div>
 		</form>

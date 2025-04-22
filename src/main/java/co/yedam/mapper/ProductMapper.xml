@@ -17,7 +17,7 @@
        AND C.CATEGORY_NAME = #{main}
      </if>
      <if test="sub != null and sub != ''">
-       AND C.SUBCATEGORY_NAME = #{sub}
+       AND C.CATEGORY_CODE = #{sub}
      </if>
      <if test="minPrice != null and minPrice != ''">
        AND P.PD_PRICE &gt;= #{minPrice}
@@ -34,6 +34,58 @@
    <select id="selectAllProduct" resultType="co.yedam.vo.ProductVO">
      SELECT *
      FROM PRODUCT
+   </select>
+   
+   <!-- 카테고리별 top5 상품 조회 -->
+   <select id="selectCategoryTop" parameterType="string" resultType="co.yedam.vo.ProductVO">
+     SELECT *
+     FROM (
+         SELECT *
+         FROM   product
+         WHERE  product.category_code LIKE CONCAT(#{categoryCode}, '%')
+         ORDER  BY pd_score DESC
+       )
+     <![CDATA[
+     WHERE  ROWNUM <= 5
+     ]]>
+   </select>
+   
+   <!-- 카테고리별 worst5 상품 조회 -->
+   <select id="selectCategoryWorst" parameterType="string" resultType="co.yedam.vo.ProductVO">
+     SELECT *
+     FROM (
+         SELECT *
+         FROM   product
+         WHERE  product.category_code LIKE CONCAT(#{categoryCode}, '%')
+         ORDER  BY pd_score ASC
+       )
+     <![CDATA[
+     WHERE  ROWNUM <= 5
+     ]]>
+   </select>
+   
+   <select id="selectCategoryNewPd" parameterType="string" resultType="co.yedam.vo.ProductVO">
+     SELECT pd_code,
+       pd_name,
+       manufacturer,
+       pd_coo,
+       material,
+       pd_img,
+       pd_mfd,
+       pd_exp,
+       pd_stock,
+       pd_price,
+       pd_score,
+       category_code
+     FROM (
+          SELECT p.*, FLOOR(SYSDATE - p.pd_mfd) AS date_diff
+          FROM product p
+          WHERE    p.category_code LIKE CONCAT(#{categoryCode}, '%')
+          ORDER BY date_diff ASC
+         )
+     <![CDATA[
+     WHERE  ROWNUM <= 10
+     ]]>
    </select>
 <!-- 
 	<select id="selectProduct" parameterType="string">

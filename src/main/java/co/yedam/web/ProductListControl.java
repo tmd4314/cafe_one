@@ -1,6 +1,7 @@
 package co.yedam.web;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,9 +31,27 @@ public class ProductListControl implements Control {
 		List<ProductVO> listPD = new ArrayList<>();
 		List<ProductVO> listUZ = new ArrayList<>();
 		
-		// test code
+		List<ProductVO> bestCOpd = mapper.selectCategoryTop("CO");
+		List<ProductVO> bestSFpd = mapper.selectCategoryTop("SF");
+		List<ProductVO> bestPDpd = mapper.selectCategoryTop("PD");
+		List<ProductVO> bestUZpd = mapper.selectCategoryTop("UZ");
+		
+		List<ProductVO> WorstCOpd = mapper.selectCategoryWorst("CO");
+		List<ProductVO> WorstSFpd = mapper.selectCategoryWorst("SF");
+		List<ProductVO> WorstPDpd = mapper.selectCategoryWorst("PD");
+		List<ProductVO> WorstUZpd = mapper.selectCategoryWorst("UZ");
+		
+		List<ProductVO> newCOpd = mapper.selectCategoryNewPd("CO");
+		List<ProductVO> newSFpd = mapper.selectCategoryNewPd("SF");
+		List<ProductVO> newPDpd = mapper.selectCategoryNewPd("PD");
+		List<ProductVO> newUZpd = mapper.selectCategoryNewPd("UZ");
+		
+		// LocalDate now = LocalDate.now();
+		// System.out.println(now);
+		
+		// test code	
 		for(ProductVO pd : list) {
-			if(pd.getCategoryCode().toString().equals("CO1") 
+			if(pd.getCategoryCode().toString().equals("CO") 
 					|| pd.getCategoryCode().toString().equals("CO2")
 					|| pd.getCategoryCode().toString().equals("CO3")) {
 				listCO.add(pd);
@@ -51,10 +70,26 @@ public class ProductListControl implements Control {
 				listUZ.add(pd);
 			}
 		} // end of loop
-		req.setAttribute("listCO", listCO);
-		req.setAttribute("listSF", listSF);
-		req.setAttribute("listPD", listPD);
-		req.setAttribute("listUZ", listUZ);
+		
+		req.setAttribute("listCO", listCO); // CO 카테고리 제품들
+		req.setAttribute("listSF", listSF); // SF 카테고리 제품들
+		req.setAttribute("listPD", listPD); // PD 카테고리 제품들
+		req.setAttribute("listUZ", listUZ); // UZ 카테고리 제품들
+		
+		req.setAttribute("bestCOpd", bestCOpd); // CO 카테고리 top5 제품들
+		req.setAttribute("bestSFpd", bestSFpd); // SF 카테고리 top5 제품들
+		req.setAttribute("bestPDpd", bestPDpd); // PD 카테고리 top5 제품들
+		req.setAttribute("bestUZpd", bestUZpd); // UZ 카테고리 top5 제품들		
+		
+		req.setAttribute("WorstCOpd", WorstCOpd); // CO 카테고리 Worst5 제품들
+		req.setAttribute("WorstSFpd", WorstSFpd); // SF 카테고리 Worst5 제품들
+		req.setAttribute("WorstPDpd", WorstPDpd); // PD 카테고리 Worst5 제품들
+		req.setAttribute("WorstUZpd", WorstUZpd); // UZ 카테고리 Worst5 제품들	
+		
+		req.setAttribute("newCOpd", newCOpd); // CO 카테고리 최신10 제품들
+		req.setAttribute("newSFpd", newSFpd); // SF 카테고리 최신10 제품들
+		req.setAttribute("newPDpd", newPDpd); // PD 카테고리 최신10 제품들
+		req.setAttribute("newUZpd", newUZpd); // UZ 카테고리 최신10 제품들	
 		
 		req.getRequestDispatcher("product/productList.tiles").forward(req, resp);
 	} // end of exec()
