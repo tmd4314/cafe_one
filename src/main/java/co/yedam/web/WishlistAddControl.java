@@ -1,8 +1,11 @@
 package co.yedam.web;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
 import co.yedam.service.WishlistService;
@@ -11,26 +14,31 @@ import co.yedam.vo.WishlistVO;
 
 public class WishlistAddControl implements Control {
 
-	@Override
-	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	    String userId = (String) req.getSession().getAttribute("logId");
-	    String pdCode = req.getParameter("pdCode");
+    @Override
+    public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/plain;charset=UTF-8");
+        PrintWriter out = resp.getWriter();
 
-	    if (userId == null || pdCode == null) {
-	        resp.sendRedirect("loginForm.do");
-	        return;
-	    }
+        String userId = req.getParameter("userId");
+        String pdCode = req.getParameter("pdCode");
 
-	    WishlistService svc = new WishlistServiceImpl();
-	    WishlistVO vo = new WishlistVO();
-	    vo.setUserId(userId);
-	    vo.setPdCode(pdCode);
+        if (userId == null || pdCode == null) {
+            out.print("fail");
+            return;
+        }
 
-	    System.out.println("VO 세팅 - " + vo.getUserId() + " / " + vo.getPdCode());
-	    System.out.println("찜 요청: userId=" + userId + ", pdCode=" + pdCode);
+        WishlistService svc = new WishlistServiceImpl();
+        WishlistVO vo = new WishlistVO();
+        vo.setPdCode(pdCode);
+        vo.setUserId(userId);
 
-	    svc.addToWishlist(vo);
-
-	    resp.sendRedirect("productInfo.do?pdCode=" + pdCode);
-	}
+        if (svc.existsInWishlist(vo)) {
+            out.print("exist");
+        } else {
+            boolean success = svc.addToWishlist(vo);
+            out.print(success ? "success" : "fail");
+        }
+    }
 }
+

@@ -9,4 +9,6 @@ public interface WishlistService {
     List<WishlistVO> getUserWishlist(String userId);
     boolean isInWishlist(WishlistVO vo);
     boolean addToWishlist(String userId, String pdCode);
+    boolean existsInWishlist(WishlistVO vo);
+
 }
