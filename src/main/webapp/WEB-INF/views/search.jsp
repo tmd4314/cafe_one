@@ -28,20 +28,13 @@
     }
     .search-box {
       position: relative;
-      float: right;
+      display: flex;
+      gap: 5px;
     }
-    .search-box input {
+    .search-box input,
+    .search-box select,
+    .search-box button {
       height: 34px;
-      border-radius: 20px;
-      padding-left: 35px;
-      border-color: #ddd;
-    }
-    .search-box i {
-      color: #a0a5b1;
-      position: absolute;
-      font-size: 19px;
-      top: 8px;
-      left: 10px;
     }
     .table td a {
       color: #03A9F4;
@@ -52,15 +45,34 @@
 <body>
 <div class="container">
   <div class="table-wrapper">
-    <div class="row">
-      <div class="col-sm-8">
-        <h2>상품 검색 결과 <b>${keyword}</b></h2>
-      </div>
-      <div class="col-sm-4">
-        <form action="search.do" method="get" class="search-box">
-          <i class="material-icons">&#xE8B6;</i>
-          <input type="text" name="keyword" value="${keyword}" placeholder="상품명 검색" class="form-control">
-        </form>
+    <div class="row mb-3">
+      <div class="col-sm-12">
+        <!-- ✅ 검색 필터 -->
+        <form action="search.do" method="get" class="search-box d-flex">
+
+		  <!-- 대분류 (CATEGORY_NAME) -->
+		  <select name="main" class="form-control" style="width:auto; margin-right:5px;" id="mainCategory">
+		    <option value="">대분류 선택</option>
+		    <c:forEach var="main" items="${mainCategoryList}">
+		      <option value="${main}" <c:if test="${main == param.main}">selected</c:if>>${main}</option>
+		    </c:forEach>
+		  </select>
+		
+		  <!-- 소분류 (CATEGORY_CODE + data-main for filtering) -->
+		  <select name="sub" class="form-control" style="width:auto; margin-right:5px;" id="subCategory">
+		    <option value="">소분류 선택</option>
+		    <c:forEach var="cat" items="${categoryList}">
+		      <option value="${cat.categoryCode}" data-main="${cat.categoryName}" 
+		              <c:if test="${sub == cat.categoryCode}">selected</c:if>>
+		        ${cat.subcategoryName}
+		      </option>
+		    </c:forEach>
+		  </select>
+		
+		  <input type="text" name="keyword" value="${keyword}" placeholder="상품명 검색" class="form-control" style="width:auto;">
+		  <button type="submit" class="btn btn-primary">검색</button>
+		</form>
+
       </div>
     </div>
 
@@ -92,5 +104,29 @@
     </c:if>
   </div>
 </div>
+
+<!-- ✅ 내부 자바스크립트 (필터 연동) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const mainSelect = document.getElementById('mainCategory');
+    const subSelect = document.getElementById('subCategory');
+
+    function filterSubCategories() {
+      const selectedMain = mainSelect.value;
+      Array.from(subSelect.options).forEach(option => {
+        if (!option.value) return; // "소분류 선택"은 항상 표시
+        const match = option.getAttribute("data-main") === selectedMain;
+        option.style.display = match ? "block" : "none";
+      });
+      subSelect.value = ""; // 소분류 초기화
+    }
+
+    mainSelect.addEventListener("change", filterSubCategories);
+
+    // 페이지 로딩 시 필터 적용
+    filterSubCategories();
+  });
+</script>
+
 </body>
 </html>

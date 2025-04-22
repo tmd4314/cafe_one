@@ -216,25 +216,7 @@
 	
 	      <!-- 중간: 대분류/소분류/검색창 -->
 	      <div class="col d-flex align-items-center gap-2">
-	        <!-- 대분류 -->
-	        <select id="mainCategory" class="form-select form-select-sm w-auto" style="width: 250px; font-size: 1rem; height: 30px;">
-	          <option value="">대분류 선택</option>
-	          <c:forEach var="main" items="${mainCategoryList}">
-				 <option value="${main}">${main}</option>
-			  </c:forEach>
-			</select>
-			
-	
-	        <!-- 소분류 -->
-	        <select id="subCategory" class="form-select form-select-sm w-auto" style="width: 250px; font-size: 1rem; height: 30px;">
-	          <option value="">소분류 선택</option>
-	          <c:forEach var="cat" items="${categoryList}">
-			    <option value="${cat.subcategoryName}" data-main="${cat.categoryName}">
-			      ${cat.subcategoryName}
-			    </option>
-			  </c:forEach>
-	        </select>
-	
+	        
 	        <!-- 검색창 -->
 			<form id="search-form" class="d-flex align-items-center" action="search.do" method="get">
 			  <input type="text" name="keyword"
@@ -257,42 +239,43 @@
 			  <li class="nav-item dropdown">
 			    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">커피</a>
 			    <div class="dropdown-menu p-3">
-			      <a class="dropdown-item" href="#">원두커피</a>
-			      <a class="dropdown-item" href="#">액상/캡슐커피</a>
-			      <a class="dropdown-item" href="#">인스턴트커피</a>
+			      <a href="search.do?sub=CO1" class="dropdown-item">원두커피</a>
+			      <a href="search.do?sub=CO2" class="dropdown-item">캡슐커피</a>
+			      <a href="search.do?sub=CO3" class="dropdown-item">인스턴트커피</a>
 			    </div>
 			  </li>
 			
 			  <!-- 시럽/소스 -->
-			  <li class="nav-item dropdown">
-			    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">시럽/소스</a>
-			    <div class="dropdown-menu p-3">
-			      <a class="dropdown-item" href="#">일반시럽</a>
-			      <a class="dropdown-item" href="#">과일시럽</a>
-			      <a class="dropdown-item" href="#">토핑시럽</a>
-			      <a class="dropdown-item" href="#">에이드베이스</a>
-			    </div>
-			  </li>
-			
-			  <!-- 파우더 -->
-			  <li class="nav-item dropdown">
-			    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">파우더</a>
-			    <div class="dropdown-menu p-3">
-			      <a class="dropdown-item" href="#">라떼</a>
-			      <a class="dropdown-item" href="#">과일</a>
-			      <a class="dropdown-item" href="#">요거트</a>
-			    </div>
-			  </li>
-			
-			  <!-- 유제품 -->
-			  <li class="nav-item dropdown">
-			    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">유제품</a>
-			    <div class="dropdown-menu p-3">
-			      <a class="dropdown-item" href="#">우유생크림</a>
-			      <a class="dropdown-item" href="#">치즈버터</a>
-			      <a class="dropdown-item" href="#">휘핑크림연유</a>
-			    </div>
-			  </li>
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">시럽/소스</a>
+				  <div class="dropdown-menu p-3">
+				    <a class="dropdown-item" href="search.do?sub=SF1">일반시럽</a>
+				    <a class="dropdown-item" href="search.do?sub=SF2">과일시럽</a>
+				    <a class="dropdown-item" href="search.do?sub=SF3">토핑시럽</a>
+				    <a class="dropdown-item" href="search.do?sub=SF4">에이드베이스</a>
+				  </div>
+				</li>
+				
+				<!-- 파우더 -->
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">파우더</a>
+				  <div class="dropdown-menu p-3">
+				    <a class="dropdown-item" href="search.do?sub=PD1">라떼</a>
+				    <a class="dropdown-item" href="search.do?sub=PD2">과일</a>
+				    <a class="dropdown-item" href="search.do?sub=PD3">요거트</a>
+				  </div>
+				</li>
+				
+				<!-- 유제품 -->
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">유제품</a>
+				  <div class="dropdown-menu p-3">
+				    <a class="dropdown-item" href="search.do?sub=UZ1">우유생크림</a>
+				    <a class="dropdown-item" href="search.do?sub=UZ2">치즈버터</a>
+				    <a class="dropdown-item" href="search.do?sub=UZ3">휘핑크림연유</a>
+				  </div>
+				</li>
+
 			
 			</ul>
 
