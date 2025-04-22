@@ -12,6 +12,7 @@ public interface ProductMapper {
        @Param("sub") String sub, @Param("minPrice") String minPrice, @Param("maxPrice") String maxPrice);
 	   ProductVO selectProduct(@Param("code") String code); // 상품 상세 조회
 	   List<ProductVO> selectAllProduct(); // 전체상품조회 made by KMS
+	   List<ProductVO> selectCategory(@Param("categoryCode") String categoryCode); // 카테고리별 상품조회 made by KMS
 	   List<ProductVO> selectCategoryTop(@Param("categoryCode") String categoryCode); // 카테고리별 top5상품 made by KMS
 	   List<ProductVO> selectCategoryWorst(@Param("categoryCode") String categoryCode); // 카테고리별 worst5상품 made by KMS
 	   List<ProductVO> selectCategoryNewPd(@Param("categoryCode") String categoryCode); // 카테고리별 최신 5상품 made by KMS 

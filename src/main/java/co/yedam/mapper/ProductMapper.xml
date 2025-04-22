@@ -36,6 +36,13 @@
      FROM PRODUCT
    </select>
    
+   <!-- 카테고리별 상품 조회 -->
+    <select id="selectCategory" parameterType="string" resultType="co.yedam.vo.ProductVO">
+     SELECT *
+     FROM   product
+     WHERE  category_code LIKE CONCAT(#{categoryCode}, '%')
+   </select>
+   
    <!-- 카테고리별 top5 상품 조회 -->
    <select id="selectCategoryTop" parameterType="string" resultType="co.yedam.vo.ProductVO">
      SELECT *
