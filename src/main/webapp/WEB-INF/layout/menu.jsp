@@ -283,39 +283,10 @@
 	</ul>
 </div>
 <header>
-	  <div class="container-fluid">
-	    <div class="row py-3 border-bottom align-items-center flex-nowrap">
-	
-	      <!-- 왼쪽: 로고 -->
-	      <div class="col-auto d-flex align-items-center gap-3">
-	        <a href="main.do">
-	          <img src="images/logo.png" alt="Home" class="img-fluid" style="height: 36px;">
-	        </a>
-	        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-	          <svg width="24" height="24"><use xlink:href="#menu"></use></svg>
-	        </button>
-	      </div>
-	
-	      <!-- 중간: 대분류/소분류/검색창 -->
-	      <div class="col d-flex align-items-center gap-2">
-	        
-	        <!-- 검색창 -->
-        <form id="search-form" class="d-flex align-items-center" action="search.do" method="get">
-          <input type="text" name="keyword"
-                 class="form-control form-control-sm"
-                 style="width: 250px;"
-                 placeholder="Search for more than 20,000 products">
-          <button type="submit" class="btn btn-outline-secondary btn-sm ms-2">
-            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"/>
-            </svg>
-          </button>
-        </form>
-      
-	
-	       <!-- 메뉴 -->
-			<ul class="navbar-nav d-flex flex-row gap-5 mb-0 fw-bold text-uppercase text-dark ps-3" style="margin-left: 50px;">
+	<div class="container-fluid">
+		<div class="row py-3 border-bottom align-items-center flex-nowrap">
 
+<<<<<<< HEAD
 			
 			  <!-- 커피 -->
 			  <li class="nav-item dropdown">
@@ -357,72 +328,153 @@
 				    <a class="dropdown-item" href="search.do?sub=UZ3">휘핑크림연유</a>
 				  </div>
 				</li>
+			<!-- 왼쪽: 로고 -->
+			<div class="col-auto d-flex align-items-center gap-3">
+				<a href="main.do">
+					<img src="images/logo.png" alt="Home" class="img-fluid" style="height: 36px;">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+					<svg width="24" height="24">
+						<use xlink:href="#menu"></use>
+					</svg>
+				</button>
+			</div>
 
-			
-			</ul>
+			<!-- 중간: 대분류/소분류/검색창 -->
+			<div class="col d-flex align-items-center gap-2">
 
-	
-	     <!-- 오른쪽: 유저 메뉴 -->
-			<div class="col-auto ms-auto d-flex align-items-center gap-3">
-			
-			  <!-- 로그인 상태 -->
-			  <c:if test="${not empty sessionScope.loginUser}">
-			    <!-- 마이페이지 -->
-			    <a href="myPage.do" title="마이페이지">
-			      <svg width="26" height="26" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-			        <path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3z"/>
-			      </svg>
-			    </a>
-			
-			    <!-- 로그아웃 -->
-			    <a href="logout.do" title="로그아웃">
-			      <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24">
-			        <path d="M10 17l5-5-5-5v10zM3 4h9v2H5v12h7v2H3V4z"/>
-			      </svg>
-			    </a>
-			  </c:if>
-			
-			  <!-- 비로그인 상태 -->
-			  <c:if test="${empty sessionScope.loginUser}">
-			    <!-- 로그인 -->
-			    <a href="loginForm.do" title="로그인">
-			      <svg width="26" height="26"><use xlink:href="#user"></use></svg>
-			    </a>
-			
-			    <!-- 회원가입 -->
-			    <a href="signForm.do" title="회원가입">
-			      <svg width="26" height="26"><use xlink:href="#plus"></use></svg>
-			    </a>
-			  </c:if>
-			
-			  <!-- 찜목록 -->
-				<c:if test="${not empty sessionScope.loginUser}">
-				  <a href="wishlist.do" title="찜 목록">
-				    <svg width="26" height="26"><use xlink:href="#wishlist"></use></svg>
-				  </a>
-				</c:if>
+				<!-- 검색창 -->
+				<form id="search-form" class="d-flex align-items-center" action="search.do" method="get">
+					<input type="text" name="keyword" class="form-control form-control-sm" style="width: 250px;"
+						placeholder="Search for more than 20,000 products">
+					<button type="submit" class="btn btn-outline-secondary btn-sm ms-2">
+						<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<path fill="currentColor"
+								d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z" />
+						</svg>
+					</button>
+				</form>
 
-			  <!-- 장바구니 -->
-			  <c:if test="${not empty sessionScope.loginUser}">
-			   <a href="cartList.do" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" onclick="loadCart()">
-                  <svg width="24" height="24"><use xlink:href="#shopping-bag"></use></svg>
-                </a>
-			  </c:if>
-    </div>
-  </div>
-			<!-- JS for 대분류 → 소분류 필터링 -->
-			<script>
-				window.addEventListener('DOMContentLoaded', function () {
-					document.querySelector('#mainCategory').addEventListener('change', function () {
-						const selectedMain = this.value;
-						document.querySelectorAll('#subCategory option').forEach(option => {
-							option.style.display = (option.dataset.main === selectedMain || option.value === "") ? 'block' :
-								'none';
+
+				<!-- 메뉴 -->
+				<ul class="navbar-nav d-flex flex-row gap-5 mb-0 fw-bold text-uppercase text-dark ps-3"
+					style="margin-left: 50px;">
+
+
+					<!-- 커피 -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">커피</a>
+						<div class="dropdown-menu p-3">
+							<a href="search.do?sub=CO1" class="dropdown-item">원두커피</a>
+							<a href="search.do?sub=CO2" class="dropdown-item">캡슐커피</a>
+							<a href="search.do?sub=CO3" class="dropdown-item">인스턴트커피</a>
+						</div>
+					</li>
+
+					<!-- 시럽/소스 -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">시럽/소스</a>
+						<div class="dropdown-menu p-3">
+							<a class="dropdown-item" href="search.do?sub=SF1">일반시럽</a>
+							<a class="dropdown-item" href="search.do?sub=SF2">과일시럽</a>
+							<a class="dropdown-item" href="search.do?sub=SF3">토핑시럽</a>
+							<a class="dropdown-item" href="search.do?sub=SF4">에이드베이스</a>
+						</div>
+					</li>
+
+					<!-- 파우더 -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">파우더</a>
+						<div class="dropdown-menu p-3">
+							<a class="dropdown-item" href="search.do?sub=PD1">라떼</a>
+							<a class="dropdown-item" href="search.do?sub=PD2">과일</a>
+							<a class="dropdown-item" href="search.do?sub=PD3">요거트</a>
+						</div>
+					</li>
+
+					<!-- 유제품 -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">유제품</a>
+						<div class="dropdown-menu p-3">
+							<a class="dropdown-item" href="search.do?sub=UZ1">우유생크림</a>
+							<a class="dropdown-item" href="search.do?sub=UZ2">치즈버터</a>
+							<a class="dropdown-item" href="search.do?sub=UZ3">휘핑크림연유</a>
+						</div>
+					</li>
+
+
+				</ul>
+
+
+				<!-- 오른쪽: 유저 메뉴 -->
+				<div class="col-auto ms-auto d-flex align-items-center gap-3">
+
+					<!-- 로그인 상태 -->
+					<c:if test="${not empty sessionScope.loginUser}">
+						<!-- 마이페이지 -->
+						<a href="myPage.do" title="마이페이지">
+							<svg width="26" height="26" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+								<path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3z" />
+							</svg>
+						</a>
+
+						<!-- 로그아웃 -->
+						<a href="logout.do" title="로그아웃">
+							<svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M10 17l5-5-5-5v10zM3 4h9v2H5v12h7v2H3V4z" />
+							</svg>
+						</a>
+					</c:if>
+
+					<!-- 비로그인 상태 -->
+					<c:if test="${empty sessionScope.loginUser}">
+						<!-- 로그인 -->
+						<a href="loginForm.do" title="로그인">
+							<svg width="26" height="26">
+								<use xlink:href="#user"></use>
+							</svg>
+						</a>
+
+						<!-- 회원가입 -->
+						<a href="signForm.do" title="회원가입">
+							<svg width="26" height="26">
+								<use xlink:href="#plus"></use>
+							</svg>
+						</a>
+					</c:if>
+
+					<!-- 찜목록 -->
+					<c:if test="${not empty sessionScope.loginUser}">
+						<a href="wishlist.do" title="찜 목록">
+							<svg width="26" height="26">
+								<use xlink:href="#wishlist"></use>
+							</svg>
+						</a>
+					</c:if>
+
+					<!-- 장바구니 -->
+					<c:if test="${not empty sessionScope.loginUser}">
+						<a href="cartList.do" class="p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
+							aria-controls="offcanvasCart" onclick="loadCart()">
+							<svg width="24" height="24">
+								<use xlink:href="#shopping-bag"></use>
+							</svg>
+						</a>
+					</c:if>
+
+					<!-- JS for 대분류 → 소분류 필터링 -->
+					<script>
+						window.addEventListener('DOMContentLoaded', function () {
+							document.querySelector('#mainCategory').addEventListener('change', function () {
+								const selectedMain = this.value;
+								document.querySelectorAll('#subCategory option').forEach(option => {
+									option.style.display = (option.dataset.main === selectedMain || option.value === "") ? 'block' :
+										'none';
+								});
+								document.querySelector('#subCategory').value = "";
+							});
 						});
-						document.querySelector('#subCategory').value = "";
-					});
-				});
-			</script>
-		</div>
-	</div>
+					</script>
+				</div>
+			</div>
 </header>

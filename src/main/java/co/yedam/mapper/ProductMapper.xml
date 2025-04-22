@@ -108,5 +108,23 @@
         SET    pd_stock = pd_stock + #{quantity}
         WHERE  pd_code  = #{pdCode}
     </update>
+    
+<!-- 리뷰별 상품 리스트 --> 
+<select id="selectTopReviewProductList" resultType="co.yedam.vo.ProductVO">
+    SELECT 
+        p.*
+    FROM 
+        product p
+    LEFT JOIN (
+        SELECT 
+            pd_code, COUNT(*) AS review_count
+        FROM 
+            review
+        GROUP BY 
+            pd_code
+    ) r ON p.pd_code = r.pd_code
+    ORDER BY 
+        r.review_count DESC NULLS LAST
+</select>
 
 </mapper>
