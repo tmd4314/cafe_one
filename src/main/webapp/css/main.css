@@ -105,6 +105,7 @@ section {
 }
 /* .product-item이 있으면 높이도 맞춰주세요 */
 .product-item {
+  width: 20%;
   height: auto; /* 또는 원하는 높이 설정 가능 */
   border: 1px solid #ddd;
   padding: 10px;
