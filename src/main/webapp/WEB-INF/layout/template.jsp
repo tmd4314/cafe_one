@@ -35,7 +35,41 @@
 		    .cart-header div {
 		        text-align: center; /* 텍스트 가운데 정렬 */
 		    }
-		</style>
+		  /* 전체 드롭다운 메뉴 */
+		  .dropdown-menu.p-4 {
+		    font-size: 1.05rem; /* 글자 크기 */
+		    padding: 2rem !important; /* 여백 */
+		  }
+		
+		  /* 각 항목 */
+		  .dropdown-menu .dropdown-item {
+		    padding: 0.6rem 1rem;
+		    font-size: 1.05rem;
+		  }
+		
+		  /* 대분류 제목 */
+		  .dropdown-header {
+		    font-size: 1.15rem;
+		    font-weight: bold;
+		    margin-bottom: 0.8rem;
+		  }
+		
+		  /* 오프캔버스 메뉴(왼쪽 슬라이드) */
+		  .offcanvas .btn-toggle {
+		    font-size: 1.05rem;
+		    padding: 0.75rem 1rem;
+		  }
+		
+		  .offcanvas .btn-toggle-nav .dropdown-item {
+		    font-size: 1.05rem;
+		    padding: 0.5rem 1rem;
+		  }
+		
+		  .offcanvas .btn-toggle-nav {
+		    margin-bottom: 1rem;
+		  
+		  }
+			</style>
     </head>
     <body>
         <tiles:insertAttribute name="menu" />
