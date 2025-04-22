@@ -1,145 +1,163 @@
-#container {
-  width: 80%;
-  margin: 0 auto;
+a {
+  text-decoration: none;
 }
-
+#container {
+	width: 80%;
+	margin: 0 auto;
+}
 /* 메인 상품 영역 */
 .main_goods {
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 3%;
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 3%;
 }
 
+.product-list {
+	width: 100%;
+	display: flex;
+}
+
+.best {
+	width: 20%;
+	height: 320px;
+	text-align: center;
+	border: 1px solid #ddd;
+	padding: 0;
+	background: #fff;
+	position: relative;
+	box-sizing: border-box;
+}
 /* Swiper */
 .swiper {
-  width: 100%;
-  position: relative;
+	width: 100%;
+	position: relative;
 }
 
 .swiper-wrapper {
-  display: flex;
+	display: flex;
 }
 
 .swiper-slide {
-  flex-shrink: 0;
-  width: 20%; /* 5개씩 보이게 */
-  box-sizing: border-box;
-  padding: 0 1px; /* 슬라이드 간 여백 주고 싶으면 */
+	flex-shrink: 0;
+	width: 20%; /* 5개씩 보이게 */
+	box-sizing: border-box;
+	padding: 0 1px; /* 슬라이드 간 여백 주고 싶으면 */
 }
 
 .product-item {
-  height: 320px;
-  text-align: center;
-  border: 1px solid #ddd;
-  padding: 10px;
-  background: #fff;
-  position: relative;
-  box-sizing: border-box;
+	height: 320px;
+	text-align: center;
+	border: 1px solid #ddd;
+	padding: 5px;
+	background: #fff;
+	position: relative;
+	box-sizing: border-box;
 }
 
 .discount {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #ec0000;
-  color: #fff;
-  padding: 4px 8px;
-  font-size: 14px;
-  border-radius: 4px;
-  font-weight: bold;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background: #ec0000;
+	color: #fff;
+	padding: 4px 8px;
+	font-size: 14px;
+	border-radius: 4px;
+	font-weight: bold;
 }
 
 .product-item img {
-  width: 100%;
-  height: 200px;
-  margin-bottom: 10px;
-  overflow: hidden;
+	width: 100%;
+	height: 200px;
+	margin-bottom: 10px;
+	overflow: hidden;
 }
 
 .product-title {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #333;
+	font-size: 16px;
+	margin-bottom: 10px;
+	color: #333;
 }
 
 .price-box {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 .price-box del {
-  color: #999;
-  margin-right: 5px;
+	color: #999;
+	margin-right: 5px;
 }
 
 .price-box .price {
-  font-weight: bold;
-  color: #ec0000;
+	font-weight: bold;
+	color: #ec0000;
 }
 
 /* Swiper 버튼 */
-.swiper-button-next,
-.swiper-button-prev {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);	
-  z-index: 10;
-  border: none;
-  background-color: none;
+.swiper-button-next, .swiper-button-prev {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 10;
+	border: none;
+	background-color: transparent; /* 버튼 배경색 제거 */
 }
 
 .swiper-button-prev {
-  left: 0px;
+	left: 0px;
 }
 
 .swiper-button-next {
-  right: 0px;
+	right: 0px;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 20px;
-  font-weight: bold;
-  background-color: none;
+.swiper-button-next::after, .swiper-button-prev::after {
+	font-size: 20px;
+	font-weight: bold;
+	background-color: transparent; /* 버튼 배경색 제거 */
 }
+
 .main_h1 {
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
+	width: 80%;
+	margin: 0 auto;
+	overflow: hidden;
 }
+
 .new-goods {
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 3%;
+	width: 80%;
+	margin: 0 auto;
+	overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 3%;
 }
+
 .discounted-goods {
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 3%;
+	width: 80%;
+	margin: 0 auto;
+	overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 3%;
 }
 /* 반응형 */
-@media (max-width: 1200px) {
-  .swiper-slide {
-    width: calc(100% / 3.5) !important;
-  }
+@media ( max-width : 1200px) {
+	.swiper-slide {
+		width: calc(100%/ 3.5) !important;
+	}
 }
 
-@media (max-width: 768px) {
-  .swiper-slide {
-    width: calc(100% / 2.2) !important;
-  }
+@media ( max-width : 768px) {
+	.swiper-slide {
+		width: calc(100%/ 2.2) !important;
+	}
 }
 
-@media (max-width: 480px) {
-  .swiper-slide {
-    width: 100% !important;
-  }
+@media ( max-width : 480px) {
+	.swiper-slide {
+		width: 100% !important;
+	}
 }
