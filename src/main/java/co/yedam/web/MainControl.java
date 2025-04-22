@@ -28,10 +28,11 @@ public class MainControl implements Control {
 		ProductService service = new ProductServiceImpl();
 		List<ProductVO> allList = service.getTopReviewProductList();
 		List<ProductVO> productList = allList.size() > 4 ? allList.subList(0, 4) : allList;
+		System.out.println(allList);
 		
-		int reviewCounter = service.getproductListWithReviewCount(reviewCode);
+//		int reviewCounter = service.getproductListWithReviewCount(reviewCode);
 		
-		req.setAttribute("reviewCounter", reviewCounter);
+//		req.setAttribute("reviewCounter", reviewCounter);
 		req.setAttribute("reviewProductList", productList);
 		SqlSession sqlSession = DataSource.getInstance().openSession(true);
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);

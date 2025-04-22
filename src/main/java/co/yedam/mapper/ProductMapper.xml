@@ -116,6 +116,7 @@
         p.pd_code,
         p.pd_name,
         p.pd_price,
+        p.pd_stock,
         p.pd_img
     FROM 
         product p
