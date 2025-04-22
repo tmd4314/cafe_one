@@ -14,4 +14,5 @@ public interface CartMapper {
 	boolean deleteCartItem(@Param("userId") String userId, @Param("pdCode") String pdCode, @Param("quantity") int quantity);
 	CartVo getCartItemByCartNo(int cartNo);
 	int insertCart(CartVo cvo); 
+	
 }

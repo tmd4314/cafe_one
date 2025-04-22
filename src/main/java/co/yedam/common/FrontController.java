@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.yedam.web.AddToCartAjaxControl;
 import co.yedam.web.AdminControl;
 import co.yedam.web.AdminLoginControl;
 import co.yedam.web.AdminLoginFormControl;
@@ -110,6 +111,7 @@ public class FrontController extends HttpServlet {
 		map.put("/cartDelete.do", new CartDeleteControl());
 		map.put("/updateCart.do", new CartUpdateControl());
 		map.put("/cartAdd.do", new CartAddControl());
+		map.put("/addToCartAjax.do", new AddToCartAjaxControl());
 		
 		//주문
 		map.put("/cashForm.do", new CashFormControl());

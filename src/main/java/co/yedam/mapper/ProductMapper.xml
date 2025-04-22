@@ -17,7 +17,7 @@
        AND C.CATEGORY_NAME = #{main}
      </if>
      <if test="sub != null and sub != ''">
-       AND C.SUBCATEGORY_NAME = #{sub}
+       AND C.CATEGORY_CODE = #{sub}
      </if>
      <if test="minPrice != null and minPrice != ''">
        AND P.PD_PRICE &gt;= #{minPrice}
