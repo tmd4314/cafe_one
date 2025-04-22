@@ -43,7 +43,7 @@ public class CartServiceImpl implements CartService {
 	}
 	@Override
 	public boolean addToCart(CartVo vo) {
-		return mapper.insertCart(vo) == 1;
+		 return mapper.insertOrUpdateCart(vo) >= 1;
 	}
 }
 
