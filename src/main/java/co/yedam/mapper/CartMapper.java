@@ -15,4 +15,7 @@ public interface CartMapper {
 	CartVo getCartItemByCartNo(int cartNo);
 	int insertCart(CartVo cvo); 
 	
+	// 🆕 장바구니에 동일 상품이 있으면 수량 증가, 없으면 삽입
+    int insertOrUpdateCart(CartVo vo);
+	
 }

@@ -66,10 +66,10 @@
               <div class="row mb-4">
                 <div class="col-md-12">
                   <div class="category-buttons d-flex justify-content-center">
-                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('all')">모두 보기</button>
                     <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('coffee')">커피</button>
-                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('tea')">차</button>
-                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('snacks')">간식</button>
+                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('syrup/sauce')">시럽/소스</button>
+                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('powder')">파우더</button>
+                    <button class="btn btn-outline-secondary mx-1" onclick="filterProducts('dairy')">유제품</button>
                   </div>
                 </div>
               </div>
@@ -84,11 +84,11 @@
         <div class="col-md-4 product-item coffee">
           <figure>
             <a href="product.do?pdc=product1" title="Product 1">
-              <img src="images/product-thumb-1.png" alt="Product 1" class="tab-image">
+              <img src="images/리브라 브렌드 500g.png" alt="Product 1" class="tab-image">
             </a>
           </figure>
           <div class="d-flex flex-column text-center">
-            <h3 class="fs-6 fw-normal">룩아워티 홍차 블렌딩 맘마미아 20티백</h3>
+            <h3 class="fs-6 fw-normal">리브라 브렌드 500g</h3>
             <div>
               <span class="rating">★★★★☆</span>
               <span>(222)</span>

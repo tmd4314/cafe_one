@@ -83,6 +83,17 @@
 	  insert into cart (cart_no, quantity, pd_code, user_id)
 	  values (seq_cart.nextval, #{quantity}, #{pdCode}, #{userId})
 	</insert>
+	
+	<insert id="insertOrUpdateCart" parameterType="co.yedam.vo.CartVo">
+	  MERGE INTO cart c
+	  USING (SELECT #{userId} AS user_id, #{pdCode} AS pd_code FROM dual) src
+	  ON (c.user_id = src.user_id AND c.pd_code = src.pd_code)
+	  WHEN MATCHED THEN
+	    UPDATE SET c.quantity = c.quantity + #{quantity}
+	  WHEN NOT MATCHED THEN
+	    INSERT (cart_no, quantity, pd_code, user_id)
+	    VALUES (seq_cart.nextval, #{quantity}, #{pdCode}, #{userId})
+	</insert>
   
 
 </mapper>
