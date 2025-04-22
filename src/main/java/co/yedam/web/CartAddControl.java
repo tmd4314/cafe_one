@@ -23,10 +23,9 @@ public class CartAddControl implements Control {
         String quan = req.getParameter("quan");
         
         CartVo cvo = new CartVo();
+        cvo.setUserId(userid);
         cvo.setPdCode(pdCode);
         cvo.setQuantity(Integer.parseInt(quan));
-        cvo.setUserId(userid);
-		
 
 		// 업무처리.
 		CartService svc = new CartServiceImpl();

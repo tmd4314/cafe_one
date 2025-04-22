@@ -14,11 +14,16 @@ public interface MemberMapper {
 	// 회원정보조회
 	MemberVo selectMemberId(String id);
 	
-	// 정보 수정
+	// 비밀번호 변경
 	int updatePasswd(MemberVo member);
-
+	
+	// 정보 변경
+	int updateMemberInfo(MemberVo vo);
+	
 	// 회원 탈퇴
 	int deleteMember(String userId);    
-     // 마일리지 업데이트
-     int updateMemberMaile(MemberVo member);
+     
+	// 마일리지 업데이트
+    int updateMemberMaile(MemberVo member);
+     
 }

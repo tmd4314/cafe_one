@@ -79,15 +79,9 @@
 	    WHERE cart_no = #{cartNo}
 	</select>
 	
-	<insert id="insertCart" parameterType="cart">
-		insert into cart (cart_no, 
-                  quantity, 
-                  pd_code, 
-                  user_id)
-		values(seq_cart.nextval,
-		       #{quantity},
-		       #{pdCode},
-		       #{userId})
+	<insert id="insertCart" parameterType="co.yedam.vo.CartVo">
+	  insert into cart (cart_no, quantity, pd_code, user_id)
+	  values (seq_cart.nextval, #{quantity}, #{pdCode}, #{userId})
 	</insert>
   
 

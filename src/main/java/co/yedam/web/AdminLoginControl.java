@@ -25,6 +25,8 @@ public class AdminLoginControl implements Control {
             HttpSession session = req.getSession();
             session.setAttribute("adminId", admin.getAdminId());
             session.setAttribute("adminName", admin.getAdminName());
+            session.setAttribute("loginadmin", admin);
+            session.setAttribute("loginUser", admin);
             resp.sendRedirect("adminBody.do");
         } else {
             req.setAttribute("error", "아이디 또는 비밀번호가 올바르지 않습니다.");

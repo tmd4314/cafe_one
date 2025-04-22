@@ -102,3 +102,4 @@
         </div>
 
 </div>
+<p style="color:red;">[디버그] 로그인 유저: ${sessionScope.loginadmin.adminName}</p>

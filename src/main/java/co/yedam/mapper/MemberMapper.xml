@@ -50,7 +50,21 @@
 		        #{email}, 
 		        0)
 	</insert>
-
+	
+	<!-- 정보 변경 -->
+  	<update id="updateMemberInfo" parameterType="user">
+		update user_info
+    	set
+       		user_name = #{userName},
+            phone = #{phone},
+            post = #{post},
+            address1 = #{address1},
+            address2 = #{address2},
+            address3 = #{address3},
+            email = #{email}
+    	where user_id = #{userId}
+  	</update>
+	
 	<!-- 비밀번호 변경 -->
 	<update id="updatePasswd" parameterType="user">
 		update user_info
@@ -60,7 +74,8 @@
 
 	<!-- 회원 탈퇴 -->
 	<delete id="deleteMember" parameterType="String">
-		DELETE FROM member WHERE user_id = #{userId}
+		DELETE FROM member 
+		WHERE user_id = #{userId}
 	</delete>
  	
  	<update id="updateMemberMaile" parameterType="user">

@@ -13,29 +13,28 @@ import co.yedam.service.MemberServiceImpl;
 
 public class DropUserControl implements Control {
 
-	@Override
-	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("member/dropUser.tiles").forward(req, resp);
-		
-//		HttpSession session = req.getSession(false);
-//		
-//		if (session == null || session.getAttribute("logId") == null) {
-//			// 로그인 안되어 있을 경우
-//			resp.sendRedirect("loginForm.do");
-//			return;
-//		}
-//
-//		String userId = (String) session.getAttribute("logId");
-//		MemberService svc = new MemberServiceImpl();
-//
-//		if (svc.removeMember(userId)) {
-//			// 탈퇴 성공 시 세션 초기화 후 메인 페이지로 이동
-//			session.invalidate();
-//			resp.sendRedirect("product/index.do");
-//		} else {
-//			// 탈퇴 실패 시
-//			req.setAttribute("mes", "회원탈퇴 처리 중 오류가 발생했습니다.");
-//			req.getRequestDispatcher("mypage/myInfo.tiles").forward(req, resp);
-//		}
-	}
+    @Override
+    public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+        String userId = (String) session.getAttribute("logId");
+
+        // 1. 사용자 ID가 없는 경우 로그인 페이지로 리다이렉트
+        if (userId == null) {
+            resp.sendRedirect("loginForm.do");
+            return;
+        }
+
+        // 2. 서비스 객체를 통해 사용자 삭제 처리
+        MemberService service = new MemberServiceImpl();
+        boolean result = service.dropUser(userId);  // dropUser 메소드 호출
+
+        // 3. 삭제 성공 시
+        if (result) {
+            session.invalidate();  // 세션 종료
+            resp.sendRedirect("main.do");  // 메인 페이지로 리다이렉트
+        } else {
+            req.setAttribute("errorMsg", "회원 탈퇴에 실패했습니다.");
+            req.getRequestDispatcher("member/myPage.tiles").forward(req, resp);  // 에러 메시지 전달
+        }
+    }
 }

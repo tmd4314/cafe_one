@@ -5,10 +5,10 @@
 
 <mapper namespace="co.yedam.mapper.AdminMapper">
 
- <select id="loginAdmin" parameterType="co.yedam.vo.AdminVO" resultType="co.yedam.vo.AdminVO">
+ <select id="selectAdmin" parameterType="co.yedam.vo.AdminVO" resultType="co.yedam.vo.AdminVO">
   SELECT * FROM admin 
-  WHERE admin_id = #{adminId} 
-    AND admin_pw = #{adminPw}
+  WHERE admin_id = #{id} 
+    AND admin_pw = #{pw}
 </select>
 
 </mapper>
