@@ -12,16 +12,21 @@
    	 	ORDER BY review_id DESC
    	 </select>
    
-     <insert id="insertReview" parameterType="co.yedam.vo.ReviewVO">
-		INSERT INTO review (
-		    review_id, review_title, review_content, user_id, pdCode
-		) VALUES (
-		    #{pdc},
-		    (SELECT NVL(MAX(review_id), 0) + 1 FROM review WHERE pd_code = #{pdc}),
-		    #{rt},
-		    #{rc},
-		    #{uid},
-		    SYSDATE
-		);
-   	 </insert>
+<insert id="insertReview" parameterType="Review">
+    INSERT INTO review (review_id, review_title, review_content, user_id, pd_code, create_date)
+    VALUES (
+        (SELECT NVL(MAX(review_id), 0) + 1 FROM review WHERE pd_code = #{pdCode}),
+        #{reviewTitle},
+        #{reviewContent},
+        #{userId},
+        #{pdCode},
+        SYSDATE
+    )
+</insert>
+
+<delete id="deleteReview">
+    DELETE FROM review 
+    WHERE review_id = #{reviewId}
+    AND user_id = #{userId}
+</delete>
 </mapper>

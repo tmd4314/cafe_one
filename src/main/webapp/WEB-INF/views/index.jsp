@@ -368,8 +368,8 @@
 
                 <div class="product-item swiper-slide">
                   <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/product-thumb-20.png" alt="Product Thumbnail" class="tab-image">
+                    <a href="product.do?pdCode=${product.pdCode}" title="Product Title">
+                      <img src="images/product-thumb-1.png" alt="produtForm.jsp" class="tab-image">
                     </a>
                   </figure>
                   <div class="d-flex flex-column text-center">

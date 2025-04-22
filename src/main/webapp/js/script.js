@@ -160,6 +160,11 @@
     initJarallax();
     initChocolat();
 
+    // 👇 여기 추가
+    if (window.location.hash === '#reviews') {
+      $('.nav-tabs a[href="#reviews"]').tab('show');
+    }
+
   }); // End of a document
 
 })(jQuery);
