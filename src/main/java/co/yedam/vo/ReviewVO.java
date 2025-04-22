@@ -13,4 +13,6 @@ public class ReviewVO {
 	private Date createDate;
 	private String userId;
 	private String pdCode;
+	
+	
 }

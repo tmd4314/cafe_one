@@ -39,7 +39,7 @@ public class DeleteReviewControl implements Control{
 
         // 서비스 호출
         ReviewService svc = new ReviewServiceImpl();
-        boolean result = svc.removeReview(Integer.parseInt(reviewId), userId);
+        boolean result = svc.removeReview(Integer.parseInt(reviewId), userId, pdCode);
 
         resp.setContentType("text/html; charset=UTF-8");
         PrintWriter out = resp.getWriter();

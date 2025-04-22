@@ -12,6 +12,8 @@ import org.apache.ibatis.session.SqlSession;
 import co.yedam.common.Control;
 import co.yedam.common.DataSource;
 import co.yedam.mapper.ProductMapper;
+import co.yedam.service.ProductService;
+import co.yedam.service.ProductServiceImpl;
 import co.yedam.vo.ProductVO;
 
 
@@ -22,8 +24,16 @@ public class MainControl implements Control {
 
 //		HttpSession session = req.getSession();
 //		String logId = (String) session.getAttribute("logId");
+		String reviewCode = req.getParameter("reviewCount");
+		ProductService service = new ProductServiceImpl();
+		List<ProductVO> allList = service.getTopReviewProductList();
+		List<ProductVO> productList = allList.size() > 4 ? allList.subList(0, 4) : allList;
+		System.out.println(allList);
 		
+//		int reviewCounter = service.getproductListWithReviewCount(reviewCode);
 		
+//		req.setAttribute("reviewCounter", reviewCounter);
+		req.setAttribute("reviewProductList", productList);
 		SqlSession sqlSession = DataSource.getInstance().openSession(true);
 		ProductMapper mapper = sqlSession.getMapper(ProductMapper.class);
         
@@ -38,10 +48,9 @@ public class MainControl implements Control {
         req.setAttribute("bSFList", bestPdListSF);
         req.setAttribute("bPDList", bestPdListPD);
         req.setAttribute("bUZList", bestPdListUZ);
+
 		req.getRequestDispatcher("product/index.tiles").forward(req, resp);
 		
-		// req.setAttribute("productList", productList); // JSP에 전달
-
 	} // end of exec()
 } // end of class
 		

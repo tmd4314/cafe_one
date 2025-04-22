@@ -109,11 +109,15 @@
         SET    pd_stock = pd_stock + #{quantity}
         WHERE  pd_code  = #{pdCode}
     </update>
+
     
-<!-- 리뷰별 상품 리스트 --> 
-<select id="selectTopReviewProductList" resultType="co.yedam.vo.ProductVO">
+<select id="selectProductOrderByReview" resultType="co.yedam.vo.ProductVO">
     SELECT 
-        p.*
+        p.pd_code,
+        p.pd_name,
+        p.pd_price,
+        p.pd_stock,
+        p.pd_img
     FROM 
         product p
     LEFT JOIN (
@@ -125,7 +129,13 @@
             pd_code
     ) r ON p.pd_code = r.pd_code
     ORDER BY 
-        r.review_count DESC NULLS LAST
+        NVL(r.review_count, 0) DESC
+</select>
+
+<select id="productListWithReviewCount" parameterType="String" resultType="co.yedam.vo.ProductVO">
+	select count (*)
+	from review
+	where pd_code = #{pdCode}
 </select>
 
 </mapper>

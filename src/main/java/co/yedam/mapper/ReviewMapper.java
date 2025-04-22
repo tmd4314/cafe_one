@@ -11,6 +11,7 @@ public interface ReviewMapper {
 	int insertReview(ReviewVO vo);
 	List<ReviewVO> reviewList(String pdCode);
 	public List<ReviewVO> selectReviewList(String pdCode);
-	int deleteReview(@Param("reviewId") int reviewId, @Param("userId") String userId);
+	int deleteReview(@Param("reviewId") int reviewId, @Param("userId") String userId, @Param("pdCode") String pdCode);
+	
 	List<ReviewVO> selectMyReviews(String userId); // 내가작성한 리뷰목록만 출력
 }

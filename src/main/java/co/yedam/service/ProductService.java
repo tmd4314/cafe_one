@@ -9,7 +9,7 @@ public interface ProductService {
 	 List<ProductVO> searchAdvanced(String keyword, String main, String sub, String minPrice, String maxPrice);
      ProductVO getProduct(String code);
 	 boolean updateStock(String pdCode, int quantity);
-	 
-	 List<ProductVO> getProductList();
+
 	 List<ProductVO> getTopReviewProductList();
+	 int getproductListWithReviewCount(String code);
 }
