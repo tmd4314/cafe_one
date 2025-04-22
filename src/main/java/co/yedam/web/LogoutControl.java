@@ -19,5 +19,6 @@ public class LogoutControl implements Control {
 		
 		resp.sendRedirect("main.do");
 	}
+	
 
 }

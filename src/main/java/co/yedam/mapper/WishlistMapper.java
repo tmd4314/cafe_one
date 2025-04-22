@@ -9,4 +9,6 @@ public interface WishlistMapper {
     List<WishlistVO> selectByUser(String userId);
     boolean exists(WishlistVO vo);
     int insertOrUpdateCnt(WishlistVO vo); // 개수 증가용
+
+    
 }

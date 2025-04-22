@@ -107,7 +107,12 @@
                           class="form-control border-dark-subtle input-number quantity" value="1"></div>
                       <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">Add to Cart</a>
                       </div>
-                      <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">❤️</a></div>
+                      <a href="#" 
+						   class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
+						   data-pdcode="${pdList.pdCode}" 
+						   data-userid="${sessionScope.logId}" 
+						   onclick="addToWishlist(this)">❤️</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -377,6 +382,26 @@
         }
       });
     }
+    function addToWishlist(el) {
+  	  const pdCode = el.dataset.pdcode;
+  	  const userId = el.dataset.userid;
+
+  	  fetch("wishlistAdd.do", {
+  	    method: "POST",
+  	    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  	    body: `userId=\${userId}&pdCode=\${pdCode}`
+  	  })
+  	  .then(res => res.text())
+  	  .then(data => {
+  	    if (data === "success") {
+  	      alert("찜 목록에 추가되었습니다!");
+  	    } else if (data === "exist") {
+  	      alert("이미 찜한 상품입니다!");
+  	    } else {
+  	      alert("찜 추가 실패 😢");
+  	    }
+  	  });
+  	}
   </script>
 
 

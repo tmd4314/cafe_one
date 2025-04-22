@@ -10,4 +10,7 @@ public interface ReviewService {
 	public List<ReviewVO> getReviewList(String pdCode);
 	
 	boolean removeReview(int reviewId, String userId, String pdCode);
+
+    // 내가 작성한 리뷰 목록
+    public List<ReviewVO> getMyReviews(String userId);
 }

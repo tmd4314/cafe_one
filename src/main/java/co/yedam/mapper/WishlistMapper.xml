@@ -5,8 +5,8 @@
 <mapper namespace="co.yedam.mapper.WishlistMapper">
 
   <insert id="insert" parameterType="co.yedam.vo.WishlistVO">
-    INSERT INTO list (user_id, pd_code)
-    VALUES (#{userId}, #{pdCode})
+     INSERT INTO list (user_id, pd_code, cnt)
+     VALUES (#{userId}, #{pdCode}, 1)
   </insert>
 
   <delete id="delete" parameterType="co.yedam.vo.WishlistVO">
@@ -15,11 +15,12 @@
   </delete>
 
   <select id="selectByUser" resultType="co.yedam.vo.WishlistVO">
-   SELECT l.user_id, l.pd_code,
-         p.pd_name AS pdName,
-         p.pd_img AS pdImg,
+   SELECT l.user_id, 
+          l.pd_code,
+         p.pd_name ,
+         p.pd_img ,
          p.manufacturer,
-         p.pd_price AS pdPrice,
+         p.pd_price,
          l.cnt
    FROM list l
    JOIN product p ON l.pd_code = p.pd_code
