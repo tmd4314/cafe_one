@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -24,6 +25,9 @@
       margin-bottom: 20px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
       position: relative;
+      
+      margin-left: 600px;
+      margin-right: 600px;
     }
     .review-header {
       display: flex;
@@ -46,6 +50,10 @@
       color: #333;
       margin: 10px 0;
     }
+    .review-date {
+  font-size: 13px; 
+  color: #999;           
+}
     .review-text {
       font-size: 15px;
       color: #333;
@@ -69,8 +77,8 @@
         <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="user" />
         <div class="user">${r.userId}</div>
       </div>
-      <div class="review-stars">
-        <div class="star">★★★★★</div>
+      <div class="review-date">
+        <div><fmt:formatDate value="${r.createDate}" pattern="yyyy-MM-dd" /></div>
       </div>
   <div class="review-title">
     ${r.reviewTitle}
@@ -79,7 +87,6 @@
         ${r.reviewContent}
       </div>
       <div class="review-footer">
-        <div><fmt:formatDate value="${r.createDate}" pattern="yyyy.MM.dd"/></div>
         <button class="btn btn-danger" onclick="deleteReview(${r.reviewId}, '${r.pdCode}')">삭제</button>
       </div>
     </div>
