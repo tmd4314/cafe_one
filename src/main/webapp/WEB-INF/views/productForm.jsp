@@ -229,6 +229,24 @@
 
                     <div class="tab-pane" id="reviews">
 					
+					<h3>리뷰 작성</h3>
+<form action="addReview.do" method="post">
+    <input type="hidden" name="pdCode" value="${product.pdCode}" />
+    <div class="form-group">
+        <label for="userId">작성자</label>
+        <input type="text" class="form-control" name="userId" id="userId" required />
+    </div>
+    <div class="form-group">
+        <label for="reviewTitle">제목</label>
+        <input type="text" class="form-control" name="reviewTitle" id="reviewTitle" required />
+    </div>
+    <div class="form-group">
+        <label for="reviewContent">내용</label>
+        <textarea class="form-control" name="reviewContent" id="reviewContent" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">리뷰 등록</button>
+</form>
+					
 					<table class="table">
 					  <thead>
 					    <tr>

@@ -12,7 +12,7 @@
    	 	ORDER BY review_id DESC
    	 </select>
    
-     <select id="insertReview" resultType="co.yedam.vo.ReviewVO">
+     <insert id="insertReview" parameterType="co.yedam.vo.ReviewVo">
 		INSERT INTO review (
 		    review_id, review_title, review_content, user_id, pdCode
 		) VALUES (
@@ -20,7 +20,8 @@
 		    (SELECT NVL(MAX(review_id), 0) + 1 FROM review WHERE pd_code = #{pdc}),
 		    #{rt},
 		    #{rc},
-		    #{uid}
+		    #{uid},
+		    SYSDATE
 		);
-   	 </select>
+   	 </insert>
 </mapper>
