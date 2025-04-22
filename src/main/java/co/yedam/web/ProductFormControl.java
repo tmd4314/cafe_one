@@ -1,6 +1,7 @@
 package co.yedam.web;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +13,9 @@ import org.apache.ibatis.session.SqlSession;
 import co.yedam.common.Control;
 import co.yedam.common.DataSource;
 import co.yedam.mapper.ProductDetailMapper;
+import co.yedam.mapper.ReviewMapper;
 import co.yedam.vo.ProductVO;
+import co.yedam.vo.ReviewVO;
 
 public class ProductFormControl implements Control {
 
@@ -20,11 +23,20 @@ public class ProductFormControl implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String pdc = req.getParameter("pdc");
+		String uid = req.getParameter("uid");
+		String rt = req.getParameter("rt");
+		String rc = req.getParameter("rc");
+		
+		ReviewVO vo = new ReviewVO();
 		
 		SqlSession sqlSession = DataSource.getInstance().openSession(true);
 		ProductDetailMapper mapper = sqlSession.getMapper(ProductDetailMapper.class);
 		ProductVO product = mapper.selectOne(pdc);		
 		req.setAttribute("product", product);
+		
+		ReviewMapper mapper1 = sqlSession.getMapper(ReviewMapper.class);
+		List<ReviewVO> review = mapper1.reviewList(pdc);
+		req.setAttribute("review", review);
 		
 		req.getRequestDispatcher("product/productForm.tiles")//
 				.forward(req, resp);

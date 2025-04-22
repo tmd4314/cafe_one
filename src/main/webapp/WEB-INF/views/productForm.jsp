@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE HTML>
 
@@ -121,22 +122,6 @@
 
                         <button class="btn btn-theme" type="submit">Add to cart</button>
 
-                        <div class="social-share">
-
-                            <ul>
-
-                                <li><a href=""><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href=""><i class="fa fa-twitter"></i></a></li>
-
-                                <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-
-                                <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-
-                            </ul>
-
-                        </div>
-
                     </form>
 
                     <p><span class="strong-text">Categories:</span> 커피, 원두</p>
@@ -148,12 +133,6 @@
                     <ul class="product-info-btn">
 
                         <li><a href=""><i class="fa fa-heart-o"></i> Wishlist</a></li>
-
-                        <li><a href=""><i class="fa fa-arrows-h"></i> Compare</a></li>
-
-                        <li><a href=""><i class="fa fa-envelope-o"></i> Email</a></li>
-
-                        <li><a href=""><i class="fa fa-print"></i> Print</a></li>
 
                     </ul>
 
@@ -250,37 +229,45 @@
 
                     <div class="tab-pane" id="reviews">
 					
+					<h3>리뷰 작성</h3>
+<form action="addReview.do" method="post">
+    <input type="hidden" name="pdCode" value="${product.pdCode}" />
+    <div class="form-group">
+        <label for="userId">작성자</label>
+        <input type="text" class="form-control" name="userId" id="userId" required />
+    </div>
+    <div class="form-group">
+        <label for="reviewTitle">제목</label>
+        <input type="text" class="form-control" name="reviewTitle" id="reviewTitle" required />
+    </div>
+    <div class="form-group">
+        <label for="reviewContent">내용</label>
+        <textarea class="form-control" name="reviewContent" id="reviewContent" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">리뷰 등록</button>
+</form>
+					
 					<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>	
-						
-						
+					  <thead>
+					    <tr>
+					      <th scope="col" style="width: 5%;">번호</th>
+					      <th scope="col" style="width: 10%;">작성자</th>
+					      <th scope="col" style="width: 25%;">리뷰제목</th>
+					      <th scope="col" style="width: 60%;">리뷰내용</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  	<c:forEach var="review" items="${review}" varStatus="status">
+						    <tr>
+						      <th scope="row">${review.reviewId }</th>
+						      <td>${review.userId }</td>
+						      <td>${review.reviewTitle }</td>
+						      <td>${review.reviewContent }</td>
+						    </tr>
+					    </c:forEach>
+					  </tbody>
+					</table>	
+								
                     </div>
 
                 </div>

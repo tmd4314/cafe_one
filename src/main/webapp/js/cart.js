@@ -58,8 +58,28 @@ function loadCart() {
 
         // 버튼 이벤트 추가
         document.getElementById('orderSelected').addEventListener('click', orderSelectedItems);
-        document.getElementById('orderAll').addEventListener('click', orderAllItems);
         document.getElementById('deleteSelected').addEventListener('click', deleteSelectedItems); // 삭제 버튼 이벤트 추가
+		
+		const selectAllCheckbox = document.getElementById('selectAll');
+        const cartCheckboxes = document.querySelectorAll('.cart-checkbox');
+
+        selectAllCheckbox.addEventListener('click', function() {
+            const isChecked = selectAllCheckbox.checked;
+            cartCheckboxes.forEach(checkbox => {
+                checkbox.checked = isChecked;
+            });
+            updateTotalPrice(); // 총 가격 업데이트
+        });
+
+        // 개별 체크박스 이벤트 추가
+        cartCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('click', function() {
+                updateTotalPrice(); // 개별 선택 시 총 가격 업데이트
+                // 모든 체크박스가 선택되었는지 확인하고 전체 선택 체크박스 업데이트
+                const allChecked = Array.from(cartCheckboxes).every(checkbox => checkbox.checked);
+                selectAllCheckbox.checked = allChecked;
+            });
+        });
     })
     .catch(error => {
         console.error('장바구니 목록을 불러오는 데 실패했습니다.', error);
@@ -116,12 +136,6 @@ function orderSelectedItems() {
     } else {
         alert('선택된 상품이 없습니다.');
     }
-}
-
-function orderAllItems() {
-    // 전체 상품 주문 처리 (예: 서버에 요청)
-    console.log('전체 상품 주문');
-    // 여기서 전체 주문 요청을 서버에 보낼 수 있습니다.
 }
 
 function deleteSelectedItems() {
@@ -241,6 +255,7 @@ document.addEventListener('click', function(event) {
         }
 
         quantityElement.textContent = newQuantity; // UI 업데이트
+		updateItemTotalPrice(cartNo, newQuantity); // UI 금액 업데이트
     } else if (event.target.classList.contains('quantity-increase')) {
         // 수량 증가 버튼 클릭
         const cartNo = event.target.dataset.cartNo;
@@ -249,6 +264,7 @@ document.addEventListener('click', function(event) {
         let newQuantity = currentQuantity + 1;
 
         quantityElement.textContent = newQuantity; // UI 업데이트
+		updateItemTotalPrice(cartNo, newQuantity); // UI 금액 업데이트
     } else if (event.target.classList.contains('update-quantity-on-server')) {
         // 수정 버튼 클릭
         const cartNo = event.target.dataset.cartNo;
@@ -256,5 +272,24 @@ document.addEventListener('click', function(event) {
         let newQuantity = parseInt(quantityElement.textContent); // 최종 수량 가져오기
         updateQuantityOnServer(cartNo, newQuantity); // 서버에 최종 수량 전송
     }
+	
+	function updateItemTotalPrice(cartNo, newQuantity) {
+	    // 해당 cartNo에 대한 상품 정보 찾기
+	    const item = cartItems.find(item => item.cartNo === parseInt(cartNo));
+
+	    if (item) {
+	        const itemTotalPrice = item.pdPrice * newQuantity;
+	        const itemElement = document.querySelector(`#cartItems li[data-cart-no="${cartNo}"]`);
+	        
+	        // 금액 업데이트
+	        const priceElement = itemElement.querySelector('.text-body-secondary');
+	        priceElement.textContent = ` 금액: ${itemTotalPrice.toLocaleString()}원`;
+
+	        // data-total-price 속성 업데이트
+	        itemElement.dataset.totalPrice = itemTotalPrice;
+
+	        updateTotalPrice(); // 총 가격 업데이트
+	    }
+	}
 });
 

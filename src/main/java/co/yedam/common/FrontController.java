@@ -11,19 +11,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.web.AdminControl;
+import co.yedam.web.AdminLoginControl;
+import co.yedam.web.AdminLogoutControl;
+import co.yedam.web.CancelOrderControl;
 import co.yedam.web.CancelOrderFormControl;
+import co.yedam.web.CartAddControl;
 import co.yedam.web.CartDeleteControl;
 import co.yedam.web.CartListControl;
 import co.yedam.web.CartUpdateControl;
 import co.yedam.web.CashControl;
 import co.yedam.web.CashFormControl;
 import co.yedam.web.CategoryListControl;
+import co.yedam.web.ChangePwControl;
 import co.yedam.web.DropUserControl;
 import co.yedam.web.LoginControl;
 import co.yedam.web.LoginFormControl;
 import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
 import co.yedam.web.MyPageControl;
+import co.yedam.web.OrderDeleteControl;
 import co.yedam.web.OrderDetailFormControl;
 import co.yedam.web.OrderFormControl;
 import co.yedam.web.ProductControl;
@@ -68,6 +74,8 @@ public class FrontController extends HttpServlet {
 
 		// 관리자부분.
 		map.put("/adminBody.do", new AdminControl());
+		map.put("/adminLogin.do", new AdminLoginControl());
+		map.put("/adminLogout.do", new AdminLogoutControl());
 		// 카테고리 부분.
 		map.put("/categoryList.do", new CategoryListControl());
 		map.put("/category.do", new CategoryListControl());
@@ -91,15 +99,18 @@ public class FrontController extends HttpServlet {
  		
  		// 마이페이지.
 		map.put("/myPage.do", new MyPageControl()); // 마이페이지
+		map.put("/changePw.do", new ChangePwControl()); // 비밀번호변경
  		
 		//장바구니
 		map.put("/cartList.do", new CartListControl());
 		map.put("/cartDelete.do", new CartDeleteControl());
 		map.put("/updateCart.do", new CartUpdateControl());
+		map.put("/cartAdd.do", new CartAddControl());
 		
 		//주문
 		map.put("/cashForm.do", new CashFormControl());
 		map.put("/cash.do", new CashControl());
+		map.put("/orderDelete.do", new OrderDeleteControl());
 		
 		//주문내역
 		map.put("/orderForm.do", new OrderFormControl());
@@ -107,6 +118,7 @@ public class FrontController extends HttpServlet {
 		
 		//주문취소
 		map.put("/cancelOrderForm.do", new CancelOrderFormControl());
+		map.put("/cancelOrder.do", new CancelOrderControl());
 		
 		//찜목록
 		map.put("/wishlist.do", new WishlistControl());

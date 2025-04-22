@@ -29,7 +29,7 @@ public class MemberServiceImpl implements MemberService {
  
  	@Override
  	public boolean changePasswd(MemberVo member) {
- 		return false;
+ 	    return mapper.updatePasswd(member) == 1;
  	}
 
 	@Override

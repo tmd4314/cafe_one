@@ -30,24 +30,24 @@ public class SignUpControl implements Control {
 			String ucp = req.getParameter("cpass");
 			String unm = req.getParameter("userName");
 			String upn = req.getParameter("phone");
+			String post = req.getParameter("post");
 			String addr1 = req.getParameter("address1");
 			String addr2 = req.getParameter("address2");
 			String addr3 = req.getParameter("address3");
 			String addr4 = req.getParameter("address4");
 			String uem = req.getParameter("email");
 			
-			String addr = (addr1 != null ? addr1 : "") +
-			             (addr2 != null ? addr2 : "") +
-			             (addr3 != null ? addr3 : "") +
-			             (addr4 != null ? addr4 : "");
-			
+
 			if (upw.equals(ucp)) {
 				MemberVo mvo = new MemberVo();
 				mvo.setUserId(uid);
 				mvo.setPassword(upw);
 				mvo.setUserName(unm);
 				mvo.setPhone(upn);
-				mvo.setAddress(addr);
+				mvo.setPost(post);
+				mvo.setAddress1(addr1);
+				mvo.setAddress2(addr2);
+				mvo.setAddress3(addr3);
 				mvo.setEmail(uem);
 				mvo.setMailage(0);
 

@@ -33,4 +33,9 @@
 	        od.od_no = #{odNo}
     </select>
 
+	<!-- order_detail 삭제 -->
+	<delete id="deleteDetailOrder" parameterType="string">
+	    DELETE FROM order_detail 
+	    WHERE  od_no = #{odNo}
+	</delete>
 </mapper>
