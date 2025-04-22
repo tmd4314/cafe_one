@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+section {
+  position: relative;
+  /* 추가 */
+}
+
+.slideshow-container {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+  z-index: 0;
+  /* 추가 또는 조정 */
+}
+
+.mySlides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  /* 변경: 기본적으로 숨김 */
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+  /* 추가 또는 조정 */
+}
+
+.mySlides.active {
+  opacity: 1;
+  /* 변경: 활성화된 슬라이드만 보이도록 함 */
+  z-index: 1;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: auto;
+  /* 또는 z-index: 0; */
+}
+
+.slide-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 47.5%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  /* 추가 또는 조정 */
+}
+
+.indicator-line {
+  flex: 1;
+  height: 5px;
+  background-color: #ccc;
+  position: relative;
+  margin: 0 5px;
+}
+
+.active-indicator {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: 10px;
+  width: 25%;
+  background-color: red;
+  border-radius: 50%;
+  transition: left 0.3s;
+}
+
+.slide-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #bbb;
+  margin: 0 5px;
+  position: relative;
+  /* 추가 */
+  z-index: 4;
+  /* 추가 */
+}
+
+.slide-btn.active {
+  background-color: red;
+}
+
+.slide-btns {
+  position: relative;
+  z-index: 3;
+  /* 다른 요소보다 높은 값으로 설정 */
+  transform: translateZ(0);
+  /* 추가 */
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.product-item.card {
+  width: 250px;
+  /* 카드 너비 설정 */
+  margin-right: 15px;
+  /* 카드 간 간격 설정 */
+  flex: 0 0 auto;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 150px;
+  /* 이미지 높이 설정 */
+  object-fit: cover;
+  /* 이미지 비율 유지 및 자르기 */
+}
+
+.featured-product.card {
+  width: 350px;
+  /* 카드 너비 설정 */
+  /* 카드 간 간격 설정 */
+  flex: 0 0 auto;
+}
+
+.featured-product.card {
+  width: 300px;
+  /* 카드 너비를 300px로 설정 */
+  margin-right: 15px;
+  /* 카드 간 간격 설정 */
+  flex: 0 0 auto;
+  /* 카드가 자동으로 크기를 조정하도록 설정 */
+}
+
+#latest-blog {
+  padding: 30px 0;
+}
+
+.blog-slider {
+  display: flex;
+  overflow-x: auto;
+  /* 가로 스크롤 활성화 */
+  scroll-snap-type: x mandatory;
+  /* 스크롤 스냅핑 활성화 */
+  -webkit-overflow-scrolling: touch;
+  /* iOS 부드러운 스크롤 */
+}
+
+.blog-slide {
+  flex: 0 0 33.33%;
+  /* 각 슬라이드가 3개씩 보이도록 설정 (100% / 3) */
+  width: 33.33%;
+  padding: 10px;
+  scroll-snap-align: start;
+  /* 스크롤 스냅핑 위치 설정 */
+  box-sizing: border-box;
+}
+
+.blog-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* 추가 스타일 (선택 사항) */
+.blog-slide h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.blog-slide p {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.blog-slide a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.product-item.swiper-slide {
+  width: 300px !important;
+  /* 원하는 너비로 변경, !important 추가 */
+  margin-right: 15px !important;
+  /* 필요에 따라 간격 조정, !important 추가 */
+  /* 다른 스타일 속성들을 추가할 수 있습니다. */
+}
+
+/* Swiper가 동적으로 생성하는 스타일을 덮어쓰기 위해 더 구체적인 선택자를 사용할 수 있습니다. */
+.swiper-wrapper .product-item.swiper-slide {
+  width: 300px !important;
+}
+
+.tab-image {
+  /* 이미지에 대한 스타일 (선택 사항) */
+  width: 100%;
+  /* 이미지가 컨테이너에 꽉 차도록 설정 */
+  height: auto;
+  /* 이미지 비율 유지 */
+}
