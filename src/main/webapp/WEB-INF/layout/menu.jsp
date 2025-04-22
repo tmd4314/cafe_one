@@ -214,7 +214,7 @@
 				<ul class="btn-toggle-nav list-unstyled fw-normal ps-5 pb-1">
 					<li class="border-bottom py-2"><a href="productList.do?category=CO1" class="dropdown-item">원두커피</a></li>
 					<li class="border-bottom py-2"><a href="productList.do?category=CO2" class="dropdown-item">액상캡슐커피</a></li>
-					<li class="border-bottom py-2"><a href="productList.do?category=CO2" class="dropdown-item">인스턴스커피</a></li>
+					<li class="border-bottom py-2"><a href="productList.do?category=CO3" class="dropdown-item">인스턴스커피</a></li>
 				</ul>
 			</div>
 		</li>

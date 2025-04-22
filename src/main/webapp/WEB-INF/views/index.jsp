@@ -91,7 +91,7 @@
             <c:forEach var="pdList" items="${bList}">
               <div class="col-md-4 product-item ">
                 <figure>
-                  <a href="product.do?pdc=product1" title="Product 1">
+                  <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
                     <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
                   </a>
                 </figure>
@@ -120,7 +120,7 @@
             <c:forEach var="pdList" items="${bCOList}">
               <div class="col-md-4 product-item ">
                 <figure>
-                  <a href="product.do?pdc=product1" title="Product 1">
+                  <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
                     <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
                   </a>
                 </figure>
@@ -148,7 +148,7 @@
             <c:forEach var="pdList" items="${bSFList }">
               <div class="col-md-4 product-item ">
                 <figure>
-                  <a href="product.do?pdc=product1" title="Product 1">
+                  <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
                     <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
                   </a>
                 </figure>
@@ -175,7 +175,7 @@
             <c:forEach var="pdList" items="${bPDList}">
               <div class="col-md-4 product-item ">
                 <figure>
-                  <a href="product.do?pdc=product1" title="Product 1">
+                  <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
                     <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
                   </a>
                 </figure>
@@ -202,7 +202,7 @@
             <c:forEach var="pdList" items="${bUZList}">
               <div class="col-md-4 product-item ">
                 <figure>
-                  <a href="product.do?pdc=product1" title="Product 1">
+                  <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
                     <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
                   </a>
                 </figure>
