@@ -71,6 +71,7 @@
      ]]>
    </select>
    
+   <!-- 신규 상품 10개 조회 -->
    <select id="selectCategoryNewPd" parameterType="string" resultType="co.yedam.vo.ProductVO">
      SELECT pd_code,
        pd_name,
