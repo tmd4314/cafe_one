@@ -12,7 +12,7 @@
 	</div>
 	<div class="main_goods">
 		<div class="product-list">
-			<c:forEach var="bestPD" items="${bestCOpd}" varStatus="status">
+			<c:forEach var="bestPD" items="${bestPdList}" varStatus="status">
 				<div class="product-item best">
 					<!-- 
 					<div class="discount">n%</div>					
@@ -41,12 +41,12 @@
 	</div>
 	<div class="main_goods">
 		<div class="product-list">
-			<c:forEach var="WorstPD" items="${WorstCOpd}" varStatus="status">
+			<c:forEach var="WorstPD" items="${worstPdList}" varStatus="status">
 				<div class="product-item best">
 					<!-- 
 					<div class="discount">n%</div>					
 					 -->
-					<a href="product.do?pdc=${WorstPD.pdCode}">
+					<a href="product.do?pdCode=${WorstPD.pdCode}">
 						<img src="images/${WorstPD.pdimg}" alt="${WorstPD.pdName}">
 						<h5 class="product-title">${WorstPD.pdName}</h5>
 					</a>
@@ -72,10 +72,10 @@
 		<div class="new-goods-list">
 			<div class="swiper mySwiper">
 				<div class="swiper-wrapper">
-					<c:forEach var="newpd" items="${newCOpd}">
+					<c:forEach var="newpd" items="${newPdList}">
 						<div class="swiper-slide">
 							<div class="product-item">
-								<a href="product.do?pdc=${newpd.pdCode}">
+								<a href="product.do?pdCode=${newpd.pdCode}">
 									<img src="images/${newpd.pdimg}" alt="${newpd.pdName}">
 									<h5 class="product-title">${newpd.pdName}</h5>
 								</a>
@@ -121,17 +121,17 @@
 	<div class="discounted-goods">
 		<div class="swiper mySwiper">
 			<div class="swiper-wrapper">
-				<c:forEach var="pdsf" items="${listSF}">
+				<c:forEach var="pdList" items="${list}">
 					<div class="swiper-slide">
 						<div class="product-item">
 							<div class="discount">n%</div>
-							<a href="product.do?pdc=${pdsf.pdCode}">
-								<img src="images/${pdsf.pdimg}" alt="${pdsf.pdName}">
-								<h5 class="product-title">${pdsf.pdName}</h5>
+							<a href="product.do?pdCode=${pdList.pdCode}">
+								<img src="images/${pdList.pdimg}" alt="${pdList.pdName}">
+								<h5 class="product-title">${pdList.pdName}</h5>
 							</a>
 							<div class="price-box">
-								<del>${pdsf.pdPrice}원</del>
-								<span class="price">${pdsf.pdPrice}원</span>
+								<del>${pdList.pdPrice}원</del>
+								<span class="price">${pdList.pdPrice}원</span>
 							</div>
 						</div>
 					</div>
