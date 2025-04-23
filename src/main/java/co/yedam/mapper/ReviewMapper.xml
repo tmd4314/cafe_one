@@ -11,7 +11,15 @@
    	 	WHERE PD_CODE = #{pdc}
    	 	ORDER BY review_id DESC
    	 </select>
-   
+   	 
+   	 <!-- 내가 작성한 리뷰목록만 출력 -->
+   	 <select id="selectMyReviews" parameterType="string" resultType="co.yedam.vo.ReviewVO">
+		SELECT *
+		FROM review
+		WHERE user_id = #{userId}
+		ORDER BY create_date DESC
+	</select>
+	
 <insert id="insertReview" parameterType="Review">
     INSERT INTO review (review_id, review_title, review_content, user_id, pd_code, create_date)
     VALUES (
@@ -27,6 +35,15 @@
 <delete id="deleteReview">
     DELETE FROM review 
     WHERE review_id = #{reviewId}
-    AND user_id = #{userId}
+      AND LOWER(user_id) = LOWER(#{userId})
+      AND pd_code = #{pdCode}
 </delete>
+
+    <update id="reorderReviews">
+        UPDATE review
+        SET review_id = review_id - 1
+        WHERE pd_code = #{pdCode}
+        AND review_id > #{deletedReviewId}
+    </update>
+
 </mapper>

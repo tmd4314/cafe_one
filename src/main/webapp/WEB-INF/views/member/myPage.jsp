@@ -205,7 +205,7 @@ h1 {
 				<div class="menu-divider"></div>
 				<h4><b>나의 상품후기</b></h4>
 				<ul>
-					<li><a href="">나의 상품후기</a></li>
+					<li><a href="myReview.do">나의 상품후기</a></li>
 				</ul>
 				<div class="menu-divider"></div>
 				<h4><b>정보 변경</b></h4>

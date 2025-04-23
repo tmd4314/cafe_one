@@ -30,7 +30,7 @@ public class SearchControl implements Control {
 
         ProductService service = new ProductServiceImpl();
         List<ProductVO> list = service.searchAdvanced(keyword, main, sub, minPrice, maxPrice);
-        
+        System.out.println(list);
         CategoryService catService = new CategoryServiceImpl();
         List<CategoryVO> all = catService.getCategoryList();
         Set<String> mainCategories = all.stream()

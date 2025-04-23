@@ -14,6 +14,7 @@ public interface CartMapper {
 	boolean deleteCartItem(@Param("userId") String userId, @Param("pdCode") String pdCode, @Param("quantity") int quantity);
 	CartVo getCartItemByCartNo(int cartNo);
 	int insertCart(CartVo cvo); 
+	CartVo getCartCartNo(@Param("userId")String userId, @Param("pdCode")String pdCode);
 	
 	// 🆕 장바구니에 동일 상품이 있으면 수량 증가, 없으면 삽입
     int insertOrUpdateCart(CartVo vo);

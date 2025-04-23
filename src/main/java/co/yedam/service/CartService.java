@@ -13,5 +13,6 @@ public interface CartService {
 	CartVo getCartItemByCartNo(int cartNo);
 	boolean addCart(CartVo cvo);
 	boolean addToCart(CartVo vo);
+	CartVo getCartItem(String userId, String pdCode);// 수량 있을시 만듬
 }
 

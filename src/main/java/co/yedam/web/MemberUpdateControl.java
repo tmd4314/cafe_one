@@ -43,13 +43,22 @@ public class MemberUpdateControl implements Control {
         vo.setAddress2(address2);
         vo.setAddress3(address3);
         vo.setEmail(email);
+        
 
         // 서비스 호출
         MemberService service = new MemberServiceImpl();
         boolean result = service.updateMemberInfo(vo);
+        System.out.println(result);
+        
+        if (result == true) {
+        	 // 세션 무효화 (로그아웃 처리)
+            session.invalidate();
 
-        if (result) {
-            resp.sendRedirect("main.do");
+            // 알림 메시지 설정 (setAttribute 사용)
+            req.setAttribute("updateSuccessMsg", "회원 정보가 수정되었습니다. 다시 로그인해주세요.");
+
+            // loginForm.do로 리다이렉트
+            resp.sendRedirect("loginForm.do");
         } else {
             req.setAttribute("errorMsg", "회원 정보 수정에 실패했습니다.");
             req.getRequestDispatcher("member/myPage.tiles").forward(req, resp);
