@@ -5,6 +5,7 @@
 <style>
 /* 푸터 스타일 */
 .footer {
+    margin-top: 150px;
     background-color: #d1b58a; /* 로고 배경과 동일한 색 */
     padding: 20px 0; /* 높이 줄임 */
     color: #fff; /* 흰색 텍스트 */
