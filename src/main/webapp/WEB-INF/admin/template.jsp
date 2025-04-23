@@ -13,7 +13,7 @@
 
 <!-- 상단 네비게이션 바 -->
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand ps-3" href="adminBody.do">Admin</a>
+    <a class="navbar-brand ps-3" href="main.do">Admin</a>
 
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle">
         <i class="fas fa-bars"></i>
