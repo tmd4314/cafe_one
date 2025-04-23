@@ -93,13 +93,13 @@
                 <figure>
                   <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
                     <c:choose>
-					    <c:when test="${pdList.pdStock == 0}">
-					        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
-					    </c:when>
-					    <c:otherwise>
-					        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
-					    </c:otherwise>
-					</c:choose>
+                      <c:when test="${pdList.pdStock == 0}">
+                        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
+                      </c:when>
+                      <c:otherwise>
+                        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                      </c:otherwise>
+                    </c:choose>
                   </a>
                 </figure>
                 <div class="d-flex flex-column text-center">
@@ -110,26 +110,27 @@
                   <div class="button-area p-3 pt-0">
                     <div class="row g-1 mt-2">
                       <div class="col-3"><input type="number" name="quantity"
-                          class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10" data-pdcode="${pdList.pdCode}"></div>
-                      <div class="col-7"> <c:choose>
-										        <c:when test="${pdList.pdStock == 0}">
-										            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
-										            <span class="text-danger">매진되었습니다</span>
-										        </c:when>
-										        <c:otherwise>
-										            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
-										        </c:otherwise>
-										    </c:choose>
+                          class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10"
+                          data-pdcode="${pdList.pdCode}"></div>
+                      <div class="col-7">
+                        <c:choose>
+                          <c:when test="${pdList.pdStock == 0}">
+                            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+                            <span class="text-danger">매진되었습니다</span>
+                          </c:when>
+                          <c:otherwise>
+                            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"
+                              onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+                          </c:otherwise>
+                        </c:choose>
                       </div>
-                      <a href="#" 
-						   class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
-						   data-pdcode="${pdList.pdCode}" 
-						   data-userid="${sessionScope.logId}" 
-						   onclick="addToWishlist(this)">❤️</a>
-                      </div>
+                      <a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist"
+                        data-pdcode="${pdList.pdCode}" data-userid="${sessionScope.logId}"
+                        onclick="addToWishlist(this)">❤️</a>
                     </div>
                   </div>
                 </div>
+              </div>
             </c:forEach>
           </c:when>
 
@@ -140,13 +141,13 @@
                 <figure>
                   <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
                     <c:choose>
-					    <c:when test="${pdList.pdStock == 0}">
-					        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
-					    </c:when>
-					    <c:otherwise>
-					        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
-					    </c:otherwise>
-					</c:choose>
+                      <c:when test="${pdList.pdStock == 0}">
+                        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
+                      </c:when>
+                      <c:otherwise>
+                        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                      </c:otherwise>
+                    </c:choose>
                   </a>
                 </figure>
                 <div class="d-flex flex-column text-center">
@@ -157,42 +158,43 @@
                   <div class="button-area p-3 pt-0">
                     <div class="row g-1 mt-2">
                       <div class="col-3"><input type="number" name="quantity"
-                          class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10" data-pdcode="${pdList.pdCode}"></div>
-                      <div class="col-7"><c:choose>
-										        <c:when test="${pdList.pdStock == 0}">
-										            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
-										            <span class="text-danger">매진되었습니다</span>
-										        </c:when>
-										        <c:otherwise>
-										            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
-										        </c:otherwise>
-										    </c:choose>
+                          class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10"
+                          data-pdcode="${pdList.pdCode}"></div>
+                      <div class="col-7">
+                        <c:choose>
+                          <c:when test="${pdList.pdStock == 0}">
+                            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+                            <span class="text-danger">매진되었습니다</span>
+                          </c:when>
+                          <c:otherwise>
+                            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"
+                              onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+                          </c:otherwise>
+                        </c:choose>
                       </div>
-                      <a href="#" 
-						   class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
-						   data-pdcode="${pdList.pdCode}" 
-						   data-userid="${sessionScope.logId}" 
-						   onclick="addToWishlist(this)">❤️</a>
-                      </div>
-		          </div>
-		        </div>
-		      </div>
+                      <a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist"
+                        data-pdcode="${pdList.pdCode}" data-userid="${sessionScope.logId}"
+                        onclick="addToWishlist(this)">❤️</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </c:forEach>
           </c:when>
-          
+
           <c:when test="${param.categoryCode == 'SF'}">
             <c:forEach var="pdList" items="${bSFList }">
               <div class="col-md-4 product-item ">
                 <figure>
                   <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
                     <c:choose>
-					    <c:when test="${pdList.pdStock == 0}">
-					        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
-					    </c:when>
-					    <c:otherwise>
-					        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
-					    </c:otherwise>
-					</c:choose>
+                      <c:when test="${pdList.pdStock == 0}">
+                        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
+                      </c:when>
+                      <c:otherwise>
+                        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                      </c:otherwise>
+                    </c:choose>
                   </a>
                 </figure>
                 <div class="d-flex flex-column text-center">
@@ -203,22 +205,23 @@
                   <div class="button-area p-3 pt-0">
                     <div class="row g-1 mt-2">
                       <div class="col-3"><input type="number" name="quantity"
-                          class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10" data-pdcode="${pdList.pdCode}"></div>
-                      <div class="col-7"><c:choose>
-										        <c:when test="${pdList.pdStock == 0}">
-										            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
-										            <span class="text-danger">매진되었습니다</span>
-										        </c:when>
-										        <c:otherwise>
-										            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
-										        </c:otherwise>
-										    </c:choose>
+                          class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10"
+                          data-pdcode="${pdList.pdCode}"></div>
+                      <div class="col-7">
+                        <c:choose>
+                          <c:when test="${pdList.pdStock == 0}">
+                            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+                            <span class="text-danger">매진되었습니다</span>
+                          </c:when>
+                          <c:otherwise>
+                            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"
+                              onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+                          </c:otherwise>
+                        </c:choose>
                       </div>
-						<a href="#" 
-						   class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
-						   data-pdcode="${pdList.pdCode}" 
-						   data-userid="${sessionScope.logId}" 
-						   onclick="addToWishlist(this)">❤️</a>
+                      <a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist"
+                        data-pdcode="${pdList.pdCode}" data-userid="${sessionScope.logId}"
+                        onclick="addToWishlist(this)">❤️</a>
                     </div>
                   </div>
                 </div>
@@ -231,13 +234,13 @@
                 <figure>
                   <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
                     <c:choose>
-					    <c:when test="${pdList.pdStock == 0}">
-					        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
-					    </c:when>
-					    <c:otherwise>
-					        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
-					    </c:otherwise>
-					</c:choose>
+                      <c:when test="${pdList.pdStock == 0}">
+                        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
+                      </c:when>
+                      <c:otherwise>
+                        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                      </c:otherwise>
+                    </c:choose>
                   </a>
                 </figure>
                 <div class="d-flex flex-column text-center">
@@ -248,43 +251,43 @@
                   <div class="button-area p-3 pt-0">
                     <div class="row g-1 mt-2">
                       <div class="col-3"><input type="number" name="quantity"
-                          class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10" data-pdcode="${pdList.pdCode}"></div>
+                          class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10"
+                          data-pdcode="${pdList.pdCode}"></div>
                       <div class="col-7">
-                      		<c:choose>
-						        <c:when test="${pdList.pdStock == 0}">
-						            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
-						            <span class="text-danger">매진되었습니다</span>
-						        </c:when>
-						        <c:otherwise>
-						            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
-						        </c:otherwise>
-						    </c:choose>
+                        <c:choose>
+                          <c:when test="${pdList.pdStock == 0}">
+                            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+                            <span class="text-danger">매진되었습니다</span>
+                          </c:when>
+                          <c:otherwise>
+                            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"
+                              onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+                          </c:otherwise>
+                        </c:choose>
                       </div>
-  						   <a href="#" 
-						   class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
-						   data-pdcode="${pdList.pdCode}" 
-						   data-userid="${sessionScope.logId}" 
-						   onclick="addToWishlist(this)">❤️</a>
+                      <a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist"
+                        data-pdcode="${pdList.pdCode}" data-userid="${sessionScope.logId}"
+                        onclick="addToWishlist(this)">❤️</a>
                     </div>
                   </div>
                 </div>
               </div>
             </c:forEach>
           </c:when>
-          
+
           <c:when test="${param.categoryCode == 'UZ'}">
             <c:forEach var="pdList" items="${bUZList}">
               <div class="col-md-4 product-item ">
                 <figure>
                   <a href="product.do?pdCode=${pdList.pdCode}" title="Product 1">
                     <c:choose>
-					    <c:when test="${pdList.pdStock == 0}">
-					        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
-					    </c:when>
-					    <c:otherwise>
-					        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
-					    </c:otherwise>
-					</c:choose>
+                      <c:when test="${pdList.pdStock == 0}">
+                        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
+                      </c:when>
+                      <c:otherwise>
+                        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}" class="tab-image">
+                      </c:otherwise>
+                    </c:choose>
                   </a>
                 </figure>
                 <div class="d-flex flex-column text-center">
@@ -295,29 +298,30 @@
                   <div class="button-area p-3 pt-0">
                     <div class="row g-1 mt-2">
                       <div class="col-3"><input type="number" name="quantity"
-                          class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10" data-pdcode="${pdList.pdCode}"></div>
-                      <div class="col-7"><c:choose>
-										        <c:when test="${pdList.pdStock == 0}">
-										            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
-										            <span class="text-danger">매진되었습니다</span>
-										        </c:when>
-										        <c:otherwise>
-										            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
-										        </c:otherwise>
-										    </c:choose>
+                          class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10"
+                          data-pdcode="${pdList.pdCode}"></div>
+                      <div class="col-7">
+                        <c:choose>
+                          <c:when test="${pdList.pdStock == 0}">
+                            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+                            <span class="text-danger">매진되었습니다</span>
+                          </c:when>
+                          <c:otherwise>
+                            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"
+                              onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+                          </c:otherwise>
+                        </c:choose>
                       </div>
- 					  <a href="#" 
-						   class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
-						   data-pdcode="${pdList.pdCode}" 
-						   data-userid="${sessionScope.logId}" 
-						   onclick="addToWishlist(this)">❤️</a>
+                      <a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist"
+                        data-pdcode="${pdList.pdCode}" data-userid="${sessionScope.logId}"
+                        onclick="addToWishlist(this)">❤️</a>
                     </div>
                   </div>
                 </div>
               </div>
             </c:forEach>
           </c:when>
-          
+
         </c:choose>
       </div>
 
@@ -328,77 +332,78 @@
   </section>
 
 
- <section id="latest-products" class="products-carousel">
+  <section id="latest-products" class="products-carousel">
     <div class="container-lg overflow-hidden pb-5">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-header d-flex justify-content-between my-4">
+            <h2 class="section-title">💬인기 리뷰상품</h2>
+          </div>
+        </div>
+
         <div class="row">
-            <div class="col-md-12">
-                <div class="section-header d-flex justify-content-between my-4">
-                    <h2 class="section-title">💬인기 리뷰상품</h2>
-                </div>
-            </div>
+          <div class="col-md-12">
+            <div class="swiper">
+              <div class="swiper-wrapper">
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
+                <c:forEach var="product" items="${reviewProductList}">
+                  <div class="swiper-slide">
+                    <div class="product-item swiper-slide review-product-item">
+                      <!-- 클래스 추가 -->
+                      <figure>
+                        <a href="product.do?pdCode=${product.pdCode}" title="${product.pdName}">
+                          <c:choose>
+                            <c:when test="${product.pdStock == 0}">
+                              <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
+                            </c:when>
+                            <c:otherwise>
+                              <img src="images/${product.pdimg}" alt="${product.pdName}" class="tab-image">
+                            </c:otherwise>
+                          </c:choose>
+                        </a>
+                      </figure>
+                      <h3 class="fs-6 fw-normal" style="color: black;">${product.pdName}</h3>
+                      <span class="text-dark fw-semibold" style="color: black;">
+                        <fmt:formatNumber value="${product.pdPrice}" type="number" groupingUsed="true" />원
+                      </span>
+                      <span class="d-block text-muted" style="color: black;">재고: ${product.pdStock}</span>
 
-                            <c:forEach var="product" items="${reviewProductList}">
-                                <div class="swiper-slide">
-                                    <div class="product-item swiper-slide review-product-item"> <!-- 클래스 추가 -->
-                                        <figure>
-                                            <a href="product.do?pdCode=${product.pdCode}" title="${product.pdName}">
-                                               <c:choose>
-												    <c:when test="${product.pdStock == 0}">
-												        <img src="images/soldout.jpg" alt="SOLD OUT" class="tab-image">
-												    </c:when>
-												    <c:otherwise>
-												        <img src="images/${product.pdimg}" alt="${product.pdName}" class="tab-image">
-												    </c:otherwise>
-												</c:choose>
-                                            </a>
-                                        </figure>
-                                        <h3 class="fs-6 fw-normal" style="color: black;">${product.pdName}</h3>
-                                        <span class="text-dark fw-semibold" style="color: black;">
-                                            <fmt:formatNumber value="${product.pdPrice}" type="number" groupingUsed="true" />원
-                                        </span>
-                                        <span class="d-block text-muted" style="color: black;">재고: ${product.pdStock}</span>
+                      <div class="button-area p-3 pt-0">
+                        <div class="row g-1 mt-2">
+                          <div class="col-3">
+                            <input type="number" name="quantity"
+                              class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10"
+                              data-pdcode="${product.pdCode}">
+                          </div>
+                          <div class="col-7">
+                            <c:choose>
+                              <c:when test="${product.pdStock == 0}">
+                                <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+                                <span class="text-danger">매진되었습니다</span>
+                              </c:when>
+                              <c:otherwise>
+                                <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"
+                                  onclick="addToCart(this, '${product.pdCode}')">🛒Cart</a>
+                              </c:otherwise>
+                            </c:choose>
+                          </div>
+                          <a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist"
+                            data-pdcode="${product.pdCode}" data-userid="${sessionScope.logId}"
+                            onclick="addToWishlist(this)">❤️</a>
+                        </div>
+                      </div>
 
-                                        <div class="button-area p-3 pt-0">
-                                            <div class="row g-1 mt-2">
-                                                <div class="col-3">
-                                                    <input type="number" name="quantity"
-                                                        class="form-control border-dark-subtle input-number quantity" value="1" min="1" max="10" data-pdcode="${product.pdCode}">
-                                                </div>
-                                                <div class="col-7">
-                                                    <c:choose>
-												        <c:when test="${product.pdStock == 0}">
-												            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
-												            <span class="text-danger">매진되었습니다</span>
-												        </c:when>
-												        <c:otherwise>
-												            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${product.pdCode}')">🛒Cart</a>
-												        </c:otherwise>
-												    </c:choose>
-                                                </div>
-                                                    <a href="#" 
-                                                       class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
-                                                       data-pdcode="${product.pdCode}" 
-                                                       data-userid="${sessionScope.logId}" 
-                                                       onclick="addToWishlist(this)">❤️</a>
-                                            </div>
-                                        </div>
+                    </div> <!-- /.product-item -->
+                  </div> <!-- /.swiper-slide -->
+                </c:forEach>
 
-                                    </div> <!-- /.product-item -->
-                                </div> <!-- /.swiper-slide -->
-                            </c:forEach>
-
-                        </div> <!-- /.swiper-wrapper -->
-                    </div> <!-- /.swiper -->
-                </div> <!-- /.col-md-12 -->
-            </div> <!-- /.row -->
+              </div> <!-- /.swiper-wrapper -->
+            </div> <!-- /.swiper -->
+          </div> <!-- /.col-md-12 -->
         </div> <!-- /.row -->
+      </div> <!-- /.row -->
     </div> <!-- /.container-lg -->
-</section>
+  </section>
 
 
   <section id="latest-blog" class="pb-4">
@@ -418,7 +423,6 @@
           </div>
         </div>
       </div>
-    </div>
     </div>
   </section>
   <script>
@@ -480,37 +484,43 @@
         }
       });
     }
+
     function addToWishlist(el) {
-  	  const pdCode = el.dataset.pdcode;
-  	  const userId = el.dataset.userid;
+      const pdCode = el.dataset.pdcode;
+      const userId = el.dataset.userid;
 
-  	  fetch("wishlistAdd.do", {
-  	    method: "POST",
-  	    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  	    body: `userId=\${userId}&pdCode=\${pdCode}`
-  	  })
-  	  .then(res => res.text())
-  	  .then(data => {
-  	    if (data === "success") {
-  	      alert("찜 목록에 추가되었습니다!");
-  	    } else if (data === "exist") {
-  	      alert("이미 찜한 상품입니다!");
-  	    } else {
-  	      alert("찜 추가 실패 😢");
-  	    }
-  	  });
-  	}
-    function addToCart(element, pdCode) {
-        // 해당 상품 아이템에서 수량 입력 필드를 찾습니다.
-        var quantityInput = element.closest('.product-item').querySelector('.quantity');
-        var quantity = quantityInput.value;
-
-        // cartAdd.do URL을 생성합니다.
-        var cartAddUrl = "cartAdd.do?pdCode=" + pdCode + "&quan=" + quantity;
-
-        // URL로 리디렉션합니다.
-        window.location.href = cartAddUrl;
+      fetch("wishlistAdd.do", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body: `userId=\${userId}&pdCode=\${pdCode}`
+        })
+        .then(res => res.text())
+        .then(data => {
+          if (data === "success") {
+            alert("찜 목록에 추가되었습니다!");
+          } else if (data === "exist") {
+            alert("이미 찜한 상품입니다!");
+          } else {
+            alert("찜 추가 실패 😢");
+          }
+        });
     }
+
+    function addToCart(element, pdCode) {
+      // 해당 상품 아이템에서 수량 입력 필드를 찾습니다.
+      var quantityInput = element.closest('.product-item').querySelector('.quantity');
+      var quantity = quantityInput.value;
+
+      // cartAdd.do URL을 생성합니다.
+      var cartAddUrl = "cartAdd.do?pdCode=" + pdCode + "&quan=" + quantity;
+
+      // URL로 리디렉션합니다.
+      window.location.href = cartAddUrl;
+    }
+    
+   
   </script>
 
 

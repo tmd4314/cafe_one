@@ -131,11 +131,12 @@
     ORDER BY 
         NVL(r.review_count, 0) DESC
 </select>
-
+<!-- 
 <select id="productListWithReviewCount" parameterType="String" resultType="co.yedam.vo.ProductVO">
 	select count (*)
 	from review
 	where pd_code = #{pdCode}
-</select>
+</select>	
+ -->
 
 </mapper>

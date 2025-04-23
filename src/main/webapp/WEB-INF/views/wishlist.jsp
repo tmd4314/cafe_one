@@ -62,7 +62,7 @@
               </div>
               <div class="card-footer d-flex justify-content-between bg-transparent border-0">
                  <!-- 상세보기 버튼 -->
-                <form action="productInfo.do" method="get">
+                <form action="product.do" method="get">
 				  <input type="hidden" name="pdCode" value="${item.pdCode}" />
 				  <button class="btn btn-sm btn-outline-primary" type="submit">상세보기</button>
 				</form>

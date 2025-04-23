@@ -102,7 +102,7 @@
               <td>${p.pdName}</td>
               <td><fmt:formatNumber value="${p.pdPrice}" pattern="#,###"/> 원</td>
               <td>${p.manufacturer}</td>
-              <td><a href="productInfo.do?pdCode=${p.pdCode}">보기</a></td>
+              <td><a href="product.do?pdCode=${p.pdCode}">보기</a></td>
             </tr>
           </c:forEach>
         </tbody>

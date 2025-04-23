@@ -154,7 +154,19 @@
 					             <button class="btn btn-theme" type="submit">🛒Cart</button>
 					        </c:otherwise>
 					    </c:choose>
+<<<<<<< HEAD
 					</form>
+=======
+					    <form action="wishlistAdd.do" method="post">
+						   <input type="hidden" name="pdCode" value="${product.pdCode}" />
+						   <a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
+						    data-pdcode="${product.pdCode}" 
+						    data-userid="${sessionScope.logId}" 
+						    onclick="addToWishlist(this)">Wishlist</a>
+						</form>
+					</form>
+						
+>>>>>>> refs/heads/master
 
                     <p><span class="strong-text">Categories:</span> 커피, 원두</p>
 
@@ -162,11 +174,7 @@
 
                     
 
-                    <ul class="product-info-btn">
-
-                        <li><a href=""><i class="fa fa-heart-o"></i> Wishlist</a></li>
-
-                    </ul>
+                   
 
                     <p><i class="fa fa-check"></i> 부드러운 산미의 커피를 즐기세요 </p>
 
@@ -363,6 +371,41 @@
             document.querySelector('#calculatedPrice').textContent = formattedPrice;
         }
     });
+<<<<<<< HEAD
+=======
+    
+    function addToWishlist(el) {
+   	  const pdCode = el.dataset.pdcode;
+   	  const userId = el.dataset.userid;
+
+   	  fetch("wishlistAdd.do", {
+   	    method: "POST",
+   	    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+   	    body: `userId=\${userId}&pdCode=\${pdCode}`
+   	  })
+   	  .then(res => res.text())
+   	  .then(data => {
+   	    if (data === "success") {
+   	      alert("찜 목록에 추가되었습니다!");
+   	    } else if (data === "exist") {
+   	      alert("이미 찜한 상품입니다!");
+   	    } else {
+   	      alert("찜 추가 실패 😢");
+   	    }
+   	  });
+   	}
+     function addToCart(element, pdCode) {
+         // 해당 상품 아이템에서 수량 입력 필드를 찾습니다.
+         var quantityInput = element.closest('.product-item').querySelector('.quantity');
+         var quantity = quantityInput.value;
+
+         // cartAdd.do URL을 생성합니다.
+         var cartAddUrl = "cartAdd.do?pdCode=" + pdCode + "&quan=" + quantity;
+
+         // URL로 리디렉션합니다.
+         window.location.href = cartAddUrl;
+     }
+>>>>>>> refs/heads/master
 
 	</script>
     
