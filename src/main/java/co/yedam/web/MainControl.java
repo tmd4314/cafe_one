@@ -22,6 +22,7 @@ public class MainControl implements Control {
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		
 //		HttpSession session = req.getSession();
 //		String logId = (String) session.getAttribute("logId");
 		String reviewCode = req.getParameter("reviewCount");
