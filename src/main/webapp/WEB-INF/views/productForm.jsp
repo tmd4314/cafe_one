@@ -154,9 +154,6 @@
 					             <button class="btn btn-theme" type="submit">🛒Cart</button>
 					        </c:otherwise>
 					    </c:choose>
-<<<<<<< HEAD
-					</form>
-=======
 					    <form action="wishlistAdd.do" method="post">
 						   <input type="hidden" name="pdCode" value="${product.pdCode}" />
 						   <a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6 btn-wishlist" 
@@ -166,7 +163,6 @@
 						</form>
 					</form>
 						
->>>>>>> refs/heads/master
 
                     <p><span class="strong-text">Categories:</span> 커피, 원두</p>
 
@@ -371,8 +367,6 @@
             document.querySelector('#calculatedPrice').textContent = formattedPrice;
         }
     });
-<<<<<<< HEAD
-=======
     
     function addToWishlist(el) {
    	  const pdCode = el.dataset.pdcode;
@@ -405,7 +399,6 @@
          // URL로 리디렉션합니다.
          window.location.href = cartAddUrl;
      }
->>>>>>> refs/heads/master
 
 	</script>
     
