@@ -371,12 +371,12 @@
                                                 </div>
                                                 <div class="col-7">
                                                     <c:choose>
-												        <c:when test="${pdList.pdStock == 0}">
+												        <c:when test="${product.pdStock == 0}">
 												            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
 												            <span class="text-danger">매진되었습니다</span>
 												        </c:when>
 												        <c:otherwise>
-												            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${pdList.pdCode}')">🛒Cart</a>
+												            <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart" onclick="addToCart(this, '${product.pdCode}')">🛒Cart</a>
 												        </c:otherwise>
 												    </c:choose>
                                                 </div>

@@ -65,9 +65,9 @@
          <c:set var="totalProductPrice" value="${totalProductPrice + cart.totalPrice}" />
      </c:forEach>
 
-     <p>총 상품금액: <strong><fmt:formatNumber value="${totalProductPrice}" pattern="#,###"/>원</strong></p>
-     <p>배송비: <strong><fmt:formatNumber value="${deliveryFee}" pattern="#,###"/>원</strong></p>
-     <p>합계: <strong><fmt:formatNumber value="${totalProductPrice + deliveryFee}" pattern="#,###"/>원</strong></p>
+     <p style="color:black">총 상품금액: <strong style="color:black"><fmt:formatNumber value="${totalProductPrice}" pattern="#,###"/>원</strong></p>
+     <p style="color:black">배송비: <strong style="color:black"><fmt:formatNumber value="${deliveryFee}" pattern="#,###"/>원</strong></p>
+     <p style="color:black">합계: <strong style="color:black"><fmt:formatNumber value="${totalProductPrice + deliveryFee}" pattern="#,###"/>원</strong></p>
  </div>
    
   
@@ -87,23 +87,23 @@
     <div class="card p-3 mb-4">
       <h5>배송지 정보</h5>
       <div class="col-md-6">
-        <label class="dname">이름</label>
+        <label class="dname" style="color:black">이름</label>
         <input type="text" class="form-control" name="dname"id="dname">
         <button type="button" class="btn btn-sm btn-outline-secondary" onclick="fillMemberInfo()">회원정보 넣기</button>
       </div>
       <div class="col-md-12">
-        <label class="dphone">전화번호</label>
+        <label class="dphone" style="color:black">전화번호</label>
         <input type="text" class="form-control" name="dphone" id="dphone">
       </div>
       
       <div class="col-md-12">
-	        <label class="dpost">우편번호</label>
+	        <label class="dpost" style="color:black">우편번호</label>
 	         <input type="text" class="form-control" name="dpost" id="sample6_postcode" placeholder="우편번호">
 	         <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" style="background-color: #007bff; color: white; border: 1px solid #007bff;">
 	      </div>
       
       <div class="col-md-12">
-        <label class="daddre">배송 주소</label>
+        <label class="daddre" style="color:black">배송 주소</label>
         <input type="text" class="form-control" name="daddre" id="sample6_address">
         <input type="text" class="form-control" name="daddre2" id="sample6_detailAddress" placeholder="상세주소">
       </div>
@@ -113,11 +113,11 @@
     <div class="card p-3 mb-4">
       <h5>💳 결제 정보</h5>
       <div class="mileage-container">
-        <label class="form-label">마일리지 사용 (보유 마일리지: <c:out value="${sessionScope.mile }"/>)</label>
+        <label class="form-label" style="color:black">마일리지 사용 (보유 마일리지: <c:out value="${sessionScope.mile }"/>)</label>
         <input type="number" class="form-control" name="useMileage" value="0">
         <button type="button" class="btn btn-secondary btn-sm" onclick="useAllMileage()">모두 사용</button>
       </div>
-      <p>총 결제 금액: <strong id="totalPriceResult"></strong></p>
+      <p style="color:black">총 결제 금액: <strong id="totalPriceResult"></strong></p>
     </div>
 
     <!-- 버튼 -->

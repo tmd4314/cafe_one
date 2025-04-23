@@ -146,7 +146,14 @@
 						        </c:otherwise>
 						    </c:choose>
 						</div>
-					    <button class="btn btn-theme" type="submit">🛒Cart</button>
+						<c:choose>
+					        <c:when test="${product.pdStock == 0}">
+					            <button class="btn btn-secondary rounded-1 p-2 fs-7 btn-cart" disabled>매진</button>
+					        </c:when>
+					        <c:otherwise>
+					             <button class="btn btn-theme" type="submit">🛒Cart</button>
+					        </c:otherwise>
+					    </c:choose>
 					</form>
 
                     <p><span class="strong-text">Categories:</span> 커피, 원두</p>
