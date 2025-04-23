@@ -31,7 +31,7 @@
             <span class="text-white">
                 <c:choose>
                     <c:when test="${not empty sessionScope.adminName}">
-                        님 로그인됨
+                        ${sessionScope.adminName }님 로그인됨
                     </c:when>
                 </c:choose>
             </span>

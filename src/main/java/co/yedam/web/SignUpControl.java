@@ -37,6 +37,14 @@ public class SignUpControl implements Control {
 			String addr4 = req.getParameter("address4");
 			String uem = req.getParameter("email");
 			
+			MemberService svc = new MemberServiceImpl();
+			MemberVo existingMember = svc.getMember(uid); // MemberService에 getMember 메서드가 있다고 가정합니다.
+
+			if (existingMember != null) {
+				req.setAttribute("msg", "이미 사용중인 아이디입니다.");
+				req.getRequestDispatcher("member/signForm.tiles").forward(req, resp);
+				return; // 중복일 경우 더 이상 진행하지 않고 회원가입 폼으로 돌아갑니다.
+			}
 
 			if (upw.equals(ucp)) {
 				MemberVo mvo = new MemberVo();
@@ -51,8 +59,6 @@ public class SignUpControl implements Control {
 				mvo.setEmail(uem);
 				mvo.setMailage(0);
 
-				// 업무처리.
-				MemberService svc = new MemberServiceImpl();
 				if (svc.addMember(mvo)) {
 					// resp.sendRedirect("loginForm.do");
 					req.getRequestDispatcher("product/index.tiles").forward(req, resp);

@@ -143,5 +143,13 @@ h2 {
 
 		</div>
 	</div>
+	<script>
+		 var msg = "${msg}"; // 서버에서 전달된 msg 값을 JavaScript 변수에 할당
+	
+	     if (msg !== null && msg !== "") {
+	       alert(msg);
+	       // 메시지를 표시한 후 세션에서 제거
+	     }
+	</script>
 </body>
 </html>
