@@ -22,13 +22,13 @@
 	<link rel="stylesheet" href="css/ProductList.css">
 	<style>
 		body {
-		    background-image: url('images/coffee-one.png'); /* 배경 이미지 경로 */
+		    /*background-image: url('images/coffee-one.png');  배경 이미지 경로 */
 		    background-size: cover; /* 배경 이미지를 화면에 맞게 조절 */
 		    background-position: center; /* 배경 이미지 중앙 정렬 */
 		    background-repeat: no-repeat; /* 배경 이미지 반복 안 함 */
 		    position: relative; /* 자식 요소를 절대 위치로 설정할 수 있도록 함 */
 		    z-index: 1; /* 기본 배경의 z-index 설정 */
-		    color: white; /* 기본 글자색을 흰색으로 설정 */
+		    color: black; /* 기본 글자색을 흰색으로 설정 */
 		}
 		
 		.container {
@@ -37,11 +37,11 @@
 		}
 		/* 필요한 경우 특정 요소에 대한 글자색을 재정의할 수 있습니다. */
 		h1, h2, h3, h4, h5, h6 {
-		    color: white; /* 제목 글자색을 흰색으로 설정 */
+		    color: black; /* 제목 글자색을 흰색으로 설정 */
 		}
 		
 		p, div, span, a, li {
-		    color: white; /* 일반 텍스트, div, span, 링크, 목록 항목 글자색을 흰색으로 설정 */
+		    color: black; /* 일반 텍스트, div, span, 링크, 목록 항목 글자색을 흰색으로 설정 */
 		}
 		.cart-header {
 			background-color: #808080;
@@ -49,7 +49,7 @@
 			padding: 10px;
 			border-bottom: 1px solid #dee2e6;
 			/* 구분선 */
-			color: white;
+			color: black;
 			/* 글자 색상 */
 			font-weight: bold;
 			/* 글자 굵게 */
