@@ -419,7 +419,6 @@
         </div>
       </div>
     </div>
-    </div>
   </section>
   <script>
     let slideIndex = 0;
@@ -511,6 +510,8 @@
         // URL로 리디렉션합니다.
         window.location.href = cartAddUrl;
     }
+    
+   
   </script>
 
 

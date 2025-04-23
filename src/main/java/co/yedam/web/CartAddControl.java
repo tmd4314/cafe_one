@@ -22,31 +22,38 @@ public class CartAddControl implements Control {
         String pdCode = req.getParameter("pdCode");
         int  quan = Integer.parseInt(req.getParameter("quan"));
         
-        CartService svc = new CartServiceImpl();
-        CartVo existingCartItem = svc.getCartItem(userId, pdCode); // 장바구니에 해당 상품이 있는지 확인
+        System.out.println(userId);
+        
+        if (userId == null) {
+        	req.setAttribute("msg", "로그인 해주세요.! ");
+        	req.getRequestDispatcher("member/loginForm.tiles").forward(req, resp);
+        }else {
+        	CartService svc = new CartServiceImpl();
+            CartVo existingCartItem = svc.getCartItem(userId, pdCode); // 장바구니에 해당 상품이 있는지 확인
 
-        if (existingCartItem != null) {
-            // 이미 장바구니에 있는 경우 수량 증가
-            int newQuantity = existingCartItem.getQuantity() + quan;
-            existingCartItem.setQuantity(newQuantity);
-            if (svc.updateCart(existingCartItem)) { // updateCart 메서드를 사용하여 수량 업데이트
-                resp.sendRedirect("main.do");
+            if (existingCartItem != null) {
+                // 이미 장바구니에 있는 경우 수량 증가
+                int newQuantity = existingCartItem.getQuantity() + quan;
+                existingCartItem.setQuantity(newQuantity);
+                if (svc.updateCart(existingCartItem)) { // updateCart 메서드를 사용하여 수량 업데이트
+                    resp.sendRedirect("main.do");
+                } else {
+                    System.out.println("수량 업데이트 오류");
+                    resp.sendRedirect("main.do");
+                }
             } else {
-                System.out.println("수량 업데이트 오류");
-                resp.sendRedirect("main.do");
-            }
-        } else {
-            // 장바구니에 없는 경우 새로 추가
-            CartVo cvo = new CartVo();
-            cvo.setUserId(userId);
-            cvo.setPdCode(pdCode);
-            cvo.setQuantity(quan);
+                // 장바구니에 없는 경우 새로 추가
+                CartVo cvo = new CartVo();
+                cvo.setUserId(userId);
+                cvo.setPdCode(pdCode);
+                cvo.setQuantity(quan);
 
-            if (svc.addCart(cvo)) {
-                resp.sendRedirect("main.do");
-            } else {
-                System.out.println("처리오류");
-                resp.sendRedirect("main.do");
+                if (svc.addCart(cvo)) {
+                    resp.sendRedirect("main.do");
+                } else {
+                    System.out.println("처리오류");
+                    resp.sendRedirect("main.do");
+                }
             }
         }
     }
