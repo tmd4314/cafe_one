@@ -149,7 +149,7 @@
 							<a href="product.do?pdCode=${pdList.pdCode}">
 								<c:choose>
 								    <c:when test="${pdList.pdStock == 0}">
-								        <img src="images/soldout.png" alt="SOLD OUT">
+								        <img src="images/soldout.jpg" alt="SOLD OUT">
 								    </c:when>
 								    <c:otherwise>
 								        <img src="images/${pdList.pdimg}" alt="${pdList.pdName}">
