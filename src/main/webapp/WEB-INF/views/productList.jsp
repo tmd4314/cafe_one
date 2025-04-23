@@ -5,9 +5,9 @@
 
 <div id="container">
 	<!-- 베스트 상품 추천 시작 -->
-	<div class="main_h1">
+	<div class="main_h1" id="main_h1">
 		<h2>
-			<strong>가장 많이 팔린제품</strong> <span> 무엇인지 궁금하시죠?</span>
+			<strong>가장 많이 팔린제품</strong> <span class="best_title"> 무엇인지 궁금하시죠?</span>
 		</h2>
 	</div>
 	<div class="main_goods">
@@ -41,7 +41,7 @@
 	<!-- 베스트 상품 추천 끝-->
 	
 	<!-- 이달의 상품 추천 시작 -->
-	<div class="main_h1">
+	<div class="main_h1" id="main_h1">
 		<h2>
 			<strong>이달의 추천 상품!</strong> <span> 이런 상품은 어떤가요?</span>
 		</h2>
@@ -79,7 +79,7 @@
 	<!-- 이달의 상품 추천 끝-->
 
 	<!-- 신상품 추천 시작 -->
-	<div class="main_h1">
+	<div class="main_h1" id="main_h1">
 		<h3>신상품 추천</h3>
 	</div>
 	<div class="new-goods">
@@ -129,11 +129,11 @@
 	<!-- 신상품 추천 끝 -->
 
 	<!-- 할인 상품 추천 시작 -->
-	<h2 class="main_h1">
+	<h2 class="main_h1" id="main_h1">
 		<strong>할인상품 구경하세요! </strong> <span>할인 팍팍!</span>
 	</h2>
 
-	<div class="main_h1">
+	<div class="main_h1" id="main_h1">
 		<div class="goods_list_tit">
 			<h3>!!할인상품 목록!!</h3>
 		</div>
